@@ -1,13 +1,11 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010-2014 SkeekS (Sx)
- * @date 09.11.2014
- * @since 1.0.0
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\models;
+namespace itlo\cms\models;
 
 use Yii;
 use yii\helpers\ArrayHelper;
@@ -39,8 +37,8 @@ class CmsContentProperty2content extends Core
     public function attributeLabels()
     {
         return ArrayHelper::merge(parent::attributeLabels(), [
-            'cms_content_id' => Yii::t('skeeks/cms', 'Linked to content'),
-            'cms_content_property_id' => Yii::t('skeeks/cms', 'Linked to content'),
+            'cms_content_id' => Yii::t('itlo/cms', 'Linked to content'),
+            'cms_content_property_id' => Yii::t('itlo/cms', 'Linked to content'),
         ]);
     }
 

@@ -1,23 +1,22 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 06.06.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\widgets\formInputs\comboText;
+namespace itlo\cms\widgets\formInputs\comboText;
 
 use Yii;
 use yii\web\AssetBundle;
 
 /**
  * Class ComboTextInputWidgetAsset
- * @package skeeks\cms\widgets\formInputs\comboText
+ * @package itlo\cms\widgets\formInputs\comboText
  */
 class ComboTextInputWidgetAsset extends AssetBundle
 {
-    public $sourcePath = '@skeeks/cms/widgets/formInputs/comboText/assets';
+    public $sourcePath = '@itlo/cms/widgets/formInputs/comboText/assets';
 
     public $css = [];
 
@@ -27,7 +26,7 @@ class ComboTextInputWidgetAsset extends AssetBundle
         ];
 
     public $depends = [
-        '\skeeks\sx\assets\Core',
+        '\itlo\sx\assets\Core',
     ];
 }
 

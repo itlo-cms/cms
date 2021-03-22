@@ -2,21 +2,19 @@
 /**
  * SelectTree
  *
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010-2014 SkeekS (Sx)
- * @date 13.11.2014
- * @since 1.0.0
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\widgets\formInputs\selectTree;
+namespace itlo\cms\widgets\formInputs\selectTree;
 
-use skeeks\cms\Exception;
-use skeeks\cms\helpers\UrlHelper;
-use skeeks\cms\models\Tree;
-use skeeks\cms\modules\admin\Module;
-use skeeks\cms\modules\admin\widgets\ActiveForm;
-use skeeks\cms\themes\unify\admin\assets\UnifyAdminIframeAsset;
+use itlo\cms\Exception;
+use itlo\cms\helpers\UrlHelper;
+use itlo\cms\models\Tree;
+use itlo\cms\modules\admin\Module;
+use itlo\cms\modules\admin\widgets\ActiveForm;
+use itlo\cms\themes\unify\admin\assets\UnifyAdminIframeAsset;
 use yii\helpers\Html;
 use yii\helpers\Json;
 use yii\widgets\InputWidget;
@@ -24,7 +22,7 @@ use Yii;
 
 /**
  * Class Widget
- * @package skeeks\cms\widgets\formInputs\selectTree
+ * @package itlo\cms\widgets\formInputs\selectTree
  */
 class SelectTree extends InputWidget
 {
@@ -54,7 +52,7 @@ class SelectTree extends InputWidget
     private function _initAndValidate()
     {
         if (!$this->hasModel()) {
-            throw new Exception(\Yii::t('skeeks/cms', "This file is intended only for forms model"));
+            throw new Exception(\Yii::t('itlo/cms', "This file is intended only for forms model"));
         }
     }
 
@@ -95,7 +93,7 @@ class SelectTree extends InputWidget
             }
 
 
-            $src = \skeeks\cms\backend\helpers\BackendUrlHelper::createByParams(['/cms/admin-tools/tree'])
+            $src = \itlo\cms\backend\helpers\BackendUrlHelper::createByParams(['/cms/admin-tools/tree'])
                 ->merge([
                     'mode' => $this->mode
                 ])

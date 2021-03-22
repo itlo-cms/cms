@@ -2,16 +2,14 @@
 /**
  * ErrorController
  *
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010-2014 SkeekS (Sx)
- * @date 04.11.2014
- * @since 1.0.0
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\controllers;
+namespace itlo\cms\controllers;
 
-use skeeks\cms\base\Controller;
+use itlo\cms\base\Controller;
 use Yii;
 
 
@@ -35,7 +33,7 @@ class ErrorController extends Controller
     {
         return [
             'error' => [
-                'class' => 'skeeks\cms\actions\ErrorAction',
+                'class' => 'itlo\cms\actions\ErrorAction',
             ],
         ];
     }

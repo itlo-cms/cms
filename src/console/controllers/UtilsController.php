@@ -1,23 +1,22 @@
 <?php
 /**
- * @link https://cms.skeeks.com/
- * @copyright Copyright (c) 2010 SkeekS
- * @license https://cms.skeeks.com/license/
- * @author Semenov Alexander <semenov@skeeks.com>
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\console\controllers;
+namespace itlo\cms\console\controllers;
 
-use skeeks\cms\components\Cms;
-use skeeks\cms\models\CmsAgent;
-use skeeks\cms\models\CmsContent;
-use skeeks\cms\models\CmsContentElement;
-use skeeks\cms\models\CmsContentProperty;
-use skeeks\cms\models\CmsContentProperty2content;
-use skeeks\cms\models\CmsSearchPhrase;
-use skeeks\cms\models\CmsTree;
-use skeeks\cms\models\StorageFile;
-use skeeks\sx\Dir;
+use itlo\cms\components\Cms;
+use itlo\cms\models\CmsAgent;
+use itlo\cms\models\CmsContent;
+use itlo\cms\models\CmsContentElement;
+use itlo\cms\models\CmsContentProperty;
+use itlo\cms\models\CmsContentProperty2content;
+use itlo\cms\models\CmsSearchPhrase;
+use itlo\cms\models\CmsTree;
+use itlo\cms\models\StorageFile;
+use itlo\sx\Dir;
 use Yii;
 use yii\base\Event;
 use yii\console\Controller;
@@ -27,9 +26,9 @@ use yii\helpers\Console;
 use yii\helpers\FileHelper;
 
 /**
- * Productivity SkeekS CMS
+ * Productivity itlo CMS
  *
- * @package skeeks\cms\console\controllers
+ * @package itlo\cms\console\controllers
  */
 class UtilsController extends Controller
 {

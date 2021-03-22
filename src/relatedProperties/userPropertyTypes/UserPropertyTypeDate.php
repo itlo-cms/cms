@@ -1,22 +1,21 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 30.04.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\relatedProperties\userPropertyTypes;
+namespace itlo\cms\relatedProperties\userPropertyTypes;
 
-use skeeks\cms\components\Cms;
-use skeeks\cms\models\CmsContentElement;
-use skeeks\cms\relatedProperties\PropertyType;
+use itlo\cms\components\Cms;
+use itlo\cms\models\CmsContentElement;
+use itlo\cms\relatedProperties\PropertyType;
 use yii\helpers\ArrayHelper;
 use yii\widgets\ActiveForm;
 
 /**
  * Class UserPropertyTypeDate
- * @package skeeks\cms\relatedProperties\userPropertyTypes
+ * @package itlo\cms\relatedProperties\userPropertyTypes
  */
 class UserPropertyTypeDate extends PropertyType
 {
@@ -36,7 +35,7 @@ class UserPropertyTypeDate extends PropertyType
         parent::init();
 
         if (!$this->name) {
-            $this->name = \Yii::t('skeeks/cms', 'Datetime');
+            $this->name = \Yii::t('itlo/cms', 'Datetime');
         }
 
     }
@@ -44,8 +43,8 @@ class UserPropertyTypeDate extends PropertyType
     public static function types()
     {
         return [
-            \kartik\datecontrol\DateControl::FORMAT_DATETIME => \Yii::t('skeeks/cms', 'Datetime'),
-            \kartik\datecontrol\DateControl::FORMAT_DATE => \Yii::t('skeeks/cms', 'Only date'),
+            \kartik\datecontrol\DateControl::FORMAT_DATETIME => \Yii::t('itlo/cms', 'Datetime'),
+            \kartik\datecontrol\DateControl::FORMAT_DATE => \Yii::t('itlo/cms', 'Only date'),
             //\kartik\datecontrol\DateControl::FORMAT_TIME => 'Только время',
         ];
     }
@@ -87,7 +86,7 @@ class UserPropertyTypeDate extends PropertyType
     public function renderConfigForm(ActiveForm $activeForm)
     {
         echo $activeForm->field($this,
-            'type')->radioList(\skeeks\cms\relatedProperties\userPropertyTypes\UserPropertyTypeDate::types());
+            'type')->radioList(\itlo\cms\relatedProperties\userPropertyTypes\UserPropertyTypeDate::types());
     }
 
 }

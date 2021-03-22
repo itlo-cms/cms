@@ -2,23 +2,21 @@
 /**
  * SelectTree
  *
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010-2014 SkeekS (Sx)
- * @date 13.11.2014
- * @since 1.0.0
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\widgets\formInputs\selectTree;
+namespace itlo\cms\widgets\formInputs\selectTree;
 
-use skeeks\cms\Exception;
-use skeeks\cms\helpers\UrlHelper;
-use skeeks\cms\models\CmsTree;
-use skeeks\cms\models\Tree;
-use skeeks\cms\modules\admin\Module;
-use skeeks\cms\modules\admin\widgets\ActiveForm;
-use skeeks\cms\widgets\formInputs\selectTree\assets\SelectTreeInputWidgetAsset;
-use skeeks\cms\widgets\Pjax;
+use itlo\cms\Exception;
+use itlo\cms\helpers\UrlHelper;
+use itlo\cms\models\CmsTree;
+use itlo\cms\models\Tree;
+use itlo\cms\modules\admin\Module;
+use itlo\cms\modules\admin\widgets\ActiveForm;
+use itlo\cms\widgets\formInputs\selectTree\assets\SelectTreeInputWidgetAsset;
+use itlo\cms\widgets\Pjax;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\helpers\Json;
@@ -29,7 +27,7 @@ use Yii;
  *
  *
  *  <?= $form->field($model, 'treeIds')->widget(
- * \skeeks\cms\widgets\formInputs\selectTree\SelectTreeInputWidget::class,
+ * \itlo\cms\widgets\formInputs\selectTree\SelectTreeInputWidget::class,
  * [
  * 'multiple' => true
  * ]
@@ -40,7 +38,7 @@ use Yii;
  *
  * Class SelectTreeInputWidget
  *
- * @package skeeks\cms\widgets\formInputs\selectTree
+ * @package itlo\cms\widgets\formInputs\selectTree
  */
 class SelectTreeInputWidget extends InputWidget
 {
@@ -56,12 +54,12 @@ class SelectTreeInputWidget extends InputWidget
     public $wrapperOptions = [];
 
     /**
-     * @see skeeks\cms\widgets\tree\CmsTreeWidget options
+     * @see itlo\cms\widgets\tree\CmsTreeWidget options
      *
      * @var array
      */
     public $treeWidgetOptions = [];
-    public $treeWidgetClass = 'skeeks\cms\widgets\tree\CmsTreeWidget';
+    public $treeWidgetClass = 'itlo\cms\widgets\tree\CmsTreeWidget';
 
     /**
      * @var bool
@@ -78,7 +76,7 @@ class SelectTreeInputWidget extends InputWidget
         $this->treeWidgetOptions = ArrayHelper::merge([
             "models" => [],
             "sessionName" => 'select-' . (int)$this->multiple,
-            "viewNodeContentFile" => '@skeeks/cms/widgets/formInputs/selectTree/views/_tree-node',
+            "viewNodeContentFile" => '@itlo/cms/widgets/formInputs/selectTree/views/_tree-node',
 
             'pjaxOptions' =>
                 [
@@ -172,7 +170,7 @@ class SelectTreeInputWidget extends InputWidget
             $rootLevel = $model->level;
 
             /**
-             * @var \skeeks\cms\models\CmsTree $tree
+             * @var \itlo\cms\models\CmsTree $tree
              */
             $name = $tree->name;
             if ($tree->parents) {
@@ -188,7 +186,7 @@ class SelectTreeInputWidget extends InputWidget
             $rootLevel = 0;
 
             /**
-             * @var \skeeks\cms\models\CmsTree $tree
+             * @var \itlo\cms\models\CmsTree $tree
              */
             $name = $tree->name;
             if ($tree->parents) {
@@ -249,7 +247,7 @@ class SelectTreeInputWidget extends InputWidget
         $result = $model->name;
         $additionalName = '';
         if ($model->level == 0) {
-            $site = \skeeks\cms\models\CmsSite::findOne(['id' => $model->cms_site_id]);
+            $site = \itlo\cms\models\CmsSite::findOne(['id' => $model->cms_site_id]);
             if ($site) {
                 $additionalName = $site->name;
             }

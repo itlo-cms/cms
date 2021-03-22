@@ -1,15 +1,13 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010-2014 SkeekS (Sx)
- * @date 09.11.2014
- * @since 1.0.0
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\models;
+namespace itlo\cms\models;
 
-use skeeks\cms\relatedProperties\models\RelatedPropertyModel;
+use itlo\cms\relatedProperties\models\RelatedPropertyModel;
 use Yii;
 
 /**
@@ -42,7 +40,7 @@ class CmsTreeTypeProperty extends RelatedPropertyModel
     public function behaviors()
     {
         return array_merge(parent::behaviors(), [
-            \skeeks\cms\behaviors\RelationalBehavior::class,
+            \itlo\cms\behaviors\RelationalBehavior::class,
         ]);
     }
 
@@ -91,7 +89,7 @@ class CmsTreeTypeProperty extends RelatedPropertyModel
     public function attributeLabels()
     {
         return array_merge(parent::attributeLabels(), [
-            'cmsTreeTypes' => Yii::t('skeeks/cms', "Linked To Section's Type"),
+            'cmsTreeTypes' => Yii::t('itlo/cms', "Linked To Section's Type"),
         ]);
     }
 
@@ -109,7 +107,7 @@ class CmsTreeTypeProperty extends RelatedPropertyModel
                 ['code', 'tree_type_id'],
                 'unique',
                 'targetAttribute' => ['tree_type_id', 'code'],
-                'message' => \Yii::t('skeeks/cms', "For this section's type of the code is already in use.")
+                'message' => \Yii::t('itlo/cms', "For this section's type of the code is already in use.")
             ],
         ]);
     }

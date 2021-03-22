@@ -1,13 +1,12 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 18.12.2016
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 /* @var $this yii\web\View */
-/* @var $widget \skeeks\cms\widgets\tree\CmsTreeWidget */
-/* @var $model \skeeks\cms\models\CmsTree */
+/* @var $widget \itlo\cms\widgets\tree\CmsTreeWidget */
+/* @var $model \itlo\cms\models\CmsTree */
 $widget = $this->context;
 ?>
 <?= \yii\helpers\Html::beginTag('li', [
@@ -21,13 +20,13 @@ $widget = $this->context;
         <div class="sx-node-open-close">
             <?php if ($widget->isOpenNode($model)) : ?>
                 <a href="<?= $widget->getOpenCloseLink($model); ?>" class="btn btn-sm btn-default">
-                    <span class="fa fa-minus" title="<?= \Yii::t('skeeks/cms', "Minimize"); ?>"></span>
+                    <span class="fa fa-minus" title="<?= \Yii::t('itlo/cms', "Minimize"); ?>"></span>
                 </a>
             <?php else
                 : ?>
                 <a href="<?= $widget->getOpenCloseLink($model);
                 ?>" class="btn btn-sm btn-default">
-                    <span class="fa fa-plus" title="<?= \Yii::t('skeeks/cms', "Restore"); ?>"></span>
+                    <span class="fa fa-plus" title="<?= \Yii::t('itlo/cms', "Restore"); ?>"></span>
                 </a>
             <?php endif; ?>
         </div>

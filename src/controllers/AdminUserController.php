@@ -2,34 +2,32 @@
 /**
  * AdminUserController
  *
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010-2014 SkeekS (Sx)
- * @date 31.10.2014
- * @since 1.0.0
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\controllers;
+namespace itlo\cms\controllers;
 
-use skeeks\cms\actions\backend\BackendModelMultiActivateAction;
-use skeeks\cms\actions\backend\BackendModelMultiDeactivateAction;
-use skeeks\cms\backend\controllers\BackendModelStandartController;
-use skeeks\cms\grid\BooleanColumn;
-use skeeks\cms\grid\DateTimeColumnData;
-use skeeks\cms\grid\ImageColumn2;
-use skeeks\cms\helpers\Image;
-use skeeks\cms\helpers\RequestResponse;
-use skeeks\cms\helpers\UrlHelper;
-use skeeks\cms\models\CmsUser;
-use skeeks\cms\models\forms\PasswordChangeForm;
-use skeeks\cms\modules\admin\controllers\helpers\rules\HasModel;
-use skeeks\cms\queryfilters\filters\modes\FilterModeEq;
-use skeeks\cms\queryfilters\QueryFiltersEvent;
-use skeeks\cms\rbac\CmsManager;
-use skeeks\cms\rbac\RbacModule;
-use skeeks\cms\widgets\ActiveForm;
-use skeeks\yii2\form\fields\BoolField;
-use skeeks\yii2\form\fields\SelectField;
+use itlo\cms\actions\backend\BackendModelMultiActivateAction;
+use itlo\cms\actions\backend\BackendModelMultiDeactivateAction;
+use itlo\cms\backend\controllers\BackendModelStandartController;
+use itlo\cms\grid\BooleanColumn;
+use itlo\cms\grid\DateTimeColumnData;
+use itlo\cms\grid\ImageColumn2;
+use itlo\cms\helpers\Image;
+use itlo\cms\helpers\RequestResponse;
+use itlo\cms\helpers\UrlHelper;
+use itlo\cms\models\CmsUser;
+use itlo\cms\models\forms\PasswordChangeForm;
+use itlo\cms\modules\admin\controllers\helpers\rules\HasModel;
+use itlo\cms\queryfilters\filters\modes\FilterModeEq;
+use itlo\cms\queryfilters\QueryFiltersEvent;
+use itlo\cms\rbac\CmsManager;
+use itlo\cms\rbac\RbacModule;
+use itlo\cms\widgets\ActiveForm;
+use itlo\yii2\form\fields\BoolField;
+use itlo\yii2\form\fields\SelectField;
 use Yii;
 use yii\base\Event;
 use yii\db\ActiveQuery;
@@ -39,7 +37,7 @@ use yii\rbac\Item;
 use yii\web\Response;
 
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
+ * @author Semenov Alexander <semenov@itlo.com>
  */
 class AdminUserController extends BackendModelStandartController
 {
@@ -96,7 +94,7 @@ class AdminUserController extends BackendModelStandartController
                             'role' => [
                                 'class'    => SelectField::class,
                                 'multiple' => true,
-                                'label'    => \Yii::t('skeeks/cms', 'Roles'),
+                                'label'    => \Yii::t('itlo/cms', 'Roles'),
                                 'items'    => \yii\helpers\ArrayHelper::map(\Yii::$app->authManager->getRoles(), 'name', 'description'),
                                 'on apply' => function (QueryFiltersEvent $e) {
                                     /**
@@ -117,8 +115,8 @@ class AdminUserController extends BackendModelStandartController
                                 'multiple' => false,
                                 'label'    => 'Онлайн/Оффлайн',
                                 'items'    => [
-                                    1 => \Yii::t('skeeks/cms', 'Online'),
-                                    2 => \Yii::t('skeeks/cms', 'Offline'),
+                                    1 => \Yii::t('itlo/cms', 'Online'),
+                                    2 => \Yii::t('itlo/cms', 'Offline'),
                                 ],
                                 'on apply' => function (QueryFiltersEvent $e) {
                                     /**
@@ -281,7 +279,7 @@ class AdminUserController extends BackendModelStandartController
                                 return implode(', ', $result);
                             },
                             'format' => 'html',
-                            'label'  => \Yii::t('skeeks/cms', 'Roles'),
+                            'label'  => \Yii::t('itlo/cms', 'Roles'),
                         ],
                     ],
                 ],
@@ -410,7 +408,7 @@ class AdminUserController extends BackendModelStandartController
                     }
                 }
 
-                \Yii::$app->getSession()->setFlash('success', \Yii::t('skeeks/cms', 'Saved'));
+                \Yii::$app->getSession()->setFlash('success', \Yii::t('itlo/cms', 'Saved'));
 
                 if (\Yii::$app->request->post('submit-btn') == 'apply') {
                     return $this->redirect(
@@ -465,7 +463,7 @@ class AdminUserController extends BackendModelStandartController
             $passwordChange->load(\Yii::$app->request->post());
 
             if ($model->save() && $relatedModel->save()) {
-                \Yii::$app->getSession()->setFlash('success', \Yii::t('skeeks/cms', 'Saved'));
+                \Yii::$app->getSession()->setFlash('success', \Yii::t('itlo/cms', 'Saved'));
 
                 if ($passwordChange->new_password) {
                     if (!$passwordChange->changePassword()) {

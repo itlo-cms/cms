@@ -1,21 +1,20 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link https://skeeks.com/
- * @copyright (c) 2010 SkeekS
- * @date 24.03.2018
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\widgets;
+namespace itlo\cms\widgets;
 
-use skeeks\cms\widgets\assets\DualSelectAsset;
+use itlo\cms\widgets\assets\DualSelectAsset;
 use yii\base\InvalidConfigException;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\widgets\InputWidget;
 /**
  * Class SortableDualList
- * @package skeeks\cms\widgets
+ * @package itlo\cms\widgets
  */
 class SortSelect extends InputWidget
 {

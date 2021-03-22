@@ -1,23 +1,22 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 06.06.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\widgets\formInputs\componentSettings;
+namespace itlo\cms\widgets\formInputs\componentSettings;
 
 use Yii;
 use yii\web\AssetBundle;
 
 /**
  * Class ComponentSettingsWidgetAsset
- * @package skeeks\cms\widgets\formInputs\componentSettings
+ * @package itlo\cms\widgets\formInputs\componentSettings
  */
 class ComponentSettingsWidgetAsset extends AssetBundle
 {
-    public $sourcePath = '@skeeks/cms/widgets/formInputs/componentSettings/assets';
+    public $sourcePath = '@itlo/cms/widgets/formInputs/componentSettings/assets';
 
     public $css = [];
 
@@ -27,7 +26,7 @@ class ComponentSettingsWidgetAsset extends AssetBundle
         ];
 
     public $depends = [
-        '\skeeks\sx\assets\Core',
+        '\itlo\sx\assets\Core',
     ];
 }
 

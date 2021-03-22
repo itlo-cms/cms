@@ -2,18 +2,16 @@
 /**
  * PublishedAtColumn
  *
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010-2014 SkeekS (Sx)
- * @date 19.01.2015
- * @since 1.0.0
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\grid;
+namespace itlo\cms\grid;
 
 /**
  * Class UpdatedAtColumn
- * @package skeeks\cms\grid
+ * @package itlo\cms\grid
  */
 class PublishedAtColumn extends DateTimeColumnData
 {

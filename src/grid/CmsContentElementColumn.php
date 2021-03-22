@@ -1,21 +1,20 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 05.08.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\grid;
+namespace itlo\cms\grid;
 
-use skeeks\cms\helpers\UrlHelper;
-use skeeks\cms\models\CmsContentElement;
+use itlo\cms\helpers\UrlHelper;
+use itlo\cms\models\CmsContentElement;
 use yii\grid\DataColumn;
 use yii\helpers\Html;
 
 /**
  * Class CmsContentElementColumn
- * @package skeeks\cms\grid
+ * @package itlo\cms\grid
  */
 class CmsContentElementColumn extends DataColumn
 {

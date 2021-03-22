@@ -1,18 +1,17 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 25.05.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\models\searchs;
+namespace itlo\cms\models\searchs;
 
-use skeeks\cms\models\CmsContent;
-use skeeks\cms\models\CmsContentElement;
-use skeeks\cms\models\CmsContentElementProperty;
-use skeeks\cms\models\CmsContentProperty;
-use skeeks\cms\relatedProperties\models\RelatedPropertyModel;
+use itlo\cms\models\CmsContent;
+use itlo\cms\models\CmsContentElement;
+use itlo\cms\models\CmsContentElementProperty;
+use itlo\cms\models\CmsContentProperty;
+use itlo\cms\relatedProperties\models\RelatedPropertyModel;
 use yii\base\DynamicModel;
 use yii\data\ActiveDataProvider;
 use yii\db\ActiveQuery;
@@ -21,7 +20,7 @@ use yii\helpers\ArrayHelper;
 
 /**
  * Class SearchRelatedPropertiesModel
- * @package skeeks\cms\models\searchs
+ * @package itlo\cms\models\searchs
  */
 class SearchChildrenRelatedPropertiesModel extends SearchRelatedPropertiesModel
 {
@@ -46,7 +45,7 @@ class SearchChildrenRelatedPropertiesModel extends SearchRelatedPropertiesModel
             }
 
             if ($property = $this->getProperty($propertyCode)) {
-                if ($property->property_type == \skeeks\cms\relatedProperties\PropertyType::CODE_NUMBER) {
+                if ($property->property_type == \itlo\cms\relatedProperties\PropertyType::CODE_NUMBER) {
                     $elementIds = [];
 
                     $query = $classSearch::find()->select(['element_id'])->where([

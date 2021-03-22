@@ -1,12 +1,11 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link https://skeeks.com/
- * @copyright 2010 SkeekS
- * @date 05.03.2017
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\traits;
+namespace itlo\cms\traits;
 
 use yii\base\Model;
 
@@ -14,7 +13,7 @@ use yii\base\Model;
  * @property Model $model;
  *
  * Class THasModel
- * @package skeeks\cms\traits
+ * @package itlo\cms\traits
  */
 trait THasModel
 {

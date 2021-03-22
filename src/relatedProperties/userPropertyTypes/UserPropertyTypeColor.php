@@ -1,24 +1,23 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 30.04.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\relatedProperties\userPropertyTypes;
+namespace itlo\cms\relatedProperties\userPropertyTypes;
 
-use skeeks\cms\components\Cms;
-use skeeks\cms\models\CmsContentElement;
-use skeeks\cms\relatedProperties\models\RelatedPropertiesModel;
-use skeeks\cms\relatedProperties\PropertyType;
-use skeeks\cms\widgets\ColorInput;
+use itlo\cms\components\Cms;
+use itlo\cms\models\CmsContentElement;
+use itlo\cms\relatedProperties\models\RelatedPropertiesModel;
+use itlo\cms\relatedProperties\PropertyType;
+use itlo\cms\widgets\ColorInput;
 use yii\helpers\ArrayHelper;
 use yii\widgets\ActiveForm;
 
 /**
  * Class UserPropertyTypeColor
- * @package skeeks\cms\relatedProperties\userPropertyTypes
+ * @package itlo\cms\relatedProperties\userPropertyTypes
  */
 class UserPropertyTypeColor extends PropertyType
 {
@@ -39,7 +38,7 @@ class UserPropertyTypeColor extends PropertyType
         parent::init();
 
         if (!$this->name) {
-            $this->name = \Yii::t('skeeks/cms', 'Choice of color');
+            $this->name = \Yii::t('itlo/cms', 'Choice of color');
         }
     }
 
@@ -47,12 +46,12 @@ class UserPropertyTypeColor extends PropertyType
     {
         return array_merge(parent::attributeLabels(),
             [
-                'showDefaultPalette' => \Yii::t('skeeks/cms', 'Show extended palette of colors'),
-                'saveValueAs' => \Yii::t('skeeks/cms', 'Format conservation values'),
-                'useNative' => \Yii::t('skeeks/cms', 'Use the native color selection'),
-                'showAlpha' => \Yii::t('skeeks/cms', 'Management transparency'),
-                'showInput' => \Yii::t('skeeks/cms', 'Show input field values'),
-                'showPalette' => \Yii::t('skeeks/cms', 'Generally show the palette'),
+                'showDefaultPalette' => \Yii::t('itlo/cms', 'Show extended palette of colors'),
+                'saveValueAs' => \Yii::t('itlo/cms', 'Format conservation values'),
+                'useNative' => \Yii::t('itlo/cms', 'Use the native color selection'),
+                'showAlpha' => \Yii::t('itlo/cms', 'Management transparency'),
+                'showInput' => \Yii::t('itlo/cms', 'Show input field values'),
+                'showPalette' => \Yii::t('itlo/cms', 'Generally show the palette'),
             ]);
     }
 
@@ -107,11 +106,11 @@ class UserPropertyTypeColor extends PropertyType
     {
         echo $activeForm->fieldRadioListBoolean($this, 'showDefaultPalette');
         echo $activeForm->fieldRadioListBoolean($this, 'useNative');
-        echo $activeForm->fieldRadioListBoolean($this, 'showInput')->hint(\Yii::t('skeeks/cms',
+        echo $activeForm->fieldRadioListBoolean($this, 'showInput')->hint(\Yii::t('itlo/cms',
             'This INPUT to opened the palette'));
         echo $activeForm->fieldRadioListBoolean($this, 'showAlpha');
         echo $activeForm->fieldRadioListBoolean($this, 'showPalette');
-        echo $activeForm->field($this, 'saveValueAs')->radioList(\skeeks\cms\widgets\ColorInput::$possibleSaveAs);
+        echo $activeForm->field($this, 'saveValueAs')->radioList(\itlo\cms\widgets\ColorInput::$possibleSaveAs);
     }
 
     /**

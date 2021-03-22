@@ -2,22 +2,20 @@
 /**
  * ClearController
  *
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010-2014 SkeekS (Sx)
- * @date 08.11.2014
- * @since 1.0.0
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\controllers;
+namespace itlo\cms\controllers;
 
-use skeeks\cms\admin\AdminController;
-use skeeks\cms\backend\BackendAction;
-use skeeks\cms\helpers\RequestResponse;
-use skeeks\cms\helpers\UrlHelper;
-use skeeks\cms\modules\admin\actions\AdminAction;
-use skeeks\cms\modules\admin\controllers\helpers\rules\NoModel;
-use skeeks\sx\Dir;
+use itlo\cms\admin\AdminController;
+use itlo\cms\backend\BackendAction;
+use itlo\cms\helpers\RequestResponse;
+use itlo\cms\helpers\UrlHelper;
+use itlo\cms\modules\admin\actions\AdminAction;
+use itlo\cms\modules\admin\controllers\helpers\rules\NoModel;
+use itlo\sx\Dir;
 use yii\filters\VerbFilter;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
@@ -25,13 +23,13 @@ use yii\helpers\Url;
 
 /**
  * Class IndexController
- * @package skeeks\cms\admin\controllers
+ * @package itlo\cms\admin\controllers
  */
 class AdminClearController extends AdminController
 {
     public function init()
     {
-        $this->name = \Yii::t('skeeks/cms', "Deleting temporary files");
+        $this->name = \Yii::t('itlo/cms', "Deleting temporary files");
         parent::init();
     }
 
@@ -42,7 +40,7 @@ class AdminClearController extends AdminController
                 "index" =>
                     [
                         "class" => BackendAction::className(),
-                        "name" => \Yii::t('skeeks/cms', 'Clearing temporary data'),
+                        "name" => \Yii::t('itlo/cms', 'Clearing temporary data'),
                         "callback" => [$this, 'actionIndex'],
                     ],
             ];
@@ -93,7 +91,7 @@ class AdminClearController extends AdminController
             \Yii::$app->cache->flush();
 
             $rr->success = true;
-            $rr->message = \Yii::t('skeeks/cms', 'Cache cleared');
+            $rr->message = \Yii::t('itlo/cms', 'Cache cleared');
             return $rr;
         }
 

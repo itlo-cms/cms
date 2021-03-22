@@ -2,23 +2,21 @@
 /**
  * SignupForm
  *
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010-2014 SkeekS (Sx)
- * @date 28.10.2014
- * @since 1.0.0
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\models\forms;
+namespace itlo\cms\models\forms;
 
-use skeeks\cms\models\CmsUserEmail;
-use skeeks\cms\models\User;
+use itlo\cms\models\CmsUserEmail;
+use itlo\cms\models\User;
 use yii\base\Model;
 use Yii;
 
 /**
  * Class ViewFileEditModel
- * @package skeeks\cms\models\forms
+ * @package itlo\cms\models\forms
  */
 class ViewFileEditModel extends Model
 {
@@ -52,7 +50,7 @@ class ViewFileEditModel extends Model
     public function attributeLabels()
     {
         return [
-            'source' => \Yii::t('skeeks/cms', 'Code'),
+            'source' => \Yii::t('itlo/cms', 'Code'),
         ];
     }
 

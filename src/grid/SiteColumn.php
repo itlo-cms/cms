@@ -1,19 +1,18 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (�����)
- * @date 01.09.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\grid;
+namespace itlo\cms\grid;
 
-use skeeks\cms\models\CmsSite;
+use itlo\cms\models\CmsSite;
 use yii\grid\DataColumn;
 
 /**
  * Class SiteColumn
- * @package skeeks\cms\grid
+ * @package itlo\cms\grid
  */
 class SiteColumn extends DataColumn
 {
@@ -25,7 +24,7 @@ class SiteColumn extends DataColumn
 
         if (!$this->filter) {
             $this->filter = \yii\helpers\ArrayHelper::map(
-                \skeeks\cms\models\CmsSite::find()->all(),
+                \itlo\cms\models\CmsSite::find()->all(),
                 'code',
                 'name'
             );

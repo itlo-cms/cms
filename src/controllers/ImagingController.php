@@ -2,26 +2,24 @@
 /**
  * ImagingController
  *
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010-2014 SkeekS (Sx)
- * @date 11.12.2014
- * @since 1.0.0
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\controllers;
+namespace itlo\cms\controllers;
 
-use skeeks\cms\components\Imaging;
-use skeeks\cms\components\imaging\Filter;
-use skeeks\cms\Exception;
-use skeeks\sx\File;
+use itlo\cms\components\Imaging;
+use itlo\cms\components\imaging\Filter;
+use itlo\cms\Exception;
+use itlo\sx\File;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 
 
 /**
  * Class ImagingController
- * @package skeeks\cms\controllers
+ * @package itlo\cms\controllers
  */
 class ImagingController extends Controller
 {

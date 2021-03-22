@@ -2,14 +2,12 @@
 /**
  * Alert
  *
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010-2014 SkeekS (Sx)
- * @date 08.11.2014
- * @since 1.0.0
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\widgets;
+namespace itlo\cms\widgets;
 
 /**
  * Alert widget renders a message from session flash. All flash messages are displayed

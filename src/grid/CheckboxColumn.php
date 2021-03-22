@@ -1,19 +1,18 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 24.07.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\grid;
+namespace itlo\cms\grid;
 
 use yii\helpers\ArrayHelper;
 use yii\helpers\Json;
 
 /**
  * Class CheckboxColumn
- * @package skeeks\cms\grid
+ * @package itlo\cms\grid
  */
 class CheckboxColumn extends \yii\grid\CheckboxColumn
 {

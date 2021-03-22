@@ -1,6 +1,6 @@
 <?php
 
-namespace skeeks\cms\models;
+namespace itlo\cms\models;
 
 use Yii;
 
@@ -19,7 +19,7 @@ use Yii;
  * @property CmsContentElement $contentElement
  * @property CmsStorageFile $storageFile
  */
-class CmsContentElementFile extends \skeeks\cms\models\Core
+class CmsContentElementFile extends \itlo\cms\models\Core
 {
     /**
      * @inheritdoc
@@ -52,7 +52,7 @@ class CmsContentElementFile extends \skeeks\cms\models\Core
                 ['storage_file_id', 'content_element_id'],
                 'unique',
                 'targetAttribute' => ['storage_file_id', 'content_element_id'],
-                'message' => \Yii::t('skeeks/cms',
+                'message' => \Yii::t('itlo/cms',
                     'The combination of Storage File ID and Content Element ID has already been taken.')
             ]
         ];
@@ -64,14 +64,14 @@ class CmsContentElementFile extends \skeeks\cms\models\Core
     public function attributeLabels()
     {
         return [
-            'id' => Yii::t('skeeks/cms', 'ID'),
-            'created_by' => Yii::t('skeeks/cms', 'Created By'),
-            'updated_by' => Yii::t('skeeks/cms', 'Updated By'),
-            'created_at' => Yii::t('skeeks/cms', 'Created At'),
-            'updated_at' => Yii::t('skeeks/cms', 'Updated At'),
-            'storage_file_id' => Yii::t('skeeks/cms', 'Storage File ID'),
-            'content_element_id' => Yii::t('skeeks/cms', 'Content Element ID'),
-            'priority' => Yii::t('skeeks/cms', 'Priority'),
+            'id' => Yii::t('itlo/cms', 'ID'),
+            'created_by' => Yii::t('itlo/cms', 'Created By'),
+            'updated_by' => Yii::t('itlo/cms', 'Updated By'),
+            'created_at' => Yii::t('itlo/cms', 'Created At'),
+            'updated_at' => Yii::t('itlo/cms', 'Updated At'),
+            'storage_file_id' => Yii::t('itlo/cms', 'Storage File ID'),
+            'content_element_id' => Yii::t('itlo/cms', 'Content Element ID'),
+            'priority' => Yii::t('itlo/cms', 'Priority'),
         ];
     }
 

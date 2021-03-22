@@ -1,13 +1,11 @@
 <?php
 /**
- * Самый базовый конфиг приложения на базе skeeks cms
+ * Самый базовый конфиг приложения на базе itlo cms
  * По умолчанию конфигурирование всех базовых используемых компонентов и админки
  *
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010-2014 SkeekS (Sx)
- * @date 31.10.2014
- * @since 1.0.0
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 $config = [
     'bootstrap' => ['cms'],
@@ -20,7 +18,7 @@ $config = [
 
         'user' => [
             'class' => '\yii\web\User',
-            'identityClass' => 'skeeks\cms\models\CmsUser',
+            'identityClass' => 'itlo\cms\models\CmsUser',
             'enableAutoLogin' => true,
             'loginUrl' => ['cms/auth/login'],
         ],
@@ -50,23 +48,23 @@ $config = [
         ],
 
         'breadcrumbs' => [
-            'class' => '\skeeks\cms\components\Breadcrumbs',
+            'class' => '\itlo\cms\components\Breadcrumbs',
         ],
 
         'upaBackend' => [
             'menu' => [
                 'data' => [
                     'personal' => [
-                        'name' => ['skeeks/cms', 'Personal data'],
+                        'name' => ['itlo/cms', 'Personal data'],
                         'icon' => 'fa fa-user',
                         'items' => [
                             [
-                                'name' => ['skeeks/cms', 'Personal data'],
+                                'name' => ['itlo/cms', 'Personal data'],
                                 'url' => ['/cms/upa-personal/update'],
                                 'icon' => 'fa fa-user',
                             ],
                             [
-                                'name' => ['skeeks/cms', 'Change password'],
+                                'name' => ['itlo/cms', 'Change password'],
                                 'url' => ['/cms/upa-personal/change-password'],
                                 'icon' => 'fa fa-key',
                             ],
@@ -80,7 +78,7 @@ $config = [
 
     'modules' => [
         'datecontrol' => [
-            'class' => 'skeeks\cms\modules\datecontrol\Module',
+            'class' => 'itlo\cms\modules\datecontrol\Module',
         ],
     ],
 ];

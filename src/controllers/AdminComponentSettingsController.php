@@ -1,22 +1,21 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 27.03.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\controllers;
+namespace itlo\cms\controllers;
 
-use skeeks\cms\backend\actions\THasActiveForm;
-use skeeks\cms\backend\BackendController;
-use skeeks\cms\base\Component;
-use skeeks\cms\components\Cms;
-use skeeks\cms\helpers\RequestResponse;
-use skeeks\cms\models\CmsComponentSettings;
-use skeeks\cms\models\CmsSite;
-use skeeks\cms\models\User;
-use skeeks\cms\modules\admin\controllers\AdminController;
+use itlo\cms\backend\actions\THasActiveForm;
+use itlo\cms\backend\BackendController;
+use itlo\cms\base\Component;
+use itlo\cms\components\Cms;
+use itlo\cms\helpers\RequestResponse;
+use itlo\cms\models\CmsComponentSettings;
+use itlo\cms\models\CmsSite;
+use itlo\cms\models\User;
+use itlo\cms\modules\admin\controllers\AdminController;
 use yii\base\ActionEvent;
 use yii\base\Theme;
 use yii\base\UserException;
@@ -28,7 +27,7 @@ use yii\widgets\ActiveForm;
  * @property array $callableData;
  *
  * Class AdminComponentSettingsController
- * @package skeeks\cms\controllers
+ * @package itlo\cms\controllers
  */
 class AdminComponentSettingsController extends BackendController
 {
@@ -104,7 +103,7 @@ class AdminComponentSettingsController extends BackendController
     {
         $component = $this->_component;
 
-        if (\Yii::$app->request->get('attributes') && !$settings = \skeeks\cms\models\CmsComponentSettings::findByComponent($component)->one()) {
+        if (\Yii::$app->request->get('attributes') && !$settings = \itlo\cms\models\CmsComponentSettings::findByComponent($component)->one()) {
             $attributes = \Yii::$app->request->get('attributes');
             $component->setAttributes($attributes);
         } else {
@@ -152,7 +151,7 @@ class AdminComponentSettingsController extends BackendController
             $attibutes = ArrayHelper::merge($attibutes, $attributesCallable);
         }
 
-        if ($attibutes && !\skeeks\cms\models\CmsComponentSettings::findByComponent($component)->one()) {
+        if ($attibutes && !\itlo\cms\models\CmsComponentSettings::findByComponent($component)->one()) {
             $attributes = $attibutes;
             $component->setAttributes($attributes);
         } else {
@@ -341,7 +340,7 @@ class AdminComponentSettingsController extends BackendController
 
         if ($rr->isRequestAjaxPost()) {
             if (\Yii::$app->request->post('do') == 'all') {
-                if ($settings = \skeeks\cms\models\CmsComponentSettings::findByComponent($component)->all()) {
+                if ($settings = \itlo\cms\models\CmsComponentSettings::findByComponent($component)->all()) {
                     /**
                      * @var $setting CmsComponentSettings
                      */
@@ -357,7 +356,7 @@ class AdminComponentSettingsController extends BackendController
                 };
             } else {
                 if (\Yii::$app->request->post('do') == 'default') {
-                    if ($settings = \skeeks\cms\models\CmsComponentSettings::findByComponent($component)->one()) {
+                    if ($settings = \itlo\cms\models\CmsComponentSettings::findByComponent($component)->one()) {
                         $settings->delete();
                         $component->invalidateCache();
                         $rr->message = 'Настройки успешно удалены';
@@ -365,7 +364,7 @@ class AdminComponentSettingsController extends BackendController
                     };
                 } else {
                     if (\Yii::$app->request->post('do') == 'sites') {
-                        if ($settings = \skeeks\cms\models\CmsComponentSettings::findByComponent($component)->andWhere([
+                        if ($settings = \itlo\cms\models\CmsComponentSettings::findByComponent($component)->andWhere([
                             '>',
                             'cms_site_id',
                             0
@@ -385,7 +384,7 @@ class AdminComponentSettingsController extends BackendController
                         };
                     } else {
                         if (\Yii::$app->request->post('do') == 'users') {
-                            if ($settings = \skeeks\cms\models\CmsComponentSettings::findByComponent($component)->andWhere([
+                            if ($settings = \itlo\cms\models\CmsComponentSettings::findByComponent($component)->andWhere([
                                 '>',
                                 'user_id',
                                 0

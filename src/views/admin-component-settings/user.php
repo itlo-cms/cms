@@ -1,12 +1,11 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 27.03.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  *
- * @var $component \skeeks\cms\base\Component
- * @var $user \skeeks\cms\models\User
+ * @var $component \itlo\cms\base\Component
+ * @var $user \itlo\cms\models\User
  */
 /* @var $this yii\web\View */
 $controller = $this->context;
@@ -17,7 +16,7 @@ $controller = $this->context;
 ]); ?>
 
 
-<h2><?= \Yii::t('skeeks/cms', 'User settings') ?>: <?= $user->getDisplayName() ?></h2>
+<h2><?= \Yii::t('itlo/cms', 'User settings') ?>: <?= $user->getDisplayName() ?></h2>
 <div class="sx-box g-mb-10">
     <? $alert = \yii\bootstrap\Alert::begin([
         'options' => [
@@ -25,22 +24,22 @@ $controller = $this->context;
         ],
         'closeButton' => false,
     ]); ?>
-    <?php if ($settings = \skeeks\cms\models\CmsComponentSettings::findByComponentUser($component, $user)->one()) : ?>
+    <?php if ($settings = \itlo\cms\models\CmsComponentSettings::findByComponentUser($component, $user)->one()) : ?>
         <button type="submit" class="btn btn-danger btn-xs"
                 onclick="sx.ComponentSettings.Remove.removeByUser('<?= $user->id; ?>'); return false;">
-            <i class="fa fa-times"></i> <?= \Yii::t('skeeks/cms', 'Reset settings for this user') ?>
+            <i class="fa fa-times"></i> <?= \Yii::t('itlo/cms', 'Reset settings for this user') ?>
         </button>
-        <small><?= \Yii::t('skeeks/cms',
+        <small><?= \Yii::t('itlo/cms',
                 'The settings for this component are stored in the database. This option will erase them from the database, but the component, restore the default values. As they have in the code the developer.') ?></small>
     <?php else
         : ?>
-        <small><?= \Yii::t('skeeks/cms', 'These settings not yet saved in the database') ?></small>
+        <small><?= \Yii::t('itlo/cms', 'These settings not yet saved in the database') ?></small>
     <?php endif;
     ?>
     <? $alert::end(); ?>
 </div>
 
-<?php $form = \skeeks\cms\modules\admin\widgets\form\ActiveFormUseTab::begin([
+<?php $form = \itlo\cms\modules\admin\widgets\form\ActiveFormUseTab::begin([
     'enableAjaxValidation' => false,
     'enableClientValidation' => false,
 ]); ?>
@@ -91,7 +90,7 @@ JS
 )); ?>
 
 <? if ($fields = $component->getConfigFormFields()) : ?>
-    <? echo (new \skeeks\yii2\form\Builder([
+    <? echo (new \itlo\yii2\form\Builder([
         'models'     => $component->getConfigFormModels(),
         'model'      => $component,
         'activeForm' => $form,
@@ -108,7 +107,7 @@ JS
         [$component], $component->getConfigFormModels()
 )); ?>
 
-<?php \skeeks\cms\modules\admin\widgets\form\ActiveFormUseTab::end(); ?>
+<?php \itlo\cms\modules\admin\widgets\form\ActiveFormUseTab::end(); ?>
 
 
 <?= $this->render('_footer'); ?>

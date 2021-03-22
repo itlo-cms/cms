@@ -1,20 +1,19 @@
 <?php
 /**
- * @link https://cms.skeeks.com/
- * @copyright Copyright (c) 2010 SkeekS
- * @license https://cms.skeeks.com/license/
- * @author Semenov Alexander <semenov@skeeks.com>
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\controllers;
+namespace itlo\cms\controllers;
 
-use skeeks\cms\actions\user\UserAction;
-use skeeks\cms\helpers\RequestResponse;
+use itlo\cms\actions\user\UserAction;
+use itlo\cms\helpers\RequestResponse;
 use yii\helpers\Json;
 use yii\web\Controller;
 
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
+ * @author Semenov Alexander <semenov@itlo.com>
  */
 class OnlineController extends Controller
 {

@@ -11,7 +11,7 @@
 
 namespace skeeks\cms\actions;
 
-use skeeks\cms\helpers\UrlHelper;
+use itlo\cms\helpers\UrlHelper;
 use Yii;
 use yii\base\Action;
 

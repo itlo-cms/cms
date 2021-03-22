@@ -1,20 +1,19 @@
 <?php
 /**
- * @link https://cms.skeeks.com/
- * @copyright Copyright (c) 2010 SkeekS
- * @license https://cms.skeeks.com/license/
- * @author Semenov Alexander <semenov@skeeks.com>
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\console\controllers;
+namespace itlo\cms\console\controllers;
 
-use skeeks\imagine\Image;
-use skeeks\cms\models\CmsStorageFile;
+use itlo\imagine\Image;
+use itlo\cms\models\CmsStorageFile;
 use yii\base\Exception;
 use yii\helpers\Console;
 
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
+ * @author Semenov Alexander <semenov@itlo.com>
  */
 class ImageController extends \yii\console\Controller
 {

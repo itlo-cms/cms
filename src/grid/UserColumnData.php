@@ -4,23 +4,21 @@
  *
  * TODO: доработать фильтр
  *
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010-2014 SkeekS (Sx)
- * @date 30.10.2014
- * @since 1.0.0
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\grid;
+namespace itlo\cms\grid;
 
-use skeeks\cms\helpers\UrlHelper;
-use skeeks\cms\models\User;
+use itlo\cms\helpers\UrlHelper;
+use itlo\cms\models\User;
 use yii\grid\DataColumn;
 use yii\helpers\Html;
 
 /**
  * Class UserColumnData
- * @package skeeks\cms\grid
+ * @package itlo\cms\grid
  */
 class UserColumnData extends DataColumn
 {
@@ -36,7 +34,7 @@ class UserColumnData extends DataColumn
 
         if ($this->grid->filterModel && $this->attribute) {
             $this->filter = false;
-            /*$this->filter = \skeeks\cms\backend\widgets\SelectModelDialogUserWidget::widget([
+            /*$this->filter = \itlo\cms\backend\widgets\SelectModelDialogUserWidget::widget([
                 'model'             => $this->grid->filterModel,
                 'attribute'         => $this->attribute,
             ]);*/

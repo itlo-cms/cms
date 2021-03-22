@@ -1,21 +1,20 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 30.04.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\relatedProperties\propertyTypes;
+namespace itlo\cms\relatedProperties\propertyTypes;
 
-use skeeks\cms\relatedProperties\models\RelatedPropertiesModel;
-use skeeks\cms\relatedProperties\PropertyType;
+use itlo\cms\relatedProperties\models\RelatedPropertiesModel;
+use itlo\cms\relatedProperties\PropertyType;
 use yii\helpers\ArrayHelper;
 use yii\widgets\ActiveForm;
 
 /**
  * Class PropertyTypeNumber
- * @package skeeks\cms\relatedProperties\propertyTypes
+ * @package itlo\cms\relatedProperties\propertyTypes
  */
 class PropertyTypeNumber extends PropertyType
 {
@@ -29,7 +28,7 @@ class PropertyTypeNumber extends PropertyType
         parent::init();
 
         if (!$this->name) {
-            $this->name = \Yii::t('skeeks/cms', 'Number');
+            $this->name = \Yii::t('itlo/cms', 'Number');
         }
     }
 
@@ -37,7 +36,7 @@ class PropertyTypeNumber extends PropertyType
     {
         return array_merge(parent::attributeLabels(),
             [
-                'default_value' => \Yii::t('skeeks/cms', 'Default Value'),
+                'default_value' => \Yii::t('itlo/cms', 'Default Value'),
             ]);
     }
 

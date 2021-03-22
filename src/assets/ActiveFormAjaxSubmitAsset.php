@@ -1,21 +1,18 @@
 <?php
 /**
- * @link https://cms.skeeks.com/
- * @copyright Copyright (c) 2010 SkeekS
- * @license https://cms.skeeks.com/license/
- * @author Semenov Alexander <semenov@skeeks.com>
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright 2021 ITLO (Infomarket)
  */
 
-namespace skeeks\cms\assets;
+namespace itlo\cms\assets;
 
-use skeeks\cms\base\AssetBundle;
+use itlo\cms\base\AssetBundle;
 
-/**
- * @author Semenov Alexander <semenov@skeeks.com>
- */
+
 class ActiveFormAjaxSubmitAsset extends AssetBundle
 {
-    public $sourcePath = '@skeeks/cms/assets/src';
+    public $sourcePath = '@itlo/cms/assets/src';
 
     public $css = [
     ];
@@ -25,6 +22,6 @@ class ActiveFormAjaxSubmitAsset extends AssetBundle
     ];
 
     public $depends = [
-        '\skeeks\sx\assets\Custom',
+        '\itlo\sx\assets\Custom',
     ];
 }

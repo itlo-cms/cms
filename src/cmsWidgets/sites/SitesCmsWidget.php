@@ -1,25 +1,24 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 25.05.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\cmsWidgets\sites;
+namespace itlo\cms\cmsWidgets\sites;
 
-use skeeks\cms\base\Widget;
-use skeeks\cms\base\WidgetRenderable;
-use skeeks\cms\components\Cms;
-use skeeks\cms\helpers\UrlHelper;
-use skeeks\cms\models\CmsContentElement;
-use skeeks\cms\models\CmsContentElementTree;
-use skeeks\cms\models\CmsSite;
-use skeeks\cms\models\Search;
-use skeeks\cms\models\Tree;
-use skeeks\yii2\form\fields\BoolField;
-use skeeks\yii2\form\fields\FieldSet;
-use skeeks\yii2\form\fields\SelectField;
+use itlo\cms\base\Widget;
+use itlo\cms\base\WidgetRenderable;
+use itlo\cms\components\Cms;
+use itlo\cms\helpers\UrlHelper;
+use itlo\cms\models\CmsContentElement;
+use itlo\cms\models\CmsContentElementTree;
+use itlo\cms\models\CmsSite;
+use itlo\cms\models\Search;
+use itlo\cms\models\Tree;
+use itlo\yii2\form\fields\BoolField;
+use itlo\yii2\form\fields\FieldSet;
+use itlo\yii2\form\fields\SelectField;
 use yii\caching\TagDependency;
 use yii\data\ActiveDataProvider;
 use yii\db\ActiveQuery;
@@ -30,7 +29,7 @@ use yii\widgets\ActiveForm;
 
 /**
  * Class SitesCmsWidget
- * @package skeeks\cms\cmsWidgets\contentElements
+ * @package itlo\cms\cmsWidgets\contentElements
  */
 class SitesCmsWidget extends WidgetRenderable
 {
@@ -106,7 +105,7 @@ class SitesCmsWidget extends WidgetRenderable
         return [
             'template' => [
                 'class'  => FieldSet::class,
-                'name'   => \Yii::t('skeeks/cms', 'Template'),
+                'name'   => \Yii::t('itlo/cms', 'Template'),
                 'fields' => [
                     'viewFile',
                 ],
@@ -114,7 +113,7 @@ class SitesCmsWidget extends WidgetRenderable
 
             'filtration' => [
                 'class'  => FieldSet::class,
-                'name'   => \Yii::t('skeeks/cms', 'Filtration'),
+                'name'   => \Yii::t('itlo/cms', 'Filtration'),
                 'fields' => [
                     'active' => [
                         'class'      => BoolField::class,
@@ -126,17 +125,17 @@ class SitesCmsWidget extends WidgetRenderable
 
             'sort'       => [
                 'class'  => FieldSet::class,
-                'name'   => \Yii::t('skeeks/cms', 'Sorting'),
+                'name'   => \Yii::t('itlo/cms', 'Sorting'),
                 'fields' => [
                     'orderBy' => [
                         'class' => SelectField::class,
-                        'items' => (new \skeeks\cms\models\Tree())->attributeLabels(),
+                        'items' => (new \itlo\cms\models\Tree())->attributeLabels(),
                     ],
                     'order'   => [
                         'class' => SelectField::class,
                         'items' => [
-                            SORT_ASC  => \Yii::t('skeeks/cms', 'ASC (from lowest to highest)'),
-                            SORT_DESC => \Yii::t('skeeks/cms', 'DESC (from highest to lowest)'),
+                            SORT_ASC  => \Yii::t('itlo/cms', 'ASC (from lowest to highest)'),
+                            SORT_DESC => \Yii::t('itlo/cms', 'DESC (from highest to lowest)'),
                         ],
                     ],
                 ],
@@ -144,7 +143,7 @@ class SitesCmsWidget extends WidgetRenderable
 
             'additionally'       => [
                 'class'  => FieldSet::class,
-                'name'   => \Yii::t('skeeks/cms', 'Additionally'),
+                'name'   => \Yii::t('itlo/cms', 'Additionally'),
                 'fields' => [
                     'label'
                 ],
@@ -152,7 +151,7 @@ class SitesCmsWidget extends WidgetRenderable
 
             'cache'       => [
                 'class'  => FieldSet::class,
-                'name'   => \Yii::t('skeeks/cms', 'Cache settings'),
+                'name'   => \Yii::t('itlo/cms', 'Cache settings'),
                 'fields' => [
                     'enabledRunCache' => [
                         'class' => BoolField::class,

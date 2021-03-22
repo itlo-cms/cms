@@ -1,12 +1,11 @@
 <?
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 06.06.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 /* @var $this yii\web\View */
-/* @var $widget \skeeks\cms\widgets\formInputs\comboText\ComboTextInputWidget */
+/* @var $widget \itlo\cms\widgets\formInputs\comboText\ComboTextInputWidget */
 
 $options = $widget->clientOptions;
 $clientOptions = \yii\helpers\Json::encode($options);
@@ -15,13 +14,13 @@ $clientOptions = \yii\helpers\Json::encode($options);
     <div class="sx-select-controll">
         <?php if ($widget->modelAttributeSaveType) : ?>
             <?= \yii\helpers\Html::activeRadioList($widget->model, $widget->modelAttributeSaveType,
-                \skeeks\cms\widgets\formInputs\comboText\ComboTextInputWidget::editors()) ?>
+                \itlo\cms\widgets\formInputs\comboText\ComboTextInputWidget::editors()) ?>
         <?php else
             : ?>
             <?= \yii\helpers\Html::radioList(
                 $widget->id . '-radio',
                 $widget->defaultEditor,
-                \skeeks\cms\widgets\formInputs\comboText\ComboTextInputWidget::editors()
+                \itlo\cms\widgets\formInputs\comboText\ComboTextInputWidget::editors()
             ) ?>
         <?php endif;
         ?>

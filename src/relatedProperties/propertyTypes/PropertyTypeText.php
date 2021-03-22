@@ -1,21 +1,20 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 30.04.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\relatedProperties\propertyTypes;
+namespace itlo\cms\relatedProperties\propertyTypes;
 
-use skeeks\cms\relatedProperties\models\RelatedPropertiesModel;
-use skeeks\cms\relatedProperties\PropertyType;
+use itlo\cms\relatedProperties\models\RelatedPropertiesModel;
+use itlo\cms\relatedProperties\PropertyType;
 use yii\helpers\ArrayHelper;
 use yii\widgets\ActiveForm;
 
 /**
  * Class PropertyTypeTextarea
- * @package skeeks\cms\relatedProperties\propertyTypes
+ * @package itlo\cms\relatedProperties\propertyTypes
  */
 class PropertyTypeText extends PropertyType
 {
@@ -36,10 +35,10 @@ class PropertyTypeText extends PropertyType
     public static function fieldElements()
     {
         return [
-            'textarea' => \Yii::t('skeeks/cms', 'Text field') . ' (textarea)',
-            'textInput' => \Yii::t('skeeks/cms', 'Text string') . ' (input)',
-            'hiddenInput' => \Yii::t('skeeks/cms', 'Скрытое поле') . ' (hiddenInput)',
-            'default_value' => \Yii::t('skeeks/cms', 'Default Value'),
+            'textarea' => \Yii::t('itlo/cms', 'Text field') . ' (textarea)',
+            'textInput' => \Yii::t('itlo/cms', 'Text string') . ' (input)',
+            'hiddenInput' => \Yii::t('itlo/cms', 'Скрытое поле') . ' (hiddenInput)',
+            'default_value' => \Yii::t('itlo/cms', 'Default Value'),
         ];
     }
 
@@ -48,7 +47,7 @@ class PropertyTypeText extends PropertyType
         parent::init();
 
         if (!$this->name) {
-            $this->name = \Yii::t('skeeks/cms', 'Text');
+            $this->name = \Yii::t('itlo/cms', 'Text');
         }
     }
 
@@ -56,9 +55,9 @@ class PropertyTypeText extends PropertyType
     {
         return array_merge(parent::attributeLabels(),
             [
-                'fieldElement' => \Yii::t('skeeks/cms', 'Element form'),
-                'rows' => \Yii::t('skeeks/cms', 'The number of lines of the text field'),
-                'default_value' => \Yii::t('skeeks/cms', 'Default Value'),
+                'fieldElement' => \Yii::t('itlo/cms', 'Element form'),
+                'rows' => \Yii::t('itlo/cms', 'The number of lines of the text field'),
+                'default_value' => \Yii::t('itlo/cms', 'Default Value'),
             ]);
     }
 
@@ -78,7 +77,7 @@ class PropertyTypeText extends PropertyType
     public function renderConfigForm(ActiveForm $activeForm)
     {
         echo $activeForm->fieldSelect($this, 'fieldElement',
-            \skeeks\cms\relatedProperties\propertyTypes\PropertyTypeText::fieldElements());
+            \itlo\cms\relatedProperties\propertyTypes\PropertyTypeText::fieldElements());
         echo $activeForm->fieldInputInt($this, 'rows');
         echo $activeForm->field($this, 'default_value');
     }

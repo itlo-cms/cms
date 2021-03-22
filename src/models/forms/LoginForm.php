@@ -2,16 +2,14 @@
 /**
  * LoginForm
  *
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010-2014 SkeekS (Sx)
- * @date 28.10.2014
- * @since 1.0.0
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\models\forms;
+namespace itlo\cms\models\forms;
 
-use skeeks\cms\models\User;
+use itlo\cms\models\User;
 use Yii;
 use yii\base\Model;
 
@@ -53,7 +51,7 @@ class LoginForm extends Model
         if (!$this->hasErrors()) {
             $user = $this->getUser();
             if (!$user || !$user->validatePassword($this->password)) {
-                $this->addError($attribute, \Yii::t('skeeks/cms', 'Incorrect username or password.'));
+                $this->addError($attribute, \Yii::t('itlo/cms', 'Incorrect username or password.'));
             }
         }
     }

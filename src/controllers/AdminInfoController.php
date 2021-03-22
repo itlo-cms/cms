@@ -1,22 +1,21 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 30.05.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\controllers;
+namespace itlo\cms\controllers;
 
-use skeeks\cms\admin\AdminController;
-use skeeks\cms\backend\BackendAction;
-use skeeks\cms\backend\BackendController;
-use skeeks\cms\helpers\UrlHelper;
-use skeeks\cms\models\Search;
-use skeeks\cms\modules\admin\actions\AdminAction;
-use skeeks\cms\modules\admin\controllers\helpers\rules\NoModel;
-use skeeks\sx\Dir;
-use skeeks\sx\File;
+use itlo\cms\admin\AdminController;
+use itlo\cms\backend\BackendAction;
+use itlo\cms\backend\BackendController;
+use itlo\cms\helpers\UrlHelper;
+use itlo\cms\models\Search;
+use itlo\cms\modules\admin\actions\AdminAction;
+use itlo\cms\modules\admin\controllers\helpers\rules\NoModel;
+use itlo\sx\Dir;
+use itlo\sx\File;
 use yii\data\ArrayDataProvider;
 use yii\filters\VerbFilter;
 use yii\grid\GridView;
@@ -27,13 +26,13 @@ use yii\helpers\Url;
 use Yii;
 
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
+ * @author Semenov Alexander <semenov@itlo.com>
  */
 class AdminInfoController extends BackendController
 {
     public function init()
     {
-        $this->name = \Yii::t('skeeks/cms', "Information about the system");
+        $this->name = \Yii::t('itlo/cms', "Information about the system");
         $this->generateAccessActions = false;
 
         parent::init();
@@ -46,7 +45,7 @@ class AdminInfoController extends BackendController
                 'index' =>
                     [
                         'class' => BackendAction::className(),
-                        'name' => \Yii::t('skeeks/cms', 'General information'),
+                        'name' => \Yii::t('itlo/cms', 'General information'),
                         'callback' => [$this, 'actionIndex'],
                     ]
             ];
@@ -92,7 +91,7 @@ class AdminInfoController extends BackendController
     {
         $env = (string)\Yii::$app->request->get('env');
         if (!$env) {
-            \Yii::$app->session->setFlash('error', \Yii::t('skeeks/cms', 'Not Specified Places to record'));
+            \Yii::$app->session->setFlash('error', \Yii::t('itlo/cms', 'Not Specified Places to record'));
             return $this->redirect(\Yii::$app->request->getReferrer());
         }
 
@@ -103,9 +102,9 @@ PHP;
 
         $file = new File(APP_ENV_GLOBAL_FILE);
         if ($file->write($content)) {
-            \Yii::$app->session->setFlash('success', \Yii::t('skeeks/cms', 'File successfully created and written'));
+            \Yii::$app->session->setFlash('success', \Yii::t('itlo/cms', 'File successfully created and written'));
         } else {
-            \Yii::$app->session->setFlash('error', \Yii::t('skeeks/cms', 'Failed to write file'));
+            \Yii::$app->session->setFlash('error', \Yii::t('itlo/cms', 'Failed to write file'));
         }
 
         return $this->redirect(\Yii::$app->request->getReferrer());
@@ -115,9 +114,9 @@ PHP;
     {
         $file = new File(APP_ENV_GLOBAL_FILE);
         if ($file->remove()) {
-            \Yii::$app->session->setFlash('success', \Yii::t('skeeks/cms', 'File deleted successfully'));
+            \Yii::$app->session->setFlash('success', \Yii::t('itlo/cms', 'File deleted successfully'));
         } else {
-            \Yii::$app->session->setFlash('error', \Yii::t('skeeks/cms', 'Could not delete the file'));
+            \Yii::$app->session->setFlash('error', \Yii::t('itlo/cms', 'Could not delete the file'));
         }
 
         return $this->redirect(\Yii::$app->request->getReferrer());

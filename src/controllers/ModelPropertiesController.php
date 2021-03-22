@@ -1,18 +1,17 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 14.04.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\controllers;
+namespace itlo\cms\controllers;
 
-use skeeks\cms\models\forms\PasswordChangeForm;
-use skeeks\cms\models\User;
-use skeeks\cms\relatedProperties\models\RelatedElementModel;
+use itlo\cms\models\forms\PasswordChangeForm;
+use itlo\cms\models\User;
+use itlo\cms\relatedProperties\models\RelatedElementModel;
 use Yii;
-use skeeks\cms\models\searchs\User as UserSearch;
+use itlo\cms\models\searchs\User as UserSearch;
 use yii\filters\VerbFilter;
 use yii\helpers\ArrayHelper;
 use yii\web\Controller;
@@ -21,7 +20,7 @@ use yii\widgets\ActiveForm;
 
 /**
  * Class ModelPropertiesController
- * @package skeeks\cms\controllers
+ * @package itlo\cms\controllers
  */
 class ModelPropertiesController extends Controller
 {

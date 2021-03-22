@@ -1,16 +1,15 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 18.06.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 return [
 
     [
         'class' => \yii\grid\DataColumn::className(),
         'value' => function($model) {
-            return \yii\helpers\Html::a('<i class="glyphicon glyphicon-circle-arrow-left"></i> ' . \Yii::t('skeeks/cms',
+            return \yii\helpers\Html::a('<i class="glyphicon glyphicon-circle-arrow-left"></i> ' . \Yii::t('itlo/cms',
                     'Choose'), $model->id, [
                 'class' => 'btn btn-primary sx-row-action',
                 'onclick' => 'sx.SelectCmsElement.submit(' . \yii\helpers\Json::encode(array_merge($model->toArray(), [
@@ -25,34 +24,34 @@ return [
 
     [
         'class' => \yii\grid\DataColumn::className(),
-        'value' => function(\skeeks\cms\models\CmsContentElement $model) {
+        'value' => function(\itlo\cms\models\CmsContentElement $model) {
             return $model->cmsContent->name;
         },
         'format' => 'raw',
         'attribute' => 'content_id',
-        'filter' => \skeeks\cms\models\CmsContent::getDataForSelect()
+        'filter' => \itlo\cms\models\CmsContent::getDataForSelect()
     ],
 
 
     [
-        'class' => \skeeks\cms\grid\ImageColumn2::className(),
+        'class' => \itlo\cms\grid\ImageColumn2::className(),
     ],
 
     'name',
-    ['class' => \skeeks\cms\grid\CreatedAtColumn::className()],
-    ///['class' => \skeeks\cms\grid\UpdatedAtColumn::className()],
-    ///['class' => \skeeks\cms\grid\PublishedAtColumn::className()],
+    ['class' => \itlo\cms\grid\CreatedAtColumn::className()],
+    ///['class' => \itlo\cms\grid\UpdatedAtColumn::className()],
+    ///['class' => \itlo\cms\grid\PublishedAtColumn::className()],
     /*[
-        'class' => \skeeks\cms\grid\DateTimeColumnData::className(),
+        'class' => \itlo\cms\grid\DateTimeColumnData::className(),
         'attribute' => "published_to",
     ],*/
 
-    //['class' => \skeeks\cms\grid\CreatedByColumn::className()],
-    //['class' => \skeeks\cms\grid\UpdatedByColumn::className()],
+    //['class' => \itlo\cms\grid\CreatedByColumn::className()],
+    //['class' => \itlo\cms\grid\UpdatedByColumn::className()],
 
     [
         'class' => \yii\grid\DataColumn::className(),
-        'value' => function(\skeeks\cms\models\CmsContentElement $model) {
+        'value' => function(\itlo\cms\models\CmsContentElement $model) {
             if (!$model->cmsTree) {
                 return null;
             }
@@ -72,13 +71,13 @@ return [
             return "<small><a href='{$model->cmsTree->url}' target='_blank' data-pjax='0'>{$path} / {$model->cmsTree->name}</a></small>";
         },
         'format' => 'raw',
-        'filter' => \skeeks\cms\helpers\TreeOptions::getAllMultiOptions(),
+        'filter' => \itlo\cms\helpers\TreeOptions::getAllMultiOptions(),
         'attribute' => 'tree_id'
     ],
 
     [
         'class' => \yii\grid\DataColumn::className(),
-        'value' => function(\skeeks\cms\models\CmsContentElement $model) {
+        'value' => function(\itlo\cms\models\CmsContentElement $model) {
             $result = [];
 
             if ($model->cmsContentElementTrees) {
@@ -94,21 +93,21 @@ return [
 
         },
         'format' => 'raw',
-        'label' => \Yii::t('skeeks/cms', 'Additional sections'),
+        'label' => \Yii::t('itlo/cms', 'Additional sections'),
     ],
 
     [
         'attribute' => 'active',
-        'class' => \skeeks\cms\grid\BooleanColumn::className()
+        'class' => \itlo\cms\grid\BooleanColumn::className()
     ],
 
     [
         'class' => \yii\grid\DataColumn::className(),
-        'value' => function(\skeeks\cms\models\CmsContentElement $model) {
+        'value' => function(\itlo\cms\models\CmsContentElement $model) {
 
             return \yii\helpers\Html::a('<i class="glyphicon glyphicon-arrow-right"></i>', $model->absoluteUrl, [
                 'target' => '_blank',
-                'title' => \Yii::t('skeeks/cms', 'Watch to site (opens new window)'),
+                'title' => \Yii::t('itlo/cms', 'Watch to site (opens new window)'),
                 'data-pjax' => '0',
                 'class' => 'btn btn-default btn-sm'
             ]);

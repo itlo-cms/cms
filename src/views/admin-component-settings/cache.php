@@ -1,11 +1,10 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 27.03.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  *
- * @var $component \skeeks\cms\base\Component
+ * @var $component \itlo\cms\base\Component
  */
 /* @var $this yii\web\View */
 ?>
@@ -21,7 +20,7 @@
     ],
     'closeButton' => false,
 ]); ?>
-    <p><?= \Yii::t('skeeks/cms', 'To improve performance, configure each component of the site is cached.') ?></p>
+    <p><?= \Yii::t('itlo/cms', 'To improve performance, configure each component of the site is cached.') ?></p>
     <button type="submit" class="btn btn-danger btn-xs" onclick="sx.ComponentSettings.Cache.clearAll(); return false;">
         <i class="fa fa-times"></i> Сбросить кэш для всех
     </button>

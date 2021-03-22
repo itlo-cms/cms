@@ -1,23 +1,22 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 18.03.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\widgets;
+namespace itlo\cms\widgets;
 
-use skeeks\cms\modules\admin\traits\ActiveFormTrait;
-use skeeks\cms\modules\admin\traits\AdminActiveFormTrait;
-use skeeks\cms\modules\admin\widgets\ActiveForm;
-use skeeks\cms\traits\ActiveFormAjaxSubmitTrait;
-use skeeks\modules\cms\form\models\Form;
+use itlo\cms\modules\admin\traits\ActiveFormTrait;
+use itlo\cms\modules\admin\traits\AdminActiveFormTrait;
+use itlo\cms\modules\admin\widgets\ActiveForm;
+use itlo\cms\traits\ActiveFormAjaxSubmitTrait;
+use itlo\modules\cms\form\models\Form;
 use yii\base\Model;
 
 /**
  * Class ActiveFormRelatedProperties
- * @package skeeks\cms\widgets
+ * @package itlo\cms\widgets
  */
 class ActiveFormRelatedProperties extends ActiveForm
 {
@@ -31,8 +30,8 @@ class ActiveFormRelatedProperties extends ActiveForm
 
     public function __construct($config = [])
     {
-        $this->validationUrl = \skeeks\cms\helpers\UrlHelper::construct('cms/model-properties/validate')->toString();
-        $this->action = \skeeks\cms\helpers\UrlHelper::construct('cms/model-properties/submit')->toString();
+        $this->validationUrl = \itlo\cms\helpers\UrlHelper::construct('cms/model-properties/validate')->toString();
+        $this->action = \itlo\cms\helpers\UrlHelper::construct('cms/model-properties/submit')->toString();
 
         $this->enableAjaxValidation = true;
 

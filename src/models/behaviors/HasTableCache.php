@@ -1,12 +1,11 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 28.05.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\models\behaviors;
+namespace itlo\cms\models\behaviors;
 
 use yii\base\Behavior;
 use yii\caching\Cache;
@@ -19,7 +18,7 @@ use yii\web\ErrorHandler;
 
 /**
  * Class HasTableCache
- * @package skeeks\cms\models\behaviors
+ * @package itlo\cms\models\behaviors
  */
 class HasTableCache extends Behavior
 {

@@ -1,18 +1,17 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 26.05.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright 2021 ITLO (Infomarket)
  */
 
-namespace skeeks\cms\base;
+namespace itlo\cms\base;
 
 use yii\helpers\ArrayHelper;
 
 /**
  * Class WidgetRenderable
- * @package skeeks\cms\base
+ * @package itlo\cms\base
  */
 class WidgetRenderable extends Widget
 {
@@ -24,7 +23,7 @@ class WidgetRenderable extends Widget
     public function attributeLabels()
     {
         return array_merge(parent::attributeLabels(), [
-            'viewFile' => \Yii::t('skeeks/cms', 'File-template'),
+            'viewFile' => \Yii::t('itlo/cms', 'File-template'),
         ]);
     }
 
@@ -42,7 +41,7 @@ class WidgetRenderable extends Widget
                 'widget' => $this,
             ]);
         } else {
-            return \Yii::t('skeeks/cms', "Template not found");
+            return \Yii::t('itlo/cms', "Template not found");
         }
     }
 }

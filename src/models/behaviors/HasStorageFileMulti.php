@@ -2,17 +2,15 @@
 /**
  * Если к моделе привязаны файлы из хранилище, то при удалении модели будут удалены все свяазнные файлы из хранилища.
  *
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010-2014 SkeekS (Sx)
- * @date 31.10.2014
- * @since 1.0.0
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\models\behaviors;
+namespace itlo\cms\models\behaviors;
 
-use skeeks\cms\models\CmsStorageFile;
-use skeeks\cms\models\StorageFile;
+use itlo\cms\models\CmsStorageFile;
+use itlo\cms\models\StorageFile;
 use yii\base\Behavior;
 use yii\db\ActiveRecord;
 use yii\db\BaseActiveRecord;
@@ -22,7 +20,7 @@ use yii\helpers\ArrayHelper;
  * @property ActiveRecord $owner
  *
  * Class HasStorageFileMulti
- * @package skeeks\cms\models\behaviors
+ * @package itlo\cms\models\behaviors
  */
 class HasStorageFileMulti extends Behavior
 {

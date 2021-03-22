@@ -1,9 +1,8 @@
 <?
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 31.05.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 /* @var $this yii\web\View */
 
@@ -76,11 +75,11 @@ CSS
 );
 ?>
 <div class="col-md-12">
-    <?php $widget = \skeeks\cms\widgets\tree\CmsTreeWidget::begin([
+    <?php $widget = \itlo\cms\widgets\tree\CmsTreeWidget::begin([
         "models" => $models,
-        "viewNodeContentFile" => '@skeeks/cms/views/admin-tree/_tree-node',
+        "viewNodeContentFile" => '@itlo/cms/views/admin-tree/_tree-node',
 
-        'pjaxClass' => \skeeks\cms\modules\admin\widgets\Pjax::class,
+        'pjaxClass' => \itlo\cms\modules\admin\widgets\Pjax::class,
         /*'pjaxOptions' =>
             [
                 'blockPjaxContainer' => false,
@@ -94,8 +93,8 @@ CSS
     $options = \yii\helpers\Json::encode([
         'id' => $widget->id,
         'pjaxid' => $widget->pjax->id,
-        'backendNewChild' => \skeeks\cms\helpers\UrlHelper::construct(['/cms/admin-tree/new-children'])->enableAdmin()->toString(),
-        'backendResort' => \skeeks\cms\helpers\UrlHelper::construct(['/cms/admin-tree/resort'])->enableAdmin()->toString()
+        'backendNewChild' => \itlo\cms\helpers\UrlHelper::construct(['/cms/admin-tree/new-children'])->enableAdmin()->toString(),
+        'backendResort' => \itlo\cms\helpers\UrlHelper::construct(['/cms/admin-tree/resort'])->enableAdmin()->toString()
     ]);
 
 

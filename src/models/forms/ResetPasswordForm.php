@@ -2,14 +2,12 @@
 /**
  * ResetPasswordForm
  *
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010-2014 SkeekS (Sx)
- * @date 28.10.2014
- * @since 1.0.0
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\models\forms;
+namespace itlo\cms\models\forms;
 
 use yii\base\InvalidParamException;
 use yii\base\Model;
@@ -17,7 +15,7 @@ use Yii;
 
 /**
  * Class ResetPasswordForm
- * @package skeeks\module\cms\user\model
+ * @package itlo\module\cms\user\model
  */
 class ResetPasswordForm extends Model
 {
@@ -38,11 +36,11 @@ class ResetPasswordForm extends Model
     public function __construct($token, $config = [])
     {
         if (empty($token) || !is_string($token)) {
-            throw new InvalidParamException(\Yii::t('skeeks/cms', 'Password reset token cannot be blank.'));
+            throw new InvalidParamException(\Yii::t('itlo/cms', 'Password reset token cannot be blank.'));
         }
         $this->_user = User::findByPasswordResetToken($token);
         if (!$this->_user) {
-            throw new InvalidParamException(\Yii::t('skeeks/cms', 'Wrong password reset token.'));
+            throw new InvalidParamException(\Yii::t('itlo/cms', 'Wrong password reset token.'));
         }
         parent::__construct($config);
     }

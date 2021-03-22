@@ -1,17 +1,15 @@
 <?php
 /**
- * @link https://cms.skeeks.com/
- * @copyright Copyright (c) 2010 SkeekS
- * @license https://cms.skeeks.com/license/
- * @author Semenov Alexander <semenov@skeeks.com>
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright 2021 ITLO (Infomarket)
+ * @date 22.03.2021
  */
 namespace skeeks\cms\actions\backend;
 
 use skeeks\cms\backend\actions\BackendModelMultiAction;
 use skeeks\cms\components\Cms;
-/**
- * @author Semenov Alexander <semenov@skeeks.com>
- */
+
 class BackendModelMultiActivateAction extends BackendModelMultiAction {
 
     public $attribute = 'active';
@@ -26,7 +24,7 @@ class BackendModelMultiActivateAction extends BackendModelMultiAction {
 
         if (!$this->name)
         {
-            $this->name = \Yii::t('skeeks/cms', "Activate");
+            $this->name = \Yii::t('itlo/cms', "Activate");
         }
 
         parent::init();

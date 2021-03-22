@@ -1,21 +1,20 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link https://skeeks.com/
- * @copyright (c) 2010 SkeekS
- * @date 21.03.2017
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 /* @var $this yii\web\View */
-/* @var $controller \skeeks\cms\backend\controllers\BackendModelController */
-/* @var $action \skeeks\cms\backend\actions\BackendModelCreateAction|\skeeks\cms\backend\actions\IHasActiveForm */
-/* @var $model \skeeks\cms\models\CmsLang */
+/* @var $controller \itlo\cms\backend\controllers\BackendModelController */
+/* @var $action \itlo\cms\backend\actions\BackendModelCreateAction|\itlo\cms\backend\actions\IHasActiveForm */
+/* @var $model \itlo\cms\models\CmsLang */
 $controller = $this->context;
 $action = $controller->action;
 ?>
 <?php $form = $action->beginActiveForm(); ?>
     <?= $form->errorSummary($model); ?>
         <?= $form->field($model, 'image_id')->widget(
-            \skeeks\cms\widgets\AjaxFileUploadWidget::class,
+            \itlo\cms\widgets\AjaxFileUploadWidget::class,
             [
                 'accept' => 'image/*',
                 'multiple' => false
@@ -27,7 +26,7 @@ $action = $controller->action;
         <?= $form->field($model, 'patronymic')->textInput(); ?>
         <?= $form->field($model, 'email')->textInput(); ?>
         <?
-        \skeeks\cms\admin\assets\JqueryMaskInputAsset::register($this);
+        \itlo\cms\admin\assets\JqueryMaskInputAsset::register($this);
         $id = \yii\helpers\Html::getInputId($model, 'phone');
         $this->registerJs(<<<JS
 $("#{$id}").mask("+7 999 999-99-99");

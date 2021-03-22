@@ -2,21 +2,19 @@
 /**
  * ErrorController
  *
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010-2014 SkeekS (Sx)
- * @date 04.11.2014
- * @since 1.0.0
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\controllers;
+namespace itlo\cms\controllers;
 
 
-use skeeks\cms\base\Component;
-use skeeks\cms\components\Cms;
-use skeeks\cms\helpers\RequestResponse;
-use skeeks\cms\models\CmsComponentSettings;
-use skeeks\sx\helpers\ResponseHelper;
+use itlo\cms\base\Component;
+use itlo\cms\components\Cms;
+use itlo\cms\helpers\RequestResponse;
+use itlo\cms\models\CmsComponentSettings;
+use itlo\sx\helpers\ResponseHelper;
 use Yii;
 use yii\web\Controller;
 use yii\web\Response;
@@ -24,7 +22,7 @@ use yii\web\Response;
 
 /**
  * Class ToolbarController
- * @package skeeks\cms\controllers
+ * @package itlo\cms\controllers
  */
 class ToolbarController extends Controller
 {

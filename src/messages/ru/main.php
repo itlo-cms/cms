@@ -771,7 +771,7 @@ return
         "Add widget" => "Добавить виджет",
         "Disk space" => "Место на диске",
         "Short info" => "Краткая информация",
-        "Information about SkeekS CMS" => "Информация о SkeekS CMS",
+        "Information about ITLO CMS" => "Информация о ITLO CMS",
         "The list of content items" => "Список элементов контента",
         "Change sorting" => "Поменять сортировку",
 

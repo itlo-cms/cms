@@ -1,36 +1,35 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 14.10.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
-$model = new \skeeks\cms\models\CmsContentElement();
+$model = new \itlo\cms\models\CmsContentElement();
 ?>
-<?php $form = \skeeks\cms\modules\admin\widgets\ActiveForm::begin([
+<?php $form = \itlo\cms\modules\admin\widgets\ActiveForm::begin([
         'usePjax' => false
 ]); ?>
 
 <?php /*= $form->field($model, 'treeIds')->widget(
-        \skeeks\cms\widgets\formInputs\selectTree\SelectTreeInputWidget::class,
+        \itlo\cms\widgets\formInputs\selectTree\SelectTreeInputWidget::class,
         [
             'multiple' => true
         ]
     ); */ ?>
 
 <?= $form->field($model, 'treeIds')->widget(
-    \skeeks\cms\backend\widgets\SelectModelDialogTreeWidget::class,
+    \itlo\cms\backend\widgets\SelectModelDialogTreeWidget::class,
     [
         'multiple' => true
     ]
 ); ?>
 
 
-<?= \yii\helpers\Html::checkbox('removeCurrent', false); ?> <label><?= \Yii::t('skeeks/cms',
+<?= \yii\helpers\Html::checkbox('removeCurrent', false); ?> <label><?= \Yii::t('itlo/cms',
         'Get rid of the already linked (in this case, the selected records bind only to the selected section)') ?></label>
 <?= $form->buttonsStandart($model, ['save']); ?>
 
-<?php \skeeks\cms\modules\admin\widgets\ActiveForm::end(); ?>
+<?php \itlo\cms\modules\admin\widgets\ActiveForm::end(); ?>
 
 
 <?php $alert = \yii\bootstrap\Alert::begin([
@@ -39,6 +38,6 @@ $model = new \skeeks\cms\models\CmsContentElement();
         'style' => 'margin-top: 20px;',
     ],
 ]) ?>
-    <p><?= \Yii::t('skeeks/cms', 'You can specify some additional sections that will show your records.') ?></p>
-    <p><?= \Yii::t('skeeks/cms', 'This does not affect the final address of the page, and hence safe.') ?></p>
+    <p><?= \Yii::t('itlo/cms', 'You can specify some additional sections that will show your records.') ?></p>
+    <p><?= \Yii::t('itlo/cms', 'This does not affect the final address of the page, and hence safe.') ?></p>
 <?php $alert::end(); ?>

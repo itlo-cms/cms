@@ -2,11 +2,9 @@
 /**
  * Controller
  *
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010-2014 SkeekS (Sx)
- * @date 03.11.2014
- * @since 1.0.0
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright 2021 ITLO (Infomarket)
  */
 
 namespace skeeks\cms\base;
@@ -17,7 +15,7 @@ use yii\web\Controller as YiiWebController;
 
 /**
  * Class Controller
- * @package skeeks\cms\base
+ * @package itlo\cms\base
  */
 class Controller extends YiiWebController
 {

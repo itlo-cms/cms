@@ -2,15 +2,14 @@
 /**
  * Модель значения связанного свойства.
  *
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 18.05.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\relatedProperties\models;
+namespace itlo\cms\relatedProperties\models;
 
-use skeeks\cms\models\Core;
+use itlo\cms\models\Core;
 use Yii;
 
 /**
@@ -35,16 +34,16 @@ abstract class RelatedPropertyEnumModel extends Core
     public function attributeLabels()
     {
         return array_merge(parent::attributeLabels(), [
-            'id' => Yii::t('skeeks/cms', 'ID'),
-            'created_by' => Yii::t('skeeks/cms', 'Created By'),
-            'updated_by' => Yii::t('skeeks/cms', 'Updated By'),
-            'created_at' => Yii::t('skeeks/cms', 'Created At'),
-            'updated_at' => Yii::t('skeeks/cms', 'Updated At'),
-            'property_id' => Yii::t('skeeks/cms', 'Property'),
-            'value' => Yii::t('skeeks/cms', 'Value'),
-            'def' => Yii::t('skeeks/cms', 'Default'),
-            'code' => Yii::t('skeeks/cms', 'Code'),
-            'priority' => Yii::t('skeeks/cms', 'Priority'),
+            'id' => Yii::t('itlo/cms', 'ID'),
+            'created_by' => Yii::t('itlo/cms', 'Created By'),
+            'updated_by' => Yii::t('itlo/cms', 'Updated By'),
+            'created_at' => Yii::t('itlo/cms', 'Created At'),
+            'updated_at' => Yii::t('itlo/cms', 'Updated At'),
+            'property_id' => Yii::t('itlo/cms', 'Property'),
+            'value' => Yii::t('itlo/cms', 'Value'),
+            'def' => Yii::t('itlo/cms', 'Default'),
+            'code' => Yii::t('itlo/cms', 'Code'),
+            'priority' => Yii::t('itlo/cms', 'Priority'),
         ]);
     }
 

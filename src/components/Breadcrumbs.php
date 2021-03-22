@@ -2,24 +2,22 @@
 /**
  * Breadcrumbs
  *
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010-2014 SkeekS (Sx)
- * @date 15.01.2015
- * @since 1.0.0
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\components;
+namespace itlo\cms\components;
 
-use skeeks\cms\base\components\Descriptor;
-use skeeks\cms\models\Site;
-use skeeks\cms\models\Tree;
-use skeeks\cms\models\TreeType;
+use itlo\cms\base\components\Descriptor;
+use itlo\cms\models\Site;
+use itlo\cms\models\Tree;
+use itlo\cms\models\TreeType;
 use yii\base\Component;
 
 /**
  * Class Cms
- * @package skeeks\cms\components
+ * @package itlo\cms\components
  */
 class Breadcrumbs extends Component
 {

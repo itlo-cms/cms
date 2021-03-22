@@ -1,18 +1,17 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 09.06.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\widgets\formInputs\componentSettings;
+namespace itlo\cms\widgets\formInputs\componentSettings;
 
-use skeeks\cms\Exception;
-use skeeks\cms\helpers\StringHelper;
-use skeeks\cms\helpers\UrlHelper;
-use skeeks\cms\modules\admin\Module;
-use skeeks\widget\codemirror\CodemirrorWidget;
+use itlo\cms\Exception;
+use itlo\cms\helpers\StringHelper;
+use itlo\cms\helpers\UrlHelper;
+use itlo\cms\modules\admin\Module;
+use itlo\widget\codemirror\CodemirrorWidget;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\helpers\Json;
@@ -21,7 +20,7 @@ use Yii;
 
 /**
  * Class ComponentSettingsWidget
- * @package skeeks\cms\widgets\formInputs\componentSettings
+ * @package itlo\cms\widgets\formInputs\componentSettings
  */
 class ComponentSettingsWidget extends InputWidget
 {
@@ -42,7 +41,7 @@ class ComponentSettingsWidget extends InputWidget
         parent::init();
 
         if (!$this->buttonText) {
-            $this->buttonText = \Yii::t('skeeks/cms', 'Setting property');
+            $this->buttonText = \Yii::t('itlo/cms', 'Setting property');
         }
     }
 
@@ -79,7 +78,7 @@ class ComponentSettingsWidget extends InputWidget
         $this->clientOptions['componentSettingsId'] = Html::getInputId($this->model, $this->attribute);
         $this->clientOptions['id'] = $this->id;
 
-        $this->clientOptions['backend'] = \skeeks\cms\backend\helpers\BackendUrlHelper::createByParams(['/cms/admin-universal-component-settings/index'])
+        $this->clientOptions['backend'] = \itlo\cms\backend\helpers\BackendUrlHelper::createByParams(['/cms/admin-universal-component-settings/index'])
             ->enableEmptyLayout()
             ->url;
 

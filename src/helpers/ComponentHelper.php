@@ -1,19 +1,18 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 06.03.2016
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\helpers;
+namespace itlo\cms\helpers;
 
 use yii\base\Behavior;
 use yii\base\Component;
 
 /**
  * Class ComponentHelper
- * @package skeeks\cms\helpers
+ * @package itlo\cms\helpers
  */
 class ComponentHelper extends Component
 {

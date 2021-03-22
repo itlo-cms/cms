@@ -1,21 +1,20 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 27.03.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\components;
+namespace itlo\cms\components;
 
-use skeeks\cms\models\CmsSite;
-use skeeks\cms\models\CmsSiteDomain;
+use itlo\cms\models\CmsSite;
+use itlo\cms\models\CmsSiteDomain;
 use yii\base\Component;
 use yii\caching\TagDependency;
 
 /**
  * @property CmsSite $site
- * @package skeeks\cms\components
+ * @package itlo\cms\components
  */
 class CurrentSite extends Component
 {

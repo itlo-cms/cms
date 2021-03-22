@@ -2,24 +2,22 @@
 /**
  * StorageFilesController
  *
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010-2014 SkeekS (Sx)
- * @date 03.11.2014
- * @since 1.0.0
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
 
-namespace skeeks\cms\controllers;
+namespace itlo\cms\controllers;
 
-use skeeks\cms\Exception;
-use skeeks\cms\filters\CmsAccessControl;
-use skeeks\cms\helpers\RequestResponse;
-use skeeks\cms\models\CmsStorageFile;
-use skeeks\cms\modules\admin\controllers\AdminController;
+use itlo\cms\Exception;
+use itlo\cms\filters\CmsAccessControl;
+use itlo\cms\helpers\RequestResponse;
+use itlo\cms\models\CmsStorageFile;
+use itlo\cms\modules\admin\controllers\AdminController;
 use Yii;
-use skeeks\cms\models\StorageFile;
-use skeeks\cms\models\searchs\StorageFile as StorageFileSearch;
+use itlo\cms\models\StorageFile;
+use itlo\cms\models\searchs\StorageFile as StorageFileSearch;
 use yii\db\ActiveRecord;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Json;
@@ -72,9 +70,9 @@ class StorageFilesController extends Controller
 
         $request = Yii::$app->getRequest();
 
-        $dir = \skeeks\sx\Dir::runtimeTmp();
+        $dir = \itlo\sx\Dir::runtimeTmp();
 
-        $uploader = new \skeeks\widget\simpleajaxuploader\backend\FileUpload("imgfile");
+        $uploader = new \itlo\widget\simpleajaxuploader\backend\FileUpload("imgfile");
         $file = $dir->newFile()->setExtension($uploader->getExtension());
 
         $originalName = $uploader->getFileName();
@@ -113,7 +111,7 @@ class StorageFilesController extends Controller
 
     /**
      * ���������� � ������ ������ ����
-     * @see skeeks\cms\widgets\formInputs\StorageImage
+     * @see itlo\cms\widgets\formInputs\StorageImage
      * @return RequestResponse
      */
     public function actionLinkToModel()
@@ -181,7 +179,7 @@ class StorageFilesController extends Controller
 
     /**
      * ���������� � ������ ������ ����
-     * @see skeeks\cms\widgets\formInputs\StorageImage
+     * @see itlo\cms\widgets\formInputs\StorageImage
      * @return RequestResponse
      */
     public function actionLinkToModels()

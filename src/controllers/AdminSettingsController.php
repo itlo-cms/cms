@@ -1,26 +1,25 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 27.03.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\controllers;
+namespace itlo\cms\controllers;
 
-use skeeks\cms\backend\BackendController;
-use skeeks\cms\base\Component;
-use skeeks\cms\components\Cms;
-use skeeks\cms\modules\admin\actions\AdminAction;
-use skeeks\cms\modules\admin\controllers\AdminController;
-use skeeks\yii2\config\ConfigBehavior;
+use itlo\cms\backend\BackendController;
+use itlo\cms\base\Component;
+use itlo\cms\components\Cms;
+use itlo\cms\modules\admin\actions\AdminAction;
+use itlo\cms\modules\admin\controllers\AdminController;
+use itlo\yii2\config\ConfigBehavior;
 use yii\helpers\ArrayHelper;
 use yii\web\Response;
 use yii\widgets\ActiveForm;
 
 /**
  * Class AdminSettingsController
- * @package skeeks\cms\controllers
+ * @package itlo\cms\controllers
  */
 class AdminSettingsController extends BackendController
 {

@@ -1,17 +1,16 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 19.12.2016
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\widgets\tree;
+namespace itlo\cms\widgets\tree;
 
-use skeeks\cms\helpers\UrlHelper;
-use skeeks\cms\models\CmsSite;
-use skeeks\cms\models\CmsTree;
-use skeeks\cms\widgets\tree\assets\CmsTreeWidgetAsset;
+use itlo\cms\helpers\UrlHelper;
+use itlo\cms\models\CmsSite;
+use itlo\cms\models\CmsTree;
+use itlo\cms\widgets\tree\assets\CmsTreeWidgetAsset;
 use yii\base\Widget;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
@@ -22,7 +21,7 @@ use yii\helpers\Url;
  * @property int[] $openedIds
  *
  * Class CmsTreeWidget
- * @package skeeks\cms\widgets\tree
+ * @package itlo\cms\widgets\tree
  */
 class CmsTreeWidget extends Widget
 {
@@ -70,7 +69,7 @@ class CmsTreeWidget extends Widget
      * @var \yii\widgets\Pjax
      */
     public $pjax = null;
-    public $pjaxClass = 'skeeks\cms\widgets\Pjax';
+    public $pjaxClass = 'itlo\cms\widgets\Pjax';
     public $pjaxOptions = [
         'isBlock' => true
     ];
@@ -259,7 +258,7 @@ class CmsTreeWidget extends Widget
     public function getNodeName($model)
     {
         /**
-         * @var $model \skeeks\cms\models\Tree
+         * @var $model \itlo\cms\models\Tree
          */
 
         $result = $model->name;

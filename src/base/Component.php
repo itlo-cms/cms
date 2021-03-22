@@ -1,20 +1,19 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 26.03.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright 2021 ITLO (Infomarket)
  */
 
-namespace skeeks\cms\base;
+namespace itlo\cms\base;
 
-use skeeks\cms\helpers\UrlHelper;
-use skeeks\cms\IHasConfig;
-use skeeks\cms\models\CmsComponentSettings;
-use skeeks\cms\models\CmsSite;
-use skeeks\cms\models\CmsUser;
-use skeeks\cms\traits\HasComponentDbSettingsTrait;
-use skeeks\cms\traits\HasComponentDescriptorTrait;
+use itlo\cms\helpers\UrlHelper;
+use itlo\cms\IHasConfig;
+use itlo\cms\models\CmsComponentSettings;
+use itlo\cms\models\CmsSite;
+use itlo\cms\models\CmsUser;
+use itlo\cms\traits\HasComponentDbSettingsTrait;
+use itlo\cms\traits\HasComponentDescriptorTrait;
 use yii\base\Exception;
 use yii\base\InvalidParamException;
 use yii\base\Model;
@@ -39,7 +38,7 @@ use yii\widgets\ActiveForm;
  * @property array       overridePath
  *
  * Class Component
- * @package skeeks\cms\base
+ * @package itlo\cms\base
  */
 abstract class Component extends Model implements ConfigFormInterface
 {
@@ -216,7 +215,7 @@ abstract class Component extends Model implements ConfigFormInterface
             $this->setAttributes($this->getSettings($useCache));
             $this->_oldAttributes = $this->toArray($this->safeAttributes());
         } catch (\Exception $e) {
-            \Yii::error(\Yii::t('skeeks/cms', '{cms} component error load defaul settings',
+            \Yii::error(\Yii::t('itlo/cms', '{cms} component error load defaul settings',
                     ['cms' => 'Cms']).': '.$e->getMessage());
         }
 
@@ -689,7 +688,7 @@ abstract class Component extends Model implements ConfigFormInterface
             }
         }
 
-        return \skeeks\cms\backend\helpers\BackendUrlHelper::createByParams(['/cms/admin-component-settings/index'])
+        return \itlo\cms\backend\helpers\BackendUrlHelper::createByParams(['/cms/admin-component-settings/index'])
             ->merge([
                 'componentClassName' => $this->className(),
                 'attributes'         => $attributes,
@@ -704,7 +703,7 @@ abstract class Component extends Model implements ConfigFormInterface
      */
     public function getCallableEditUrl()
     {
-        return \skeeks\cms\backend\helpers\BackendUrlHelper::createByParams(['/cms/admin-component-settings/call-edit'])
+        return \itlo\cms\backend\helpers\BackendUrlHelper::createByParams(['/cms/admin-component-settings/call-edit'])
             ->merge([
                 'componentClassName' => $this->className(),
                 'componentNamespace' => $this->namespace,

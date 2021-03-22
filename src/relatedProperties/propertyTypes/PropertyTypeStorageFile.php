@@ -1,25 +1,24 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 30.04.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\relatedProperties\propertyTypes;
+namespace itlo\cms\relatedProperties\propertyTypes;
 
-use skeeks\cms\models\behaviors\HasStorageFile;
-use skeeks\cms\models\behaviors\HasStorageFileMulti;
-use skeeks\cms\models\CmsStorageFile;
-use skeeks\cms\relatedProperties\PropertyType;
-use skeeks\cms\widgets\AjaxFileUploadWidget;
+use itlo\cms\models\behaviors\HasStorageFile;
+use itlo\cms\models\behaviors\HasStorageFileMulti;
+use itlo\cms\models\CmsStorageFile;
+use itlo\cms\relatedProperties\PropertyType;
+use itlo\cms\widgets\AjaxFileUploadWidget;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /**
  * Class PropertyTypeFile
- * @package skeeks\cms\relatedProperties\propertyTypes
+ * @package itlo\cms\relatedProperties\propertyTypes
  */
 class PropertyTypeStorageFile extends PropertyType
 {
@@ -64,7 +63,7 @@ class PropertyTypeStorageFile extends PropertyType
     {
         return array_merge(parent::attributeLabels(), [
             'accept' => "Типы файлов разрешенные к загрузке",
-            'is_multiple' => \Yii::t('skeeks/cms', 'Multiple choice'),
+            'is_multiple' => \Yii::t('itlo/cms', 'Multiple choice'),
             'allowExtensions' => "Разрешенные расширения файлов к загрузке",
             'minSize' => "Минимально допустимый размер файла",
             'maxSize' => "Максимально допустимый размер файла",
@@ -110,7 +109,7 @@ class PropertyTypeStorageFile extends PropertyType
                 $extensions = explode(",", $this->allowExtensions);
             }
 
-            $this->property->relatedPropertiesModel->addRule($this->property->code, \skeeks\cms\validators\FileValidator::class, [
+            $this->property->relatedPropertiesModel->addRule($this->property->code, \itlo\cms\validators\FileValidator::class, [
                 'skipOnEmpty' => false,
                 'extensions'  => $extensions,
                 'maxFiles'    => $this->maxFiles,
@@ -129,7 +128,7 @@ class PropertyTypeStorageFile extends PropertyType
                 $extensions = explode(",", $this->allowExtensions);
             }
 
-            $this->property->relatedPropertiesModel->addRule($this->property->code, \skeeks\cms\validators\FileValidator::class, [
+            $this->property->relatedPropertiesModel->addRule($this->property->code, \itlo\cms\validators\FileValidator::class, [
                 'skipOnEmpty' => false,
                 'extensions'  => $extensions,
                 'maxFiles'    => 1,

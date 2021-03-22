@@ -1,12 +1,11 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link https://skeeks.com/
- * @copyright (c) 2010 SkeekS
- * @date 05.05.2017
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\validators;
+namespace itlo\cms\validators;
 
 use yii\helpers\FileHelper;
 use yii\web\UploadedFile;
@@ -14,7 +13,7 @@ use yii\web\UploadedFile;
 /**
  * Class FileValidator
  *
- * @package skeeks\yii2\ajaxfileupload\validators
+ * @package itlo\yii2\ajaxfileupload\validators
  */
 class FileValidator extends \yii\validators\FileValidator
 {

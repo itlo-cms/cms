@@ -1,12 +1,11 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 20.04.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\models;
+namespace itlo\cms\models;
 
 use yii\base\Component;
 use yii\data\ActiveDataProvider;
@@ -17,7 +16,7 @@ use yii\db\ActiveRecord;
  * @property ActiveDataProvider $dataProvider
  *
  * Class Search
- * @package skeeks\cms\models
+ * @package itlo\cms\models
  */
 class Search extends Component
 {

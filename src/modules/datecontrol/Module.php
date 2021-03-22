@@ -1,16 +1,15 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 30.09.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\modules\datecontrol;
+namespace itlo\cms\modules\datecontrol;
 
 /**
  * Class Module
- * @package skeeks\cms\modules\datecontrol
+ * @package itlo\cms\modules\datecontrol
  */
 class Module extends \kartik\datecontrol\Module
 {

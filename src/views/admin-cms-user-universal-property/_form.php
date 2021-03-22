@@ -1,9 +1,9 @@
 <?php
 
 use yii\helpers\Html;
-use skeeks\cms\modules\admin\widgets\form\ActiveFormUseTab as ActiveForm;
-use skeeks\cms\models\Tree;
-use skeeks\cms\modules\admin\widgets\Pjax;
+use itlo\cms\modules\admin\widgets\form\ActiveFormUseTab as ActiveForm;
+use itlo\cms\models\Tree;
+use itlo\cms\modules\admin\widgets\Pjax;
 
 /* @var $this yii\web\View */
 /* @var $model Tree */
@@ -53,7 +53,7 @@ if ($model->isNewRecord) {
 JS
 ); ?>
 
-<?= $form->fieldSet(\Yii::t('skeeks/cms', 'Basic settings')) ?>
+<?= $form->fieldSet(\Yii::t('itlo/cms', 'Basic settings')) ?>
 
 <?= $form->fieldRadioListBoolean($model, 'active') ?>
 <?= $form->fieldRadioListBoolean($model, 'is_required') ?>
@@ -66,12 +66,12 @@ JS
     'size' => 1,
     'data-form-reload' => 'true'
 ])
-    ->label(\Yii::t('skeeks/cms', "Property type"));
+    ->label(\Yii::t('itlo/cms', "Property type"));
 ?>
 
 <?php if ($handler) : ?>
-    <?= \skeeks\cms\modules\admin\widgets\BlockTitleWidget::widget(['content' => \Yii::t('skeeks/cms', 'Settings')]); ?>
-    <?php if ($handler instanceof \skeeks\cms\relatedProperties\propertyTypes\PropertyTypeList) : ?>
+    <?= \itlo\cms\modules\admin\widgets\BlockTitleWidget::widget(['content' => \Yii::t('itlo/cms', 'Settings')]); ?>
+    <?php if ($handler instanceof \itlo\cms\relatedProperties\propertyTypes\PropertyTypeList) : ?>
         <?php $handler->enumRoute = 'cms/admin-cms-user-universal-property-enum'; ?>
     <?php endif; ?>
     <?= $handler->renderConfigForm($form); ?>
@@ -81,7 +81,7 @@ JS
 
 <?= $form->fieldSetEnd(); ?>
 
-<?= $form->fieldSet(\Yii::t('skeeks/cms', 'Additionally')) ?>
+<?= $form->fieldSet(\Yii::t('itlo/cms', 'Additionally')) ?>
 <?= $form->field($model, 'hint')->textInput() ?>
 <?= $form->fieldInputInt($model, 'priority') ?>
 

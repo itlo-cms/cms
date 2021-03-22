@@ -2,15 +2,13 @@
 /**
  * default
  *
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010-2014 SkeekS (Sx)
- * @date 17.11.2014
- * @since 1.0.0
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
 /**
- * @var \skeeks\cms\models\Tree $model
+ * @var \itlo\cms\models\Tree $model
  */
 ?>
 

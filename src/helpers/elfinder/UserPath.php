@@ -1,14 +1,13 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 19.04.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\helpers\elfinder;
+namespace itlo\cms\helpers\elfinder;
 
-use skeeks\cms\rbac\CmsManager;
+use itlo\cms\rbac\CmsManager;
 use Yii;
 
 class UserPath extends \mihaildev\elfinder\volume\UserPath

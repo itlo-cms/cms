@@ -1,12 +1,11 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 26.09.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\validators;
+namespace itlo\cms\validators;
 
 use yii\validators\Validator;
 use libphonenumber\PhoneNumberUtil;
@@ -52,7 +51,7 @@ class PhoneValidator extends Validator
 
         // if none and strict
         if (!isset($country) && $this->strict) {
-            $this->addError($model, $attribute, \Yii::t('skeeks/cms', 'For phone validation country required'));
+            $this->addError($model, $attribute, \Yii::t('itlo/cms', 'For phone validation country required'));
             return false;
         }
         if (!isset($country)) {
@@ -68,14 +67,14 @@ class PhoneValidator extends Validator
                 return true;
             } else {
                 $this->addError($model, $attribute,
-                    \Yii::t('skeeks/cms', 'Phone number does not seem to be a valid phone number'));
+                    \Yii::t('itlo/cms', 'Phone number does not seem to be a valid phone number'));
                 return false;
             }
         } catch (NumberParseException $e) {
-            $this->addError($model, $attribute, \Yii::t('skeeks/cms', 'Unexpected Phone Number Format'));
+            $this->addError($model, $attribute, \Yii::t('itlo/cms', 'Unexpected Phone Number Format'));
         } catch (Exception $e) {
             $this->addError($model, $attribute,
-                \Yii::t('skeeks/cms', 'Unexpected Phone Number Format or Country Code'));
+                \Yii::t('itlo/cms', 'Unexpected Phone Number Format or Country Code'));
         }
     }
 }

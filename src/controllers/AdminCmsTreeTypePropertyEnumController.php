@@ -1,26 +1,25 @@
 <?php
 /**
- * @link https://cms.skeeks.com/
- * @copyright Copyright (c) 2010 SkeekS
- * @license https://cms.skeeks.com/license/
- * @author Semenov Alexander <semenov@skeeks.com>
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\controllers;
+namespace itlo\cms\controllers;
 
-use skeeks\cms\backend\controllers\BackendModelStandartController;
-use skeeks\cms\models\CmsTreeTypePropertyEnum;
+use itlo\cms\backend\controllers\BackendModelStandartController;
+use itlo\cms\models\CmsTreeTypePropertyEnum;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
+ * @author Semenov Alexander <semenov@itlo.com>
  */
 class AdminCmsTreeTypePropertyEnumController extends BackendModelStandartController
 {
     public function init()
     {
-        $this->name = \Yii::t('skeeks/cms', 'Managing partition property values');
+        $this->name = \Yii::t('itlo/cms', 'Managing partition property values');
         $this->modelShowAttribute = "value";
         $this->modelClassName = CmsTreeTypePropertyEnum::class;
 

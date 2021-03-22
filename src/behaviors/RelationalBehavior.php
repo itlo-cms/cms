@@ -1,14 +1,11 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 10.10.2015
- *
- * @see https://github.com/E96/yii2-relational-behavior
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright 2021 ITLO (Infomarket)
  */
 
-namespace skeeks\cms\behaviors;
+namespace itlo\cms\behaviors;
 
 use yii\base\Behavior;
 use yii\base\ErrorException;

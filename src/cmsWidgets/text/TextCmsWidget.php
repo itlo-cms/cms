@@ -1,21 +1,20 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 25.05.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\cmsWidgets\text;
+namespace itlo\cms\cmsWidgets\text;
 
-use skeeks\cms\base\Widget;
-use skeeks\cms\widgets\formInputs\comboText\ComboTextInputWidget;
-use skeeks\yii2\form\fields\WidgetField;
+use itlo\cms\base\Widget;
+use itlo\cms\widgets\formInputs\comboText\ComboTextInputWidget;
+use itlo\yii2\form\fields\WidgetField;
 use yii\helpers\ArrayHelper;
 
 /**
  * Class TextCmsWidget
- * @package skeeks\cms\cmsWidgets\text
+ * @package itlo\cms\cmsWidgets\text
  */
 class TextCmsWidget extends Widget
 {

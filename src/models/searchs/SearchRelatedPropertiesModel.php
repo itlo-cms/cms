@@ -1,18 +1,17 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 25.05.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\models\searchs;
+namespace itlo\cms\models\searchs;
 
-use skeeks\cms\models\CmsContent;
-use skeeks\cms\models\CmsContentElement;
-use skeeks\cms\models\CmsContentElementProperty;
-use skeeks\cms\models\CmsContentProperty;
-use skeeks\cms\relatedProperties\models\RelatedPropertyModel;
+use itlo\cms\models\CmsContent;
+use itlo\cms\models\CmsContentElement;
+use itlo\cms\models\CmsContentElementProperty;
+use itlo\cms\models\CmsContentProperty;
+use itlo\cms\relatedProperties\models\RelatedPropertyModel;
 use yii\base\DynamicModel;
 use yii\data\ActiveDataProvider;
 use yii\db\ActiveQuery;
@@ -22,7 +21,7 @@ use yii\helpers\ArrayHelper;
 
 /**
  * Class SearchRelatedPropertiesModel
- * @package skeeks\cms\models\searchs
+ * @package itlo\cms\models\searchs
  */
 class SearchRelatedPropertiesModel extends DynamicModel
 {
@@ -39,7 +38,7 @@ class SearchRelatedPropertiesModel extends DynamicModel
     /**
      * @var string
      */
-    public $propertyElementClassName = '\skeeks\cms\models\CmsContentElementProperty';
+    public $propertyElementClassName = '\itlo\cms\models\CmsContentElementProperty';
 
     /**
      * TODO: IS DEPRECATED > 3.0
@@ -61,7 +60,7 @@ class SearchRelatedPropertiesModel extends DynamicModel
     public function initProperties($props = [])
     {
         foreach ($props as $prop) {
-            if ($prop->property_type == \skeeks\cms\relatedProperties\PropertyType::CODE_NUMBER) {
+            if ($prop->property_type == \itlo\cms\relatedProperties\PropertyType::CODE_NUMBER) {
                 $this->defineAttribute($this->getAttributeNameRangeFrom($prop->code), '');
                 $this->defineAttribute($this->getAttributeNameRangeTo($prop->code), '');
 
@@ -166,7 +165,7 @@ class SearchRelatedPropertiesModel extends DynamicModel
             }
 
             if ($property = $this->getProperty($propertyCode)) {
-                if ($property->property_type == \skeeks\cms\relatedProperties\PropertyType::CODE_NUMBER) {
+                if ($property->property_type == \itlo\cms\relatedProperties\PropertyType::CODE_NUMBER) {
                     $elementIds = [];
 
                     $query = $classSearch::find()->select(['element_id as id'])->where([
@@ -200,7 +199,7 @@ class SearchRelatedPropertiesModel extends DynamicModel
 
                     $applyFilters = true;
 
-                    if ($property->property_type == \skeeks\cms\relatedProperties\PropertyType::CODE_STRING) {
+                    if ($property->property_type == \itlo\cms\relatedProperties\PropertyType::CODE_STRING) {
                         $query = $classSearch::find()->select(['element_id as id'])
                             ->where([
                                 "property_id" => $property->id
@@ -216,7 +215,7 @@ class SearchRelatedPropertiesModel extends DynamicModel
                         $unionQueries[] = $query;
 
                     } else {
-                        if ($property->property_type == \skeeks\cms\relatedProperties\PropertyType::CODE_BOOL) {
+                        if ($property->property_type == \itlo\cms\relatedProperties\PropertyType::CODE_BOOL) {
                             $query = $classSearch::find()->select(['element_id as id'])->where([
                                 "value_bool" => $value,
                                 "property_id" => $property->id
@@ -226,11 +225,11 @@ class SearchRelatedPropertiesModel extends DynamicModel
                             $unionQueries[] = $query;
                         } else {
                             if (in_array($property->property_type, [
-                                \skeeks\cms\relatedProperties\PropertyType::CODE_ELEMENT
+                                \itlo\cms\relatedProperties\PropertyType::CODE_ELEMENT
                                 ,
-                                \skeeks\cms\relatedProperties\PropertyType::CODE_LIST
+                                \itlo\cms\relatedProperties\PropertyType::CODE_LIST
                                 ,
-                                \skeeks\cms\relatedProperties\PropertyType::CODE_TREE
+                                \itlo\cms\relatedProperties\PropertyType::CODE_TREE
                             ])) {
                                 $query = $classSearch::find()->select(['element_id as id'])->where([
                                     "value_enum" => $value,

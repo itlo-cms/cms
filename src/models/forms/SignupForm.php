@@ -2,18 +2,16 @@
 /**
  * SignupForm
  *
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010-2014 SkeekS (Sx)
- * @date 28.10.2014
- * @since 1.0.0
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\models\forms;
+namespace itlo\cms\models\forms;
 
-use skeeks\cms\models\CmsUserEmail;
-use skeeks\cms\models\User;
-use skeeks\cms\validators\PhoneValidator;
+use itlo\cms\models\CmsUserEmail;
+use itlo\cms\models\User;
+use itlo\cms\validators\PhoneValidator;
 use yii\base\Model;
 use Yii;
 use yii\helpers\ArrayHelper;
@@ -21,7 +19,7 @@ use yii\helpers\Json;
 
 /**
  * Class SignupForm
- * @package skeeks\cms\models\forms
+ * @package itlo\cms\models\forms
  */
 class SignupForm extends Model
 {
@@ -45,15 +43,15 @@ class SignupForm extends Model
     public function attributeLabels()
     {
         return [
-            'username' => \Yii::t('skeeks/cms', 'Login'),
-            'email' => \Yii::t('skeeks/cms', 'Email'),
-            'password' => \Yii::t('skeeks/cms', 'Password'),
-            'first_name' => \Yii::t('skeeks/cms', 'First name'),
-            'last_name' => \Yii::t('skeeks/cms', 'Last name'),
-            'patronymic' => \Yii::t('skeeks/cms', 'Patronymic'),
+            'username' => \Yii::t('itlo/cms', 'Login'),
+            'email' => \Yii::t('itlo/cms', 'Email'),
+            'password' => \Yii::t('itlo/cms', 'Password'),
+            'first_name' => \Yii::t('itlo/cms', 'First name'),
+            'last_name' => \Yii::t('itlo/cms', 'Last name'),
+            'patronymic' => \Yii::t('itlo/cms', 'Patronymic'),
 
-            'email' => Yii::t('skeeks/cms', 'Email'),
-            'phone' => Yii::t('skeeks/cms', 'Phone'),
+            'email' => Yii::t('itlo/cms', 'Email'),
+            'phone' => Yii::t('itlo/cms', 'Phone'),
         ];
     }
 
@@ -99,7 +97,7 @@ class SignupForm extends Model
                 'username',
                 'unique',
                 'targetClass' => \Yii::$app->user->identityClass,
-                'message' => \Yii::t('skeeks/cms', 'This login is already in use by another user.')
+                'message' => \Yii::t('itlo/cms', 'This login is already in use by another user.')
             ],
             ['username', 'string', 'min' => 2, 'max' => 255],
 
@@ -110,7 +108,7 @@ class SignupForm extends Model
                 'email',
                 'unique',
                 'targetClass' => \Yii::$app->user->identityClass,
-                'message' => \Yii::t('skeeks/cms', 'This Email is already in use by another user')
+                'message' => \Yii::t('itlo/cms', 'This Email is already in use by another user')
             ],
 
             //[['email'], 'unique', 'targetClass' => CmsUserEmail::className(), 'targetAttribute' => 'value'],
@@ -186,7 +184,7 @@ class SignupForm extends Model
                             [
                                 '@app/mail' =>
                                     [
-                                        '@skeeks/cms/mail-templates'
+                                        '@itlo/cms/mail-templates'
                                     ]
                             ]);
 
@@ -196,7 +194,7 @@ class SignupForm extends Model
                         ])
                             ->setFrom([\Yii::$app->cms->adminEmail => \Yii::$app->cms->appName . ''])
                             ->setTo($user->email)
-                            ->setSubject(\Yii::t('skeeks/cms', 'Sign up at site') . \Yii::$app->cms->appName)
+                            ->setSubject(\Yii::t('itlo/cms', 'Sign up at site') . \Yii::$app->cms->appName)
                             ->send();
 
                         return $user;
@@ -234,14 +232,14 @@ class SignupForm extends Model
                     [
                         '@app/mail' =>
                             [
-                                '@skeeks/cms/mail'
+                                '@itlo/cms/mail'
                             ]
                     ]);
 
                 return \Yii::$app->mailer->compose('@app/mail/password-reset-token', ['user' => $user])
                     ->setFrom([\Yii::$app->cms->adminEmail => \Yii::$app->cms->appName . ' robot'])
                     ->setTo($this->email)
-                    ->setSubject(\Yii::t('skeeks/cms', 'Password reset for ') . \Yii::$app->cms->appName)
+                    ->setSubject(\Yii::t('itlo/cms', 'Password reset for ') . \Yii::$app->cms->appName)
                     ->send();
             }
         }

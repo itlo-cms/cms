@@ -1,14 +1,13 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 15.03.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright 2021 ITLO (Infomarket)
  */
 
 namespace skeeks\cms\assets;
 
-use skeeks\cms\base\AssetBundle;
+use itlo\cms\base\AssetBundle;
 
 /**
  * Class AppAsset

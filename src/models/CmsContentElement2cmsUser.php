@@ -1,6 +1,6 @@
 <?php
 
-namespace skeeks\cms\models;
+namespace itlo\cms\models;
 
 /**
  * This is the model class for table "{{%cms_content_element2cms_user}}".
@@ -16,7 +16,7 @@ namespace skeeks\cms\models;
  * @property CmsContentElement $cmsContentElement
  * @property CmsUser $cmsUser
  */
-class CmsContentElement2cmsUser extends \skeeks\cms\models\Core
+class CmsContentElement2cmsUser extends \itlo\cms\models\Core
 {
     /**
      * @inheritdoc

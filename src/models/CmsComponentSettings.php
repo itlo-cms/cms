@@ -1,15 +1,14 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 21.05.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\models;
+namespace itlo\cms\models;
 
-use skeeks\cms\base\Component;
-use skeeks\cms\models\behaviors\HasJsonFieldsBehavior;
+use itlo\cms\base\Component;
+use itlo\cms\models\behaviors\HasJsonFieldsBehavior;
 use Yii;
 use yii\db\ActiveQuery;
 
@@ -75,13 +74,13 @@ class CmsComponentSettings extends Core
     public function attributeLabels()
     {
         return array_merge(parent::attributeLabels(), [
-            'id' => Yii::t('skeeks/cms', 'ID'),
-            'value' => Yii::t('skeeks/cms', 'Value'),
-            'component' => Yii::t('skeeks/cms', 'Component'),
+            'id' => Yii::t('itlo/cms', 'ID'),
+            'value' => Yii::t('itlo/cms', 'Value'),
+            'component' => Yii::t('itlo/cms', 'Component'),
 
-            'cms_site_id' => Yii::t('skeeks/cms', 'Site Code'),
-            'user_id' => Yii::t('skeeks/cms', 'User ID'),
-            'namespace' => Yii::t('skeeks/cms', 'Namespace'),
+            'cms_site_id' => Yii::t('itlo/cms', 'Site Code'),
+            'user_id' => Yii::t('itlo/cms', 'User ID'),
+            'namespace' => Yii::t('itlo/cms', 'Namespace'),
         ]);
     }
 

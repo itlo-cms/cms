@@ -2,16 +2,15 @@
 /**
  * Наличие свойств в связанных таблицах
  *
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 18.05.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\models\behaviors;
+namespace itlo\cms\models\behaviors;
 
-use skeeks\cms\relatedProperties\models\RelatedPropertiesModel;
-use skeeks\cms\relatedProperties\models\RelatedPropertyModel;
+use itlo\cms\relatedProperties\models\RelatedPropertiesModel;
+use itlo\cms\relatedProperties\models\RelatedPropertyModel;
 use yii\base\Behavior;
 use yii\base\Exception;
 use yii\db\ActiveQuery;
@@ -21,7 +20,7 @@ use yii\web\ErrorHandler;
 
 /**
  * Class HasRelatedProperties
- * @package skeeks\cms\models\behaviors
+ * @package itlo\cms\models\behaviors
  */
 class HasRelatedProperties extends Behavior
 {

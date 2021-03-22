@@ -1,18 +1,17 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 19.09.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\grid;
+namespace itlo\cms\grid;
 
 use yii\grid\DataColumn;
 
 /**
  * Class ImageColumn2
- * @package skeeks\cms\grid
+ * @package itlo\cms\grid
  */
 class ImageColumn2 extends DataColumn
 {
@@ -29,7 +28,7 @@ class ImageColumn2 extends DataColumn
         if ($this->relationName && $file = $model->{$this->relationName}) {
             $originalSrc = $file->src;
             $src = \Yii::$app->imaging->getImagingUrl($file->src,
-                new \skeeks\cms\components\imaging\filters\Thumbnail());
+                new \itlo\cms\components\imaging\filters\Thumbnail());
         } else {
             $src = \Yii::$app->cms->noImageUrl;
             $originalSrc = $src;

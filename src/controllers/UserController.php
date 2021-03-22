@@ -1,24 +1,23 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 22.06.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\controllers;
+namespace itlo\cms\controllers;
 
-use skeeks\cms\actions\user\UserAction;
-use skeeks\cms\base\Controller;
-use skeeks\cms\components\Cms;
-use skeeks\cms\filters\CmsAccessControl;
-use skeeks\cms\helpers\RequestResponse;
-use skeeks\cms\helpers\UrlHelper;
-use skeeks\cms\models\CmsUser;
-use skeeks\cms\models\forms\PasswordChangeForm;
-use skeeks\cms\models\User;
+use itlo\cms\actions\user\UserAction;
+use itlo\cms\base\Controller;
+use itlo\cms\components\Cms;
+use itlo\cms\filters\CmsAccessControl;
+use itlo\cms\helpers\RequestResponse;
+use itlo\cms\helpers\UrlHelper;
+use itlo\cms\models\CmsUser;
+use itlo\cms\models\forms\PasswordChangeForm;
+use itlo\cms\models\User;
 use Yii;
-use skeeks\cms\models\searchs\User as UserSearch;
+use itlo\cms\models\searchs\User as UserSearch;
 use yii\helpers\ArrayHelper;
 use yii\rest\UpdateAction;
 use yii\web\NotFoundHttpException;
@@ -28,7 +27,7 @@ use yii\web\NotFoundHttpException;
  * @property bool $isOwner
  *
  * Class UserController
- * @package skeeks\cms\controllers
+ * @package itlo\cms\controllers
  */
 class UserController extends Controller
 {
@@ -51,7 +50,7 @@ class UserController extends Controller
                     $controller->requestPkParamName => $this->user->{$controller->modelPkAttribute}
                 ];
 
-                $urlEditModel = \skeeks\cms\backend\helpers\BackendUrlHelper::createByParams($adminControllerRoute)
+                $urlEditModel = \itlo\cms\backend\helpers\BackendUrlHelper::createByParams($adminControllerRoute)
                     ->enableEmptyLayout()
                     ->url;
 

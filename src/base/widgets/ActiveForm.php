@@ -9,9 +9,9 @@
  * @since 1.0.0
  */
 
-namespace skeeks\cms\base\widgets;
+namespace itlo\cms\base\widgets;
 
-use skeeks\cms\components\Cms;
+use itlo\cms\components\Cms;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\widgets\ActiveField;

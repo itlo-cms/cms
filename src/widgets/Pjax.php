@@ -1,17 +1,16 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 19.12.2016
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\widgets;
+namespace itlo\cms\widgets;
 
 /**
  * Class Pjax
  *
- * @package skeeks\cms\widgets
+ * @package itlo\cms\widgets
  */
 class Pjax extends \yii\widgets\Pjax
 {
@@ -45,7 +44,7 @@ class Pjax extends \yii\widgets\Pjax
     {
         parent::registerClientScript();
 
-        $errorMessage = \Yii::t('skeeks/admin', 'An unexpected error occurred. Refer to the developers.');
+        $errorMessage = \Yii::t('itlo/admin', 'An unexpected error occurred. Refer to the developers.');
 
         $errorNotify = '';
         if ($this->isShowError) {

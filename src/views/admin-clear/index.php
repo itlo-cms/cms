@@ -1,9 +1,8 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link https://skeeks.com/
- * @copyright (c) 2010 SkeekS
- * @date 21.03.2017
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 /* @var $this yii\web\View */
 $url = \yii\helpers\Url::to(['/cms/admin-clear/index']);
@@ -13,13 +12,13 @@ $data = \yii\helpers\Json::encode([
 ?>
 
     <div class="sx-box g-pa-10 sx-bg-primary">
-        <?= \yii\helpers\Html::a(\Yii::t('skeeks/cms', 'Delete temporary files'), $url, [
+        <?= \yii\helpers\Html::a(\Yii::t('itlo/cms', 'Delete temporary files'), $url, [
             'class' => 'btn btn-primary',
             'onclick' => 'new sx.classes.Clear(' . $data . '); return false;'
         ]); ?>
         <hr/>
 
-        <?= \skeeks\cms\modules\admin\widgets\GridView::widget([
+        <?= \itlo\cms\modules\admin\widgets\GridView::widget([
             'dataProvider' => new \yii\data\ArrayDataProvider([
                 'allModels' => $clearDirs
             ]),
@@ -30,7 +29,7 @@ $data = \yii\helpers\Json::encode([
                     'class' => \yii\grid\DataColumn::className(),
                     'value' => function($data) {
                         /**
-                         * @var $dir \skeeks\sx\Dir
+                         * @var $dir \itlo\sx\Dir
                          */
                         $dir = $data['dir'];
                         return $dir->getPath();
@@ -41,7 +40,7 @@ $data = \yii\helpers\Json::encode([
                     'class' => \yii\grid\DataColumn::className(),
                     'value' => function($data) {
                         /**
-                         * @var $dir \skeeks\sx\Dir
+                         * @var $dir \itlo\sx\Dir
                          */
                         $dir = $data['dir'];
                         return $dir->getSize()->formatedShortSize();

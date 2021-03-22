@@ -18,10 +18,10 @@ $this->title = $name;
     </div>
 
     <p>
-        <?= \Yii::t('skeeks/cms', 'The above error occurred while the Web server was processing your request.'); ?>
+        <?= \Yii::t('itlo/cms', 'The above error occurred while the Web server was processing your request.'); ?>
     </p>
     <p>
-        <?= \Yii::t('skeeks/cms', 'Please contact us if you think this is a server error. Thank you.'); ?>
+        <?= \Yii::t('itlo/cms', 'Please contact us if you think this is a server error. Thank you.'); ?>
     </p>
 
 </div>

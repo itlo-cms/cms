@@ -1,19 +1,18 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 18.12.2016
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 /* @var $this yii\web\View */
-/* @var $widget \skeeks\cms\widgets\tree\CmsTreeWidget */
-/* @var $model \skeeks\cms\models\CmsTree */
+/* @var $widget \itlo\cms\widgets\tree\CmsTreeWidget */
+/* @var $model \itlo\cms\models\CmsTree */
 $widget = $this->context;
 
 $result = $model->name;
 $additionalName = '';
 if ($model->level == 0) {
-    $site = \skeeks\cms\models\CmsSite::findOne(['id' => $model->cms_site_id]);
+    $site = \itlo\cms\models\CmsSite::findOne(['id' => $model->cms_site_id]);
     if ($site) {
         $additionalName = $site->name;
     }
@@ -47,7 +46,7 @@ if ($additionalName) {
             $root = $parents[0];
             unset($parents[0]);
             /**
-             * @var \skeeks\cms\models\CmsTree $root
+             * @var \itlo\cms\models\CmsTree $root
              */
             $names[] = $root->site->name;
             if ($parents) {
@@ -92,7 +91,7 @@ if ($additionalName) {
         </div>
     <?php endif; ?>
 
-    <?php $widget = \skeeks\cms\backend\widgets\ContextMenuControllerActionsWidget::begin([
+    <?php $widget = \itlo\cms\backend\widgets\ContextMenuControllerActionsWidget::begin([
         'actions'             => $controller->modelActions,
         'isOpenNewWindow'     => true,
         'rightClickSelectors' => ['.sx-tree-node-'.$model->id],
@@ -108,7 +107,7 @@ if ($additionalName) {
         <?php $widget::end(); ?>
     </div>
 
-    <? /*= \skeeks\cms\backend\widgets\DropdownControllerActionsWidget::widget([
+    <? /*= \itlo\cms\backend\widgets\DropdownControllerActionsWidget::widget([
         "actions" => $controller->modelActions,
         "renderFirstAction" => true,
         "wrapperOptions" => ['class' => "dropdown pull-left"],
@@ -120,27 +119,27 @@ if ($additionalName) {
     <?php if (\Yii::$app->user->can('cms/admin-tree/new-children')) : ?>
         <div class="pull-left sx-controll-act">
             <a href="#" class="btn-tree-node-controll btn btn-default btn-sm add-tree-child"
-               title="<?= \Yii::t('skeeks/cms', 'Create subsection'); ?>" data-id="<?= $model->id; ?>"><span
+               title="<?= \Yii::t('itlo/cms', 'Create subsection'); ?>" data-id="<?= $model->id; ?>"><span
                         class="fa fa-plus"></span></a>
         </div>
     <?php endif; ?>
     <div class="pull-left sx-controll-act">
         <a href="<?= $model->absoluteUrl; ?>" target="_blank"
            class="btn-tree-node-controll btn btn-default btn-sm show-at-site"
-           title="<?= \Yii::t('skeeks/cms', "Show at site"); ?>">
+           title="<?= \Yii::t('itlo/cms', "Show at site"); ?>">
             <span class="fas fa-external-link-alt"></span>
         </a>
     </div>
     <?php if ($model->level > 0 && \Yii::$app->user->can('cms/admin-tree/resort')) : ?>
         <div class="pull-left sx-controll-act">
             <a href="#" class="btn-tree-node-controll btn btn-default btn-sm sx-tree-move" style="cursor: move;"
-               title="<?= \Yii::t('skeeks/cms', "Change sorting"); ?>">
+               title="<?= \Yii::t('itlo/cms', "Change sorting"); ?>">
                 <span class="fa fa-arrows"></span>
             </a>
         </div>
     <?php endif; ?>
 
-    <?php if ($callbackEventName = \skeeks\cms\backend\helpers\BackendUrlHelper::createByParams()->setBackendParamsByCurrentRequest()->callbackEventName) : ?>
+    <?php if ($callbackEventName = \itlo\cms\backend\helpers\BackendUrlHelper::createByParams()->setBackendParamsByCurrentRequest()->callbackEventName) : ?>
 
 
         <?
@@ -192,7 +191,7 @@ JS
             'fullName' => $model->fullName,
         ]);
 
-        echo \yii\helpers\Html::a('<i class="glyphicon glyphicon-circle-arrow-left"></i> '.\Yii::t('skeeks/cms',
+        echo \yii\helpers\Html::a('<i class="glyphicon glyphicon-circle-arrow-left"></i> '.\Yii::t('itlo/cms',
                 'Choose'), '#', [
             'class'     => 'btn btn-primary btn-xs sx-controll-act',
             'style'     => 'float: left;',

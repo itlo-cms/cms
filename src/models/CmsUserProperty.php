@@ -1,14 +1,13 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 17.05.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\models;
+namespace itlo\cms\models;
 
-use skeeks\cms\relatedProperties\models\RelatedElementPropertyModel;
+use itlo\cms\relatedProperties\models\RelatedElementPropertyModel;
 
 /**
  * This is the model class for table "{{%cms_content_element_property}}".

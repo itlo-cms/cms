@@ -1,16 +1,15 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 14.10.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
-$model = new \skeeks\cms\models\CmsContentElement();
+$model = new \itlo\cms\models\CmsContentElement();
 ?>
 <?php $form = \yii\widgets\ActiveForm::begin(); ?>
 
 <?= $form->field($model, 'tree_id')->widget(
-    \skeeks\cms\backend\widgets\SelectModelDialogTreeWidget::class
+    \itlo\cms\backend\widgets\SelectModelDialogTreeWidget::class
 ); ?>
     <button type="submit" class="btn btn-primary">Сохранить</button>
 <?php $form::end(); ?>
@@ -21,7 +20,7 @@ $model = new \skeeks\cms\models\CmsContentElement();
         'style' => 'margin-top: 20px;',
     ],
 ]) ?>
-    <p><?= \Yii::t('skeeks/cms', 'Attention! For checked items will be given a new primary section.') ?></p>
-    <p><?= \Yii::t('skeeks/cms',
+    <p><?= \Yii::t('itlo/cms', 'Attention! For checked items will be given a new primary section.') ?></p>
+    <p><?= \Yii::t('itlo/cms',
             'This will alter the page record, and it will cease to be available at the old address.') ?></p>
 <?php $alert::end(); ?>

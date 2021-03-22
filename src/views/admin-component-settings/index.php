@@ -1,12 +1,11 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 27.03.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  *
- * @var $component \skeeks\cms\base\Component
- * @var $controller \skeeks\cms\controllers\AdminComponentSettingsController
+ * @var $component \itlo\cms\base\Component
+ * @var $controller \itlo\cms\controllers\AdminComponentSettingsController
  */
 /* @var $this yii\web\View */
 $controller = $this->context;
@@ -24,22 +23,22 @@ $controller = $this->context;
         ],
         'closeButton' => false,
     ]); ?>
-    <?php if ($settings = \skeeks\cms\models\CmsComponentSettings::findByComponentDefault($component)->one()) : ?>
+    <?php if ($settings = \itlo\cms\models\CmsComponentSettings::findByComponentDefault($component)->one()) : ?>
         <button type="submit" class="btn btn-danger btn-xs"
                 onclick="sx.ComponentSettings.Remove.removeDefault(); return false;">
-            <i class="fa fa-times"></i> <?= \Yii::t('skeeks/cms', 'reset default settings') ?>
+            <i class="fa fa-times"></i> <?= \Yii::t('itlo/cms', 'reset default settings') ?>
         </button>
-        <small><?= \Yii::t('skeeks/cms',
+        <small><?= \Yii::t('itlo/cms',
                 'The settings for this component are stored in the database. This option will erase them from the database, but the component, restore the default values. As they have in the code the developer.') ?></small>
     <?php else
         : ?>
-        <small><?= \Yii::t('skeeks/cms', 'These settings not yet saved in the database') ?></small>
+        <small><?= \Yii::t('itlo/cms', 'These settings not yet saved in the database') ?></small>
     <?php endif;
     ?>
     <? $alert::end(); ?>
 </div>
 
-<?php $form = \skeeks\cms\modules\admin\widgets\form\ActiveFormUseTab::begin([
+<?php $form = \itlo\cms\modules\admin\widgets\form\ActiveFormUseTab::begin([
     'enableAjaxValidation' => false,
     'enableClientValidation' => false,
 ]); ?>
@@ -89,7 +88,7 @@ JS
 )); ?>
 
 <? if ($fields = $component->getConfigFormFields()) : ?>
-    <? echo (new \skeeks\yii2\form\Builder([
+    <? echo (new \itlo\yii2\form\Builder([
         'models'     => $component->getConfigFormModels(),
         'model'      => $component,
         'activeForm' => $form,
@@ -106,6 +105,6 @@ JS
         [$component], $component->getConfigFormModels()
 )); ?>
 
-<?php \skeeks\cms\modules\admin\widgets\form\ActiveFormUseTab::end(); ?>
+<?php \itlo\cms\modules\admin\widgets\form\ActiveFormUseTab::end(); ?>
 
 <?= $this->render('_footer'); ?>

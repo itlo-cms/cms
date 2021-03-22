@@ -2,26 +2,24 @@
 /**
  * AdminFileManagerController
  *
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010-2014 SkeekS (Sx)
- * @date 06.02.2015
- * @since 1.0.0
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\controllers;
+namespace itlo\cms\controllers;
 
-use skeeks\cms\helpers\UrlHelper;
-use skeeks\cms\models\Comment;
-use skeeks\cms\modules\admin\actions\AdminAction;
-use skeeks\cms\modules\admin\controllers\AdminController;
+use itlo\cms\helpers\UrlHelper;
+use itlo\cms\models\Comment;
+use itlo\cms\modules\admin\actions\AdminAction;
+use itlo\cms\modules\admin\controllers\AdminController;
 use Yii;
-use skeeks\cms\models\User;
-use skeeks\cms\models\searchs\User as UserSearch;
+use itlo\cms\models\User;
+use itlo\cms\models\searchs\User as UserSearch;
 
 /**
  * Class AdminFileManagerController
- * @package skeeks\cms\controllers
+ * @package itlo\cms\controllers
  */
 class AdminFileManagerController extends AdminController
 {

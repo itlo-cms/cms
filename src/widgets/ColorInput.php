@@ -1,12 +1,11 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 21.07.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\widgets;
+namespace itlo\cms\widgets;
 
 use kartik\color\ColorInputAsset;
 use yii\helpers\Html;
@@ -14,7 +13,7 @@ use yii\web\JsExpression;
 
 /**
  * Class ColorInput
- * @package skeeks\cms\widgets
+ * @package itlo\cms\widgets
  */
 class ColorInput extends \kartik\color\ColorInput
 {

@@ -2,21 +2,19 @@
 /**
  * Exception
  *
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010-2014 SkeekS (Sx)
- * @date 21.10.2014
- * @since 1.0.0
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\components\storage;
+namespace itlo\cms\components\storage;
 
 use Yii;
-use skeeks\cms\Exception as CmsException;
+use itlo\cms\Exception as CmsException;
 
 /**
  * Class Exception
- * @package skeeks\cms\components\storage
+ * @package itlo\cms\components\storage
  */
 class Exception
     extends CmsException

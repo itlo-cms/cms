@@ -1,20 +1,19 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 22.05.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright 2021 ITLO (Infomarket)
  */
 
-namespace skeeks\cms\base;
+namespace itlo\cms\base;
 
-use skeeks\cms\traits\TWidget;
+use itlo\cms\traits\TWidget;
 use yii\base\ViewContextInterface;
 use yii\helpers\ArrayHelper;
 
 /**
  * Class Widget
- * @package skeeks\cms\base
+ * @package itlo\cms\base
  */
 abstract class Widget extends Component implements ViewContextInterface
 {

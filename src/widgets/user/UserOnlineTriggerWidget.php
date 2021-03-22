@@ -1,15 +1,14 @@
 <?php
 /**
- * @link https://cms.skeeks.com/
- * @copyright Copyright (c) 2010 SkeekS
- * @license https://cms.skeeks.com/license/
- * @author Semenov Alexander <semenov@skeeks.com>
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\widgets\user;
+namespace itlo\cms\widgets\user;
 
 use common\models\User;
-use skeeks\cms\widgets\user\assets\UserOnlineWidgetAsset;
+use itlo\cms\widgets\user\assets\UserOnlineWidgetAsset;
 use yii\base\Widget;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Json;
@@ -17,7 +16,7 @@ use yii\helpers\Url;
 
 /**
  * Виджет отправляющий ajax запросы в бэкенд с заданной частотой
- * @author Semenov Alexander <semenov@skeeks.com>
+ * @author Semenov Alexander <semenov@itlo.com>
  */
 class UserOnlineTriggerWidget extends Widget
 {

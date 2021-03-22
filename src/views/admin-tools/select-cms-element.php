@@ -1,15 +1,14 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 28.04.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 /* @var $this yii\web\View */
 
 /* @var $model \yii\db\ActiveRecord */
 
-use skeeks\cms\modules\admin\widgets\form\ActiveFormUseTab as ActiveForm;
+use itlo\cms\modules\admin\widgets\form\ActiveFormUseTab as ActiveForm;
 
 ?>
 
@@ -64,7 +63,7 @@ JS
 <?php $content_id = \Yii::$app->request->get('content_id'); ?>
 
 <?php if (!\Yii::$app->request->get('content_id')) : ?>
-    <?php if ($content = \skeeks\cms\models\CmsContent::find()->orderBy("priority ASC")->one()) : ?>
+    <?php if ($content = \itlo\cms\models\CmsContent::find()->orderBy("priority ASC")->one()) : ?>
         <?php $content_id = $content->id; ?>
     <?php endif; ?>
 <?php endif; ?>
@@ -74,11 +73,11 @@ JS
     <?
 
     $dataProvider = new \yii\data\ActiveDataProvider([
-        'query' => \skeeks\cms\models\CmsContentElement::find()
+        'query' => \itlo\cms\models\CmsContentElement::find()
     ]);
 
 
-    $search = new \skeeks\cms\models\Search(\skeeks\cms\models\CmsContentElement::className());
+    $search = new \itlo\cms\models\Search(\itlo\cms\models\CmsContentElement::className());
     $dataProvider = $search->search(\Yii::$app->request->queryParams);
     $searchModel = $search->loadedModel;
 
@@ -90,7 +89,7 @@ JS
 
 
     $autoColumns = [];
-    $model = \skeeks\cms\models\CmsContentElement::find()->where(['content_id' => $content_id])->one();
+    $model = \itlo\cms\models\CmsContentElement::find()->where(['content_id' => $content_id])->one();
 
 
     if (is_array($model) || is_object($model)) {
@@ -111,13 +110,13 @@ JS
             ];
         }
 
-        $searchRelatedPropertiesModel = new \skeeks\cms\models\searchs\SearchRelatedPropertiesModel();
+        $searchRelatedPropertiesModel = new \itlo\cms\models\searchs\SearchRelatedPropertiesModel();
         $searchRelatedPropertiesModel->initCmsContent($model->cmsContent);
         $searchRelatedPropertiesModel->load(\Yii::$app->request->get());
         $searchRelatedPropertiesModel->search($dataProvider);
 
         /**
-         * @var $model \skeeks\cms\models\CmsContentElement
+         * @var $model \itlo\cms\models\CmsContentElement
          */
         if ($model->relatedPropertiesModel) {
             foreach ($model->relatedPropertiesModel->toArray($model->relatedPropertiesModel->attributes()) as $name => $value) {
@@ -125,9 +124,9 @@ JS
                 $property = $model->relatedPropertiesModel->getRelatedProperty($name);
                 $filter = '';
 
-                if ($property->property_type == \skeeks\cms\relatedProperties\PropertyType::CODE_ELEMENT) {
+                if ($property->property_type == \itlo\cms\relatedProperties\PropertyType::CODE_ELEMENT) {
                     $propertyType = $property->handler;
-                    $options = \skeeks\cms\models\CmsContentElement::find()->active()->andWhere([
+                    $options = \itlo\cms\models\CmsContentElement::find()->active()->andWhere([
                         'content_id' => $propertyType->content_id
                     ])->all();
 
@@ -139,7 +138,7 @@ JS
                         ['class' => 'form-control']);
 
                 } else {
-                    if ($property->property_type == \skeeks\cms\relatedProperties\PropertyType::CODE_LIST) {
+                    if ($property->property_type == \itlo\cms\relatedProperties\PropertyType::CODE_LIST) {
                         $items = \yii\helpers\ArrayHelper::merge(['' => ''], \yii\helpers\ArrayHelper::map(
                             $property->enums, 'id', 'value'
                         ));
@@ -148,12 +147,12 @@ JS
                             ['class' => 'form-control']);
 
                     } else {
-                        if ($property->property_type == \skeeks\cms\relatedProperties\PropertyType::CODE_STRING) {
+                        if ($property->property_type == \itlo\cms\relatedProperties\PropertyType::CODE_STRING) {
                             $filter = \yii\helpers\Html::activeTextInput($searchRelatedPropertiesModel, $name, [
                                 'class' => 'form-control'
                             ]);
                         } else {
-                            if ($property->property_type == \skeeks\cms\relatedProperties\PropertyType::CODE_NUMBER) {
+                            if ($property->property_type == \itlo\cms\relatedProperties\PropertyType::CODE_NUMBER) {
                                 $filter = "<div class='row'><div class='col-md-6'>" . \yii\helpers\Html::activeTextInput($searchRelatedPropertiesModel,
                                         $searchRelatedPropertiesModel->getAttributeNameRangeFrom($name), [
                                             'class' => 'form-control',
@@ -180,7 +179,7 @@ JS
                     'class' => \yii\grid\DataColumn::className(),
                     'value' => function($model, $key, $index) use ($name) {
                         /**
-                         * @var $model \skeeks\cms\models\CmsContentElement
+                         * @var $model \itlo\cms\models\CmsContentElement
                          */
                         $value = $model->relatedPropertiesModel->getSmartAttribute($name);
                         if (is_array($value)) {
@@ -201,7 +200,7 @@ JS
 
     ?>
 
-    <?= \skeeks\cms\modules\admin\widgets\GridViewStandart::widget([
+    <?= \itlo\cms\modules\admin\widgets\GridViewStandart::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'enabledCheckbox' => false,

@@ -1,23 +1,22 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 30.04.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\relatedProperties\propertyTypes;
+namespace itlo\cms\relatedProperties\propertyTypes;
 
-use skeeks\cms\backend\widgets\SelectModelDialogTreeWidget;
-use skeeks\cms\components\Cms;
-use skeeks\cms\models\CmsTree;
-use skeeks\cms\relatedProperties\PropertyType;
+use itlo\cms\backend\widgets\SelectModelDialogTreeWidget;
+use itlo\cms\components\Cms;
+use itlo\cms\models\CmsTree;
+use itlo\cms\relatedProperties\PropertyType;
 use yii\helpers\ArrayHelper;
 use yii\widgets\ActiveForm;
 
 /**
  * Class PropertyTypeTree
- * @package skeeks\cms\relatedProperties\propertyTypes
+ * @package itlo\cms\relatedProperties\propertyTypes
  */
 class PropertyTypeTree extends PropertyType
 {
@@ -36,8 +35,8 @@ class PropertyTypeTree extends PropertyType
     public static function fieldElements()
     {
         return [
-            self::FIELD_ELEMENT_DEFAULT => \Yii::t('skeeks/cms', 'Standard selection element'),
-            self::FIELD_ELEMENT_SELECT_DIALOG => \Yii::t('skeeks/cms', 'Selection in the dialog box'),
+            self::FIELD_ELEMENT_DEFAULT => \Yii::t('itlo/cms', 'Standard selection element'),
+            self::FIELD_ELEMENT_SELECT_DIALOG => \Yii::t('itlo/cms', 'Selection in the dialog box'),
         ];
     }
 
@@ -51,7 +50,7 @@ class PropertyTypeTree extends PropertyType
         echo $activeForm->field($this, 'is_multiple')->checkbox(\Yii::$app->formatter->booleanFormat);
         echo $activeForm->fieldSelect($this, 'fieldElement', static::fieldElements());
         echo $activeForm->field($this, 'root_tree_id')->widget(
-            ///\skeeks\cms\widgets\formInputs\selectTree\SelectTreeInputWidget::class
+            ///\itlo\cms\widgets\formInputs\selectTree\SelectTreeInputWidget::class
             SelectModelDialogTreeWidget::class
         );
     }
@@ -60,9 +59,9 @@ class PropertyTypeTree extends PropertyType
     {
         return array_merge(parent::attributeLabels(),
             [
-                'is_multiple' => \Yii::t('skeeks/cms', 'Multiple choice'),
-                'fieldElement' => \Yii::t('skeeks/cms', 'Form element type'),
-                'root_tree_id' => \Yii::t('skeeks/cms', 'Root partition'),
+                'is_multiple' => \Yii::t('itlo/cms', 'Multiple choice'),
+                'fieldElement' => \Yii::t('itlo/cms', 'Form element type'),
+                'root_tree_id' => \Yii::t('itlo/cms', 'Root partition'),
             ]);
     }
 
@@ -115,7 +114,7 @@ class PropertyTypeTree extends PropertyType
                 $rootTreeModels = CmsTree::findAll($this->root_tree_id);
             }
             $field->widget(
-                \skeeks\cms\widgets\formInputs\selectTree\SelectTreeInputWidget::className(),
+                \itlo\cms\widgets\formInputs\selectTree\SelectTreeInputWidget::className(),
                 [
                     "multiple" => $this->isMultiple ? true : false,
                     'treeWidgetOptions' =>

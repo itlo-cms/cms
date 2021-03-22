@@ -1,13 +1,11 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010-2014 SkeekS (Sx)
- * @date 09.11.2014
- * @since 1.0.0
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\models;
+namespace itlo\cms\models;
 
 use Yii;
 
@@ -41,13 +39,13 @@ class CmsContentElementTree extends Core
     public function attributeLabels()
     {
         return array_merge(parent::attributeLabels(), [
-            'id' => Yii::t('skeeks/cms', 'ID'),
-            'created_by' => Yii::t('skeeks/cms', 'Created By'),
-            'updated_by' => Yii::t('skeeks/cms', 'Updated By'),
-            'created_at' => Yii::t('skeeks/cms', 'Created At'),
-            'updated_at' => Yii::t('skeeks/cms', 'Updated At'),
-            'element_id' => Yii::t('skeeks/cms', 'Element ID'),
-            'tree_id' => Yii::t('skeeks/cms', 'Tree ID'),
+            'id' => Yii::t('itlo/cms', 'ID'),
+            'created_by' => Yii::t('itlo/cms', 'Created By'),
+            'updated_by' => Yii::t('itlo/cms', 'Updated By'),
+            'created_at' => Yii::t('itlo/cms', 'Created At'),
+            'updated_at' => Yii::t('itlo/cms', 'Updated At'),
+            'element_id' => Yii::t('itlo/cms', 'Element ID'),
+            'tree_id' => Yii::t('itlo/cms', 'Tree ID'),
         ]);
     }
 
@@ -63,7 +61,7 @@ class CmsContentElementTree extends Core
                 ['element_id', 'tree_id'],
                 'unique',
                 'targetAttribute' => ['element_id', 'tree_id'],
-                'message' => \Yii::t('skeeks/cms', 'The combination of Element ID and Tree ID has already been taken.')
+                'message' => \Yii::t('itlo/cms', 'The combination of Element ID and Tree ID has already been taken.')
             ]
         ]);
     }

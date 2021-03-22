@@ -1,6 +1,6 @@
 <?php
 
-use skeeks\cms\mail\helpers\Html;
+use itlo\cms\mail\helpers\Html;
 
 /* @var $this yii\web\View */
 /* @var $user common\models\User */

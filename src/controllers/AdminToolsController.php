@@ -2,24 +2,22 @@
 /**
  * AdminTreeController
  *
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010-2014 SkeekS (Sx)
- * @date 04.11.2014
- * @since 1.0.0
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\controllers;
+namespace itlo\cms\controllers;
 
-use skeeks\cms\helpers\RequestResponse;
-use skeeks\cms\models\CmsSite;
-use skeeks\cms\models\CmsTree;
-use skeeks\cms\models\forms\ViewFileEditModel;
-use skeeks\cms\modules\admin\controllers\AdminController;
-use skeeks\cms\admin\AdminAccessControl;
-use skeeks\cms\modules\admin\widgets\UserLastActivityWidget;
-use skeeks\cms\rbac\CmsManager;
-use skeeks\cms\widgets\formInputs\selectTree\SelectTree;
+use itlo\cms\helpers\RequestResponse;
+use itlo\cms\models\CmsSite;
+use itlo\cms\models\CmsTree;
+use itlo\cms\models\forms\ViewFileEditModel;
+use itlo\cms\modules\admin\controllers\AdminController;
+use itlo\cms\admin\AdminAccessControl;
+use itlo\cms\modules\admin\widgets\UserLastActivityWidget;
+use itlo\cms\rbac\CmsManager;
+use itlo\cms\widgets\formInputs\selectTree\SelectTree;
 use Yii;
 use yii\db\ActiveRecord;
 use yii\helpers\ArrayHelper;
@@ -30,7 +28,7 @@ use yii\web\Response;
 
 /**
  * Class AdminUserController
- * @package skeeks\cms\controllers
+ * @package itlo\cms\controllers
  */
 class AdminToolsController extends AdminController
 {
@@ -112,7 +110,7 @@ class AdminToolsController extends AdminController
      */
     public function actionSelectFile()
     {
-        //$this->layout = '@skeeks/cms/modules/admin/views/layouts/main.php';
+        //$this->layout = '@itlo/cms/modules/admin/views/layouts/main.php';
         \Yii::$app->cmsToolbar->enabled = 0;
 
         $model = null;

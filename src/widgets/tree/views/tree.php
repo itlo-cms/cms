@@ -1,12 +1,11 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 18.12.2016
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 /* @var $this yii\web\View */
-/* @var $widget \skeeks\cms\widgets\tree\CmsTreeWidget */
+/* @var $widget \itlo\cms\widgets\tree\CmsTreeWidget */
 $widget = $this->context;
 ?>
 <div class="row">

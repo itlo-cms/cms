@@ -1,12 +1,11 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 22.05.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\traits;
+namespace itlo\cms\traits;
 
 use ReflectionClass;
 use Yii;
@@ -19,7 +18,7 @@ use yii\base\WidgetEvent;
  * @see yii\base\Widget
  *
  * Class WidgetTrait
- * @package skeeks\cms\traits
+ * @package itlo\cms\traits
  */
 trait TWidget
 {
@@ -32,7 +31,7 @@ trait TWidget
      * @var string the prefix to the automatically generated widget IDs.
      * @see getId()
      */
-    public static $autoIdPrefix = 'skeeks';
+    public static $autoIdPrefix = 'itlo';
     /**
      * @var Widget[] the widgets that are currently being rendered (not ended). This property
      * is maintained by [[begin()]] and [[end()]] methods.

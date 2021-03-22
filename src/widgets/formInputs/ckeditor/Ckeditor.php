@@ -1,16 +1,15 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 28.04.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\widgets\formInputs\ckeditor;
+namespace itlo\cms\widgets\formInputs\ckeditor;
 
-use skeeks\cms\Exception;
-use skeeks\cms\helpers\UrlHelper;
-use skeeks\yii2\ckeditor\CKEditorWidget;
+use itlo\cms\Exception;
+use itlo\cms\helpers\UrlHelper;
+use itlo\yii2\ckeditor\CKEditorWidget;
 use yii\db\ActiveRecord;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
@@ -20,7 +19,7 @@ use Yii;
 
 /**
  * Class Ckeditor
- * @package skeeks\cms\widgets\formInputs\ckeditor
+ * @package itlo\cms\widgets\formInputs\ckeditor
  */
 class Ckeditor extends CKEditorWidget
 {
@@ -48,17 +47,17 @@ class Ckeditor extends CKEditorWidget
             ];
         }
 
-        $this->clientOptions['filebrowserImageUploadUrl'] = \skeeks\cms\backend\helpers\BackendUrlHelper::createByParams(['/cms/admin-tools/select-file'])
+        $this->clientOptions['filebrowserImageUploadUrl'] = \itlo\cms\backend\helpers\BackendUrlHelper::createByParams(['/cms/admin-tools/select-file'])
             ->merge($additionalData)
             ->enableEmptyLayout()
             ->url;
 
-        $this->clientOptions['filebrowserImageBrowseUrl'] = \skeeks\cms\backend\helpers\BackendUrlHelper::createByParams(['/cms/admin-tools/select-file'])
+        $this->clientOptions['filebrowserImageBrowseUrl'] = \itlo\cms\backend\helpers\BackendUrlHelper::createByParams(['/cms/admin-tools/select-file'])
             ->merge($additionalData)
             ->enableEmptyLayout()
             ->url;
 
-        $this->clientOptions['filebrowserBrowseUrl'] = \skeeks\cms\backend\helpers\BackendUrlHelper::createByParams(['/cms/admin-tools/select-file'])
+        $this->clientOptions['filebrowserBrowseUrl'] = \itlo\cms\backend\helpers\BackendUrlHelper::createByParams(['/cms/admin-tools/select-file'])
             ->merge($additionalData)
             ->enableEmptyLayout()
             ->url;

@@ -1,20 +1,19 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link https://skeeks.com/
- * @copyright (c) 2010 SkeekS
- * @date 20.12.2017
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\controllers;
+namespace itlo\cms\controllers;
 
-use skeeks\cms\backend\actions\BackendModelUpdateAction;
-use skeeks\cms\backend\controllers\BackendModelController;
-use skeeks\cms\components\Cms;
-use skeeks\cms\models\CmsUser;
-use skeeks\yii2\form\Field;
-use skeeks\yii2\form\fields\PasswordField;
-use skeeks\yii2\form\fields\WidgetField;
+use itlo\cms\backend\actions\BackendModelUpdateAction;
+use itlo\cms\backend\controllers\BackendModelController;
+use itlo\cms\components\Cms;
+use itlo\cms\models\CmsUser;
+use itlo\yii2\form\Field;
+use itlo\yii2\form\fields\PasswordField;
+use itlo\yii2\form\fields\WidgetField;
 use yii\base\DynamicModel;
 use yii\base\Event;
 use yii\base\Exception;
@@ -22,7 +21,7 @@ use yii\helpers\ArrayHelper;
 
 /**
  * Class UpaPersonalController
- * @package skeeks\cms\controllers
+ * @package itlo\cms\controllers
  */
 class UpaPersonalController extends BackendModelController
 {
@@ -30,7 +29,7 @@ class UpaPersonalController extends BackendModelController
 
     public function init()
     {
-        $this->name = ['skeeks/cms', 'Personal data'];
+        $this->name = ['itlo/cms', 'Personal data'];
         $this->modelClassName = \Yii::$app->user->identityClass;
         $this->modelShowAttribute = 'displayName';
 
@@ -55,13 +54,13 @@ class UpaPersonalController extends BackendModelController
                 "update"          => [
                     'buttons' => ['save'],
                     'class'   => BackendModelUpdateAction::class,
-                    'name'    => ['skeeks/cms', 'Personal data'],
+                    'name'    => ['itlo/cms', 'Personal data'],
                     'fields'  => [$this, 'updateFields'],
                 ],
                 "change-password" => [
                     'buttons'           => ['save'],
                     'class'             => BackendModelUpdateAction::class,
-                    'name'              => ['skeeks/cms', 'Change password'],
+                    'name'              => ['itlo/cms', 'Change password'],
                     'icon'              => 'fa fa-key',
                     'defaultView'       => 'change-password',
                     'on initFormModels' => function (Event $e) {
@@ -71,7 +70,7 @@ class UpaPersonalController extends BackendModelController
                         $dm->addRule(['pass', 'pass2'], 'required');
                         $dm->addRule(['pass', 'pass2'], function ($attribute) use ($dm) {
                             if ($dm->pass != $dm->pass2) {
-                                $dm->addError($attribute, \Yii::t('skeeks/cms', 'New passwords do not match'));
+                                $dm->addError($attribute, \Yii::t('itlo/cms', 'New passwords do not match'));
                                 return false;
                             }
                         });
@@ -101,11 +100,11 @@ class UpaPersonalController extends BackendModelController
                     'fields' => [
                         'dm.pass'  => [
                             'class' => PasswordField::class,
-                            'label' => ['skeeks/cms', 'New password'],
+                            'label' => ['itlo/cms', 'New password'],
                         ],
                         'dm.pass2' => [
                             'class' => PasswordField::class,
-                            'label' => ['skeeks/cms', 'New password (again)'],
+                            'label' => ['itlo/cms', 'New password (again)'],
                         ],
                     ],
                 ],
@@ -126,7 +125,7 @@ class UpaPersonalController extends BackendModelController
         return [
             'image_id' => [
                 'class'        => WidgetField::class,
-                'widgetClass'  => \skeeks\cms\widgets\AjaxFileUploadWidget::class,
+                'widgetClass'  => \itlo\cms\widgets\AjaxFileUploadWidget::class,
                 'widgetConfig' => [
                     'accept'   => 'image/*',
                     'multiple' => false,
@@ -146,7 +145,7 @@ class UpaPersonalController extends BackendModelController
                      * @var $field Field
                      */
                     $field = $e->sender;
-                    \skeeks\cms\admin\assets\JqueryMaskInputAsset::register(\Yii::$app->view);
+                    \itlo\cms\admin\assets\JqueryMaskInputAsset::register(\Yii::$app->view);
                     $id = \yii\helpers\Html::getInputId($field->model, $field->attribute);
                     \Yii::$app->view->registerJs(<<<JS
                         $("#{$id}").mask("+7 999 999-99-99");

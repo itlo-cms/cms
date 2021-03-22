@@ -2,18 +2,16 @@
 /**
  * Storage
  *
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010-2014 SkeekS (Sx)
- * @date 17.10.2014
- * @since 1.0.0
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\components;
+namespace itlo\cms\components;
 
 /**
  * Class Storage
- * @package skeeks\cms\components
+ * @package itlo\cms\components
  */
 class Storage extends storage\Storage
 {

@@ -1,16 +1,15 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 24.05.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\components\urlRules;
+namespace itlo\cms\components\urlRules;
 
-use skeeks\cms\models\CmsSite;
-use skeeks\cms\models\CmsTree;
-use skeeks\cms\models\Tree;
+use itlo\cms\models\CmsSite;
+use itlo\cms\models\CmsTree;
+use itlo\cms\models\Tree;
 use \yii\base\InvalidConfigException;
 use yii\caching\TagDependency;
 use yii\db\Exception;
@@ -19,7 +18,7 @@ use yii\helpers\Url;
 
 /**
  * Class UrlRuleTree
- * @package skeeks\cms\components\urlRules
+ * @package itlo\cms\components\urlRules
  */
 class UrlRuleTree
     extends \yii\web\UrlRule

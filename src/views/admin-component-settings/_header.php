@@ -1,15 +1,14 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 27.03.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  *
- * @var $component \skeeks\cms\base\Component
+ * @var $component \itlo\cms\base\Component
  */
 /* @var $this yii\web\View */
 
-\skeeks\cms\themes\unify\admin\assets\UnifyAdminIframeAsset::register($this);
+\itlo\cms\themes\unify\admin\assets\UnifyAdminIframeAsset::register($this);
 
 $this->registerCss(<<<CSS
 li.divider
@@ -162,15 +161,15 @@ JS
                 class="nav-item">
                 <a class="nav-link <?= in_array(\Yii::$app->controller->action->id, ['index']) ? "active" : "" ?>"
                         href="<?= \yii\helpers\Url::to('index') . "?" . http_build_query(\Yii::$app->request->get()); ?>">
-                    <i class="fas fa-asterisk"></i> <?= \Yii::t('skeeks/cms', 'The default settings') ?>
+                    <i class="fas fa-asterisk"></i> <?= \Yii::t('itlo/cms', 'The default settings') ?>
                 </a></li>
 
-            <?php if (\skeeks\cms\models\CmsSite::find()->active()->count() > 1) : ?>
+            <?php if (\itlo\cms\models\CmsSite::find()->active()->count() > 1) : ?>
                 <li role="presentation"
                     class="nav-item">
                     <a class="nav-link <?= in_array(\Yii::$app->controller->action->id, ['sites', 'site']) ? "active" : "" ?>"
                             href="<?= \yii\helpers\Url::to('sites') . "?" . http_build_query(\Yii::$app->request->get()); ?>">
-                        <i class="fas fa-globe"></i> <?= \Yii::t('skeeks/cms', 'Sites settings') ?>
+                        <i class="fas fa-globe"></i> <?= \Yii::t('itlo/cms', 'Sites settings') ?>
                     </a></li>
             <?php endif; ?>
 
@@ -178,7 +177,7 @@ JS
                 class="nav-item">
                 <a class="nav-link <?= in_array(\Yii::$app->controller->action->id, ['users', 'user']) ? "active" : "" ?>"
                         href="<?= \yii\helpers\Url::to('users') . "?" . http_build_query(\Yii::$app->request->get()); ?>">
-                    <i class="fas fa-user"></i> <?= \Yii::t('skeeks/cms', 'Users settings') ?>
+                    <i class="fas fa-user"></i> <?= \Yii::t('itlo/cms', 'Users settings') ?>
                 </a></li>
             <!--<li role="presentation" class="<?php /*= \Yii::$app->controller->action->id == 'langs' ? "active" : ""*/ ?>"><a href="#">Настройки языков</a></li>-->
             <!--<li role="presentation"><a href="#">Настройки языков</a></li>-->
@@ -187,14 +186,14 @@ JS
                 class="nav-item">
                 <a class="nav-link <?= in_array(\Yii::$app->controller->action->id, ['cache']) ? "active" : "" ?>"
                         href="<?= \yii\helpers\Url::to('cache') . "?" . http_build_query(\Yii::$app->request->get()); ?>">
-                    <i class="fas fa-sync"></i> <?= \Yii::t('skeeks/cms', 'Clearing cache') ?></a>
+                    <i class="fas fa-sync"></i> <?= \Yii::t('itlo/cms', 'Clearing cache') ?></a>
             </li>
 
             <li role="presentation"
                 class="nav-item">
                 <a class="nav-link <?= in_array(\Yii::$app->controller->action->id, ['remove']) ? "active" : "" ?>"
                         href="<?= \yii\helpers\Url::to('remove') . "?" . http_build_query(\Yii::$app->request->get()); ?>">
-                    <i class="fa fa-times"></i> <?= \Yii::t('skeeks/cms', 'Remove{s}Recovery',
+                    <i class="fa fa-times"></i> <?= \Yii::t('itlo/cms', 'Remove{s}Recovery',
                         ['s' => '/']) ?></a>
             </li>
 

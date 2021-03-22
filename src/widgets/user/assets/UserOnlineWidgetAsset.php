@@ -1,21 +1,20 @@
 <?php
 /**
- * @link https://cms.skeeks.com/
- * @copyright Copyright (c) 2010 SkeekS
- * @license https://cms.skeeks.com/license/
- * @author Semenov Alexander <semenov@skeeks.com>
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\widgets\user\assets;
+namespace itlo\cms\widgets\user\assets;
 
-use skeeks\cms\base\AssetBundle;
+use itlo\cms\base\AssetBundle;
 
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
+ * @author Semenov Alexander <semenov@itlo.com>
  */
 class UserOnlineWidgetAsset extends AssetBundle
 {
-    public $sourcePath = '@skeeks/cms/widgets/user/assets/src';
+    public $sourcePath = '@itlo/cms/widgets/user/assets/src';
 
     public $css = [
     ];
@@ -24,6 +23,6 @@ class UserOnlineWidgetAsset extends AssetBundle
     ];
 
     public $depends = [
-        'skeeks\sx\assets\Custom',
+        'itlo\sx\assets\Custom',
     ];
 }

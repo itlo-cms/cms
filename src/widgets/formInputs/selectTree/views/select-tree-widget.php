@@ -1,12 +1,11 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 19.12.2016
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 /* @var $this yii\web\View */
-/* @var $widget \skeeks\cms\widgets\formInputs\selectTree\SelectTreeInputWidget */
+/* @var $widget \itlo\cms\widgets\formInputs\selectTree\SelectTreeInputWidget */
 $widget = $this->context;
 ?>
 <?= \yii\helpers\Html::beginTag('div', $widget->wrapperOptions); ?>

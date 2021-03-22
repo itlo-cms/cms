@@ -1,21 +1,20 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 29.05.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\grid;
+namespace itlo\cms\grid;
 
-use skeeks\cms\base\Component;
-use skeeks\cms\components\Cms;
-use skeeks\cms\models\CmsSite;
-use skeeks\cms\models\User;
+use itlo\cms\base\Component;
+use itlo\cms\components\Cms;
+use itlo\cms\models\CmsSite;
+use itlo\cms\models\User;
 
 /**
  * Class LongTextColumnData
- * @package skeeks\cms\grid
+ * @package itlo\cms\grid
  */
 class ComponentSettingsColumn extends BooleanColumn
 {
@@ -38,11 +37,11 @@ class ComponentSettingsColumn extends BooleanColumn
         }
 
         if ($model instanceof CmsSite) {
-            $settings = \skeeks\cms\models\CmsComponentSettings::findByComponentSite($this->component, $model)->one();
+            $settings = \itlo\cms\models\CmsComponentSettings::findByComponentSite($this->component, $model)->one();
         }
 
         if ($model instanceof User) {
-            $settings = \skeeks\cms\models\CmsComponentSettings::findByComponentUser($this->component, $model)->one();
+            $settings = \itlo\cms\models\CmsComponentSettings::findByComponentUser($this->component, $model)->one();
         }
 
         if ($settings) {

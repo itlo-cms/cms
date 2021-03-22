@@ -1,22 +1,21 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 14.10.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\helpers;
+namespace itlo\cms\helpers;
 
-use skeeks\cms\models\CmsTree;
-use skeeks\cms\models\Tree;
+use itlo\cms\models\CmsTree;
+use itlo\cms\models\Tree;
 use yii\caching\TagDependency;
 
 /**
  * Class TreeOptions
- * @package skeeks\cms\helpers
+ * @package itlo\cms\helpers
  */
-class TreeOptions extends \skeeks\cms\models\Tree
+class TreeOptions extends \itlo\cms\models\Tree
 {
     /**
      * @var string символ будет добавляться перед називанием раздела.
@@ -102,7 +101,7 @@ class TreeOptions extends \skeeks\cms\models\Tree
 
     /**
      * Строит рекурсивно массив дерева
-     * @param \skeeks\cms\models\Tree $model
+     * @param \itlo\cms\models\Tree $model
      * @param array $filter
      * @return array
      */

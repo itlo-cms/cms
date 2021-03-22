@@ -2,17 +2,15 @@
 /**
  * widget
  *
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010-2014 SkeekS (Sx)
- * @date 13.11.2014
- * @since 1.0.0
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-use \skeeks\cms\widgets\formInputs\selectTree\SelectTree;
+use \itlo\cms\widgets\formInputs\selectTree\SelectTree;
 
 /**
- * @var \skeeks\cms\widgets\formInputs\selectTree\SelectTree $widget
+ * @var \itlo\cms\widgets\formInputs\selectTree\SelectTree $widget
  */
 ?>
 
@@ -20,13 +18,13 @@ use \skeeks\cms\widgets\formInputs\selectTree\SelectTree;
         <p>
             <?php if ($widget->mode == SelectTree::MOD_COMBO) : ?>
 
-                <small><?= \Yii::t('skeeks/cms',
+                <small><?= \Yii::t('itlo/cms',
                         'Circle — the main section (you can choose one section, it will affect the construction of bread crumbs)') ?></small>
                 <br/>
-                <small><?= \Yii::t('skeeks/cms',
+                <small><?= \Yii::t('itlo/cms',
                         'The square - an additional section (you can mark several additional sections)') ?></small>
             <?php elseif ($widget->mode == SelectTree::MOD_MULTI) : ?>
-                <small><?= \Yii::t('skeeks/cms',
+                <small><?= \Yii::t('itlo/cms',
                         'The square - an additional section (you can mark several additional sections)') ?></small>
             <?php endif; ?>
         </p>
@@ -38,7 +36,7 @@ use \skeeks\cms\widgets\formInputs\selectTree\SelectTree;
     </div>
 
 <?php
-\skeeks\cms\themes\unify\admin\assets\UnifyAdminIframeAsset::register($this);
+\itlo\cms\themes\unify\admin\assets\UnifyAdminIframeAsset::register($this);
 $this->registerJs(<<<JS
 
 (function(sx, $, _)

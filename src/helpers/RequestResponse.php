@@ -1,12 +1,11 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 25.03.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\helpers;
+namespace itlo\cms\helpers;
 
 use yii\base\Model;
 use yii\helpers\Json;
@@ -15,7 +14,7 @@ use yii\widgets\ActiveForm;
 
 /**
  * Class AjaxRequestResponse
- * @package skeeks\cms\helpers
+ * @package itlo\cms\helpers
  */
 class RequestResponse extends Model
 {

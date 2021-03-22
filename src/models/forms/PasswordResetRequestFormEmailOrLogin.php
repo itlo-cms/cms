@@ -2,13 +2,12 @@
 /**
  * PasswordResetRequestFormEmailOrLogin
  *
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 26.02.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\models\forms;
+namespace itlo\cms\models\forms;
 
 use yii\base\Model;
 use yii\helpers\ArrayHelper;
@@ -16,7 +15,7 @@ use yii\web\User;
 
 /**
  * Class PasswordResetRequestFormEmailOrLogin
- * @package skeeks\cms\models\forms
+ * @package itlo\cms\models\forms
  */
 class PasswordResetRequestFormEmailOrLogin extends Model
 {
@@ -52,7 +51,7 @@ class PasswordResetRequestFormEmailOrLogin extends Model
     public function attributeLabels()
     {
         return [
-            'identifier' => \Yii::t('skeeks/cms', 'Username or Email'),
+            'identifier' => \Yii::t('itlo/cms', 'Username or Email'),
         ];
     }
 
@@ -62,7 +61,7 @@ class PasswordResetRequestFormEmailOrLogin extends Model
         $user = $identityClassName::findByUsernameOrEmail($this->identifier);
 
         if (!$user) {
-            $this->addError($attr, \Yii::t('skeeks/cms', 'User not found'));
+            $this->addError($attr, \Yii::t('itlo/cms', 'User not found'));
         }
     }
 
@@ -90,10 +89,10 @@ class PasswordResetRequestFormEmailOrLogin extends Model
                 }
 
                 if ($this->isAdmin) {
-                    $resetLink = \skeeks\cms\helpers\UrlHelper::construct('admin/auth/reset-password',
+                    $resetLink = \itlo\cms\helpers\UrlHelper::construct('admin/auth/reset-password',
                         ['token' => $user->password_reset_token])->enableAbsolute()->enableAdmin();
                 } else {
-                    $resetLink = \skeeks\cms\helpers\UrlHelper::construct('cms/auth/reset-password',
+                    $resetLink = \itlo\cms\helpers\UrlHelper::construct('cms/auth/reset-password',
                         ['token' => $user->password_reset_token])->enableAbsolute();
                 }
 
@@ -102,7 +101,7 @@ class PasswordResetRequestFormEmailOrLogin extends Model
                     [
                         '@app/mail' =>
                             [
-                                '@skeeks/cms/mail-templates'
+                                '@itlo/cms/mail-templates'
                             ]
                     ]);
 
@@ -113,7 +112,7 @@ class PasswordResetRequestFormEmailOrLogin extends Model
                 ])
                     ->setFrom([\Yii::$app->cms->adminEmail => \Yii::$app->cms->appName])
                     ->setTo($user->email)
-                    ->setSubject(\Yii::t('skeeks/cms',
+                    ->setSubject(\Yii::t('itlo/cms',
                             'The request to change the password for') . \Yii::$app->cms->appName);
 
                 return $message->send();

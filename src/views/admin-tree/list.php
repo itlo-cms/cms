@@ -1,14 +1,13 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 02.06.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 /* @var $this yii\web\View */
-/* @var $searchModel \skeeks\cms\models\Search */
+/* @var $searchModel \itlo\cms\models\Search */
 /* @var $dataProvider yii\data\ActiveDataProvider */
-/* @var $model \skeeks\cms\models\CmsTree */
+/* @var $model \itlo\cms\models\CmsTree */
 ?>
 <?php $pjax = \yii\widgets\Pjax::begin(); ?>
 
@@ -17,7 +16,7 @@
     'dataProvider' => $dataProvider,
 ]); ?>
 
-<?= \skeeks\cms\modules\admin\widgets\GridViewStandart::widget([
+<?= \itlo\cms\modules\admin\widgets\GridViewStandart::widget([
     'dataProvider' => $dataProvider,
     'filterModel' => $searchModel,
     'autoColumns' => false,
@@ -30,22 +29,22 @@
             'treeType.name',
             'level',
             /*[
-                'label' => \Yii::t('skeeks/cms', 'Sections'),
-                'value' => function(\skeeks\cms\models\CmsTreeTypeProperty $cmsContentProperty)
+                'label' => \Yii::t('itlo/cms', 'Sections'),
+                'value' => function(\itlo\cms\models\CmsTreeTypeProperty $cmsContentProperty)
                 {
                     $contents = \yii\helpers\ArrayHelper::map($cmsContentProperty->cmsTreeTypes, 'id', 'name');
                     return implode(', ', $contents);
                 }
             ],
             [
-                'label' => \Yii::t('skeeks/cms', 'Number of partitions where the property is filled'),
-                'value' => function(\skeeks\cms\models\CmsTreeTypeProperty $cmsContentProperty)
+                'label' => \Yii::t('itlo/cms', 'Number of partitions where the property is filled'),
+                'value' => function(\itlo\cms\models\CmsTreeTypeProperty $cmsContentProperty)
                 {
                     return $cmsContentProperty->getElementProperties()->andWhere(['!=', 'value', ''])->count();
                 }
             ],
             [
-                'class'         => \skeeks\cms\grid\BooleanColumn::className(),
+                'class'         => \itlo\cms\grid\BooleanColumn::className(),
                 'attribute'     => "active"
             ],*/
         ]

@@ -1,31 +1,30 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 31.05.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\controllers;
+namespace itlo\cms\controllers;
 
-use skeeks\cms\actions\backend\BackendModelMultiActivateAction;
-use skeeks\cms\actions\backend\BackendModelMultiDeactivateAction;
-use skeeks\cms\backend\controllers\BackendModelStandartController;
-use skeeks\cms\grid\BooleanColumn;
-use skeeks\cms\grid\ImageColumn2;
-use skeeks\cms\models\CmsLang;
-use skeeks\yii2\form\fields\BoolField;
-use skeeks\yii2\form\fields\WidgetField;
+use itlo\cms\actions\backend\BackendModelMultiActivateAction;
+use itlo\cms\actions\backend\BackendModelMultiDeactivateAction;
+use itlo\cms\backend\controllers\BackendModelStandartController;
+use itlo\cms\grid\BooleanColumn;
+use itlo\cms\grid\ImageColumn2;
+use itlo\cms\models\CmsLang;
+use itlo\yii2\form\fields\BoolField;
+use itlo\yii2\form\fields\WidgetField;
 use yii\helpers\ArrayHelper;
 
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
+ * @author Semenov Alexander <semenov@itlo.com>
  */
 class AdminCmsLangController extends BackendModelStandartController
 {
     public function init()
     {
-        $this->name = \Yii::t('skeeks/cms', "Management of languages");
+        $this->name = \Yii::t('itlo/cms', "Management of languages");
         $this->modelShowAttribute = "name";
         $this->modelClassName = CmsLang::class;
 
@@ -95,7 +94,7 @@ class AdminCmsLangController extends BackendModelStandartController
         return [
             'image_id' => [
                 'class'        => WidgetField::class,
-                'widgetClass'  => \skeeks\cms\widgets\AjaxFileUploadWidget::class,
+                'widgetClass'  => \itlo\cms\widgets\AjaxFileUploadWidget::class,
                 'widgetConfig' => [
                     'accept'   => 'image/*',
                     'multiple' => false,

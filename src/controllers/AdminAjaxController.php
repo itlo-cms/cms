@@ -1,30 +1,29 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 16.10.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\controllers;
+namespace itlo\cms\controllers;
 
-use skeeks\cms\base\Component;
-use skeeks\cms\components\marketplace\models\PackageModel;
-use skeeks\cms\helpers\RequestResponse;
-use skeeks\cms\helpers\UrlHelper;
-use skeeks\cms\models\CmsComponentSettings;
-use skeeks\cms\models\CmsLang;
-use skeeks\cms\models\Comment;
-use skeeks\cms\modules\admin\actions\AdminAction;
-use skeeks\cms\modules\admin\controllers\AdminController;
+use itlo\cms\base\Component;
+use itlo\cms\components\marketplace\models\PackageModel;
+use itlo\cms\helpers\RequestResponse;
+use itlo\cms\helpers\UrlHelper;
+use itlo\cms\models\CmsComponentSettings;
+use itlo\cms\models\CmsLang;
+use itlo\cms\models\Comment;
+use itlo\cms\modules\admin\actions\AdminAction;
+use itlo\cms\modules\admin\controllers\AdminController;
 use Yii;
-use skeeks\cms\models\User;
-use skeeks\cms\models\searchs\User as UserSearch;
+use itlo\cms\models\User;
+use itlo\cms\models\searchs\User as UserSearch;
 use yii\helpers\ArrayHelper;
 
 /**
  * Class AdminAjaxController
- * @package skeeks\cms\controllers
+ * @package itlo\cms\controllers
  */
 class AdminAjaxController extends AdminController
 {

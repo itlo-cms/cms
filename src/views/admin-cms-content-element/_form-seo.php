@@ -1,9 +1,9 @@
 <?php
 /* @var $this yii\web\View */
-/* @var $model \skeeks\cms\models\CmsContentElement */
-/* @var $relatedModel \skeeks\cms\relatedProperties\models\RelatedPropertiesModel */
+/* @var $model \itlo\cms\models\CmsContentElement */
+/* @var $relatedModel \itlo\cms\relatedProperties\models\RelatedPropertiesModel */
 ?>
-<?= $form->fieldSet(\Yii::t('skeeks/cms', 'SEO')); ?>
+<?= $form->fieldSet(\Yii::t('itlo/cms', 'SEO')); ?>
 <?= $form->field($model, 'seo_h1'); ?>
 <?= $form->field($model, 'meta_title')->textarea(); ?>
 <?= $form->field($model, 'meta_description')->textarea(); ?>

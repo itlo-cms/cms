@@ -1,14 +1,13 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 24.05.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\models\behaviors\traits;
+namespace itlo\cms\models\behaviors\traits;
 
-use skeeks\cms\models\CmsContentElementTree;
+use itlo\cms\models\CmsContentElementTree;
 use yii\db\ActiveQuery;
 use yii\db\ActiveRecord;
 

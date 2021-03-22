@@ -2,21 +2,19 @@
 /**
  * Imaging
  *
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010-2014 SkeekS (Sx)
- * @date 11.12.2014
- * @since 1.0.0
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\components;
+namespace itlo\cms\components;
 
-use skeeks\cms\components\imaging\Filter;
+use itlo\cms\components\imaging\Filter;
 use yii\base\Component;
 
 /**
  * Class Imaging
- * @package skeeks\cms\components
+ * @package itlo\cms\components
  */
 class Imaging extends Component
 {

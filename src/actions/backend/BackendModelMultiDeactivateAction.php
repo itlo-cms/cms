@@ -1,14 +1,13 @@
 <?php
 /**
- * @link https://cms.skeeks.com/
- * @copyright Copyright (c) 2010 SkeekS
- * @license https://cms.skeeks.com/license/
- * @author Semenov Alexander <semenov@skeeks.com>
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright 2021 ITLO (Infomarket)
  */
-namespace skeeks\cms\actions\backend;
+namespace itlo\cms\actions\backend;
 
-use skeeks\cms\backend\actions\BackendModelMultiAction;
-use skeeks\cms\components\Cms;
+use itlo\cms\backend\actions\BackendModelMultiAction;
+use itlo\cms\components\Cms;
 /**
  * @author Semenov Alexander <semenov@skeeks.com>
  */

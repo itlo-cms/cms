@@ -1,23 +1,22 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 19.12.2016
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\widgets\formInputs\selectTree\assets;
+namespace itlo\cms\widgets\formInputs\selectTree\assets;
 
 use yii\web\AssetBundle;
 
 /**
  * Class SelectTreeInputWidgetAsset
  *
- * @package skeeks\cms\widgets\formInputs\selectTree\assets
+ * @package itlo\cms\widgets\formInputs\selectTree\assets
  */
 class SelectTreeInputWidgetAsset extends AssetBundle
 {
-    public $sourcePath = '@skeeks/cms/widgets/formInputs/selectTree/assets/src';
+    public $sourcePath = '@itlo/cms/widgets/formInputs/selectTree/assets/src';
 
     public $css = [
         'css/select-tree.css',
@@ -28,6 +27,6 @@ class SelectTreeInputWidgetAsset extends AssetBundle
     ];
 
     public $depends = [
-        'skeeks\sx\assets\Core',
+        'itlo\sx\assets\Core',
     ];
 }

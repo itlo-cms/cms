@@ -2,13 +2,12 @@
 /**
  * Может привязываться к разделам через связующую таблицу
  *
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 18.05.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\models\behaviors;
+namespace itlo\cms\models\behaviors;
 
 use yii\base\Behavior;
 use yii\db\ActiveQuery;
@@ -22,7 +21,7 @@ use yii\web\ErrorHandler;
  * @property ActiveRecord $owner
  *
  * Class HasTrees
- * @package skeeks\cms\models\behaviors
+ * @package itlo\cms\models\behaviors
  */
 class HasTrees extends Behavior
 {
@@ -31,12 +30,12 @@ class HasTrees extends Behavior
     /**
      * @var string названием модели таблицы через которую связаны элементы и разделы.
      */
-    public $elementTreesClassName = '\skeeks\cms\models\CmsContentElementTree';
+    public $elementTreesClassName = '\itlo\cms\models\CmsContentElementTree';
 
     /**
      * @var string класс разделов
      */
-    public $treesClassName = '\skeeks\cms\models\CmsTree';
+    public $treesClassName = '\itlo\cms\models\CmsTree';
 
     /**
      * @var string

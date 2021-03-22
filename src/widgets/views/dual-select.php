@@ -1,12 +1,11 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link https://skeeks.com/
- * @copyright (c) 2010 SkeekS
- * @date 24.03.2018
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 /* @var $this yii\web\View */
-/* @var $widget \skeeks\cms\widgets\DualSelect */
+/* @var $widget \itlo\cms\widgets\DualSelect */
 /* @var $element string */
 $widget = $this->context;
 \yii\jui\Sortable::widget();
@@ -24,7 +23,7 @@ foreach ($values as $value)
 
 }
 
-\skeeks\cms\widgets\assets\DualSelectAsset::register($this);
+\itlo\cms\widgets\assets\DualSelectAsset::register($this);
 \yii\jui\Sortable::widget();
 
 $js = \yii\helpers\Json::encode($widget->jsOptions);

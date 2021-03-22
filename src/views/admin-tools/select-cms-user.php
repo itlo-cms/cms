@@ -1,15 +1,14 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 28.04.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 /* @var $this yii\web\View */
 
 /* @var $model \yii\db\ActiveRecord */
 
-use skeeks\cms\modules\admin\widgets\form\ActiveFormUseTab as ActiveForm;
+use itlo\cms\modules\admin\widgets\form\ActiveFormUseTab as ActiveForm;
 
 ?>
 
@@ -64,7 +63,7 @@ JS
 <?
 
 
-$search = new \skeeks\cms\models\Search(\skeeks\cms\models\CmsUser::className());
+$search = new \itlo\cms\models\Search(\itlo\cms\models\CmsUser::className());
 $dataProvider = $search->getDataProvider();
 
 $dataProvider->sort->defaultOrder = [
@@ -77,7 +76,7 @@ $searchModel = $search->loadedModel;
 
 ?>
 
-<?= \skeeks\cms\modules\admin\widgets\GridViewStandart::widget([
+<?= \itlo\cms\modules\admin\widgets\GridViewStandart::widget([
     'dataProvider' => $dataProvider,
     'filterModel' => $searchModel,
     'adminController' => @$controller,
@@ -86,8 +85,8 @@ $searchModel = $search->loadedModel;
 
         [
             'class' => \yii\grid\DataColumn::className(),
-            'value' => function(\skeeks\cms\models\User $model) {
-                return \yii\helpers\Html::a('<i class="glyphicon glyphicon-circle-arrow-left"></i> ' . \Yii::t('skeeks/cms',
+            'value' => function(\itlo\cms\models\User $model) {
+                return \yii\helpers\Html::a('<i class="glyphicon glyphicon-circle-arrow-left"></i> ' . \Yii::t('itlo/cms',
                         'Choose'), '#', [
                     'class' => 'btn btn-primary sx-row-action',
                     'onclick' => 'sx.SelectCmsElement.submit(' . \yii\helpers\Json::encode($model->toArray([],
@@ -99,7 +98,7 @@ $searchModel = $search->loadedModel;
         ],
 
         [
-            'class' => \skeeks\cms\grid\ImageColumn2::className(),
+            'class' => \itlo\cms\grid\ImageColumn2::className(),
             'attribute' => 'image_id',
             'relationName' => 'image',
         ],
@@ -110,15 +109,15 @@ $searchModel = $search->loadedModel;
         'phone',
 
 
-        ['class' => \skeeks\cms\grid\CreatedAtColumn::className()],
+        ['class' => \itlo\cms\grid\CreatedAtColumn::className()],
         [
-            'class' => \skeeks\cms\grid\DateTimeColumnData::className(),
+            'class' => \itlo\cms\grid\DateTimeColumnData::className(),
             'attribute' => 'logged_at'
         ],
 
         [
             'class' => \yii\grid\DataColumn::className(),
-            'value' => function(\skeeks\cms\models\User $model) {
+            'value' => function(\itlo\cms\models\User $model) {
                 $result = [];
 
                 if ($roles = \Yii::$app->authManager->getRolesByUser($model->id)) {
@@ -130,11 +129,11 @@ $searchModel = $search->loadedModel;
                 return implode(', ', $result);
             },
             'format' => 'html',
-            'label' => \Yii::t('skeeks/cms', 'Roles'),
+            'label' => \Yii::t('itlo/cms', 'Roles'),
         ],
 
         [
-            'class' => \skeeks\cms\grid\BooleanColumn::className(),
+            'class' => \itlo\cms\grid\BooleanColumn::className(),
             'attribute' => "active",
         ],
 

@@ -1,17 +1,16 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 06.06.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\widgets\formInputs\comboText;
+namespace itlo\cms\widgets\formInputs\comboText;
 
-use skeeks\cms\Exception;
-use skeeks\cms\helpers\UrlHelper;
-use skeeks\widget\codemirror\CodemirrorWidget;
-use skeeks\yii2\ckeditor\CKEditorPresets;
+use itlo\cms\Exception;
+use itlo\cms\helpers\UrlHelper;
+use itlo\widget\codemirror\CodemirrorWidget;
+use itlo\yii2\ckeditor\CKEditorPresets;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\helpers\Json;
@@ -20,7 +19,7 @@ use Yii;
 
 /**
  * Class ComboTextInputWidget
- * @package skeeks\cms\widgets\formInputs\comboText
+ * @package itlo\cms\widgets\formInputs\comboText
  */
 class ComboTextInputWidget extends InputWidget
 {
@@ -31,8 +30,8 @@ class ComboTextInputWidget extends InputWidget
     public static function editors()
     {
         return [
-            self::CONTROLL_TEXT => \Yii::t('skeeks/cms', 'Text'),
-            self::CONTROLL_EDITOR => \Yii::t('skeeks/cms', 'Visual Editor'),
+            self::CONTROLL_TEXT => \Yii::t('itlo/cms', 'Text'),
+            self::CONTROLL_EDITOR => \Yii::t('itlo/cms', 'Visual Editor'),
             self::CONTROLL_HTML => 'HTML',
         ];
     }
@@ -72,7 +71,7 @@ class ComboTextInputWidget extends InputWidget
 
     //TODO: сделать etter и зактрытый setter
     /**
-     * @var \skeeks\cms\widgets\formInputs\ckeditor\Ckeditor
+     * @var \itlo\cms\widgets\formInputs\ckeditor\Ckeditor
      */
     public $ckeditor = null;
 
@@ -128,7 +127,7 @@ class ComboTextInputWidget extends InputWidget
     {
         $view = $this->getView();
 
-        $this->ckeditor = new \skeeks\cms\widgets\formInputs\ckeditor\Ckeditor(ArrayHelper::merge([
+        $this->ckeditor = new \itlo\cms\widgets\formInputs\ckeditor\Ckeditor(ArrayHelper::merge([
             'model' => $this->model,
             'attribute' => $this->attribute,
             'relatedModel' => $this->model,
@@ -141,7 +140,7 @@ class ComboTextInputWidget extends InputWidget
             'preset' => 'htmlmixed',
             'assets' =>
                 [
-                    \skeeks\widget\codemirror\CodemirrorAsset::THEME_NIGHT
+                    \itlo\widget\codemirror\CodemirrorAsset::THEME_NIGHT
                 ],
             'clientOptions' =>
                 [

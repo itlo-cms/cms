@@ -1,12 +1,11 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link https://skeeks.com/
- * @copyright 2010 SkeekS
- * @date 05.03.2017
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms;
+namespace itlo\cms;
 
 use yii\base\BaseObject;
 use yii\base\Component;
@@ -17,7 +16,7 @@ use yii\db\ActiveRecord;
  * @property $model;
  *
  * Interface IHasModel
- * @package skeeks\cms
+ * @package itlo\cms
  */
 interface IHasModel
 {

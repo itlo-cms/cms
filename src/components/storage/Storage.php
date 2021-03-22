@@ -2,16 +2,14 @@
 /**
  * Storage
  *
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010-2014 SkeekS (Sx)
- * @date 17.10.2014
- * @since 1.0.0
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\components\storage;
+namespace itlo\cms\components\storage;
 
-use skeeks\cms\models\StorageFile;
+use itlo\cms\models\StorageFile;
 use Yii;
 use yii\base\Exception;
 use yii\base\Component;
@@ -21,8 +19,8 @@ use yii\helpers\FileHelper;
 use yii\web\UploadedFile;
 use yii\helpers\BaseUrl;
 
-use \skeeks\sx\File;
-use \skeeks\sx\Dir;
+use \itlo\sx\File;
+use \itlo\sx\Dir;
 
 
 /*interface Storage
@@ -151,7 +149,7 @@ class Storage extends Component
                     }
 
                 } else {
-                    throw new Exception("Файл должен быть определен как \yii\web\UploadedFile или \skeeks\sx\File или string");
+                    throw new Exception("Файл должен быть определен как \yii\web\UploadedFile или \itlo\sx\File или string");
                 }
             }
         }

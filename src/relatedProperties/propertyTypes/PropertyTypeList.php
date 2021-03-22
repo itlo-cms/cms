@@ -1,27 +1,26 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 30.04.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\relatedProperties\propertyTypes;
+namespace itlo\cms\relatedProperties\propertyTypes;
 
-use skeeks\cms\backend\widgets\ModalPermissionWidget;
-use skeeks\cms\relatedProperties\PropertyType;
+use itlo\cms\backend\widgets\ModalPermissionWidget;
+use itlo\cms\relatedProperties\PropertyType;
 use yii\bootstrap\Alert;
 use yii\helpers\ArrayHelper;
 use yii\widgets\ActiveForm;
 
 /**
  * Class PropertyTypeList
- * @package skeeks\cms\relatedProperties\propertyTypes
+ * @package itlo\cms\relatedProperties\propertyTypes
  */
 class PropertyTypeList extends PropertyType
 {
     public $enumRoute = 'cms/admin-cms-content-property-enum';
-    public $enumClass = '\skeeks\cms\models\CmsContentPropertyEnum';
+    public $enumClass = '\itlo\cms\models\CmsContentPropertyEnum';
 
     public $code = self::CODE_LIST;
     public $name = "";
@@ -40,14 +39,14 @@ class PropertyTypeList extends PropertyType
     public static function fieldElements()
     {
         return [
-            self::FIELD_ELEMENT_SELECT                 => \Yii::t('skeeks/cms', 'Combobox').' (select)',
-            self::FIELD_ELEMENT_SELECT_MULTI           => \Yii::t('skeeks/cms', 'Combobox').' (select multiple)',
-            self::FIELD_ELEMENT_RADIO_LIST             => \Yii::t('skeeks/cms', 'Radio Buttons (selecting one value)'),
-            self::FIELD_ELEMENT_CHECKBOX_LIST          => \Yii::t('skeeks/cms', 'Checkbox List'),
-            self::FIELD_ELEMENT_LISTBOX                => \Yii::t('skeeks/cms', 'ListBox'),
-            self::FIELD_ELEMENT_LISTBOX_MULTI          => \Yii::t('skeeks/cms', 'ListBox Multi'),
-            self::FIELD_ELEMENT_SELECT_DIALOG          => \Yii::t('skeeks/cms', 'Selection widget in the dialog box'),
-            self::FIELD_ELEMENT_SELECT_DIALOG_MULTIPLE => \Yii::t('skeeks/cms',
+            self::FIELD_ELEMENT_SELECT                 => \Yii::t('itlo/cms', 'Combobox').' (select)',
+            self::FIELD_ELEMENT_SELECT_MULTI           => \Yii::t('itlo/cms', 'Combobox').' (select multiple)',
+            self::FIELD_ELEMENT_RADIO_LIST             => \Yii::t('itlo/cms', 'Radio Buttons (selecting one value)'),
+            self::FIELD_ELEMENT_CHECKBOX_LIST          => \Yii::t('itlo/cms', 'Checkbox List'),
+            self::FIELD_ELEMENT_LISTBOX                => \Yii::t('itlo/cms', 'ListBox'),
+            self::FIELD_ELEMENT_LISTBOX_MULTI          => \Yii::t('itlo/cms', 'ListBox Multi'),
+            self::FIELD_ELEMENT_SELECT_DIALOG          => \Yii::t('itlo/cms', 'Selection widget in the dialog box'),
+            self::FIELD_ELEMENT_SELECT_DIALOG_MULTIPLE => \Yii::t('itlo/cms',
                 'Selection widget in the dialog box (multiple choice)'),
 
         ];
@@ -60,7 +59,7 @@ class PropertyTypeList extends PropertyType
         parent::init();
 
         if (!$this->name) {
-            $this->name = \Yii::t('skeeks/cms', 'List');
+            $this->name = \Yii::t('itlo/cms', 'List');
         }
     }
 
@@ -85,7 +84,7 @@ class PropertyTypeList extends PropertyType
     {
         return array_merge(parent::attributeLabels(),
             [
-                'fieldElement' => \Yii::t('skeeks/cms', 'Element form'),
+                'fieldElement' => \Yii::t('itlo/cms', 'Element form'),
             ]);
     }
 
@@ -105,12 +104,12 @@ class PropertyTypeList extends PropertyType
     public function renderConfigForm(ActiveForm $activeForm)
     {
         echo $activeForm->fieldSelect($this, 'fieldElement',
-            \skeeks\cms\relatedProperties\propertyTypes\PropertyTypeList::fieldElements());
+            \itlo\cms\relatedProperties\propertyTypes\PropertyTypeList::fieldElements());
 
         if ($controllerProperty = \Yii::$app->createController($this->enumRoute)[0]) {
             /**
-             * @var \skeeks\cms\backend\BackendAction $actionIndex
-             * @var \skeeks\cms\backend\BackendAction $actionCreate
+             * @var \itlo\cms\backend\BackendAction $actionIndex
+             * @var \itlo\cms\backend\BackendAction $actionCreate
              */
             $actionCreate = \yii\helpers\ArrayHelper::getValue($controllerProperty->actions, 'create');
             $actionIndex = \yii\helpers\ArrayHelper::getValue($controllerProperty->actions, 'index');
@@ -120,7 +119,7 @@ class PropertyTypeList extends PropertyType
                     'options' => [
                         'class' => 'alert-info',
                     ],
-                    'body'    => \Yii::t('skeeks/cms', 'To start setting up options, save this property.'),
+                    'body'    => \Yii::t('itlo/cms', 'To start setting up options, save this property.'),
                 ]);
             } else {
                 if ($actionIndex) {
@@ -134,7 +133,7 @@ class PropertyTypeList extends PropertyType
                         ]);
 
 
-                        echo \skeeks\cms\backend\widgets\DropdownControllerActionsWidget::widget([
+                        echo \itlo\cms\backend\widgets\DropdownControllerActionsWidget::widget([
                             'actions'         => ['create' => $actionCreate],
                             'clientOptions'   => ['pjax-id' => $pjax->id],
                             'isOpenNewWindow' => true,
@@ -148,7 +147,7 @@ class PropertyTypeList extends PropertyType
                     }
 
                     echo '</div><div class="col-md-6"><div class="pull-right">';
-                    if (\Yii::$app->user->can('rbac/admin-permission') && $controllerProperty instanceof \skeeks\cms\IHasPermissions) {
+                    if (\Yii::$app->user->can('rbac/admin-permission') && $controllerProperty instanceof \itlo\cms\IHasPermissions) {
                         echo ModalPermissionWidget::widget([
                             'controller' => $controllerProperty,
                         ]);
@@ -161,7 +160,7 @@ class PropertyTypeList extends PropertyType
                     $query = $enumClass::find()->orderBy(['priority' => SORT_ASC]);
                     $query->andWhere(['property_id' => $this->property->id]);
 
-                    echo \skeeks\cms\modules\admin\widgets\GridViewStandart::widget([
+                    echo \itlo\cms\modules\admin\widgets\GridViewStandart::widget([
                         'dataProvider'    => new \yii\data\ActiveDataProvider([
                             'query' => $query,
                         ]),
@@ -195,7 +194,7 @@ class PropertyTypeList extends PropertyType
                             ],
 
                             [
-                                'class'         => \skeeks\cms\grid\BooleanColumn::className(),
+                                'class'         => \itlo\cms\grid\BooleanColumn::className(),
                                 'attribute'     => 'def',
                                 'enableSorting' => false,
                             ],
@@ -208,9 +207,9 @@ class PropertyTypeList extends PropertyType
 
         }
 
-        /*echo \skeeks\cms\modules\admin\widgets\RelatedModelsGrid::widget([
-            'label'             => \Yii::t('skeeks/cms',"Values for list"),
-            'hint'              => \Yii::t('skeeks/cms',"You can snap to the element number of properties, and set the value to them"),
+        /*echo \itlo\cms\modules\admin\widgets\RelatedModelsGrid::widget([
+            'label'             => \Yii::t('itlo/cms',"Values for list"),
+            'hint'              => \Yii::t('itlo/cms',"You can snap to the element number of properties, and set the value to them"),
             'parentModel'       => $this->property,
             'relation'          => [
                 'property_id' => 'id'
@@ -241,7 +240,7 @@ class PropertyTypeList extends PropertyType
                     ],
 
                     [
-                        'class'         => \skeeks\cms\grid\BooleanColumn::className(),
+                        'class'         => \itlo\cms\grid\BooleanColumn::className(),
                         'attribute'     => 'def',
                         'enableSorting' => false
                     ],
@@ -299,9 +298,9 @@ class PropertyTypeList extends PropertyType
                                 if ($this->fieldElement == self::FIELD_ELEMENT_SELECT_DIALOG) {
                                     $field = parent::renderForActiveForm();
                                     $field->widget(
-                                        \skeeks\cms\backend\widgets\SelectModelDialogWidget::class,
+                                        \itlo\cms\backend\widgets\SelectModelDialogWidget::class,
                                         [
-                                            'modelClassName' => \skeeks\cms\models\CmsContentPropertyEnum::class,
+                                            'modelClassName' => \itlo\cms\models\CmsContentPropertyEnum::class,
                                             'dialogRoute'    => [
                                                 '/cms/admin-cms-content-property-enum',
                                                 'CmsContentPropertyEnum' => [
@@ -314,9 +313,9 @@ class PropertyTypeList extends PropertyType
                                     if ($this->fieldElement == self::FIELD_ELEMENT_SELECT_DIALOG_MULTIPLE) {
                                         $field = parent::renderForActiveForm();
                                         $field->widget(
-                                            \skeeks\cms\backend\widgets\SelectModelDialogWidget::class,
+                                            \itlo\cms\backend\widgets\SelectModelDialogWidget::class,
                                             [
-                                                'modelClassName' => \skeeks\cms\models\CmsContentPropertyEnum::class,
+                                                'modelClassName' => \itlo\cms\models\CmsContentPropertyEnum::class,
                                                 'dialogRoute'    => [
                                                     '/cms/admin-cms-content-property-enum',
                                                     'CmsContentPropertyEnum' => [

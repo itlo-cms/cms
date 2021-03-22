@@ -1,27 +1,26 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 19.05.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\models;
+namespace itlo\cms\models;
 
-use skeeks\cms\components\Cms;
-use skeeks\cms\components\urlRules\UrlRuleContentElement;
-use skeeks\cms\models\behaviors\HasMultiLangAndSiteFields;
-use skeeks\cms\models\behaviors\HasRelatedProperties;
-use skeeks\cms\models\behaviors\HasStatus;
-use skeeks\cms\models\behaviors\HasStorageFile;
-use skeeks\cms\models\behaviors\HasStorageFileMulti;
-use skeeks\cms\models\behaviors\HasTrees;
-use skeeks\cms\models\behaviors\TimestampPublishedBehavior;
-use skeeks\cms\models\behaviors\traits\HasRelatedPropertiesTrait;
-use skeeks\cms\models\behaviors\traits\HasTreesTrait;
-use skeeks\cms\models\behaviors\traits\HasUrlTrait;
-use skeeks\cms\relatedProperties\models\RelatedElementModel;
-use skeeks\yii2\yaslug\YaSlugBehavior;
+use itlo\cms\components\Cms;
+use itlo\cms\components\urlRules\UrlRuleContentElement;
+use itlo\cms\models\behaviors\HasMultiLangAndSiteFields;
+use itlo\cms\models\behaviors\HasRelatedProperties;
+use itlo\cms\models\behaviors\HasStatus;
+use itlo\cms\models\behaviors\HasStorageFile;
+use itlo\cms\models\behaviors\HasStorageFileMulti;
+use itlo\cms\models\behaviors\HasTrees;
+use itlo\cms\models\behaviors\TimestampPublishedBehavior;
+use itlo\cms\models\behaviors\traits\HasRelatedPropertiesTrait;
+use itlo\cms\models\behaviors\traits\HasTreesTrait;
+use itlo\cms\models\behaviors\traits\HasUrlTrait;
+use itlo\cms\relatedProperties\models\RelatedElementModel;
+use itlo\yii2\yaslug\YaSlugBehavior;
 use Yii;
 use yii\base\Exception;
 use yii\helpers\ArrayHelper;
@@ -194,39 +193,39 @@ class CmsContentElement extends RelatedElementModel
     public function attributeLabels()
     {
         return array_merge(parent::attributeLabels(), [
-            'id'                     => Yii::t('skeeks/cms', 'ID'),
-            'created_by'             => Yii::t('skeeks/cms', 'Created By'),
-            'updated_by'             => Yii::t('skeeks/cms', 'Updated By'),
-            'created_at'             => Yii::t('skeeks/cms', 'Created At'),
-            'updated_at'             => Yii::t('skeeks/cms', 'Updated At'),
-            'published_at'           => Yii::t('skeeks/cms', 'Published At'),
-            'published_to'           => Yii::t('skeeks/cms', 'Published To'),
-            'priority'               => Yii::t('skeeks/cms', 'Priority'),
-            'active'                 => Yii::t('skeeks/cms', 'Active'),
-            'name'                   => Yii::t('skeeks/cms', 'Name'),
-            'code'                   => Yii::t('skeeks/cms', 'Code'),
-            'description_short'      => Yii::t('skeeks/cms', 'Description Short'),
-            'description_full'       => Yii::t('skeeks/cms', 'Description Full'),
-            'content_id'             => Yii::t('skeeks/cms', 'Content'),
-            'tree_id'                => Yii::t('skeeks/cms', 'The main section'),
-            'show_counter'           => Yii::t('skeeks/cms', 'Show Counter'),
-            'show_counter_start'     => Yii::t('skeeks/cms', 'Show Counter Start'),
-            'meta_title'             => Yii::t('skeeks/cms', 'Meta Title'),
-            'meta_keywords'          => Yii::t('skeeks/cms', 'Meta Keywords'),
-            'meta_description'       => Yii::t('skeeks/cms', 'Meta Description'),
-            'description_short_type' => Yii::t('skeeks/cms', 'Description Short Type'),
-            'description_full_type'  => Yii::t('skeeks/cms', 'Description Full Type'),
-            'image_id'               => Yii::t('skeeks/cms', 'Main Image (announcement)'),
-            'image_full_id'          => Yii::t('skeeks/cms', 'Main Image'),
+            'id'                     => Yii::t('itlo/cms', 'ID'),
+            'created_by'             => Yii::t('itlo/cms', 'Created By'),
+            'updated_by'             => Yii::t('itlo/cms', 'Updated By'),
+            'created_at'             => Yii::t('itlo/cms', 'Created At'),
+            'updated_at'             => Yii::t('itlo/cms', 'Updated At'),
+            'published_at'           => Yii::t('itlo/cms', 'Published At'),
+            'published_to'           => Yii::t('itlo/cms', 'Published To'),
+            'priority'               => Yii::t('itlo/cms', 'Priority'),
+            'active'                 => Yii::t('itlo/cms', 'Active'),
+            'name'                   => Yii::t('itlo/cms', 'Name'),
+            'code'                   => Yii::t('itlo/cms', 'Code'),
+            'description_short'      => Yii::t('itlo/cms', 'Description Short'),
+            'description_full'       => Yii::t('itlo/cms', 'Description Full'),
+            'content_id'             => Yii::t('itlo/cms', 'Content'),
+            'tree_id'                => Yii::t('itlo/cms', 'The main section'),
+            'show_counter'           => Yii::t('itlo/cms', 'Show Counter'),
+            'show_counter_start'     => Yii::t('itlo/cms', 'Show Counter Start'),
+            'meta_title'             => Yii::t('itlo/cms', 'Meta Title'),
+            'meta_keywords'          => Yii::t('itlo/cms', 'Meta Keywords'),
+            'meta_description'       => Yii::t('itlo/cms', 'Meta Description'),
+            'description_short_type' => Yii::t('itlo/cms', 'Description Short Type'),
+            'description_full_type'  => Yii::t('itlo/cms', 'Description Full Type'),
+            'image_id'               => Yii::t('itlo/cms', 'Main Image (announcement)'),
+            'image_full_id'          => Yii::t('itlo/cms', 'Main Image'),
 
-            'imageIds'                  => Yii::t('skeeks/cms', 'Images'),
-            'fileIds'                   => Yii::t('skeeks/cms', 'Files'),
-            'images'                    => Yii::t('skeeks/cms', 'Images'),
-            'files'                     => Yii::t('skeeks/cms', 'Files'),
-            'treeIds'                   => Yii::t('skeeks/cms', 'Additional sections'),
-            'parent_content_element_id' => Yii::t('skeeks/cms', 'Parent element'),
-            'show_counter'              => Yii::t('skeeks/cms', 'Number of views'),
-            'seo_h1' => Yii::t('skeeks/cms', 'SEO заголовок h1'),
+            'imageIds'                  => Yii::t('itlo/cms', 'Images'),
+            'fileIds'                   => Yii::t('itlo/cms', 'Files'),
+            'images'                    => Yii::t('itlo/cms', 'Images'),
+            'files'                     => Yii::t('itlo/cms', 'Files'),
+            'treeIds'                   => Yii::t('itlo/cms', 'Additional sections'),
+            'parent_content_element_id' => Yii::t('itlo/cms', 'Parent element'),
+            'show_counter'              => Yii::t('itlo/cms', 'Number of views'),
+            'seo_h1' => Yii::t('itlo/cms', 'SEO заголовок h1'),
         ]);
     }
     /**
@@ -235,7 +234,7 @@ class CmsContentElement extends RelatedElementModel
     public function attributeHints()
     {
         return array_merge(parent::attributeHints(), [
-            'treeIds' => Yii::t('skeeks/cms', 'You can specify some additional sections that will show your records.'),
+            'treeIds' => Yii::t('itlo/cms', 'You can specify some additional sections that will show your records.'),
             'seo_h1' => 'Заголовок будет показан на детальной странице, в случае если его использование задано в шаблоне.'
         ]);
     }
@@ -270,13 +269,13 @@ class CmsContentElement extends RelatedElementModel
                 ['content_id', 'code'],
                 'unique',
                 'targetAttribute' => ['content_id', 'code'],
-                'message'         => \Yii::t('skeeks/cms', 'For the content of this code is already in use.'),
+                'message'         => \Yii::t('itlo/cms', 'For the content of this code is already in use.'),
             ],
             [
                 ['tree_id', 'code'],
                 'unique',
                 'targetAttribute' => ['tree_id', 'code'],
-                'message'         => \Yii::t('skeeks/cms', 'For this section of the code is already in use.'),
+                'message'         => \Yii::t('itlo/cms', 'For this section of the code is already in use.'),
             ],
             [['treeIds'], 'safe'],
             ['priority', 'default', 'value' => 500],
@@ -301,7 +300,7 @@ class CmsContentElement extends RelatedElementModel
             [['image_id', 'image_full_id'], 'safe'],
             [
                 ['image_id', 'image_full_id'],
-                \skeeks\cms\validators\FileValidator::class,
+                \itlo\cms\validators\FileValidator::class,
                 'skipOnEmpty' => false,
                 'extensions'  => ['jpg', 'jpeg', 'gif', 'png'],
                 'maxFiles'    => 1,
@@ -311,7 +310,7 @@ class CmsContentElement extends RelatedElementModel
             [['imageIds', 'fileIds'], 'safe'],
             [
                 ['imageIds'],
-                \skeeks\cms\validators\FileValidator::class,
+                \itlo\cms\validators\FileValidator::class,
                 'skipOnEmpty' => false,
                 'extensions'  => ['jpg', 'jpeg', 'gif', 'png'],
                 'maxFiles'    => 40,
@@ -320,7 +319,7 @@ class CmsContentElement extends RelatedElementModel
             ],
             [
                 ['fileIds'],
-                \skeeks\cms\validators\FileValidator::class,
+                \itlo\cms\validators\FileValidator::class,
                 'skipOnEmpty' => false,
                 //'extensions'    => [''],
                 'maxFiles'    => 40,
@@ -369,7 +368,7 @@ class CmsContentElement extends RelatedElementModel
             $contentElement = static::findOne($this->$attribute);
             if ($contentElement->cmsContent->id != $this->cmsContent->parentContent->id) {
                 $this->addError($attribute,
-                    \Yii::t('skeeks/cms', 'The parent must be a content element: «{contentName}».',
+                    \Yii::t('itlo/cms', 'The parent must be a content element: «{contentName}».',
                         ['contentName' => $this->cmsContent->parentContent->name]));
             }
         }

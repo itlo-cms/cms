@@ -1,22 +1,21 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 15.03.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\widgets\assets;
+namespace itlo\cms\widgets\assets;
 
-use skeeks\cms\base\AssetBundle;
+use itlo\cms\base\AssetBundle;
 
 /**
  * Class DualSelectAsset
- * @package skeeks\cms\assets
+ * @package itlo\cms\assets
  */
 class DualSelectAsset extends AssetBundle
 {
-    public $sourcePath = '@skeeks/cms/widgets/assets/src/dual-select';
+    public $sourcePath = '@itlo/cms/widgets/assets/src/dual-select';
 
     public $css = [
         'dual-select.css'
@@ -27,6 +26,6 @@ class DualSelectAsset extends AssetBundle
     ];
 
     public $depends = [
-        'skeeks\sx\assets\Custom',
+        'itlo\sx\assets\Custom',
     ];
 }

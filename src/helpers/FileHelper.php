@@ -1,16 +1,15 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 22.06.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\helpers;
+namespace itlo\cms\helpers;
 
 /**
  * Class FileHelper
- * @package skeeks\cms\helpers
+ * @package itlo\cms\helpers
  */
 class FileHelper extends \yii\helpers\FileHelper
 {

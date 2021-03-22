@@ -2,14 +2,12 @@
 /**
  * Filter
  *
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010-2014 SkeekS (Sx)
- * @date 11.12.2014
- * @since 1.0.0
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\components\imaging;
+namespace itlo\cms\components\imaging;
 
 use Faker\Provider\File;
 use yii\base\Component;
@@ -18,7 +16,7 @@ use yii\helpers\FileHelper;
 
 /**
  * Class Filter
- * @package skeeks\cms\components\imaging
+ * @package itlo\cms\components\imaging
  */
 abstract class Filter extends Component
 {
@@ -71,7 +69,7 @@ abstract class Filter extends Component
 
 
     /**
-     * @return \skeeks\sx\File
+     * @return \itlo\sx\File
      * @throws \ErrorException
      */
     public function save()
@@ -89,7 +87,7 @@ abstract class Filter extends Component
         //{
         $this->_createNewDir();
         $this->_save();
-        $file = new \skeeks\sx\File($this->_newRootFilePath);
+        $file = new \itlo\sx\File($this->_newRootFilePath);
 
         if (!$file->isExist()) {
             throw new \ErrorException('Файл не найден');
@@ -109,7 +107,7 @@ abstract class Filter extends Component
      */
     protected function _createNewDir()
     {
-        $newFile = new \skeeks\sx\File($this->_newRootFilePath);
+        $newFile = new \itlo\sx\File($this->_newRootFilePath);
 
         if (!FileHelper::createDirectory($newFile->getDir()->getPath())) {
             throw new \ErrorException("Не удалось создать диррикторию для нового файла");

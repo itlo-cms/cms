@@ -1,27 +1,26 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 17.05.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\controllers;
+namespace itlo\cms\controllers;
 
-use skeeks\cms\backend\controllers\BackendModelStandartController;
-use skeeks\cms\backend\widgets\SelectModelDialogTreeWidget;
-use skeeks\cms\grid\BooleanColumn;
-use skeeks\cms\helpers\RequestResponse;
-use skeeks\cms\helpers\UrlHelper;
-use skeeks\cms\models\CmsContentElementProperty;
-use skeeks\cms\models\CmsContentProperty;
-use skeeks\cms\queryfilters\QueryFiltersEvent;
-use skeeks\yii2\form\Element;
-use skeeks\yii2\form\fields\BoolField;
-use skeeks\yii2\form\fields\FieldSet;
-use skeeks\yii2\form\fields\HtmlBlock;
-use skeeks\yii2\form\fields\SelectField;
-use skeeks\yii2\form\fields\WidgetField;
+use itlo\cms\backend\controllers\BackendModelStandartController;
+use itlo\cms\backend\widgets\SelectModelDialogTreeWidget;
+use itlo\cms\grid\BooleanColumn;
+use itlo\cms\helpers\RequestResponse;
+use itlo\cms\helpers\UrlHelper;
+use itlo\cms\models\CmsContentElementProperty;
+use itlo\cms\models\CmsContentProperty;
+use itlo\cms\queryfilters\QueryFiltersEvent;
+use itlo\yii2\form\Element;
+use itlo\yii2\form\fields\BoolField;
+use itlo\yii2\form\fields\FieldSet;
+use itlo\yii2\form\fields\HtmlBlock;
+use itlo\yii2\form\fields\SelectField;
+use itlo\yii2\form\fields\WidgetField;
 use yii\base\Event;
 use yii\db\Expression;
 use yii\helpers\ArrayHelper;
@@ -29,7 +28,7 @@ use yii\helpers\Html;
 
 /**
  * Class AdminCmsContentPropertyController
- * @package skeeks\cms\controllers
+ * @package itlo\cms\controllers
  */
 class AdminCmsContentPropertyController extends BackendModelStandartController
 {
@@ -37,7 +36,7 @@ class AdminCmsContentPropertyController extends BackendModelStandartController
 
     public function init()
     {
-        $this->name = \Yii::t('skeeks/cms', 'Property management');
+        $this->name = \Yii::t('itlo/cms', 'Property management');
         $this->modelShowAttribute = "name";
         $this->modelClassName = CmsContentProperty::class;
 
@@ -78,7 +77,7 @@ class AdminCmsContentPropertyController extends BackendModelStandartController
 
                         'fields' => [
                             'component' => [
-                                //'label'    => \Yii::t('skeeks/cms', 'Content'),
+                                //'label'    => \Yii::t('itlo/cms', 'Content'),
                                 'field'             => [
                                     'class' => SelectField::class,
                                     'items' => function () {
@@ -103,11 +102,11 @@ class AdminCmsContentPropertyController extends BackendModelStandartController
                             ],
 
                             'content_ids' => [
-                                'label'    => \Yii::t('skeeks/cms', 'Content'),
+                                'label'    => \Yii::t('itlo/cms', 'Content'),
                                 'class'    => SelectField::class,
                                 'multiple' => true,
                                 'items'    => function () {
-                                    return \skeeks\cms\models\CmsContent::getDataForSelect();
+                                    return \itlo\cms\models\CmsContent::getDataForSelect();
                                 },
                                 'on apply' => function (QueryFiltersEvent $e) {
                                     /**
@@ -125,9 +124,9 @@ class AdminCmsContentPropertyController extends BackendModelStandartController
                             ],
 
                             'tree_ids' => [
-                                'label'       => \Yii::t('skeeks/cms', 'Sections'),
+                                'label'       => \Yii::t('itlo/cms', 'Sections'),
                                 'class'       => WidgetField::class,
-                                'widgetClass' => \skeeks\cms\backend\widgets\SelectModelDialogTreeWidget::class,
+                                'widgetClass' => \itlo\cms\backend\widgets\SelectModelDialogTreeWidget::class,
                                 'on apply'    => function (QueryFiltersEvent $e) {
                                     /**
                                      * @var $query ActiveQuery
@@ -196,7 +195,7 @@ class AdminCmsContentPropertyController extends BackendModelStandartController
                         'countElementProperties' => [
                             'asc'     => ['countElementProperties' => SORT_ASC],
                             'desc'    => ['countElementProperties' => SORT_DESC],
-                            'label'   => \Yii::t('skeeks/cms', 'Number of partitions where the property is filled'),
+                            'label'   => \Yii::t('itlo/cms', 'Number of partitions where the property is filled'),
                             'default' => SORT_ASC,
                         ],
                     ],
@@ -231,7 +230,7 @@ class AdminCmsContentPropertyController extends BackendModelStandartController
                             },
                         ],
                         'content' => [
-                            'label'  => \Yii::t('skeeks/cms', 'Content'),
+                            'label'  => \Yii::t('itlo/cms', 'Content'),
                             'format' => "raw",
                             'value'  => function (CmsContentProperty $cmsContentProperty) {
                                 $contents = \yii\helpers\ArrayHelper::map($cmsContentProperty->cmsContents, 'id', 'name');
@@ -240,7 +239,7 @@ class AdminCmsContentPropertyController extends BackendModelStandartController
                         ],
 
                         'sections' => [
-                            'label'  => \Yii::t('skeeks/cms', 'Sections'),
+                            'label'  => \Yii::t('itlo/cms', 'Sections'),
                             'format' => "raw",
                             'value'  => function (CmsContentProperty $cmsContentProperty) {
                                 if ($cmsContentProperty->cmsTrees) {
@@ -263,10 +262,10 @@ class AdminCmsContentPropertyController extends BackendModelStandartController
                                         });
 
 
-                                    return '<b>'.\Yii::t('skeeks/cms',
+                                    return '<b>'.\Yii::t('itlo/cms',
                                             'Only shown in sections').':</b><br />'.implode('<br />', $contents);
                                 } else {
-                                    return '<b>'.\Yii::t('skeeks/cms', 'Always shown').'</b>';
+                                    return '<b>'.\Yii::t('itlo/cms', 'Always shown').'</b>';
                                 }
                             },
                         ],
@@ -274,7 +273,7 @@ class AdminCmsContentPropertyController extends BackendModelStandartController
                         'countElementProperties' => [
                             'attribute' => 'countElementProperties',
                             'format'    => 'raw',
-                            'label'     => \Yii::t('skeeks/cms', 'Number of partitions where the property is filled'),
+                            'label'     => \Yii::t('itlo/cms', 'Number of partitions where the property is filled'),
                             'value'     => function (CmsContentProperty $model) {
                                 return Html::a($model->raw_row['countElementProperties'], [
                                     '/cms/admin-tree/list',
@@ -344,7 +343,7 @@ class AdminCmsContentPropertyController extends BackendModelStandartController
         return [
             'main' => [
                 'class'  => FieldSet::class,
-                'name'   => \Yii::t('skeeks/cms', 'Basic settings'),
+                'name'   => \Yii::t('itlo/cms', 'Basic settings'),
                 'fields' => [
                     'is_required' => [
                         'class'      => BoolField::class,
@@ -389,11 +388,11 @@ class AdminCmsContentPropertyController extends BackendModelStandartController
                                 if ($post = \Yii::$app->request->post()) {
                                     $handler->load($post);
                                 }
-                                if ($handler instanceof \skeeks\cms\relatedProperties\propertyTypes\PropertyTypeList) {
+                                if ($handler instanceof \itlo\cms\relatedProperties\propertyTypes\PropertyTypeList) {
                                     $handler->enumRoute = 'cms/admin-cms-tree-type-property-enum';
                                 }
 
-                                echo \skeeks\cms\modules\admin\widgets\BlockTitleWidget::widget(['content' => \Yii::t('skeeks/cms', 'Settings')]);
+                                echo \itlo\cms\modules\admin\widgets\BlockTitleWidget::widget(['content' => \Yii::t('itlo/cms', 'Settings')]);
                                 $formElement->content = $handler->renderConfigForm($formElement->activeForm);
                             }
                         },
@@ -403,7 +402,7 @@ class AdminCmsContentPropertyController extends BackendModelStandartController
 
             'captions' => [
                 'class'  => FieldSet::class,
-                'name'   => \Yii::t('skeeks/cms', 'Additionally'),
+                'name'   => \Yii::t('itlo/cms', 'Additionally'),
                 'fields' => [
                     'hint',
                     'priority',
@@ -412,7 +411,7 @@ class AdminCmsContentPropertyController extends BackendModelStandartController
                         'multiple' => true,
                         'items'    => function () {
                             return \yii\helpers\ArrayHelper::map(
-                                \skeeks\cms\models\CmsContent::find()->all(), 'id', 'name'
+                                \itlo\cms\models\CmsContent::find()->all(), 'id', 'name'
                             );
                         },
                     ],

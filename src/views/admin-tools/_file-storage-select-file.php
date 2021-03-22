@@ -1,21 +1,20 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 28.04.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 /* @var $this yii\web\View */
 
 /* @var $model \yii\db\ActiveRecord */
 
-use skeeks\cms\modules\admin\widgets\form\ActiveFormUseTab as ActiveForm;
+use itlo\cms\modules\admin\widgets\form\ActiveFormUseTab as ActiveForm;
 ?>
-<?php $pjax = \skeeks\cms\modules\admin\widgets\Pjax::begin(); ?>
+<?php $pjax = \itlo\cms\modules\admin\widgets\Pjax::begin(); ?>
 
 <?
 
-$search = new \skeeks\cms\models\Search(\skeeks\cms\models\StorageFile::className());
+$search = new \itlo\cms\models\Search(\itlo\cms\models\StorageFile::className());
 $dataProvider = $search->getDataProvider();
 
 $dataProvider->sort->defaultOrder = [
@@ -26,7 +25,7 @@ $dataProvider->sort->defaultOrder = [
 <?
 $id = $pjax->id;
 
-echo \skeeks\cms\widgets\StorageFileManager::widget([
+echo \itlo\cms\widgets\StorageFileManager::widget([
     'clientOptions' =>
         [
             'completeUploadFile' => new \yii\web\JsExpression(<<<JS
@@ -45,18 +44,18 @@ JS
 <p></p>
 
 <?php
-$searchModel = new \skeeks\cms\models\Search(\skeeks\cms\models\CmsStorageFile::class);
+$searchModel = new \itlo\cms\models\Search(\itlo\cms\models\CmsStorageFile::class);
 $dataProvider   = $search->search(\Yii::$app->request->queryParams);
 $searchModel    = $search->loadedModel;
 
-/*echo $this->render('@skeeks/cms/views/admin-storage-files/_search', [
+/*echo $this->render('@itlo/cms/views/admin-storage-files/_search', [
     'searchModel' => $searchModel,
     'dataProvider' => $dataProvider
 ]); */?>
 
 <?php $dataProvider->pagination->defaultPageSize = 10; ?>
 
-<?= \skeeks\cms\modules\admin\widgets\GridViewHasSettings::widget([
+<?= \itlo\cms\modules\admin\widgets\GridViewHasSettings::widget([
 
     'dataProvider' => $dataProvider,
     'filterModel' => $search->getLoadedModel(),
@@ -67,8 +66,8 @@ $searchModel    = $search->loadedModel;
 
         [
             'class' => \yii\grid\DataColumn::className(),
-            'value' => function(\skeeks\cms\models\StorageFile $model) {
-                return \yii\helpers\Html::a('<i class="glyphicon glyphicon-circle-arrow-left"></i> ' . \Yii::t('skeeks/cms',
+            'value' => function(\itlo\cms\models\StorageFile $model) {
+                return \yii\helpers\Html::a('<i class="glyphicon glyphicon-circle-arrow-left"></i> ' . \Yii::t('itlo/cms',
                         'Choose file'), $model->src, [
                     'class' => 'btn btn-primary',
                     'onclick' => 'sx.SelectFile.submit("' . $model->src . '"); return false;',
@@ -79,19 +78,19 @@ $searchModel    = $search->loadedModel;
         ],
 
         [
-            'class' => \skeeks\cms\modules\admin\grid\ActionColumn::className(),
+            'class' => \itlo\cms\modules\admin\grid\ActionColumn::className(),
             'controller' => \Yii::$app->createController('cms/admin-storage-files')[0],
             'isOpenNewWindow' => true
         ],
 
         [
             'class' => \yii\grid\DataColumn::className(),
-            'value' => function(\skeeks\cms\models\StorageFile $model) {
+            'value' => function(\itlo\cms\models\StorageFile $model) {
                 if ($model->isImage()) {
 
                     $smallImage = \Yii::$app->imaging->getImagingUrl($model->src,
-                        new \skeeks\cms\components\imaging\filters\Thumbnail());
-                    return "<a href='" . $model->src . "' data-pjax='0' class='sx-fancybox' title='" . \Yii::t('skeeks/cms',
+                        new \itlo\cms\components\imaging\filters\Thumbnail());
+                    return "<a href='" . $model->src . "' data-pjax='0' class='sx-fancybox' title='" . \Yii::t('itlo/cms',
                             'Increase') . "'>
                                     <img src='" . $smallImage . "' />
                                 </a>";
@@ -107,7 +106,7 @@ $searchModel    = $search->loadedModel;
 
         /*[
             'class'     => \yii\grid\DataColumn::className(),
-            'value'     => function(\skeeks\cms\models\StorageFile $model)
+            'value'     => function(\itlo\cms\models\StorageFile $model)
             {
                 return \yii\helpers\Html::tag('pre', $model->src);
             },
@@ -118,7 +117,7 @@ $searchModel    = $search->loadedModel;
 
         [
             'class' => \yii\grid\DataColumn::className(),
-            'value' => function(\skeeks\cms\models\StorageFile $model) {
+            'value' => function(\itlo\cms\models\StorageFile $model) {
                 $model->cluster_id;
                 $cluster = \Yii::$app->storage->getCluster($model->cluster_id);
                 return $cluster->name;
@@ -131,27 +130,27 @@ $searchModel    = $search->loadedModel;
 
         [
             'attribute' => 'mime_type',
-            'filter' => \yii\helpers\ArrayHelper::map(\skeeks\cms\models\StorageFile::find()->groupBy(['mime_type'])->all(),
+            'filter' => \yii\helpers\ArrayHelper::map(\itlo\cms\models\StorageFile::find()->groupBy(['mime_type'])->all(),
                 'mime_type', 'mime_type'),
         ],
 
         [
             'attribute' => 'extension',
-            'filter' => \yii\helpers\ArrayHelper::map(\skeeks\cms\models\StorageFile::find()->groupBy(['extension'])->all(),
+            'filter' => \yii\helpers\ArrayHelper::map(\itlo\cms\models\StorageFile::find()->groupBy(['extension'])->all(),
                 'extension', 'extension'),
         ],
 
         [
-            'class' => \skeeks\cms\grid\FileSizeColumnData::className(),
+            'class' => \itlo\cms\grid\FileSizeColumnData::className(),
             'attribute' => 'size'
         ],
 
 
-        ['class' => \skeeks\cms\grid\CreatedAtColumn::className()],
-        //['class' => \skeeks\cms\grid\UpdatedAtColumn::className()],
+        ['class' => \itlo\cms\grid\CreatedAtColumn::className()],
+        //['class' => \itlo\cms\grid\UpdatedAtColumn::className()],
 
-        ['class' => \skeeks\cms\grid\CreatedByColumn::className()],
-        //['class' => \skeeks\cms\grid\UpdatedByColumn::className()],
+        ['class' => \itlo\cms\grid\CreatedByColumn::className()],
+        //['class' => \itlo\cms\grid\UpdatedByColumn::className()],
 
     ],
 

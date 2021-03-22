@@ -1,12 +1,12 @@
 <?php
 
-use skeeks\cms\mail\helpers\Html;
+use itlo\cms\mail\helpers\Html;
 
 /* @var $this yii\web\View */
 /* @var $user common\models\User */
 /* @var $resetLink */
 if (!$resetLink) {
-    $resetLink = \skeeks\cms\helpers\UrlHelper::construct('admin/auth/reset-password',
+    $resetLink = \itlo\cms\helpers\UrlHelper::construct('admin/auth/reset-password',
         ['token' => $user->password_reset_token])->enableAbsolute()->enableAdmin();
 }
 ?>

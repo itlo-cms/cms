@@ -1,22 +1,21 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 30.04.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\relatedProperties\userPropertyTypes;
+namespace itlo\cms\relatedProperties\userPropertyTypes;
 
-use skeeks\cms\components\Cms;
-use skeeks\cms\models\CmsContentElement;
-use skeeks\cms\relatedProperties\models\RelatedPropertiesModel;
-use skeeks\cms\relatedProperties\PropertyType;
+use itlo\cms\components\Cms;
+use itlo\cms\models\CmsContentElement;
+use itlo\cms\relatedProperties\models\RelatedPropertiesModel;
+use itlo\cms\relatedProperties\PropertyType;
 use yii\helpers\ArrayHelper;
 
 /**
  * Class UserPropertyTypeSelectFile
- * @package skeeks\cms\relatedProperties\userPropertyTypes
+ * @package itlo\cms\relatedProperties\userPropertyTypes
  */
 class UserPropertyTypeSelectFile extends PropertyType
 {
@@ -28,7 +27,7 @@ class UserPropertyTypeSelectFile extends PropertyType
         parent::init();
 
         if (!$this->name) {
-            $this->name = \Yii::t('skeeks/cms', 'Standard file selection');
+            $this->name = \Yii::t('itlo/cms', 'Standard file selection');
         }
     }
 
@@ -36,7 +35,7 @@ class UserPropertyTypeSelectFile extends PropertyType
     {
         return array_merge(parent::attributeLabels(),
             [
-                'type' => \Yii::t('skeeks/cms', 'Type'),
+                'type' => \Yii::t('itlo/cms', 'Type'),
             ]);
     }
 
@@ -54,7 +53,7 @@ class UserPropertyTypeSelectFile extends PropertyType
     {
         $field = parent::renderForActiveForm();
 
-        $field->widget(\skeeks\cms\modules\admin\widgets\formInputs\OneImage::className(),
+        $field->widget(\itlo\cms\modules\admin\widgets\formInputs\OneImage::className(),
             [
                 'filesModel' => $this->property->relatedPropertiesModel->relatedElementModel
             ]);

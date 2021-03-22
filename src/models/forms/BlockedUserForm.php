@@ -1,14 +1,13 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 02.07.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\models\forms;
+namespace itlo\cms\models\forms;
 
-use skeeks\cms\models\User;
+use itlo\cms\models\User;
 use Yii;
 use yii\base\Model;
 
@@ -46,7 +45,7 @@ class BlockedUserForm extends Model
         if (!$this->hasErrors()) {
             $user = $this->getUser();
             if (!$user || !$user->validatePassword($this->password)) {
-                $this->addError($attribute, \Yii::t('skeeks/cms', 'Incorrect password.'));
+                $this->addError($attribute, \Yii::t('itlo/cms', 'Incorrect password.'));
             }
         }
     }

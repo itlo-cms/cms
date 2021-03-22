@@ -1,16 +1,15 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 09.06.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 /* @var $this yii\web\View */
-/* @var $component \skeeks\cms\relatedProperties\PropertyType */
+/* @var $component \itlo\cms\relatedProperties\PropertyType */
 /* @var $saved bool */
 $getData = \Yii::$app->request->get();
 $clientOptions = $getData;
-$clientOptions['saveUrl'] = \skeeks\cms\helpers\UrlHelper::constructCurrent()->setRoute('/cms/admin-universal-component-settings/save')->toString();
+$clientOptions['saveUrl'] = \itlo\cms\helpers\UrlHelper::constructCurrent()->setRoute('/cms/admin-universal-component-settings/save')->toString();
 $clientOptions = \yii\helpers\Json::encode($clientOptions);
 
 
@@ -19,13 +18,13 @@ $clientOptions = \yii\helpers\Json::encode($clientOptions);
     <?= $forSave; ?>
 <?php endif; ?>
 
-<?php if ($component instanceof \skeeks\cms\base\ConfigFormInterface) : ?>
+<?php if ($component instanceof \itlo\cms\base\ConfigFormInterface) : ?>
 
 
-    <?php $form = \skeeks\cms\modules\admin\widgets\form\ActiveFormUseTab::begin(); ?>
+    <?php $form = \itlo\cms\modules\admin\widgets\form\ActiveFormUseTab::begin(); ?>
     <?php $component->renderConfigForm($form); ?>
     <?= $form->buttonsStandart($component); ?>
-    <?php \skeeks\cms\modules\admin\widgets\form\ActiveFormUseTab::end(); ?>
+    <?php \itlo\cms\modules\admin\widgets\form\ActiveFormUseTab::end(); ?>
 
 <?php else
     : ?>

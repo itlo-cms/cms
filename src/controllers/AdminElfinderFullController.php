@@ -1,14 +1,13 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 19.04.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\controllers;
+namespace itlo\cms\controllers;
 
-use skeeks\cms\rbac\CmsManager;
+use itlo\cms\rbac\CmsManager;
 
 class AdminElfinderFullController extends ElfinderController
 {
@@ -19,7 +18,7 @@ class AdminElfinderFullController extends ElfinderController
         if (\Yii::$app->user->can(CmsManager::PERMISSION_ELFINDER_USER_FILES)) {
             $this->roots[] =
                 [
-                    'class' => 'skeeks\cms\helpers\elfinder\UserPath',
+                    'class' => 'itlo\cms\helpers\elfinder\UserPath',
                     'path' => 'uploads/users/{id}',
                     'name' => 'Личные файлы'
                 ];

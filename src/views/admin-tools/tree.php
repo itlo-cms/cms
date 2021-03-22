@@ -1,13 +1,12 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 19.12.2016
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 /* @var $this yii\web\View */
 
-\skeeks\cms\themes\unify\admin\assets\UnifyAdminIframeAsset::register($this);
+\itlo\cms\themes\unify\admin\assets\UnifyAdminIframeAsset::register($this);
 
 $this->registerCss(<<<CSS
 
@@ -62,11 +61,11 @@ CSS
 );
 ?>
 <div class="col-md-12">
-    <?php $widget = \skeeks\cms\widgets\tree\CmsTreeWidget::begin([
+    <?php $widget = \itlo\cms\widgets\tree\CmsTreeWidget::begin([
         "models" => $models,
-        "viewNodeContentFile" => '@skeeks/cms/views/admin-tools/_tree-node',
+        "viewNodeContentFile" => '@itlo/cms/views/admin-tools/_tree-node',
 
-        'pjaxClass' => \skeeks\cms\modules\admin\widgets\Pjax::class,
+        'pjaxClass' => \itlo\cms\modules\admin\widgets\Pjax::class,
         'pjaxOptions' =>
             [
                 'blockPjaxContainer' => false,

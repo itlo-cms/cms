@@ -1,12 +1,11 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link https://skeeks.com/
- * @copyright (c) 2010 SkeekS
- * @date 18.03.2018
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 /* @var $this yii\web\View */
-/* @var $widget \skeeks\cms\widgets\FiltersWidget */
+/* @var $widget \itlo\cms\widgets\FiltersWidget */
 $widget = $this->context;
 $fields = $widget->filtersModel->builderFields();
 ?>
@@ -17,7 +16,7 @@ $activeFormClassName = \yii\helpers\ArrayHelper::getValue($widget->activeForm, '
 
 $form = $activeFormClassName::begin((array)$widget->activeForm);
 
-echo (new \skeeks\yii2\form\Builder([
+echo (new \itlo\yii2\form\Builder([
     'models'     => $widget->filtersModel->builderModels(),
     'model'      => $widget->filtersModel,
     'activeForm' => $form,

@@ -2,21 +2,19 @@
 /**
  * ImagingUrlRule
  *
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010-2014 SkeekS (Sx)
- * @date 11.12.2014
- * @since 1.0.0
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\components;
+namespace itlo\cms\components;
 
-use skeeks\cms\helpers\StringHelper;
-use skeeks\sx\File;
+use itlo\cms\helpers\StringHelper;
+use itlo\sx\File;
 
 /**
  * Class Storage
- * @package skeeks\cms\components
+ * @package itlo\cms\components
  */
 class ImagingUrlRule
     extends \yii\web\UrlRule

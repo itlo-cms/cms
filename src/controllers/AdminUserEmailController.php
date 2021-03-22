@@ -1,20 +1,19 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 31.05.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\controllers;
+namespace itlo\cms\controllers;
 
-use skeeks\cms\backend\controllers\BackendModelStandartController;
-use skeeks\cms\models\CmsUserEmail;
-use skeeks\cms\modules\admin\controllers\AdminModelEditorController;
+use itlo\cms\backend\controllers\BackendModelStandartController;
+use itlo\cms\models\CmsUserEmail;
+use itlo\cms\modules\admin\controllers\AdminModelEditorController;
 
 /**
  * Class AdminUserEmailController
- * @package skeeks\cms\controllers
+ * @package itlo\cms\controllers
  */
 class AdminUserEmailController extends BackendModelStandartController
 {

@@ -1,15 +1,14 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 20.05.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\models;
+namespace itlo\cms\models;
 
-use skeeks\cms\components\Cms;
-use skeeks\cms\models\behaviors\HasStorageFile;
+use itlo\cms\components\Cms;
+use itlo\cms\models\behaviors\HasStorageFile;
 use Yii;
 use yii\base\Event;
 use yii\db\BaseActiveRecord;
@@ -62,19 +61,19 @@ class CmsLang extends Core
     public function attributeLabels()
     {
         return array_merge(parent::attributeLabels(), [
-            'is_active' => Yii::t('skeeks/cms', 'Active'),
-            'priority' => Yii::t('skeeks/cms', 'Priority'),
-            'code' => Yii::t('skeeks/cms', 'Code'),
-            'name' => Yii::t('skeeks/cms', 'Name'),
-            'description' => Yii::t('skeeks/cms', 'Description'),
-            'image_id' => Yii::t('skeeks/cms', 'Image'),
+            'is_active' => Yii::t('itlo/cms', 'Active'),
+            'priority' => Yii::t('itlo/cms', 'Priority'),
+            'code' => Yii::t('itlo/cms', 'Code'),
+            'name' => Yii::t('itlo/cms', 'Name'),
+            'description' => Yii::t('itlo/cms', 'Description'),
+            'image_id' => Yii::t('itlo/cms', 'Image'),
         ]);
     }
 
     public function attributeHints()
     {
         return array_merge(parent::attributeLabels(), [
-            'is_active' => \Yii::t('skeeks/cms', 'On the site must be included at least one language'),
+            'is_active' => \Yii::t('itlo/cms', 'On the site must be included at least one language'),
         ]);
     }
 
@@ -98,7 +97,7 @@ class CmsLang extends Core
 
             [
                 ['image_id'],
-                \skeeks\cms\validators\FileValidator::class,
+                \itlo\cms\validators\FileValidator::class,
                 'skipOnEmpty' => false,
                 'extensions' => ['jpg', 'jpeg', 'gif', 'png'],
                 'maxFiles' => 1,
@@ -111,7 +110,7 @@ class CmsLang extends Core
     public function validateCode($attribute)
     {
         if (!preg_match('/^[a-zA-Z]{1}[a-zA-Z0-9-]{1,255}$/', $this->$attribute)) {
-            $this->addError($attribute, \Yii::t('skeeks/cms',
+            $this->addError($attribute, \Yii::t('itlo/cms',
                 'Use only letters of the alphabet in lower or upper case and numbers, the first character of the letter (Example {code})',
                 ['code' => 'code1']));
         }

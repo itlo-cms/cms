@@ -1,18 +1,17 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link https://skeeks.com/
- * @copyright (c) 2010 SkeekS
- * @date 11.03.2018
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms;
+namespace itlo\cms;
 
 /**
  * Class Module
- * @package skeeks\cms
+ * @package itlo\cms
  */
 class Module extends \yii\base\Module
 {
-    public $controllerNamespace = 'skeeks\cms\controllers';
+    public $controllerNamespace = 'itlo\cms\controllers';
 }

@@ -1,24 +1,23 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 30.04.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\relatedProperties\propertyTypes;
+namespace itlo\cms\relatedProperties\propertyTypes;
 
-use skeeks\cms\backend\widgets\SelectModelDialogContentElementWidget;
-use skeeks\cms\components\Cms;
-use skeeks\cms\models\CmsContentElement;
-use skeeks\cms\relatedProperties\models\RelatedPropertiesModel;
-use skeeks\cms\relatedProperties\PropertyType;
+use itlo\cms\backend\widgets\SelectModelDialogContentElementWidget;
+use itlo\cms\components\Cms;
+use itlo\cms\models\CmsContentElement;
+use itlo\cms\relatedProperties\models\RelatedPropertiesModel;
+use itlo\cms\relatedProperties\PropertyType;
 use yii\helpers\ArrayHelper;
 use yii\widgets\ActiveForm;
 
 /**
  * Class PropertyTypeElement
- * @package skeeks\cms\relatedProperties\propertyTypes
+ * @package itlo\cms\relatedProperties\propertyTypes
  */
 class PropertyTypeElement extends PropertyType
 {
@@ -38,12 +37,12 @@ class PropertyTypeElement extends PropertyType
     public static function fieldElements()
     {
         return [
-            self::FIELD_ELEMENT_SELECT => \Yii::t('skeeks/cms', 'Combobox') . ' (select)',
-            self::FIELD_ELEMENT_SELECT_MULTI => \Yii::t('skeeks/cms', 'Combobox') . ' (select multiple)',
-            self::FIELD_ELEMENT_RADIO_LIST => \Yii::t('skeeks/cms', 'Radio Buttons (selecting one value)'),
-            self::FIELD_ELEMENT_CHECKBOX_LIST => \Yii::t('skeeks/cms', 'Checkbox List'),
-            self::FIELD_ELEMENT_SELECT_DIALOG => \Yii::t('skeeks/cms', 'Selection widget in the dialog box'),
-            self::FIELD_ELEMENT_SELECT_DIALOG_MULTIPLE => \Yii::t('skeeks/cms',
+            self::FIELD_ELEMENT_SELECT => \Yii::t('itlo/cms', 'Combobox') . ' (select)',
+            self::FIELD_ELEMENT_SELECT_MULTI => \Yii::t('itlo/cms', 'Combobox') . ' (select multiple)',
+            self::FIELD_ELEMENT_RADIO_LIST => \Yii::t('itlo/cms', 'Radio Buttons (selecting one value)'),
+            self::FIELD_ELEMENT_CHECKBOX_LIST => \Yii::t('itlo/cms', 'Checkbox List'),
+            self::FIELD_ELEMENT_SELECT_DIALOG => \Yii::t('itlo/cms', 'Selection widget in the dialog box'),
+            self::FIELD_ELEMENT_SELECT_DIALOG_MULTIPLE => \Yii::t('itlo/cms',
                 'Selection widget in the dialog box (multiple choice)'),
         ];
     }
@@ -53,7 +52,7 @@ class PropertyTypeElement extends PropertyType
         parent::init();
 
         if (!$this->name) {
-            $this->name = \Yii::t('skeeks/cms', 'Binding to an element');
+            $this->name = \Yii::t('itlo/cms', 'Binding to an element');
         }
     }
 
@@ -79,8 +78,8 @@ class PropertyTypeElement extends PropertyType
     {
         return array_merge(parent::attributeLabels(),
             [
-                'content_id' => \Yii::t('skeeks/cms', 'Content'),
-                'fieldElement' => \Yii::t('skeeks/cms', 'Form element type'),
+                'content_id' => \Yii::t('itlo/cms', 'Content'),
+                'fieldElement' => \Yii::t('itlo/cms', 'Form element type'),
             ]);
     }
 
@@ -181,8 +180,8 @@ class PropertyTypeElement extends PropertyType
     public function renderConfigForm(ActiveForm $activeForm)
     {
         echo $activeForm->fieldSelect($this, 'fieldElement',
-            \skeeks\cms\relatedProperties\propertyTypes\PropertyTypeElement::fieldElements());
-        echo $activeForm->fieldSelect($this, 'content_id', \skeeks\cms\models\CmsContent::getDataForSelect());
+            \itlo\cms\relatedProperties\propertyTypes\PropertyTypeElement::fieldElements());
+        echo $activeForm->fieldSelect($this, 'content_id', \itlo\cms\models\CmsContent::getDataForSelect());
     }
 
     /**

@@ -1,25 +1,24 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 17.05.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\controllers;
+namespace itlo\cms\controllers;
 
-use skeeks\cms\backend\controllers\BackendModelStandartController;
-use skeeks\cms\grid\BooleanColumn;
-use skeeks\cms\helpers\RequestResponse;
-use skeeks\cms\helpers\UrlHelper;
-use skeeks\cms\models\CmsTreeTypeProperty;
-use skeeks\cms\queryfilters\QueryFiltersEvent;
-use skeeks\yii2\form\Element;
-use skeeks\yii2\form\fields\BoolField;
-use skeeks\yii2\form\fields\FieldSet;
-use skeeks\yii2\form\fields\HtmlBlock;
-use skeeks\yii2\form\fields\SelectField;
-use skeeks\yii2\form\fields\TextField;
+use itlo\cms\backend\controllers\BackendModelStandartController;
+use itlo\cms\grid\BooleanColumn;
+use itlo\cms\helpers\RequestResponse;
+use itlo\cms\helpers\UrlHelper;
+use itlo\cms\models\CmsTreeTypeProperty;
+use itlo\cms\queryfilters\QueryFiltersEvent;
+use itlo\yii2\form\Element;
+use itlo\yii2\form\fields\BoolField;
+use itlo\yii2\form\fields\FieldSet;
+use itlo\yii2\form\fields\HtmlBlock;
+use itlo\yii2\form\fields\SelectField;
+use itlo\yii2\form\fields\TextField;
 use yii\base\Event;
 use yii\db\Expression;
 use yii\helpers\ArrayHelper;
@@ -27,7 +26,7 @@ use yii\helpers\Html;
 
 /**
  * Class AdminCmsTreeTypePropertyController
- * @package skeeks\cms\controllers
+ * @package itlo\cms\controllers
  */
 class AdminCmsTreeTypePropertyController extends BackendModelStandartController
 {
@@ -115,7 +114,7 @@ class AdminCmsTreeTypePropertyController extends BackendModelStandartController
                         'countElementProperties' => [
                             'asc'     => ['countElementProperties' => SORT_ASC],
                             'desc'    => ['countElementProperties' => SORT_DESC],
-                            'label'   => \Yii::t('skeeks/cms', 'Number of partitions where the property is filled'),
+                            'label'   => \Yii::t('itlo/cms', 'Number of partitions where the property is filled'),
                             'default' => SORT_ASC,
                         ],
                     ],
@@ -148,7 +147,7 @@ class AdminCmsTreeTypePropertyController extends BackendModelStandartController
                         ],
 
                         'sections' => [
-                            'attribute' => \Yii::t('skeeks/cms', 'Sections'),
+                            'attribute' => \Yii::t('itlo/cms', 'Sections'),
                             'format'    => "raw",
                             'value'     => function (CmsTreeTypeProperty $model) {
                                 $contents = \yii\helpers\ArrayHelper::map($model->cmsTreeTypes, 'id', 'name');
@@ -159,7 +158,7 @@ class AdminCmsTreeTypePropertyController extends BackendModelStandartController
                         'countElementProperties' => [
                             'attribute' => 'countElementProperties',
                             'format' => 'raw',
-                            'label'     => \Yii::t('skeeks/cms', 'Number of partitions where the property is filled'),
+                            'label'     => \Yii::t('itlo/cms', 'Number of partitions where the property is filled'),
                             'value'     => function (CmsTreeTypeProperty $model) {
                                 return Html::a($model->raw_row['countElementProperties'], [
                                     '/cms/admin-tree/list',
@@ -238,7 +237,7 @@ class AdminCmsTreeTypePropertyController extends BackendModelStandartController
         return [
             'main' => [
                 'class'  => FieldSet::class,
-                'name'   => \Yii::t('skeeks/cms', 'Basic settings'),
+                'name'   => \Yii::t('itlo/cms', 'Basic settings'),
                 'fields' => [
                     'is_required'                     => [
                         'class'      => BoolField::class,
@@ -283,10 +282,10 @@ class AdminCmsTreeTypePropertyController extends BackendModelStandartController
                                 if ($post = \Yii::$app->request->post()) {
                                     $handler->load($post);
                                 }
-                                if ($handler instanceof \skeeks\cms\relatedProperties\propertyTypes\PropertyTypeList) {
+                                if ($handler instanceof \itlo\cms\relatedProperties\propertyTypes\PropertyTypeList) {
                                     $handler->enumRoute = 'cms/admin-cms-tree-type-property-enum';
                                 }
-                                echo \skeeks\cms\modules\admin\widgets\BlockTitleWidget::widget(['content' => \Yii::t('skeeks/cms', 'Settings')]);
+                                echo \itlo\cms\modules\admin\widgets\BlockTitleWidget::widget(['content' => \Yii::t('itlo/cms', 'Settings')]);
                                 $formElement->content = $handler->renderConfigForm($formElement->activeForm);
                             }
                         }
@@ -296,7 +295,7 @@ class AdminCmsTreeTypePropertyController extends BackendModelStandartController
 
             'captions' => [
                 'class'  => FieldSet::class,
-                'name'   => \Yii::t('skeeks/cms', 'Additionally'),
+                'name'   => \Yii::t('itlo/cms', 'Additionally'),
                 'fields' => [
                     'hint',
                     'priority',
@@ -305,7 +304,7 @@ class AdminCmsTreeTypePropertyController extends BackendModelStandartController
                         'multiple' => true,
                         'items' => function() {
                             return \yii\helpers\ArrayHelper::map(
-                                \skeeks\cms\models\CmsTreeType::find()->all(), 'id', 'name'
+                                \itlo\cms\models\CmsTreeType::find()->all(), 'id', 'name'
                             );
                         }
                     ]

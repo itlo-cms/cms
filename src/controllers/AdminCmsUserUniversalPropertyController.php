@@ -1,22 +1,21 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 17.05.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\controllers;
+namespace itlo\cms\controllers;
 
-use skeeks\cms\backend\controllers\BackendModelStandartController;
-use skeeks\cms\grid\BooleanColumn;
-use skeeks\cms\helpers\RequestResponse;
-use skeeks\cms\helpers\UrlHelper;
-use skeeks\cms\models\CmsUserUniversalProperty;
+use itlo\cms\backend\controllers\BackendModelStandartController;
+use itlo\cms\grid\BooleanColumn;
+use itlo\cms\helpers\RequestResponse;
+use itlo\cms\helpers\UrlHelper;
+use itlo\cms\models\CmsUserUniversalProperty;
 use yii\helpers\ArrayHelper;
 
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
+ * @author Semenov Alexander <semenov@itlo.com>
  */
 class AdminCmsUserUniversalPropertyController extends BackendModelStandartController
 {
@@ -24,7 +23,7 @@ class AdminCmsUserUniversalPropertyController extends BackendModelStandartContro
 
     public function init()
     {
-        $this->name = \Yii::t('skeeks/cms', 'User control properties');
+        $this->name = \Yii::t('itlo/cms', 'User control properties');
         $this->modelShowAttribute = "name";
         $this->modelClassName = CmsUserUniversalProperty::class;
 
@@ -109,7 +108,7 @@ class AdminCmsUserUniversalPropertyController extends BackendModelStandartContro
                 ) {
                     $model->save();
 
-                    \Yii::$app->getSession()->setFlash('success', \Yii::t('skeeks/cms', 'Saved'));
+                    \Yii::$app->getSession()->setFlash('success', \Yii::t('itlo/cms', 'Saved'));
 
                     return $this->redirect(
                         UrlHelper::constructCurrent()->setCurrentRef()->enableAdmin()->setRoute($this->modelDefaultAction)->normalizeCurrentRoute()
@@ -117,7 +116,7 @@ class AdminCmsUserUniversalPropertyController extends BackendModelStandartContro
                             ->toString()
                     );
                 } else {
-                    \Yii::$app->getSession()->setFlash('error', \Yii::t('skeeks/cms', 'Could not save'));
+                    \Yii::$app->getSession()->setFlash('error', \Yii::t('itlo/cms', 'Could not save'));
                 }
             }
         }
@@ -157,7 +156,7 @@ class AdminCmsUserUniversalPropertyController extends BackendModelStandartContro
                     ) {
                         $model->save();
 
-                        \Yii::$app->getSession()->setFlash('success', \Yii::t('skeeks/cms', 'Saved'));
+                        \Yii::$app->getSession()->setFlash('success', \Yii::t('itlo/cms', 'Saved'));
 
                         if (\Yii::$app->request->post('submit-btn') == 'apply') {
 

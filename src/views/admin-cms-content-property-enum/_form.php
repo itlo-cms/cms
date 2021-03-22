@@ -1,7 +1,7 @@
 <?php
 
 use yii\helpers\Html;
-use skeeks\cms\modules\admin\widgets\ActiveForm;
+use itlo\cms\modules\admin\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
 /* @var $model \yii\db\ActiveRecord */
@@ -13,9 +13,9 @@ use skeeks\cms\modules\admin\widgets\ActiveForm;
 <?php else
     : ?>
     <?= $form->field($model, 'property_id')->widget(
-        \skeeks\widget\chosen\Chosen::className(), [
+        \itlo\widget\chosen\Chosen::className(), [
         'items' => \yii\helpers\ArrayHelper::map(
-            \skeeks\cms\models\CmsContentProperty::find()->all(),
+            \itlo\cms\models\CmsContentProperty::find()->all(),
             "id",
             "name"
         ),

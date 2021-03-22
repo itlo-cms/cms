@@ -1,22 +1,21 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 31.05.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\controllers;
+namespace itlo\cms\controllers;
 
-use skeeks\cms\helpers\RequestResponse;
-use skeeks\cms\helpers\StringHelper;
-use skeeks\cms\modules\admin\controllers\AdminController;
-use skeeks\cms\modules\admin\controllers\AdminModelEditorController;
+use itlo\cms\helpers\RequestResponse;
+use itlo\cms\helpers\StringHelper;
+use itlo\cms\modules\admin\controllers\AdminController;
+use itlo\cms\modules\admin\controllers\AdminModelEditorController;
 use yii\helpers\Json;
 
 /**
  * Class AdminUniversalComponentSettingsController
- * @package skeeks\cms\controllers
+ * @package itlo\cms\controllers
  */
 class AdminUniversalComponentSettingsController extends AdminController
 {
@@ -37,7 +36,7 @@ class AdminUniversalComponentSettingsController extends AdminController
         }
 
         /**
-         * @var $component \skeeks\cms\relatedProperties\PropertyType;
+         * @var $component \itlo\cms\relatedProperties\PropertyType;
          */
         $component = new $classComponent();
         try {
@@ -75,7 +74,7 @@ class AdminUniversalComponentSettingsController extends AdminController
         $classComponent = \Yii::$app->request->get('component');
 
         /**
-         * @var $component \skeeks\cms\relatedProperties\PropertyType;
+         * @var $component \itlo\cms\relatedProperties\PropertyType;
          */
         $component = new $classComponent();
 

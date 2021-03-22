@@ -1,25 +1,24 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 25.05.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\cmsWidgets\filters;
+namespace itlo\cms\cmsWidgets\filters;
 
-use skeeks\cms\base\Widget;
-use skeeks\cms\base\WidgetRenderable;
-use skeeks\cms\cmsWidgets\filters\models\SearchProductsModel;
-use skeeks\cms\components\Cms;
-use skeeks\cms\helpers\UrlHelper;
-use skeeks\cms\models\CmsContent;
-use skeeks\cms\models\CmsContentElement;
-use skeeks\cms\models\CmsContentElementTree;
-use skeeks\cms\models\Search;
-use skeeks\cms\models\Tree;
-use skeeks\cms\models\searchs\SearchRelatedPropertiesModel;
-use skeeks\cms\shop\models\ShopTypePrice;
+use itlo\cms\base\Widget;
+use itlo\cms\base\WidgetRenderable;
+use itlo\cms\cmsWidgets\filters\models\SearchProductsModel;
+use itlo\cms\components\Cms;
+use itlo\cms\helpers\UrlHelper;
+use itlo\cms\models\CmsContent;
+use itlo\cms\models\CmsContentElement;
+use itlo\cms\models\CmsContentElementTree;
+use itlo\cms\models\Search;
+use itlo\cms\models\Tree;
+use itlo\cms\models\searchs\SearchRelatedPropertiesModel;
+use itlo\cms\shop\models\ShopTypePrice;
 use yii\base\DynamicModel;
 use yii\data\ActiveDataProvider;
 use yii\db\ActiveQuery;
@@ -32,7 +31,7 @@ use yii\widgets\ActiveForm;
  * @property CmsContent $cmsContent;
  *
  * Class ShopProductFiltersWidget
- * @package skeeks\cms\cmsWidgets\filters
+ * @package itlo\cms\cmsWidgets\filters
  */
 class ContentElementFiltersWidget extends WidgetRenderable
 {
@@ -78,7 +77,7 @@ class ContentElementFiltersWidget extends WidgetRenderable
         }
 
         if (!$this->searchModel) {
-            $this->searchModel = new \skeeks\cms\cmsWidgets\filters\models\SearchProductsModel();
+            $this->searchModel = new \itlo\cms\cmsWidgets\filters\models\SearchProductsModel();
         }
 
         if (!$this->searchRelatedPropertiesModel && $this->cmsContent) {
@@ -98,9 +97,9 @@ class ContentElementFiltersWidget extends WidgetRenderable
     {
         return array_merge(parent::attributeLabels(),
             [
-                'content_id' => \Yii::t('skeeks/cms', 'Content'),
-                'searchModelAttributes' => \Yii::t('skeeks/cms', 'Fields'),
-                'realatedProperties' => \Yii::t('skeeks/cms', 'Properties'),
+                'content_id' => \Yii::t('itlo/cms', 'Content'),
+                'searchModelAttributes' => \Yii::t('itlo/cms', 'Fields'),
+                'realatedProperties' => \Yii::t('itlo/cms', 'Properties'),
             ]);
     }
 
@@ -166,11 +165,11 @@ class ContentElementFiltersWidget extends WidgetRenderable
     {
         $options = [];
 
-        if ($property->property_type == \skeeks\cms\relatedProperties\PropertyType::CODE_ELEMENT) {
+        if ($property->property_type == \itlo\cms\relatedProperties\PropertyType::CODE_ELEMENT) {
             $propertyType = $property->handler;
 
             if ($this->elementIds) {
-                $availables = \skeeks\cms\models\CmsContentElementProperty::find()
+                $availables = \itlo\cms\models\CmsContentElementProperty::find()
                     ->select(['value_enum'])
                     ->indexBy('value_enum')
                     ->andWhere(['element_id' => $this->elementIds])
@@ -181,7 +180,7 @@ class ContentElementFiltersWidget extends WidgetRenderable
                 $availables = array_keys($availables);
             }
 
-            $options = \skeeks\cms\models\CmsContentElement::find()
+            $options = \itlo\cms\models\CmsContentElement::find()
                 ->active()
                 ->andWhere(['content_id' => $propertyType->content_id]);
             if ($this->elementIds) {
@@ -194,11 +193,11 @@ class ContentElementFiltersWidget extends WidgetRenderable
                 $options, 'id', 'name'
             );
 
-        } elseif ($property->property_type == \skeeks\cms\relatedProperties\PropertyType::CODE_LIST) {
+        } elseif ($property->property_type == \itlo\cms\relatedProperties\PropertyType::CODE_LIST) {
             $options = $property->getEnums()->select(['id', 'value']);
 
             if ($this->elementIds) {
-                $availables = \skeeks\cms\models\CmsContentElementProperty::find()
+                $availables = \itlo\cms\models\CmsContentElementProperty::find()
                     ->select(['value_enum'])
                     ->indexBy('value_enum')
                     ->andWhere(['element_id' => $this->elementIds])

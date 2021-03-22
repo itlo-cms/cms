@@ -2,23 +2,21 @@
 /**
  * Filter
  *
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010-2014 SkeekS (Sx)
- * @date 11.12.2014
- * @since 1.0.0
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\components\imaging\filters;
+namespace itlo\cms\components\imaging\filters;
 
 use yii\base\Component;
-use skeeks\imagine\Image;
+use itlo\imagine\Image;
 
 /**
  * Class Filter
- * @package skeeks\cms\components\imaging
+ * @package itlo\cms\components\imaging
  */
-class Crop extends \skeeks\cms\components\imaging\Filter
+class Crop extends \itlo\cms\components\imaging\Filter
 {
     public $w = 0;
     public $h = 0;

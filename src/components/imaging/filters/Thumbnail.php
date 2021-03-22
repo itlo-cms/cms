@@ -2,25 +2,23 @@
 /**
  * Thumbnail
  *
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010-2014 SkeekS (Sx)
- * @date 11.12.2014
- * @since 1.0.0
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\components\imaging\filters;
+namespace itlo\cms\components\imaging\filters;
 
 use yii\base\Component;
-use skeeks\imagine\Image;
+use itlo\imagine\Image;
 use Imagine\Image\ManipulatorInterface;
 use yii\base\Exception;
 
 /**
  * Class Thumbnail
- * @package skeeks\cms\components\imaging\filters
+ * @package itlo\cms\components\imaging\filters
  */
-class Thumbnail extends \skeeks\cms\components\imaging\Filter
+class Thumbnail extends \itlo\cms\components\imaging\Filter
 {
     public $w = 50;
     public $h = 50;

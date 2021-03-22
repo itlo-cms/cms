@@ -1,21 +1,20 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 20.05.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\traits;
+namespace itlo\cms\traits;
 
-use skeeks\cms\base\ComponentDescriptor;
+use itlo\cms\base\ComponentDescriptor;
 
 /**
  *
  * @property ComponentDescriptor descriptor
  *
  * Class HasComponentDescriptorTrait
- * @package skeeks\cms\traits
+ * @package itlo\cms\traits
  */
 trait HasComponentDescriptorTrait
 {
@@ -27,7 +26,7 @@ trait HasComponentDescriptorTrait
     /**
      * @var string
      */
-    static public $descriptorClassName = 'skeeks\cms\base\ComponentDescriptor';
+    static public $descriptorClassName = 'itlo\cms\base\ComponentDescriptor';
 
     /**
      * @return array
@@ -35,9 +34,9 @@ trait HasComponentDescriptorTrait
     public static function descriptorConfig()
     {
         return [
-            "name"        => "Skeeks CMS",
+            "name"        => "itlo CMS",
             "description" => "",
-            "keywords"    => "skeeks, cms",
+            "keywords"    => "itlo, cms",
         ];
     }
 

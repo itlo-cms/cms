@@ -1,21 +1,20 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 30.04.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\relatedProperties\propertyTypes;
+namespace itlo\cms\relatedProperties\propertyTypes;
 
-use skeeks\cms\relatedProperties\models\RelatedPropertiesModel;
-use skeeks\cms\relatedProperties\PropertyType;
+use itlo\cms\relatedProperties\models\RelatedPropertiesModel;
+use itlo\cms\relatedProperties\PropertyType;
 use yii\helpers\ArrayHelper;
 use yii\widgets\ActiveForm;
 
 /**
  * Class PropertyTypeTextarea
- * @package skeeks\cms\relatedProperties\propertyTypes
+ * @package itlo\cms\relatedProperties\propertyTypes
  */
 class PropertyTypeBool extends PropertyType
 {
@@ -30,9 +29,9 @@ class PropertyTypeBool extends PropertyType
     public static function fieldElements()
     {
         return [
-            'radioList' => \Yii::t('skeeks/cms', 'Radio'),
-            'checkbox' => \Yii::t('skeeks/cms', 'Checkbox'),
-            'listBox' => \Yii::t('skeeks/cms', 'listBox'),
+            'radioList' => \Yii::t('itlo/cms', 'Radio'),
+            'checkbox' => \Yii::t('itlo/cms', 'Checkbox'),
+            'listBox' => \Yii::t('itlo/cms', 'listBox'),
         ];
     }
 
@@ -41,7 +40,7 @@ class PropertyTypeBool extends PropertyType
         parent::init();
 
         if (!$this->name) {
-            $this->name = \Yii::t('skeeks/cms', 'Yes/No');
+            $this->name = \Yii::t('itlo/cms', 'Yes/No');
         }
     }
 
@@ -49,8 +48,8 @@ class PropertyTypeBool extends PropertyType
     {
         return array_merge(parent::attributeLabels(),
             [
-                'fieldElement' => \Yii::t('skeeks/cms', 'Element form'),
-                'default_value' => \Yii::t('skeeks/cms', 'Default Value'),
+                'fieldElement' => \Yii::t('itlo/cms', 'Element form'),
+                'default_value' => \Yii::t('itlo/cms', 'Default Value'),
             ]);
     }
 

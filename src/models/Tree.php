@@ -2,29 +2,27 @@
 /**
  * Publication
  *
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010-2014 SkeekS (Sx)
- * @date 31.10.2014
- * @since 1.0.0
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\models;
+namespace itlo\cms\models;
 
 use paulzi\adjacencyList\AdjacencyListBehavior;
 use paulzi\autotree\AutoTreeTrait;
 use paulzi\materializedPath\MaterializedPathBehavior;
-use skeeks\cms\components\Cms;
-use skeeks\cms\components\urlRules\UrlRuleTree;
-use skeeks\cms\models\behaviors\CanBeLinkedToTree;
-use skeeks\cms\models\behaviors\HasRelatedProperties;
-use skeeks\cms\models\behaviors\HasStorageFile;
-use skeeks\cms\models\behaviors\HasStorageFileMulti;
-use skeeks\cms\models\behaviors\traits\HasRelatedPropertiesTrait;
-use skeeks\cms\models\behaviors\traits\TreeBehaviorTrait;
-use skeeks\cms\models\behaviors\TreeBehavior;
-use skeeks\yii2\slug\SlugRuleProvider;
-use skeeks\yii2\yaslug\YaSlugHelper;
+use itlo\cms\components\Cms;
+use itlo\cms\components\urlRules\UrlRuleTree;
+use itlo\cms\models\behaviors\CanBeLinkedToTree;
+use itlo\cms\models\behaviors\HasRelatedProperties;
+use itlo\cms\models\behaviors\HasStorageFile;
+use itlo\cms\models\behaviors\HasStorageFileMulti;
+use itlo\cms\models\behaviors\traits\HasRelatedPropertiesTrait;
+use itlo\cms\models\behaviors\traits\TreeBehaviorTrait;
+use itlo\cms\models\behaviors\TreeBehavior;
+use itlo\yii2\slug\SlugRuleProvider;
+use itlo\yii2\yaslug\YaSlugHelper;
 use Yii;
 use yii\base\Event;
 use yii\base\Exception;
@@ -289,40 +287,40 @@ class Tree extends Core
     public function attributeLabels()
     {
         return array_merge(parent::attributeLabels(), [
-            'id' => Yii::t('skeeks/cms', 'ID'),
-            'created_by' => Yii::t('skeeks/cms', 'Created By'),
-            'updated_by' => Yii::t('skeeks/cms', 'Updated By'),
-            'created_at' => Yii::t('skeeks/cms', 'Created At'),
-            'updated_at' => Yii::t('skeeks/cms', 'Updated At'),
-            'published_at' => Yii::t('skeeks/cms', 'Published At'),
-            'published_to' => Yii::t('skeeks/cms', 'Published To'),
-            'priority' => Yii::t('skeeks/cms', 'Priority'),
-            'active' => Yii::t('skeeks/cms', 'Active'),
-            'name' => Yii::t('skeeks/cms', 'Name'),
-            'tree_type_id' => Yii::t('skeeks/cms', 'Type'),
-            'redirect' => Yii::t('skeeks/cms', 'Redirect'),
-            'priority' => Yii::t('skeeks/cms', 'Priority'),
-            'code' => Yii::t('skeeks/cms', 'Code'),
-            'active' => Yii::t('skeeks/cms', 'Active'),
-            'meta_title' => Yii::t('skeeks/cms', 'Meta Title'),
-            'meta_keywords' => Yii::t('skeeks/cms', 'Meta Keywords'),
-            'meta_description' => Yii::t('skeeks/cms', 'Meta Description'),
-            'description_short' => Yii::t('skeeks/cms', 'Description Short'),
-            'description_full' => Yii::t('skeeks/cms', 'Description Full'),
-            'description_short_type' => Yii::t('skeeks/cms', 'Description Short Type'),
-            'description_full_type' => Yii::t('skeeks/cms', 'Description Full Type'),
-            'image_id' => Yii::t('skeeks/cms', 'Main Image (announcement)'),
-            'image_full_id' => Yii::t('skeeks/cms', 'Main Image'),
-            'images' => Yii::t('skeeks/cms', 'Images'),
-            'imageIds' => Yii::t('skeeks/cms', 'Images'),
-            'files' => Yii::t('skeeks/cms', 'Files'),
-            'fileIds' => Yii::t('skeeks/cms', 'Files'),
-            'redirect_tree_id' => Yii::t('skeeks/cms', 'Redirect Section'),
-            'redirect_code' => Yii::t('skeeks/cms', 'Redirect Code'),
-            'name_hidden' => Yii::t('skeeks/cms', 'Hidden Name'),
-            'view_file' => Yii::t('skeeks/cms', 'Template'),
-            'seo_h1' => Yii::t('skeeks/cms', 'SEO заголовок h1'),
-            'external_id' => Yii::t('skeeks/cms', 'ID из внешней системы'),
+            'id' => Yii::t('itlo/cms', 'ID'),
+            'created_by' => Yii::t('itlo/cms', 'Created By'),
+            'updated_by' => Yii::t('itlo/cms', 'Updated By'),
+            'created_at' => Yii::t('itlo/cms', 'Created At'),
+            'updated_at' => Yii::t('itlo/cms', 'Updated At'),
+            'published_at' => Yii::t('itlo/cms', 'Published At'),
+            'published_to' => Yii::t('itlo/cms', 'Published To'),
+            'priority' => Yii::t('itlo/cms', 'Priority'),
+            'active' => Yii::t('itlo/cms', 'Active'),
+            'name' => Yii::t('itlo/cms', 'Name'),
+            'tree_type_id' => Yii::t('itlo/cms', 'Type'),
+            'redirect' => Yii::t('itlo/cms', 'Redirect'),
+            'priority' => Yii::t('itlo/cms', 'Priority'),
+            'code' => Yii::t('itlo/cms', 'Code'),
+            'active' => Yii::t('itlo/cms', 'Active'),
+            'meta_title' => Yii::t('itlo/cms', 'Meta Title'),
+            'meta_keywords' => Yii::t('itlo/cms', 'Meta Keywords'),
+            'meta_description' => Yii::t('itlo/cms', 'Meta Description'),
+            'description_short' => Yii::t('itlo/cms', 'Description Short'),
+            'description_full' => Yii::t('itlo/cms', 'Description Full'),
+            'description_short_type' => Yii::t('itlo/cms', 'Description Short Type'),
+            'description_full_type' => Yii::t('itlo/cms', 'Description Full Type'),
+            'image_id' => Yii::t('itlo/cms', 'Main Image (announcement)'),
+            'image_full_id' => Yii::t('itlo/cms', 'Main Image'),
+            'images' => Yii::t('itlo/cms', 'Images'),
+            'imageIds' => Yii::t('itlo/cms', 'Images'),
+            'files' => Yii::t('itlo/cms', 'Files'),
+            'fileIds' => Yii::t('itlo/cms', 'Files'),
+            'redirect_tree_id' => Yii::t('itlo/cms', 'Redirect Section'),
+            'redirect_code' => Yii::t('itlo/cms', 'Redirect Code'),
+            'name_hidden' => Yii::t('itlo/cms', 'Hidden Name'),
+            'view_file' => Yii::t('itlo/cms', 'Template'),
+            'seo_h1' => Yii::t('itlo/cms', 'SEO заголовок h1'),
+            'external_id' => Yii::t('itlo/cms', 'ID из внешней системы'),
         ]);
     }
 
@@ -352,13 +350,13 @@ class Tree extends Core
                 ['pid', 'code'],
                 'unique',
                 'targetAttribute' => ['pid', 'code'],
-                'message' => \Yii::t('skeeks/cms', 'For this subsection of the code is already in use.')
+                'message' => \Yii::t('itlo/cms', 'For this subsection of the code is already in use.')
             ],
             [
                 ['pid', 'code'],
                 'unique',
                 'targetAttribute' => ['pid', 'code'],
-                'message' => \Yii::t('skeeks/cms', 'The combination of Code and Pid has already been taken.')
+                'message' => \Yii::t('itlo/cms', 'The combination of Code and Pid has already been taken.')
             ],
 
             ['description_short_type', 'string'],
@@ -370,7 +368,7 @@ class Tree extends Core
             [['image_id', 'image_full_id'], 'safe'],
             [
                 ['image_id', 'image_full_id'],
-                \skeeks\cms\validators\FileValidator::class,
+                \itlo\cms\validators\FileValidator::class,
                 'skipOnEmpty' => false,
                 'extensions' => ['jpg', 'jpeg', 'gif', 'png'],
                 'maxFiles' => 1,
@@ -380,7 +378,7 @@ class Tree extends Core
             [['imageIds', 'fileIds'], 'safe'],
             [
                 ['imageIds'],
-                \skeeks\cms\validators\FileValidator::class,
+                \itlo\cms\validators\FileValidator::class,
                 'skipOnEmpty' => false,
                 'extensions' => ['jpg', 'jpeg', 'gif', 'png'],
                 'maxFiles' => 40,
@@ -389,7 +387,7 @@ class Tree extends Core
             ],
             [
                 ['fileIds'],
-                \skeeks\cms\validators\FileValidator::class,
+                \itlo\cms\validators\FileValidator::class,
                 'skipOnEmpty' => false,
                 //'extensions'    => [''],
                 'maxFiles' => 40,

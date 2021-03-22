@@ -1,19 +1,18 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 18.12.2016
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 /* @var $this yii\web\View */
-/* @var $widget \skeeks\cms\widgets\tree\CmsTreeWidget */
-/* @var $model \skeeks\cms\models\CmsTree */
+/* @var $widget \itlo\cms\widgets\tree\CmsTreeWidget */
+/* @var $model \itlo\cms\models\CmsTree */
 $widget = $this->context;
 
 $result = $model->name;
 $additionalName = '';
 if ($model->level == 0) {
-    $site = \skeeks\cms\models\CmsSite::findOne(['id' => $model->cms_site_id]);
+    $site = \itlo\cms\models\CmsSite::findOne(['id' => $model->cms_site_id]);
     if ($site) {
         $additionalName = $site->name;
     }
@@ -42,7 +41,7 @@ $controllElement = \Yii::$app->controller->renderNodeControll($model);
     <div class="pull-left sx-controll-act">
         <a href="<?= $model->absoluteUrl; ?>" target="_blank"
            class="btn-tree-node-controll btn btn-default btn-sm show-at-site"
-           title="<?= \Yii::t('skeeks/cms', "Show at site"); ?>">
+           title="<?= \Yii::t('itlo/cms', "Show at site"); ?>">
             <span class="fa fa-eye"></span>
         </a>
     </div>

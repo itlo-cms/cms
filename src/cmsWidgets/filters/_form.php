@@ -1,30 +1,29 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 27.05.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 /* @var $this yii\web\View */
-/* @var $contentType \skeeks\cms\models\CmsContentType */
-/* @var $model \skeeks\cms\shop\cmsWidgets\filters\ShopProductFiltersWidget */
+/* @var $contentType \itlo\cms\models\CmsContentType */
+/* @var $model \itlo\cms\shop\cmsWidgets\filters\ShopProductFiltersWidget */
 
 ?>
-<?= $form->fieldSet(\Yii::t('skeeks/cms', 'Showing')); ?>
+<?= $form->fieldSet(\Yii::t('itlo/cms', 'Showing')); ?>
 <?= $form->field($model, 'viewFile')->textInput(); ?>
 <?= $form->fieldSetEnd(); ?>
 
-<?= $form->fieldSet(\Yii::t('skeeks/cms', 'Data source')); ?>
-<?= $form->fieldSelect($model, 'content_id', \skeeks\cms\models\CmsContent::getDataForSelect()); ?>
+<?= $form->fieldSet(\Yii::t('itlo/cms', 'Data source')); ?>
+<?= $form->fieldSelect($model, 'content_id', \itlo\cms\models\CmsContent::getDataForSelect()); ?>
 
 <?php /*= $form->fieldSelectMulti($model, 'searchModelAttributes', [
-        'image' => \Yii::t('skeeks/cms', 'Filter by photo'),
-        'hasQuantity' => \Yii::t('skeeks/cms', 'Filter by availability')
+        'image' => \Yii::t('itlo/cms', 'Filter by photo'),
+        'hasQuantity' => \Yii::t('itlo/cms', 'Filter by availability')
     ]); */ ?>
 
 <?php /*= $form->field($model, 'searchModelAttributes')->dropDownList([
-        'image' => \Yii::t('skeeks/cms', 'Filter by photo'),
-        'hasQuantity' => \Yii::t('skeeks/cms', 'Filter by availability')
+        'image' => \Yii::t('itlo/cms', 'Filter by photo'),
+        'hasQuantity' => \Yii::t('itlo/cms', 'Filter by availability')
     ], [
 'multiple' => true,
 'size' => 4

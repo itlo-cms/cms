@@ -1,18 +1,17 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 19.05.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\traits;
+namespace itlo\cms\traits;
 
-use skeeks\cms\assets\ActiveFormAjaxSubmitAsset;
+use itlo\cms\assets\ActiveFormAjaxSubmitAsset;
 
 /**
  *
- * <? $form = \skeeks\cms\base\widgets\ActiveFormAjaxSubmit::begin([
+ * <? $form = \itlo\cms\base\widgets\ActiveFormAjaxSubmit::begin([
     'clientCallback' => new \yii\web\JsExpression(<<<JS
     function (ActiveFormAjaxSubmit) {
         ActiveFormAjaxSubmit.on('success', function(e, response) {
@@ -28,7 +27,7 @@ JS
 ]); ?>
  *
  * Trait ActiveFormAjaxSubmitTrait
- * @package skeeks\cms\traits
+ * @package itlo\cms\traits
  */
 trait ActiveFormAjaxSubmitTrait
 {

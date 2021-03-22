@@ -1,43 +1,42 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 20.03.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 return [
 
     'rules' => [
         [
-            'class' => \skeeks\cms\rbac\AuthorRule::class,
+            'class' => \itlo\cms\rbac\AuthorRule::class,
         ],
     ],
 
     'roles' => [
 
         [
-            'name'        => \skeeks\cms\rbac\CmsManager::ROLE_ROOT,
-            'description' => ['skeeks/cms', 'Superuser'],
+            'name'        => \itlo\cms\rbac\CmsManager::ROLE_ROOT,
+            'description' => ['itlo/cms', 'Superuser'],
         ],
 
         [
-            'name'        => \skeeks\cms\rbac\CmsManager::ROLE_GUEST,
-            'description' => ['skeeks/cms', 'Unauthorized user'],
+            'name'        => \itlo\cms\rbac\CmsManager::ROLE_GUEST,
+            'description' => ['itlo/cms', 'Unauthorized user'],
         ],
 
         [
-            'name'        => \skeeks\cms\rbac\CmsManager::ROLE_ADMIN,
-            'description' => ['skeeks/cms', 'Admin'],
+            'name'        => \itlo\cms\rbac\CmsManager::ROLE_ADMIN,
+            'description' => ['itlo/cms', 'Admin'],
 
             'child' => [
                 //Есть доступ к системе администрирования
                 'permissions' => [
-                    \skeeks\cms\rbac\CmsManager::PERMISSION_ADMIN_ACCESS,
-                    \skeeks\cms\rbac\CmsManager::PERMISSION_CONTROLL_PANEL,
+                    \itlo\cms\rbac\CmsManager::PERMISSION_ADMIN_ACCESS,
+                    \itlo\cms\rbac\CmsManager::PERMISSION_CONTROLL_PANEL,
 
-                    \skeeks\cms\rbac\CmsManager::PERMISSION_ELFINDER_USER_FILES,
-                    \skeeks\cms\rbac\CmsManager::PERMISSION_ELFINDER_COMMON_PUBLIC_FILES,
-                    \skeeks\cms\rbac\CmsManager::PERMISSION_ELFINDER_ADDITIONAL_FILES,
+                    \itlo\cms\rbac\CmsManager::PERMISSION_ELFINDER_USER_FILES,
+                    \itlo\cms\rbac\CmsManager::PERMISSION_ELFINDER_COMMON_PUBLIC_FILES,
+                    \itlo\cms\rbac\CmsManager::PERMISSION_ELFINDER_ADDITIONAL_FILES,
 
                     "cms/admin-settings",
                     "cms/admin-info",
@@ -88,19 +87,19 @@ return [
         ],
 
         [
-            'name'        => \skeeks\cms\rbac\CmsManager::ROLE_MANGER,
-            'description' => ['skeeks/cms', 'Manager (access to the administration)'],
+            'name'        => \itlo\cms\rbac\CmsManager::ROLE_MANGER,
+            'description' => ['itlo/cms', 'Manager (access to the administration)'],
 
             'child' => [
 
 
                 //Есть доступ к системе администрирования
                 'permissions' => [
-                    \skeeks\cms\rbac\CmsManager::PERMISSION_ADMIN_ACCESS,
-                    \skeeks\cms\rbac\CmsManager::PERMISSION_CONTROLL_PANEL,
+                    \itlo\cms\rbac\CmsManager::PERMISSION_ADMIN_ACCESS,
+                    \itlo\cms\rbac\CmsManager::PERMISSION_CONTROLL_PANEL,
 
-                    \skeeks\cms\rbac\CmsManager::PERMISSION_ELFINDER_USER_FILES,
-                    \skeeks\cms\rbac\CmsManager::PERMISSION_ELFINDER_COMMON_PUBLIC_FILES,
+                    \itlo\cms\rbac\CmsManager::PERMISSION_ELFINDER_USER_FILES,
+                    \itlo\cms\rbac\CmsManager::PERMISSION_ELFINDER_COMMON_PUBLIC_FILES,
 
                     "cms/admin-tree",
                     "cms/admin-tree/new-children",
@@ -121,18 +120,18 @@ return [
         ],
 
         [
-            'name'        => \skeeks\cms\rbac\CmsManager::ROLE_EDITOR,
-            'description' => ['skeeks/cms', 'Editor (access to the administration)'],
+            'name'        => \itlo\cms\rbac\CmsManager::ROLE_EDITOR,
+            'description' => ['itlo/cms', 'Editor (access to the administration)'],
 
             'child' => [
 
                 //Есть доступ к системе администрирования
                 'permissions' => [
-                    \skeeks\cms\rbac\CmsManager::PERMISSION_ADMIN_ACCESS,
-                    \skeeks\cms\rbac\CmsManager::PERMISSION_CONTROLL_PANEL,
+                    \itlo\cms\rbac\CmsManager::PERMISSION_ADMIN_ACCESS,
+                    \itlo\cms\rbac\CmsManager::PERMISSION_CONTROLL_PANEL,
 
-                    \skeeks\cms\rbac\CmsManager::PERMISSION_ELFINDER_USER_FILES,
-                    \skeeks\cms\rbac\CmsManager::PERMISSION_ELFINDER_COMMON_PUBLIC_FILES,
+                    \itlo\cms\rbac\CmsManager::PERMISSION_ELFINDER_USER_FILES,
+                    \itlo\cms\rbac\CmsManager::PERMISSION_ELFINDER_COMMON_PUBLIC_FILES,
 
                     "cms/admin-tree",
                     "cms/admin-tree/new-children",
@@ -153,104 +152,104 @@ return [
         ],
 
         [
-            'name'        => \skeeks\cms\rbac\CmsManager::ROLE_USER,
-            'description' => ['skeeks/cms', 'Registered user'],
+            'name'        => \itlo\cms\rbac\CmsManager::ROLE_USER,
+            'description' => ['itlo/cms', 'Registered user'],
 
             //Есть доступ к системе администрирования
             'child'       => [
                 'permissions' => [
-                    \skeeks\cms\components\Cms::UPA_PERMISSION,
-                    \skeeks\cms\rbac\CmsManager::PERMISSION_ELFINDER_USER_FILES,
+                    \itlo\cms\components\Cms::UPA_PERMISSION,
+                    \itlo\cms\rbac\CmsManager::PERMISSION_ELFINDER_USER_FILES,
                 ],
             ],
 
         ],
 
         [
-            'name'        => \skeeks\cms\rbac\CmsManager::ROLE_APPROVED,
-            'description' => ['skeeks/cms', 'Confirmed user'],
+            'name'        => \itlo\cms\rbac\CmsManager::ROLE_APPROVED,
+            'description' => ['itlo/cms', 'Confirmed user'],
 
             //Есть доступ к системе администрирования
             'permissions' => [
-                \skeeks\cms\rbac\CmsManager::PERMISSION_ELFINDER_USER_FILES,
+                \itlo\cms\rbac\CmsManager::PERMISSION_ELFINDER_USER_FILES,
             ],
         ],
     ],
 
     'permissions' => [
         [
-            'name'        =>\skeeks\cms\rbac\CmsManager::PERMISSION_ROOT_ACCESS,
-            'description' => ['skeeks/cms', 'Возможности суперадминистратора'],
+            'name'        =>\itlo\cms\rbac\CmsManager::PERMISSION_ROOT_ACCESS,
+            'description' => ['itlo/cms', 'Возможности суперадминистратора'],
         ],
 
         [
-            'name'        => \skeeks\cms\components\Cms::UPA_PERMISSION,
-            'description' => ['skeeks/cms', 'Доступ к персональной части'],
+            'name'        => \itlo\cms\components\Cms::UPA_PERMISSION,
+            'description' => ['itlo/cms', 'Доступ к персональной части'],
         ],
 
         [
-            'name'        => \skeeks\cms\rbac\CmsManager::PERMISSION_ADMIN_ACCESS,
-            'description' => ['skeeks/cms', 'Access to system administration'],
+            'name'        => \itlo\cms\rbac\CmsManager::PERMISSION_ADMIN_ACCESS,
+            'description' => ['itlo/cms', 'Access to system administration'],
         ],
 
         [
-            'name'        => \skeeks\cms\rbac\CmsManager::PERMISSION_CONTROLL_PANEL,
-            'description' => ['skeeks/cms', 'Access to the site control panel'],
+            'name'        => \itlo\cms\rbac\CmsManager::PERMISSION_CONTROLL_PANEL,
+            'description' => ['itlo/cms', 'Access to the site control panel'],
         ],
 
         [
-            'name'        => \skeeks\cms\rbac\CmsManager::PERMISSION_EDIT_VIEW_FILES,
-            'description' => ['skeeks/cms', 'The ability to edit view files'],
+            'name'        => \itlo\cms\rbac\CmsManager::PERMISSION_EDIT_VIEW_FILES,
+            'description' => ['itlo/cms', 'The ability to edit view files'],
         ],
 
         [
-            'name'        => \skeeks\cms\rbac\CmsManager::PERMISSION_ELFINDER_USER_FILES,
-            'description' => ['skeeks/cms', 'Access to personal files'],
+            'name'        => \itlo\cms\rbac\CmsManager::PERMISSION_ELFINDER_USER_FILES,
+            'description' => ['itlo/cms', 'Access to personal files'],
         ],
 
         [
-            'name'        => \skeeks\cms\rbac\CmsManager::PERMISSION_ELFINDER_COMMON_PUBLIC_FILES,
-            'description' => ['skeeks/cms', 'Access to the public files'],
+            'name'        => \itlo\cms\rbac\CmsManager::PERMISSION_ELFINDER_COMMON_PUBLIC_FILES,
+            'description' => ['itlo/cms', 'Access to the public files'],
         ],
 
         [
-            'name'        => \skeeks\cms\rbac\CmsManager::PERMISSION_ELFINDER_ADDITIONAL_FILES,
-            'description' => ['skeeks/cms', 'Access to all files'],
+            'name'        => \itlo\cms\rbac\CmsManager::PERMISSION_ELFINDER_ADDITIONAL_FILES,
+            'description' => ['itlo/cms', 'Access to all files'],
         ],
 
         [
-            'name'        => \skeeks\cms\rbac\CmsManager::PERMISSION_ADMIN_DASHBOARDS_EDIT,
-            'description' => ['skeeks/cms', 'Access to edit dashboards'],
+            'name'        => \itlo\cms\rbac\CmsManager::PERMISSION_ADMIN_DASHBOARDS_EDIT,
+            'description' => ['itlo/cms', 'Access to edit dashboards'],
         ],
 
 
         [
             'name'        => 'cms/admin-cms-site',
-            'description' => ['skeeks/cms', 'Управление сайтами'],
+            'description' => ['itlo/cms', 'Управление сайтами'],
         ],
         [
             'name'        => 'cms/admin-cms-lang',
-            'description' => ['skeeks/cms', 'Управление языками'],
+            'description' => ['itlo/cms', 'Управление языками'],
         ],
         [
             'name'        => 'cms/admin-storage-files',
-            'description' => ['skeeks/cms', 'Управление языками'],
+            'description' => ['itlo/cms', 'Управление языками'],
         ],
         [
             'name'        => 'cms/admin-storage-files/index',
-            'description' => ['skeeks/cms', 'Просмотр списка своих файлов'],
+            'description' => ['itlo/cms', 'Просмотр списка своих файлов'],
         ],
         [
             'name'        => 'cms/admin-storage-files/index/own',
-            'description' => ['skeeks/cms', 'Просмотр списка своих файлов'],
+            'description' => ['itlo/cms', 'Просмотр списка своих файлов'],
         ],
         [
             'name'        => 'cms/admin-tree/resort',
-            'description' => ['skeeks/cms', 'Сортировать подразделы'],
+            'description' => ['itlo/cms', 'Сортировать подразделы'],
         ],
         [
             'name'        => 'cms/admin-tree/new-children',
-            'description' => ['skeeks/cms', 'Создать подраздел'],
+            'description' => ['itlo/cms', 'Создать подраздел'],
         ],
 
 
@@ -258,38 +257,38 @@ return [
         //Управление пользователями
         [
             'name'        => 'cms/admin-user',
-            'description' => ['skeeks/cms', 'Управление пользователями'],
+            'description' => ['itlo/cms', 'Управление пользователями'],
         ],
 
         [
             'name'        => 'cms/admin-user/update',
-            'description' => ['skeeks/cms', 'Редактирование данных пользователя'],
+            'description' => ['itlo/cms', 'Редактирование данных пользователя'],
         ],
 
         [
             'name'        => 'cms/admin-user/create',
-            'description' => ['skeeks/cms', 'Создать пользователя'],
+            'description' => ['itlo/cms', 'Создать пользователя'],
         ],
 
         [
             'name'        => 'cms/admin-user/update-advanced',
-            'description' => ['skeeks/cms', 'Расширенное редактирование данных пользователя'],
+            'description' => ['itlo/cms', 'Расширенное редактирование данных пользователя'],
         ],
 
         [
             'name'        => 'cms/admin-user/delete',
-            'description' => ['skeeks/cms', 'Удаление пользователя'],
+            'description' => ['itlo/cms', 'Удаление пользователя'],
         ],
 
         /*[
             'name'        => 'cms/admin-user/update/not-root',
-            'description' => ['skeeks/crm', 'Редактирование данных доступного пользователя'],
+            'description' => ['itlo/crm', 'Редактирование данных доступного пользователя'],
             'child' => [
                 'permissions' => [
                     'cms/admin-user/update',
                 ],
             ],
-            'ruleName' => \skeeks\cms\rbac\rules\CmsUserNotRootRule::class
+            'ruleName' => \itlo\cms\rbac\rules\CmsUserNotRootRule::class
         ],*/
 
 

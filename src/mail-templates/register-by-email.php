@@ -1,6 +1,6 @@
 <?php
 
-use skeeks\cms\mail\helpers\Html;
+use itlo\cms\mail\helpers\Html;
 
 /* @var $this yii\web\View */
 /* @var $user common\models\User */
@@ -23,9 +23,9 @@ use skeeks\cms\mail\helpers\Html;
     <b>Email: </b><?= $user->email; ?><br>
     <b>Пароль: </b><?= $password; ?><br>
 <br>
-<?= Html::a("Войти в кабинет", \skeeks\cms\helpers\UrlHelper::construct('cms/auth/login')
+<?= Html::a("Войти в кабинет", \itlo\cms\helpers\UrlHelper::construct('cms/auth/login')
     /*->setRef(
-        \skeeks\cms\helpers\UrlHelper::construct('/cms/profile')->enableAbsolute()->toString()
+        \itlo\cms\helpers\UrlHelper::construct('/cms/profile')->enableAbsolute()->toString()
     )*/
     ->enableAbsolute()
     ->toString()

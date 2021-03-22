@@ -1,15 +1,14 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 28.02.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\models;
+namespace itlo\cms\models;
 
-use skeeks\cms\components\Cms;
-use skeeks\cms\validators\PhoneValidator;
+use itlo\cms\components\Cms;
+use itlo\cms\validators\PhoneValidator;
 use Yii;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
@@ -73,12 +72,12 @@ class CmsUserPhone extends ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => Yii::t('skeeks/cms', 'ID'),
-            'user_id' => Yii::t('skeeks/cms', 'User'),
-            'value' => \Yii::t('skeeks/cms', "Phone Number"),
-            'approved' => \Yii::t('skeeks/cms', "Approved"),
-            'created_at' => Yii::t('skeeks/cms', 'Created At'),
-            'updated_at' => Yii::t('skeeks/cms', 'Updated At'),
+            'id' => Yii::t('itlo/cms', 'ID'),
+            'user_id' => Yii::t('itlo/cms', 'User'),
+            'value' => \Yii::t('itlo/cms', "Phone Number"),
+            'approved' => \Yii::t('itlo/cms', "Approved"),
+            'created_at' => Yii::t('itlo/cms', 'Created At'),
+            'updated_at' => Yii::t('itlo/cms', 'Updated At'),
             'def' => 'Def',
         ];
     }

@@ -1,11 +1,11 @@
 <?php
 
 use yii\helpers\Html;
-use skeeks\cms\modules\admin\widgets\form\ActiveFormUseTab as ActiveForm;
-use skeeks\cms\models\Tree;
+use itlo\cms\modules\admin\widgets\form\ActiveFormUseTab as ActiveForm;
+use itlo\cms\models\Tree;
 
 /* @var $this yii\web\View */
-/* @var $model \skeeks\cms\models\StorageFile */
+/* @var $model \itlo\cms\models\StorageFile */
 
 ?>
 
@@ -21,7 +21,7 @@ CSS
 <div class="sx-image-controll">
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->fieldSet(\Yii::t('skeeks/cms', 'Main')); ?>
+    <?= $form->fieldSet(\Yii::t('itlo/cms', 'Main')); ?>
     <?php if ($model->isImage()) : ?>
         <div class="sx-image">
             <img src="<?= $model->src; ?>"/>
@@ -30,9 +30,9 @@ CSS
     <div class="">
 
     </div>
-    <?= $form->field($model, 'name')->textInput(['maxlength' => 255])->hint(\Yii::t('skeeks/cms',
+    <?= $form->field($model, 'name')->textInput(['maxlength' => 255])->hint(\Yii::t('itlo/cms',
         'This name is usually needed for SEO, so that the file was found in the search engines')) ?>
-    <?= $form->field($model, 'name_to_save')->textInput(['maxlength' => 255])->hint(\Yii::t('skeeks/cms',
+    <?= $form->field($model, 'name_to_save')->textInput(['maxlength' => 255])->hint(\Yii::t('itlo/cms',
         'Filename, when someone will be download it.')) ?>
 
     <?= $form->fieldSetEnd(); ?>
@@ -40,10 +40,10 @@ CSS
 
 
 
-    <?= $form->fieldSet(\Yii::t('skeeks/cms', 'Description')); ?>
+    <?= $form->fieldSet(\Yii::t('itlo/cms', 'Description')); ?>
 
     <?= $form->field($model, 'description_full')->widget(
-        \skeeks\cms\widgets\formInputs\ckeditor\Ckeditor::className(),
+        \itlo\cms\widgets\formInputs\ckeditor\Ckeditor::className(),
         [
             'options' => ['rows' => 20],
             'preset' => 'full',
@@ -52,7 +52,7 @@ CSS
     ?>
 
     <?= $form->field($model, 'description_short')->widget(
-        \skeeks\cms\widgets\formInputs\ckeditor\Ckeditor::className(),
+        \itlo\cms\widgets\formInputs\ckeditor\Ckeditor::className(),
         [
             'options' => ['rows' => 6],
             'preset' => 'full',
@@ -64,12 +64,12 @@ CSS
 
 
 
-    <?= $form->fieldSet(\Yii::t('skeeks/cms', 'Additional Information')); ?>
+    <?= $form->fieldSet(\Yii::t('itlo/cms', 'Additional Information')); ?>
 
     <?= $form->field($model, 'original_name')->textInput([
         'maxlength' => 255,
         'disabled' => 'disabled'
-    ])->hint(\Yii::t('skeeks/cms', 'Filename at upload time to the site')) ?>
+    ])->hint(\Yii::t('itlo/cms', 'Filename at upload time to the site')) ?>
 
 
     <div class="form-group field-storagefile-mime_type">
@@ -88,7 +88,7 @@ CSS
     <?= $form->field($model, 'mime_type')->textInput([
         'maxlength' => 255,
         'disabled' => 'disabled'
-    ])->hint('Internet Media Types — ' . \Yii::t('skeeks/cms',
+    ])->hint('Internet Media Types — ' . \Yii::t('itlo/cms',
             'types of data which can be transmitted via the Internet using standard MIME.')); ?>
 
     <?= $form->field($model, 'extension')->textInput([
@@ -123,13 +123,13 @@ CSS
 
 
     <?php if ($model->isImage()) : ?>
-        <?= $form->fieldSet(\Yii::t('skeeks/cms', 'Thumbnails')); ?>
-        <p><?= \Yii::t('skeeks/cms',
+        <?= $form->fieldSet(\Yii::t('itlo/cms', 'Thumbnails')); ?>
+        <p><?= \Yii::t('itlo/cms',
                 'This is an image in different places of the site displayed in different sizes.') ?></p>
 
         <?= $form->fieldSetEnd(); ?>
 
-        <?= $form->fieldSet(\Yii::t('skeeks/cms', 'Image editor')); ?>
+        <?= $form->fieldSet(\Yii::t('itlo/cms', 'Image editor')); ?>
 
         <?= $form->fieldSetEnd(); ?>
     <?php endif; ?>

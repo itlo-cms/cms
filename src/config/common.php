@@ -1,13 +1,12 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link https://skeeks.com/
- * @copyright (c) 2010 SkeekS
- * @date 06.11.2017
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 return [
-    "name" => "SkeekS CMS",
-    'id' => 'skeeks-cms-app',
+    "name" => "ITLO CMS",
+    'id' => 'itlo-cms-app',
 
     'vendorPath' => '@vendor',
 
@@ -28,9 +27,9 @@ return [
 
         'db' => [
             'class' => 'yii\db\Connection',
-            //'dsn' => 'mysql:host=mysql.skeeks.com;dbname=s2_vz1005_demo-cms',
-            //'username' => 's2_vz1016',
-            //'password' => 'dryagtepEjsiocakVenAvyeyb',
+            //'dsn' => 'mysql:host=mysql.itlo.ru;dbname=itlo-db',
+            //'username' => 'itlo_user',
+            //'password' => 'itlo_pass',
             'charset' => 'utf8',
             'enableSchemaCache' => true,
             'schemaCacheDuration' => 3600,
@@ -41,46 +40,46 @@ return [
         ],
 
         'cms' => [
-            'class' => '\skeeks\cms\components\Cms',
+            'class' => '\itlo\cms\components\Cms',
         ],
 
         'storage' => [
-            'class' => 'skeeks\cms\components\Storage',
+            'class' => 'itlo\cms\components\Storage',
             'components' => [
                 'local' => [
-                    'class' => 'skeeks\cms\components\storage\ClusterLocal',
+                    'class' => 'itlo\cms\components\storage\ClusterLocal',
                     'priority' => 100,
                 ],
             ],
         ],
 
         'currentSite' => [
-            'class' => '\skeeks\cms\components\CurrentSite',
+            'class' => '\itlo\cms\components\CurrentSite',
         ],
 
         'imaging' => [
-            'class' => '\skeeks\cms\components\Imaging',
+            'class' => '\itlo\cms\components\Imaging',
         ],
 
         'console' => [
-            'class' => 'skeeks\cms\components\ConsoleComponent',
+            'class' => 'itlo\cms\components\ConsoleComponent',
         ],
 
         'i18n' => [
             'translations' => [
-                'skeeks/cms' => [
+                'itlo/cms' => [
                     'class' => 'yii\i18n\PhpMessageSource',
-                    'basePath' => '@skeeks/cms/messages',
+                    'basePath' => '@itlo/cms/messages',
                     'fileMap' => [
-                        'skeeks/cms' => 'main.php',
+                        'itlo/cms' => 'main.php',
                     ],
                 ],
 
-                'skeeks/cms/user' => [
+                'itlo/cms/user' => [
                     'class' => 'yii\i18n\PhpMessageSource',
-                    'basePath' => '@skeeks/cms/messages',
+                    'basePath' => '@itlo/cms/messages',
                     'fileMap' => [
-                        'skeeks/cms/user' => 'user.php',
+                        'itlo/cms/user' => 'user.php',
                     ],
                 ],
             ],
@@ -104,10 +103,10 @@ return [
 
                 '~<_a:(login|logout|register|forget|reset-password)>' => 'cms/auth/<_a>',
 
-                'skeeks-cms' => 'cms/cms/index',
-                'skeeks-cms/<action>' => 'cms/cms/<action>',
+                'itlo-cms' => 'cms/cms/index',
+                'itlo-cms/<action>' => 'cms/cms/<action>',
 
-                "cms-imaging" => ["class" => 'skeeks\cms\components\ImagingUrlRule'],
+                "cms-imaging" => ["class" => 'itlo\cms\components\ImagingUrlRule'],
                 //Resize image on request
             ],
         ],
@@ -116,14 +115,14 @@ return [
             'commands' => [
 
                 'cms/cache/flush-all' => [
-                    'class' => \skeeks\cms\agent\CmsAgent::class,
-                    'name' => ['skeeks/cms', 'Clearing the cache'],
+                    'class' => \itlo\cms\agent\CmsAgent::class,
+                    'name' => ['itlo/cms', 'Clearing the cache'],
                     'interval' => 3600 * 24,
                 ],
 
                 'ajaxfileupload/cleanup' => [
-                    'class' => \skeeks\cms\agent\CmsAgent::class,
-                    'name' => ['skeeks/cms', 'Cleaning temporarily downloaded files'],
+                    'class' => \itlo\cms\agent\CmsAgent::class,
+                    'name' => ['itlo/cms', 'Cleaning temporarily downloaded files'],
                     'interval' => 3600 * 24,
                 ],
 
@@ -138,11 +137,11 @@ return [
     'modules' => [
 
         'cms' => [
-            'class' => '\skeeks\cms\Module',
+            'class' => '\itlo\cms\Module',
         ],
 
         'ajaxfileupload' => [
-            'class' => '\skeeks\yii2\ajaxfileupload\AjaxFileUploadModule',
+            'class' => '\itlo\yii2\ajaxfileupload\AjaxFileUploadModule',
         ],
     ],
 ];

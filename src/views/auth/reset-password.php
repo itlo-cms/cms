@@ -1,18 +1,17 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 25.03.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
 /* @var $this yii\web\View */
 
 use yii\helpers\Html;
-use skeeks\cms\base\widgets\ActiveFormAjaxSubmit as ActiveForm;
-use \skeeks\cms\helpers\UrlHelper;
+use itlo\cms\base\widgets\ActiveFormAjaxSubmit as ActiveForm;
+use \itlo\cms\helpers\UrlHelper;
 
-$this->title = \Yii::t('skeeks/cms', 'Getting a new password');
+$this->title = \Yii::t('itlo/cms', 'Getting a new password');
 \Yii::$app->breadcrumbs->createBase()->append($this->title);
 ?>
 <div class="row">
@@ -22,11 +21,11 @@ $this->title = \Yii::t('skeeks/cms', 'Getting a new password');
                 <div class="col-lg-3"></div>
                 <div class="col-lg-6">
                     <h1><?= $message; ?></h1>
-                    <?= Html::a(\Yii::t('skeeks/cms', 'Request recovery again'),
+                    <?= Html::a(\Yii::t('itlo/cms', 'Request recovery again'),
                         UrlHelper::constructCurrent()->setRoute('cms/auth/forget')->toString()) ?> |
-                    <?= Html::a(\Yii::t('skeeks/cms', 'Authorization'),
+                    <?= Html::a(\Yii::t('itlo/cms', 'Authorization'),
                         UrlHelper::constructCurrent()->setRoute('cms/auth/login')->toString()) ?> |
-                    <?= Html::a(\Yii::t('skeeks/cms', 'Registration'),
+                    <?= Html::a(\Yii::t('itlo/cms', 'Registration'),
                         UrlHelper::constructCurrent()->setRoute('cms/auth/register')->toString()) ?>
                 </div>
                 <div class="col-lg-3"></div>

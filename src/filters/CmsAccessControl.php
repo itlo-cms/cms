@@ -1,22 +1,21 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 06.10.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\filters;
+namespace itlo\cms\filters;
 
-use skeeks\cms\helpers\RequestResponse;
-use skeeks\cms\helpers\UrlHelper;
+use itlo\cms\helpers\RequestResponse;
+use itlo\cms\helpers\UrlHelper;
 use yii\helpers\Url;
 use yii\web\ForbiddenHttpException;
 use yii\web\User;
 
 /**
  * Class AdminAccessControl
- * @package skeeks\cms\modules\admin\filters
+ * @package itlo\cms\modules\admin\filters
  */
 class CmsAccessControl extends \yii\filters\AccessControl
 {

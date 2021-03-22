@@ -2,25 +2,23 @@
 /**
  * User
  *
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010-2014 SkeekS (Sx)
- * @date 20.10.2014
- * @since 1.0.0
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\models;
+namespace itlo\cms\models;
 
 use Imagine\Image\ManipulatorInterface;
-use skeeks\cms\authclient\models\UserAuthClient;
-use skeeks\cms\components\Cms;
-use skeeks\cms\models\behaviors\HasRelatedProperties;
-use skeeks\cms\models\behaviors\HasStorageFile;
-use skeeks\cms\models\behaviors\HasSubscribes;
-use skeeks\cms\models\behaviors\traits\HasRelatedPropertiesTrait;
-use skeeks\cms\models\user\UserEmail;
-use skeeks\cms\rbac\models\CmsAuthAssignment;
-use skeeks\cms\validators\PhoneValidator;
+use itlo\cms\authclient\models\UserAuthClient;
+use itlo\cms\components\Cms;
+use itlo\cms\models\behaviors\HasRelatedProperties;
+use itlo\cms\models\behaviors\HasStorageFile;
+use itlo\cms\models\behaviors\HasSubscribes;
+use itlo\cms\models\behaviors\traits\HasRelatedPropertiesTrait;
+use itlo\cms\models\user\UserEmail;
+use itlo\cms\rbac\models\CmsAuthAssignment;
+use itlo\cms\validators\PhoneValidator;
 use Yii;
 use yii\base\Exception;
 use yii\base\NotSupportedException;
@@ -125,7 +123,7 @@ class User
         }
 
         if ($this->active == "N" && $this->id == \Yii::$app->user->identity->id) {
-            throw new Exception(\Yii::t('skeeks/cms', 'Нельзя деактивировать себя'));
+            throw new Exception(\Yii::t('itlo/cms', 'Нельзя деактивировать себя'));
         }
     }
 
@@ -162,11 +160,11 @@ class User
     public function checkDataBeforeDelete($e)
     {
         if (in_array($this->username, static::getProtectedUsernames())) {
-            throw new Exception(\Yii::t('skeeks/cms', 'This user can not be removed'));
+            throw new Exception(\Yii::t('itlo/cms', 'This user can not be removed'));
         }
 
         if ($this->id == \Yii::$app->user->identity->id) {
-            throw new Exception(\Yii::t('skeeks/cms', 'You can not delete yourself'));
+            throw new Exception(\Yii::t('itlo/cms', 'You can not delete yourself'));
         }
     }
 
@@ -211,7 +209,7 @@ class User
             [['image_id'], 'safe'],
             [
                 ['image_id'],
-                \skeeks\cms\validators\FileValidator::class,
+                \itlo\cms\validators\FileValidator::class,
                 'skipOnEmpty' => false,
                 'extensions' => ['jpg', 'jpeg', 'gif', 'png'],
                 'maxFiles' => 1,
@@ -239,7 +237,7 @@ class User
             //[['username'], 'required'],
             ['username', 'string', 'min' => 3, 'max' => 25],
             [['username'], 'unique'],
-            [['username'], \skeeks\cms\validators\LoginValidator::class],
+            [['username'], \itlo\cms\validators\LoginValidator::class],
 
             [['logged_at'], 'integer'],
             [['last_activity_at'], 'integer'],
@@ -290,28 +288,28 @@ class User
     public function attributeLabels()
     {
         return [
-            'id' => Yii::t('skeeks/cms', 'ID'),
-            'username' => Yii::t('skeeks/cms', 'Login'),
-            'auth_key' => Yii::t('skeeks/cms', 'Auth Key'),
-            'password_hash' => Yii::t('skeeks/cms', 'Password Hash'),
-            'password_reset_token' => Yii::t('skeeks/cms', 'Password Reset Token'),
-            'email' => Yii::t('skeeks/cms', 'Email'),
-            'phone' => Yii::t('skeeks/cms', 'Phone'),
-            'active' => Yii::t('skeeks/cms', 'Active'),
-            'created_at' => Yii::t('skeeks/cms', 'Created At'),
-            'updated_at' => Yii::t('skeeks/cms', 'Updated At'),
-            'name' => \Yii::t('skeeks/cms/user', 'Name'), //Yii::t('skeeks/cms', 'Name???'),
-            'first_name' => \Yii::t('skeeks/cms', 'First name'),
-            'last_name' => \Yii::t('skeeks/cms', 'Last name'),
-            'patronymic' => \Yii::t('skeeks/cms', 'Patronymic'),
-            'gender' => Yii::t('skeeks/cms', 'Gender'),
-            'logged_at' => Yii::t('skeeks/cms', 'Logged At'),
-            'last_activity_at' => Yii::t('skeeks/cms', 'Last Activity At'),
-            'last_admin_activity_at' => Yii::t('skeeks/cms', 'Last Activity In The Admin At'),
-            'image_id' => Yii::t('skeeks/cms', 'Image'),
-            'roleNames' => Yii::t('skeeks/cms', 'Группы'),
-            'email_is_approved' => Yii::t('skeeks/cms', 'Email is approved'),
-            'phone_is_approved' => Yii::t('skeeks/cms', 'Phone is approved'),
+            'id' => Yii::t('itlo/cms', 'ID'),
+            'username' => Yii::t('itlo/cms', 'Login'),
+            'auth_key' => Yii::t('itlo/cms', 'Auth Key'),
+            'password_hash' => Yii::t('itlo/cms', 'Password Hash'),
+            'password_reset_token' => Yii::t('itlo/cms', 'Password Reset Token'),
+            'email' => Yii::t('itlo/cms', 'Email'),
+            'phone' => Yii::t('itlo/cms', 'Phone'),
+            'active' => Yii::t('itlo/cms', 'Active'),
+            'created_at' => Yii::t('itlo/cms', 'Created At'),
+            'updated_at' => Yii::t('itlo/cms', 'Updated At'),
+            'name' => \Yii::t('itlo/cms/user', 'Name'), //Yii::t('itlo/cms', 'Name???'),
+            'first_name' => \Yii::t('itlo/cms', 'First name'),
+            'last_name' => \Yii::t('itlo/cms', 'Last name'),
+            'patronymic' => \Yii::t('itlo/cms', 'Patronymic'),
+            'gender' => Yii::t('itlo/cms', 'Gender'),
+            'logged_at' => Yii::t('itlo/cms', 'Logged At'),
+            'last_activity_at' => Yii::t('itlo/cms', 'Last Activity At'),
+            'last_admin_activity_at' => Yii::t('itlo/cms', 'Last Activity In The Admin At'),
+            'image_id' => Yii::t('itlo/cms', 'Image'),
+            'roleNames' => Yii::t('itlo/cms', 'Группы'),
+            'email_is_approved' => Yii::t('itlo/cms', 'Email is approved'),
+            'phone_is_approved' => Yii::t('itlo/cms', 'Phone is approved'),
         ];
     }
 
@@ -489,7 +487,7 @@ class User
      */
     public static function findIdentityByAccessToken($token, $type = null)
     {
-        throw new NotSupportedException(\Yii::t('skeeks/cms', '"findIdentityByAccessToken" is not implemented.'));
+        throw new NotSupportedException(\Yii::t('itlo/cms', '"findIdentityByAccessToken" is not implemented.'));
     }
 
     /**
@@ -546,7 +544,7 @@ class User
 
     /**
      * @param string|array $assignments
-     * @return \skeeks\cms\query\CmsActiveQuery
+     * @return \itlo\cms\query\CmsActiveQuery
      */
     public static function findByAuthAssignments($assignments) {
         return static::find()->joinWith('cmsAuthAssignments as cmsAuthAssignments')
@@ -657,14 +655,14 @@ class User
     {
         /*if ($this->email)
         {
-            $userName = \skeeks\cms\helpers\StringHelper::substr($this->email, 0, strpos() );
+            $userName = \itlo\cms\helpers\StringHelper::substr($this->email, 0, strpos() );
         }*/
 
         $userLast = static::find()->orderBy("id DESC")->limit(1)->one();
         $this->username = "id" . ($userLast->id + 1);
 
         if (static::find()->where(['username' => $this->username])->limit(1)->one()) {
-            $this->username = $this->username . "_" . \skeeks\cms\helpers\StringHelper::substr(md5(time()), 0, 6);
+            $this->username = $this->username . "_" . \itlo\cms\helpers\StringHelper::substr(md5(time()), 0, 6);
         }
 
         return $this;
@@ -704,7 +702,7 @@ class User
     {
         if ($this->image) {
             return \Yii::$app->imaging->getImagingUrl($this->image->src,
-                new \skeeks\cms\components\imaging\filters\Thumbnail([
+                new \itlo\cms\components\imaging\filters\Thumbnail([
                     'w' => $width,
                     'h' => $height,
                     'm' => $mode,

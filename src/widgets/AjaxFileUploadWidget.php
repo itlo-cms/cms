@@ -1,21 +1,20 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link https://skeeks.com/
- * @copyright (c) 2010 SkeekS
- * @date 04.05.2017
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\widgets;
+namespace itlo\cms\widgets;
 
-use skeeks\cms\models\CmsStorageFile;
+use itlo\cms\models\CmsStorageFile;
 use yii\helpers\Html;
 
 /**
  * Class AjaxFileUploadWidget
- * @package skeeks\cms\widgets
+ * @package itlo\cms\widgets
  */
-class AjaxFileUploadWidget extends \skeeks\yii2\ajaxfileupload\widgets\AjaxFileUploadWidget
+class AjaxFileUploadWidget extends \itlo\yii2\ajaxfileupload\widgets\AjaxFileUploadWidget
 {
     protected function _initClientFiles()
     {

@@ -2,16 +2,14 @@
 /**
  * LoginForm
  *
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010-2014 SkeekS (Sx)
- * @date 28.10.2014
- * @since 1.0.0
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\models\forms;
+namespace itlo\cms\models\forms;
 
-use skeeks\cms\models\User;
+use itlo\cms\models\User;
 use Yii;
 use yii\base\Model;
 use yii\helpers\ArrayHelper;
@@ -70,8 +68,8 @@ class PasswordChangeForm extends Model
     public function attributeLabels()
     {
         return [
-            'new_password' => \Yii::t('skeeks/cms', 'New password'),
-            'new_password_confirm' => \Yii::t('skeeks/cms', 'New Password Confirm'),
+            'new_password' => \Yii::t('itlo/cms', 'New password'),
+            'new_password_confirm' => \Yii::t('itlo/cms', 'New Password Confirm'),
         ];
     }
 
@@ -85,7 +83,7 @@ class PasswordChangeForm extends Model
     public function validateNewPassword($attribute, $params)
     {
         if ($this->new_password_confirm != $this->new_password) {
-            $this->addError($attribute, \Yii::t('skeeks/cms', 'New passwords do not match'));
+            $this->addError($attribute, \Yii::t('itlo/cms', 'New passwords do not match'));
         }
     }
 

@@ -1,19 +1,18 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 25.03.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 /* @var $this yii\web\View */
 
-/* @var $model \skeeks\cms\models\forms\PasswordResetRequestFormEmailOrLogin */
+/* @var $model \itlo\cms\models\forms\PasswordResetRequestFormEmailOrLogin */
 
 use yii\helpers\Html;
-use skeeks\cms\base\widgets\ActiveFormAjaxSubmit as ActiveForm;
-use \skeeks\cms\helpers\UrlHelper;
+use itlo\cms\base\widgets\ActiveFormAjaxSubmit as ActiveForm;
+use \itlo\cms\helpers\UrlHelper;
 
-$this->title = \Yii::t('skeeks/cms', 'Request for password recovery');
+$this->title = \Yii::t('itlo/cms', 'Request for password recovery');
 \Yii::$app->breadcrumbs->createBase()->append($this->title);
 ?>
 <div class="row">
@@ -25,19 +24,19 @@ $this->title = \Yii::t('skeeks/cms', 'Request for password recovery');
                 <div class="col-lg-6">
 
                     <?php $form = ActiveForm::begin([
-                        'validationUrl' => UrlHelper::construct('cms/auth/forget')->setSystemParam(\skeeks\cms\helpers\RequestResponse::VALIDATION_AJAX_FORM_SYSTEM_NAME)->toString()
+                        'validationUrl' => UrlHelper::construct('cms/auth/forget')->setSystemParam(\itlo\cms\helpers\RequestResponse::VALIDATION_AJAX_FORM_SYSTEM_NAME)->toString()
                     ]); ?>
                     <?= $form->field($model, 'identifier') ?>
 
                     <div class="form-group">
-                        <?= Html::submitButton(\Yii::t('skeeks/cms', "Send"),
+                        <?= Html::submitButton(\Yii::t('itlo/cms', "Send"),
                             ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
                     </div>
 
                     <?php ActiveForm::end(); ?>
-                    <?= Html::a(\Yii::t('skeeks/cms', 'Authorization'),
+                    <?= Html::a(\Yii::t('itlo/cms', 'Authorization'),
                         UrlHelper::constructCurrent()->setRoute('cms/auth/login')->toString()) ?> |
-                    <?= Html::a(\Yii::t('skeeks/cms', 'Registration'),
+                    <?= Html::a(\Yii::t('itlo/cms', 'Registration'),
                         UrlHelper::constructCurrent()->setRoute('cms/auth/register')->toString()) ?>
                 </div>
 

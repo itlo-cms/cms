@@ -1,20 +1,19 @@
 <?php
 /**
- * @link https://cms.skeeks.com/
- * @copyright Copyright (c) 2010 SkeekS
- * @license https://cms.skeeks.com/license/
- * @author Semenov Alexander <semenov@skeeks.com>
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\rbac\rules;
+namespace itlo\cms\rbac\rules;
 
-use skeeks\cms\models\CmsUser;
-use skeeks\crm\models\CrmProject;
+use itlo\cms\models\CmsUser;
+use itlo\crm\models\CrmProject;
 use yii\rbac\Rule;
 
 /**
  * Проверка что пользователь участник проекта
- * @author Semenov Alexander <semenov@skeeks.com>
+ * @author Semenov Alexander <semenov@itlo.com>
  */
 class CmsUserNotRootRule extends Rule
 {

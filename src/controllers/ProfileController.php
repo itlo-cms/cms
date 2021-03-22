@@ -1,19 +1,18 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 13.04.2016
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\controllers;
+namespace itlo\cms\controllers;
 
-use skeeks\cms\filters\CmsAccessControl;
+use itlo\cms\filters\CmsAccessControl;
 use yii\web\Controller;
 
 /**
  * Class ProfileController
- * @package skeeks\cms\controllers
+ * @package itlo\cms\controllers
  */
 class ProfileController extends Controller
 {

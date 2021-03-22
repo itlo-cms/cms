@@ -2,29 +2,27 @@
 /**
  * AuthController
  *
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010-2014 SkeekS (Sx)
- * @date 05.11.2014
- * @since 1.0.0
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\controllers;
+namespace itlo\cms\controllers;
 
 
-use skeeks\cms\actions\LogoutAction;
-use skeeks\cms\base\Controller;
-use skeeks\cms\helpers\AjaxRequestResponse;
-use skeeks\cms\helpers\RequestResponse;
-use skeeks\cms\helpers\UrlHelper;
-use skeeks\cms\models\CmsUser;
-use skeeks\cms\models\CmsUserEmail;
-use skeeks\cms\models\forms\LoginFormUsernameOrEmail;
-use skeeks\cms\models\forms\PasswordResetRequestFormEmailOrLogin;
-use skeeks\cms\models\forms\SignupForm;
-use skeeks\cms\models\UserAuthClient;
-use skeeks\cms\modules\admin\controllers\helpers\ActionManager;
-use skeeks\cms\modules\admin\filters\AccessControl;
+use itlo\cms\actions\LogoutAction;
+use itlo\cms\base\Controller;
+use itlo\cms\helpers\AjaxRequestResponse;
+use itlo\cms\helpers\RequestResponse;
+use itlo\cms\helpers\UrlHelper;
+use itlo\cms\models\CmsUser;
+use itlo\cms\models\CmsUserEmail;
+use itlo\cms\models\forms\LoginFormUsernameOrEmail;
+use itlo\cms\models\forms\PasswordResetRequestFormEmailOrLogin;
+use itlo\cms\models\forms\SignupForm;
+use itlo\cms\models\UserAuthClient;
+use itlo\cms\modules\admin\controllers\helpers\ActionManager;
+use itlo\cms\modules\admin\filters\AccessControl;
 use Yii;
 use yii\authclient\BaseOAuth;
 use yii\filters\VerbFilter;
@@ -33,7 +31,7 @@ use yii\web\Response;
 
 /**
  * Class AuthController
- * @package skeeks\cms\modules\admin\controllers
+ * @package itlo\cms\modules\admin\controllers
  */
 class AuthController extends Controller
 {
@@ -308,7 +306,7 @@ class AuthController extends Controller
                     [
                         '@app/mail' =>
                             [
-                                '@skeeks/cms/mail-templates',
+                                '@itlo/cms/mail-templates',
                             ],
                     ]);
 

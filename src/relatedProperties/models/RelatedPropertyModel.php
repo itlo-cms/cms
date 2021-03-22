@@ -2,20 +2,19 @@
 /**
  * Модель связанного свойства.
  *
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 18.05.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\relatedProperties\models;
+namespace itlo\cms\relatedProperties\models;
 
-use skeeks\cms\components\Cms;
-use skeeks\cms\helpers\StringHelper;
-use skeeks\cms\models\behaviors\Serialize;
-use skeeks\cms\models\Core;
-use skeeks\cms\relatedProperties\PropertyType;
-use skeeks\cms\relatedProperties\propertyTypes\PropertyTypeText;
+use itlo\cms\components\Cms;
+use itlo\cms\helpers\StringHelper;
+use itlo\cms\models\behaviors\Serialize;
+use itlo\cms\models\Core;
+use itlo\cms\relatedProperties\PropertyType;
+use itlo\cms\relatedProperties\propertyTypes\PropertyTypeText;
 use Yii;
 use yii\helpers\ArrayHelper;
 use yii\widgets\ActiveForm;
@@ -106,21 +105,21 @@ abstract class RelatedPropertyModel extends Core
     public function attributeLabels()
     {
         return array_merge(parent::attributeLabels(), [
-            'id' => Yii::t('skeeks/cms', 'ID'),
-            'created_by' => Yii::t('skeeks/cms', 'Created By'),
-            'updated_by' => Yii::t('skeeks/cms', 'Updated By'),
-            'created_at' => Yii::t('skeeks/cms', 'Created At'),
-            'updated_at' => Yii::t('skeeks/cms', 'Updated At'),
-            'name' => Yii::t('skeeks/cms', 'Name'),
-            'code' => Yii::t('skeeks/cms', 'Code'),
-            'active' => Yii::t('skeeks/cms', 'Active'),
-            'priority' => Yii::t('skeeks/cms', 'Priority'),
-            'property_type' => Yii::t('skeeks/cms', 'Property Type'),
-            'multiple' => Yii::t('skeeks/cms', 'Multiple'),
-            'is_required' => Yii::t('skeeks/cms', 'Is Required'),
-            'component' => Yii::t('skeeks/cms', 'Component'),
-            'component_settings' => Yii::t('skeeks/cms', 'Component Settings'),
-            'hint' => Yii::t('skeeks/cms', 'Hint'),
+            'id' => Yii::t('itlo/cms', 'ID'),
+            'created_by' => Yii::t('itlo/cms', 'Created By'),
+            'updated_by' => Yii::t('itlo/cms', 'Updated By'),
+            'created_at' => Yii::t('itlo/cms', 'Created At'),
+            'updated_at' => Yii::t('itlo/cms', 'Updated At'),
+            'name' => Yii::t('itlo/cms', 'Name'),
+            'code' => Yii::t('itlo/cms', 'Code'),
+            'active' => Yii::t('itlo/cms', 'Active'),
+            'priority' => Yii::t('itlo/cms', 'Priority'),
+            'property_type' => Yii::t('itlo/cms', 'Property Type'),
+            'multiple' => Yii::t('itlo/cms', 'Multiple'),
+            'is_required' => Yii::t('itlo/cms', 'Is Required'),
+            'component' => Yii::t('itlo/cms', 'Component'),
+            'component_settings' => Yii::t('itlo/cms', 'Component Settings'),
+            'hint' => Yii::t('itlo/cms', 'Hint'),
         ]);
     }
 
@@ -142,7 +141,7 @@ abstract class RelatedPropertyModel extends Core
                         $this->$attribute)) {
                                             //if(!preg_match('/(^|.*\])([\w\.]+)(\[.*|$)/', $this->$attribute))
                     {
-                        $this->addError($attribute, \Yii::t('skeeks/cms',
+                        $this->addError($attribute, \Yii::t('itlo/cms',
                             'Use only letters of the alphabet in lower or upper case and numbers, the first character of the letter (Example {code})',
                             ['code' => 'code1']));
                     }
@@ -182,7 +181,7 @@ abstract class RelatedPropertyModel extends Core
 
     /**
      * @param ActiveForm $activeForm
-     * @param \skeeks\cms\relatedProperties\models\RelatedElementModel $model
+     * @param \itlo\cms\relatedProperties\models\RelatedElementModel $model
      * @return mixed
      * @deprecated
      */
@@ -205,7 +204,7 @@ abstract class RelatedPropertyModel extends Core
 
     /**
      * @return PropertyType
-     * @throws \skeeks\cms\import\InvalidParamException
+     * @throws \itlo\cms\import\InvalidParamException
      */
     public function getHandler()
     {

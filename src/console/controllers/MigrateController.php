@@ -1,16 +1,15 @@
 <?php
 /**
- * @link https://cms.skeeks.com/
- * @copyright Copyright (c) 2010 SkeekS
- * @license https://cms.skeeks.com/license/
- * @author Semenov Alexander <semenov@skeeks.com>
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\console\controllers;
+namespace itlo\cms\console\controllers;
 
-use skeeks\cms\models\User;
-use skeeks\cms\modules\admin\controllers\AdminController;
-use skeeks\cms\rbac\AuthorRule;
+use itlo\cms\models\User;
+use itlo\cms\modules\admin\controllers\AdminController;
+use itlo\cms\rbac\AuthorRule;
 use Yii;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Console;
@@ -19,7 +18,7 @@ use yii\helpers\FileHelper;
 /**
  * Working with the mysql database
  *
- * @package skeeks\cms\controllers
+ * @package itlo\cms\controllers
  */
 class MigrateController extends \yii\console\controllers\MigrateController
 {

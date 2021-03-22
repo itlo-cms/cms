@@ -1,21 +1,20 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 05.03.2017
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\helpers;
+namespace itlo\cms\helpers;
 
-use skeeks\sx\traits\Entity;
+use itlo\sx\traits\Entity;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Url;
 use yii\web\Application;
 
 /**
  * Class UrlHelper
- * @package         skeeks\cms\helpers
+ * @package         itlo\cms\helpers
  * @deprecated
  */
 class UrlHelper
@@ -219,7 +218,7 @@ class UrlHelper
      */
     public function enableAjaxValidateForm()
     {
-        return $this->setSystemParam(\skeeks\cms\helpers\RequestResponse::VALIDATION_AJAX_FORM_SYSTEM_NAME);
+        return $this->setSystemParam(\itlo\cms\helpers\RequestResponse::VALIDATION_AJAX_FORM_SYSTEM_NAME);
     }
 
     /**

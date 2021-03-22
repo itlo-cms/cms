@@ -1,12 +1,11 @@
 <?
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 06.06.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 /* @var $this yii\web\View */
-/* @var $widget \skeeks\cms\widgets\formInputs\componentSettings\ComponentSettingsWidget */
+/* @var $widget \itlo\cms\widgets\formInputs\componentSettings\ComponentSettingsWidget */
 /* @var $element string */
 
 $options = $widget->clientOptions;

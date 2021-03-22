@@ -1,25 +1,24 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 02.06.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 /* @var $this yii\web\View */
-/* @var $searchModel \skeeks\cms\models\Search */
+/* @var $searchModel \itlo\cms\models\Search */
 /* @var $dataProvider yii\data\ActiveDataProvider */
-/* @var $model \skeeks\cms\models\CmsContentElement */
+/* @var $model \itlo\cms\models\CmsContentElement */
 
 $sortAttr = $dataProvider->getSort()->attributes;
 $query = $dataProvider->query;
 $query->joinWith('property as p');
-$query->select([\skeeks\cms\models\CmsTreeTypePropertyEnum::tableName() . '.*', 'p.name as p_name']);
+$query->select([\itlo\cms\models\CmsTreeTypePropertyEnum::tableName() . '.*', 'p.name as p_name']);
 
 $dataProvider->getSort()->attributes = \yii\helpers\ArrayHelper::merge($sortAttr, [
     'p.name' => [
         'asc' => ['p.name' => SORT_ASC],
         'desc' => ['p.name' => SORT_DESC],
-        'label' => \Yii::t('skeeks/shop/app', 'Property'),
+        'label' => \Yii::t('itlo/shop/app', 'Property'),
         'default' => SORT_ASC
     ]
 ]);
@@ -32,7 +31,7 @@ $dataProvider->getSort()->attributes = \yii\helpers\ArrayHelper::merge($sortAttr
     'dataProvider' => $dataProvider,
 ]); ?>
 
-<?= \skeeks\cms\modules\admin\widgets\GridViewStandart::widget([
+<?= \itlo\cms\modules\admin\widgets\GridViewStandart::widget([
     'dataProvider' => $dataProvider,
     'filterModel' => $searchModel,
     //'autoColumns'       => false,
@@ -42,9 +41,9 @@ $dataProvider->getSort()->attributes = \yii\helpers\ArrayHelper::merge($sortAttr
         [
             'id',
             [
-                'label' => \Yii::t('skeeks/cms', 'Property'),
+                'label' => \Yii::t('itlo/cms', 'Property'),
                 'attribute' => 'p.name',
-                'value' => function(\skeeks\cms\models\CmsTreeTypePropertyEnum $cmsContentPropertyEnum) {
+                'value' => function(\itlo\cms\models\CmsTreeTypePropertyEnum $cmsContentPropertyEnum) {
                     return $cmsContentPropertyEnum->property->name;
                 }
             ],

@@ -2,28 +2,26 @@
 /**
  * AdminStorageFilesController
  *
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010-2014 SkeekS (Sx)
- * @date 25.11.2014
- * @since 1.0.0
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\controllers;
+namespace itlo\cms\controllers;
 
-use skeeks\cms\backend\BackendAction;
-use skeeks\cms\backend\controllers\BackendModelStandartController;
-use skeeks\cms\grid\DateTimeColumnData;
-use skeeks\cms\helpers\RequestResponse;
-use skeeks\cms\models\behaviors\HasDescriptionsBehavior;
-use skeeks\cms\models\CmsStorageFile;
-use skeeks\cms\models\Comment;
-use skeeks\cms\models\Publication;
-use skeeks\cms\models\StorageFile;
-use skeeks\cms\modules\admin\actions\modelEditor\AdminOneModelEditAction;
-use skeeks\cms\modules\admin\controllers\helpers\rules\HasModelBehaviors;
-use skeeks\cms\queryfilters\QueryFiltersEvent;
-use skeeks\cms\widgets\GridView;
+use itlo\cms\backend\BackendAction;
+use itlo\cms\backend\controllers\BackendModelStandartController;
+use itlo\cms\grid\DateTimeColumnData;
+use itlo\cms\helpers\RequestResponse;
+use itlo\cms\models\behaviors\HasDescriptionsBehavior;
+use itlo\cms\models\CmsStorageFile;
+use itlo\cms\models\Comment;
+use itlo\cms\models\Publication;
+use itlo\cms\models\StorageFile;
+use itlo\cms\modules\admin\actions\modelEditor\AdminOneModelEditAction;
+use itlo\cms\modules\admin\controllers\helpers\rules\HasModelBehaviors;
+use itlo\cms\queryfilters\QueryFiltersEvent;
+use itlo\cms\widgets\GridView;
 use Yii;
 use yii\base\ActionEvent;
 use yii\base\Event;
@@ -40,7 +38,7 @@ use yii\web\Response;
 
 /**
  * Class AdminStorageFilesController
- * @package skeeks\cms\controllers
+ * @package itlo\cms\controllers
  */
 class AdminStorageFilesController extends BackendModelStandartController
 {
@@ -87,7 +85,7 @@ class AdminStorageFilesController extends BackendModelStandartController
                         return (\Yii::$app->user->can("cms/admin-storage-files/index") || \Yii::$app->user->can("cms/admin-storage-files/index/own"));
                     },
                     'on beforeRender' => function (Event $event) {
-                        $event->content = \skeeks\cms\widgets\StorageFileManager::widget([
+                        $event->content = \itlo\cms\widgets\StorageFileManager::widget([
                                 'clientOptions' =>
                                     [
                                         'completeUploadFile' => new \yii\web\JsExpression(<<<JS
@@ -249,17 +247,17 @@ JS
                                     if ($model->isImage() && $model->size < 1024 * 1024 * 4) {
 
                                         $smallImage = \Yii::$app->imaging->getImagingUrl($model->src,
-                                            new \skeeks\cms\components\imaging\filters\Thumbnail());
+                                            new \itlo\cms\components\imaging\filters\Thumbnail());
                                         return "<div class='row no-gutters sx-trigger-action' style='cursor: pointer;'>
                                                 <div class='' style='width: 50px;'>
-                                                <a href='".$model->src."' style='text-decoration: none; border-bottom: 0;' class='sx-fancybox' target='_blank' data-pjax='0' title='".\Yii::t('skeeks/cms', 'Increase')."'>
+                                                <a href='".$model->src."' style='text-decoration: none; border-bottom: 0;' class='sx-fancybox' target='_blank' data-pjax='0' title='".\Yii::t('itlo/cms', 'Increase')."'>
                                                     <img src='".$smallImage."' style='max-width: 50px; max-height: 50px; border-radius: 5px;' />
                                                 </a></div>
                                                 <div style='margin-left: 5px;'>".$info."</div></div>";;
                                     }
 
                                     return "<div class='row no-gutters sx-trigger-action' style='cursor: pointer;'>
-                                                <div class='' style='width: 50px;'><a href='".$model->src."' style='text-decoration: none; border-bottom: 0;' class='sx-fancybox' target='_blank' data-pjax='0' title='".\Yii::t('skeeks/cms',
+                                                <div class='' style='width: 50px;'><a href='".$model->src."' style='text-decoration: none; border-bottom: 0;' class='sx-fancybox' target='_blank' data-pjax='0' title='".\Yii::t('itlo/cms',
                                             'Increase')."'>".\yii\helpers\Html::tag('span', $model->extension,
                                             [
                                                 'class' => 'label label-primary u-label u-label-primary',
@@ -394,9 +392,9 @@ HTML
 
         $request = Yii::$app->getRequest();
 
-        $dir = \skeeks\sx\Dir::runtimeTmp();
+        $dir = \itlo\sx\Dir::runtimeTmp();
 
-        $uploader = new \skeeks\widget\simpleajaxuploader\backend\FileUpload("imgfile");
+        $uploader = new \itlo\widget\simpleajaxuploader\backend\FileUpload("imgfile");
         $file = $dir->newFile()->setExtension($uploader->getExtension());
 
         $originalName = $uploader->getFileName();
@@ -469,7 +467,7 @@ HTML
     /**
      * Прикрепить к моделе другой файл
      * @return RequestResponse
-     * @see skeeks\cms\widgets\formInputs\StorageImage
+     * @see itlo\cms\widgets\formInputs\StorageImage
      */
     public function _actionLinkToModel()
     {
@@ -537,7 +535,7 @@ HTML
     /**
      * Прикрепить к моделе другой файл
      * @return RequestResponse
-     * @see skeeks\cms\widgets\formInputs\StorageImage
+     * @see itlo\cms\widgets\formInputs\StorageImage
      */
     public function _actionLinkToModels()
     {

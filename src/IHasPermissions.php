@@ -1,12 +1,11 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link https://skeeks.com/
- * @copyright 2010 SkeekS
- * @date 05.03.2017
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms;
+namespace itlo\cms;
 
 /**
  * @property $permissionNames;
@@ -14,7 +13,7 @@ namespace skeeks\cms;
  * @property bool $isAllow;
  *
  * Interface IHasPermissions
- * @package skeeks\cms
+ * @package itlo\cms
  */
 interface IHasPermissions
 {

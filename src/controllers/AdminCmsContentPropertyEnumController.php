@@ -1,27 +1,26 @@
 <?php
 /**
- * @link https://cms.skeeks.com/
- * @copyright Copyright (c) 2010 SkeekS
- * @license https://cms.skeeks.com/license/
- * @author Semenov Alexander <semenov@skeeks.com>
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\controllers;
+namespace itlo\cms\controllers;
 
-use skeeks\cms\backend\controllers\BackendModelStandartController;
-use skeeks\cms\models\CmsContentPropertyEnum;
-use skeeks\yii2\form\fields\SelectField;
+use itlo\cms\backend\controllers\BackendModelStandartController;
+use itlo\cms\models\CmsContentPropertyEnum;
+use itlo\yii2\form\fields\SelectField;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
+ * @author Semenov Alexander <semenov@itlo.com>
  */
 class AdminCmsContentPropertyEnumController extends BackendModelStandartController
 {
     public function init()
     {
-        $this->name = \Yii::t('skeeks/cms', 'Managing property values');
+        $this->name = \Yii::t('itlo/cms', 'Managing property values');
         $this->modelShowAttribute = "value";
         $this->modelClassName = CmsContentPropertyEnum::class;
 
@@ -85,7 +84,7 @@ class AdminCmsContentPropertyEnumController extends BackendModelStandartControll
                 'class' => SelectField::class,
                 'items' => function() {
                     return \yii\helpers\ArrayHelper::map(
-                        \skeeks\cms\models\CmsContentProperty::find()->all(),
+                        \itlo\cms\models\CmsContentProperty::find()->all(),
                         "id",
                         "name"
                     );

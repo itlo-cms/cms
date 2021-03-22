@@ -2,14 +2,12 @@
 /**
  * PasswordResetRequestForm
  *
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010-2014 SkeekS (Sx)
- * @date 28.10.2014
- * @since 1.0.0
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\models\forms;
+namespace itlo\cms\models\forms;
 
 use yii\base\Model;
 use yii\helpers\ArrayHelper;
@@ -36,7 +34,7 @@ class PasswordResetRequestForm extends Model
                 'exist',
                 'targetClass' => $identityClassName,
                 'filter' => ['status' => $identityClassName::STATUS_ACTIVE],
-                'message' => \Yii::t('skeeks/cms', 'There is no user with such email.')
+                'message' => \Yii::t('itlo/cms', 'There is no user with such email.')
             ],
         ];
     }
@@ -66,14 +64,14 @@ class PasswordResetRequestForm extends Model
                     [
                         '@app/mail' =>
                             [
-                                '@skeeks/cms/mail-templates'
+                                '@itlo/cms/mail-templates'
                             ]
                     ]);
 
                 return \Yii::$app->mailer->compose('@app/mail/password-reset-token', ['user' => $user])
                     ->setFrom([\Yii::$app->cms->adminEmail => \Yii::$app->cms->appName . ' robot'])
                     ->setTo($this->email)
-                    ->setSubject(\Yii::t('skeeks/cms', 'Password reset for ') . \Yii::$app->cms->appName)
+                    ->setSubject(\Yii::t('itlo/cms', 'Password reset for ') . \Yii::$app->cms->appName)
                     ->send();
             }
         }

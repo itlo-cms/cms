@@ -1,16 +1,12 @@
 <?php
 /**
- * @link https://cms.skeeks.com/
- * @copyright Copyright (c) 2010 SkeekS
- * @license https://cms.skeeks.com/license/
- * @author Semenov Alexander <semenov@skeeks.com>
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright 2021 ITLO (Infomarket)
  */
 
-namespace skeeks\cms\base;
+namespace itlo\cms\base;
 
-/**
- * @author Semenov Alexander <semenov@skeeks.com>
- */
 class AssetBundle extends \yii\web\AssetBundle
 {
     /**

@@ -1,12 +1,11 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 19.09.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-/* @var $widget     \skeeks\cms\widgets\formInputs\StorageImage */
+/* @var $widget     \itlo\cms\widgets\formInputs\StorageImage */
 /* @var $this       yii\web\View */
 /* @var $model      \yii\db\ActiveRecord */
 $controller = \Yii::$app->createController('cms/admin-storage-files')[0];
@@ -77,7 +76,7 @@ JS
 );
 ?>
 <div class="sx-fromWidget-storageImages">
-    <?php \skeeks\cms\modules\admin\widgets\Pjax::begin([
+    <?php \itlo\cms\modules\admin\widgets\Pjax::begin([
         'id' => 'pjax-storage-images-widget-' . $widget->id,
         'blockPjaxContainer' => true,
     ]); ?>
@@ -90,14 +89,14 @@ JS
                     <?php if (!$widget->viewItemTemplate) : ?>
                         <a href="<?= $imageFile->src; ?>" class="sx-fancybox" data-pjax="0">
                             <img src="<?= \Yii::$app->imaging->getImagingUrl($imageFile->src,
-                                new \skeeks\cms\components\imaging\filters\Thumbnail()); ?>"/>
+                                new \itlo\cms\components\imaging\filters\Thumbnail()); ?>"/>
                         </a>
                         <div class="sx-controlls">
                             <?
                             $controllerTmp = clone $controller;
                             $controllerTmp->setModel($imageFile);
 
-                            echo \skeeks\cms\backend\widgets\DropdownControllerActionsWidget::widget([
+                            echo \itlo\cms\backend\widgets\DropdownControllerActionsWidget::widget([
                                 "actions" => $controllerTmp->modelActions,
                                 "isOpenNewWindow" => true,
                                 "clientOptions" =>
@@ -118,10 +117,10 @@ JS
         </div>
     </div>
 
-    <?php \skeeks\cms\modules\admin\widgets\Pjax::end(); ?>
+    <?php \itlo\cms\modules\admin\widgets\Pjax::end(); ?>
 
     <div class="sx-controlls">
-        <?= \skeeks\cms\widgets\StorageFileManager::widget([
+        <?= \itlo\cms\widgets\StorageFileManager::widget([
             'clientOptions' =>
                 [
                     'simpleUpload' =>

@@ -1,16 +1,15 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 18.05.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\relatedProperties\models;
+namespace itlo\cms\relatedProperties\models;
 
-use skeeks\cms\models\behaviors\HasRelatedProperties;
-use skeeks\cms\models\behaviors\traits\HasRelatedPropertiesTrait;
-use skeeks\cms\models\Core;
+use itlo\cms\models\behaviors\HasRelatedProperties;
+use itlo\cms\models\behaviors\traits\HasRelatedPropertiesTrait;
+use itlo\cms\models\Core;
 use Yii;
 use yii\web\ErrorHandler;
 

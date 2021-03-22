@@ -1,30 +1,29 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 31.05.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\controllers;
+namespace itlo\cms\controllers;
 
-use skeeks\cms\backend\controllers\BackendModelStandartController;
-use skeeks\cms\grid\BooleanColumn;
-use skeeks\cms\models\CmsSite;
-use skeeks\cms\models\CmsSiteDomain;
-use skeeks\yii2\form\fields\BoolField;
-use skeeks\yii2\form\fields\HiddenField;
-use skeeks\yii2\form\fields\SelectField;
+use itlo\cms\backend\controllers\BackendModelStandartController;
+use itlo\cms\grid\BooleanColumn;
+use itlo\cms\models\CmsSite;
+use itlo\cms\models\CmsSiteDomain;
+use itlo\yii2\form\fields\BoolField;
+use itlo\yii2\form\fields\HiddenField;
+use itlo\yii2\form\fields\SelectField;
 use yii\helpers\ArrayHelper;
 
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
+ * @author Semenov Alexander <semenov@itlo.com>
  */
 class AdminCmsSiteDomainController extends BackendModelStandartController
 {
     public function init()
     {
-        $this->name = \Yii::t('skeeks/cms', "Managing domains");
+        $this->name = \Yii::t('itlo/cms', "Managing domains");
         $this->modelShowAttribute = "domain";
         $this->modelClassName = CmsSiteDomain::class;
 

@@ -1,15 +1,14 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 19.05.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\models\searchs;
+namespace itlo\cms\models\searchs;
 
-use skeeks\cms\models\CmsContentElement;
-use skeeks\cms\models\CmsContentElementTree;
+use itlo\cms\models\CmsContentElement;
+use itlo\cms\models\CmsContentElementTree;
 use yii\data\ActiveDataProvider;
 use yii\db\Expression;
 use yii\helpers\ArrayHelper;
@@ -51,21 +50,21 @@ class CmsContentElementSearch extends CmsContentElement
     public function attributeLabels()
     {
         return ArrayHelper::merge(parent::attributeLabels(), [
-            'section' => \Yii::t('skeeks/cms', 'Section'),
+            'section' => \Yii::t('itlo/cms', 'Section'),
 
-            'created_at_from' => \Yii::t('skeeks/cms', 'Created date (from)'),
-            'created_at_to' => \Yii::t('skeeks/cms', 'Created (up to)'),
+            'created_at_from' => \Yii::t('itlo/cms', 'Created date (from)'),
+            'created_at_to' => \Yii::t('itlo/cms', 'Created (up to)'),
 
-            'updated_at_from' => \Yii::t('skeeks/cms', 'Updated time (from)'),
-            'updated_at_to' => \Yii::t('skeeks/cms', 'Updated time (up to)'),
+            'updated_at_from' => \Yii::t('itlo/cms', 'Updated time (from)'),
+            'updated_at_to' => \Yii::t('itlo/cms', 'Updated time (up to)'),
 
-            'published_at_from' => \Yii::t('skeeks/cms', 'Time of publication (from)'),
-            'published_at_to' => \Yii::t('skeeks/cms', 'Time of publication (up to)'),
+            'published_at_from' => \Yii::t('itlo/cms', 'Time of publication (from)'),
+            'published_at_to' => \Yii::t('itlo/cms', 'Time of publication (up to)'),
 
-            'has_image' => \Yii::t('skeeks/cms', 'Image'),
-            'has_full_image' => \Yii::t('skeeks/cms', 'The presence of such images'),
+            'has_image' => \Yii::t('itlo/cms', 'Image'),
+            'has_full_image' => \Yii::t('itlo/cms', 'The presence of such images'),
 
-            'q' => \Yii::t('skeeks/cms', 'Search'),
+            'q' => \Yii::t('itlo/cms', 'Search'),
         ]);
     }
 

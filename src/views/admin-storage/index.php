@@ -1,12 +1,11 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 29.04.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 ?>
-<h2><?= \Yii::t('skeeks/cms', 'Servers to store the files.') ?></h2>
+<h2><?= \Yii::t('itlo/cms', 'Servers to store the files.') ?></h2>
 <?php foreach (\Yii::$app->storage->getClusters() as $count => $cluster) : ?>
     <div class="sx-box g-pa-10 sx-bg-primary">
         <div class="row">
@@ -14,20 +13,20 @@
                 <h3><b><?= is_numeric($count )?$count:0+ 1; ?>. <?= $cluster->name; ?></b></h3>
             </div>
             <div class="col-md-6">
-                <p><b><?= \Yii::t('skeeks/cms', 'Public file path') ?>: </b> <?= $cluster->publicBaseUrl; ?></p>
-                <p><b><?= \Yii::t('skeeks/cms', 'The folder on the server') ?>: </b> <?= $cluster->rootBasePath; ?></p>
+                <p><b><?= \Yii::t('itlo/cms', 'Public file path') ?>: </b> <?= $cluster->publicBaseUrl; ?></p>
+                <p><b><?= \Yii::t('itlo/cms', 'The folder on the server') ?>: </b> <?= $cluster->rootBasePath; ?></p>
 
-                <p><b><?= \Yii::t('skeeks/cms',
+                <p><b><?= \Yii::t('itlo/cms',
                             'Total available space') ?></b>: <?= Yii::$app->formatter->asShortSize($cluster->getTotalSpace()); ?>
                 </p>
-                <p><b><?= \Yii::t('skeeks/cms',
+                <p><b><?= \Yii::t('itlo/cms',
                             'Used') ?></b>: <?= Yii::$app->formatter->asShortSize($cluster->getUsedSpace()); ?></p>
-                <p><b><?= \Yii::t('skeeks/cms',
+                <p><b><?= \Yii::t('itlo/cms',
                             'Free') ?></b>: <?= Yii::$app->formatter->asShortSize($cluster->getFreeSpace()); ?></p>
 
-                <?php if ($cluster instanceof \skeeks\cms\components\storage\ClusterLocal) : ?>
+                <?php if ($cluster instanceof \itlo\cms\components\storage\ClusterLocal) : ?>
                     <?php if ($cluster->publicBaseUrlIsAbsolute) : ?>
-                        <p><b><?= \Yii::t('skeeks/cms', 'Files download from domain') ?>
+                        <p><b><?= \Yii::t('itlo/cms', 'Files download from domain') ?>
                                 : </b> <?= $cluster->publicBaseUrlIsAbsolute; ?></p>
                     <?php endif; ?>
                 <?php endif; ?>
@@ -38,7 +37,7 @@
 
                 $baseOptions =
                     [
-                        'title' => ['text' => \Yii::t('skeeks/cms', 'At percent ratio')],
+                        'title' => ['text' => \Yii::t('itlo/cms', 'At percent ratio')],
                         'chart' => [
                             'type' => 'pie',
 
@@ -63,14 +62,14 @@
                                 'name' => '%',
                                 'data' =>
                                     [
-                                        [\Yii::t('skeeks/cms', 'Free') . " " . round($cluster->getFreeSpacePct()) . "%", round($cluster->getFreeSpacePct())],
-                                        [\Yii::t('skeeks/cms', 'Used') . " " . round($cluster->getUsedSpacePct()) . "%", round($cluster->getUsedSpacePct())],
+                                        [\Yii::t('itlo/cms', 'Free') . " " . round($cluster->getFreeSpacePct()) . "%", round($cluster->getFreeSpacePct())],
+                                        [\Yii::t('itlo/cms', 'Used') . " " . round($cluster->getUsedSpacePct()) . "%", round($cluster->getUsedSpacePct())],
                                     ]
 
                             ],
                         ]
                     ];
-                echo \skeeks\widget\highcharts\Highcharts::widget(['options' => $baseOptions]);
+                echo \itlo\widget\highcharts\Highcharts::widget(['options' => $baseOptions]);
 
                 ?>
             </div>

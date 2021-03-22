@@ -2,20 +2,19 @@
 /**
  * Базовый тип свойства.
  *
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 18.05.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\relatedProperties;
+namespace itlo\cms\relatedProperties;
 
-use skeeks\cms\base\Component;
-use skeeks\cms\base\ConfigFormInterface;
-use skeeks\cms\components\Cms;
-use skeeks\cms\relatedProperties\models\RelatedElementModel;
-use skeeks\cms\relatedProperties\models\RelatedPropertiesModel;
-use skeeks\cms\relatedProperties\models\RelatedPropertyModel;
+use itlo\cms\base\Component;
+use itlo\cms\base\ConfigFormInterface;
+use itlo\cms\components\Cms;
+use itlo\cms\relatedProperties\models\RelatedElementModel;
+use itlo\cms\relatedProperties\models\RelatedPropertiesModel;
+use itlo\cms\relatedProperties\models\RelatedPropertyModel;
 use yii\base\DynamicModel;
 use yii\base\Model;
 use yii\helpers\ArrayHelper;
@@ -30,7 +29,7 @@ use yii\widgets\ActiveForm;
  * @property string $asHtml
  *
  * Class PropertyType
- * @package skeeks\cms\relatedProperties
+ * @package itlo\cms\relatedProperties
  */
 abstract class PropertyType extends Model implements ConfigFormInterface
 {

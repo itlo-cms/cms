@@ -2,29 +2,27 @@
 /**
  * AdminTreeController
  *
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010-2014 SkeekS (Sx)
- * @date 04.11.2014
- * @since 1.0.0
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\controllers;
+namespace itlo\cms\controllers;
 
-use skeeks\cms\backend\actions\BackendModelUpdateAction;
-use skeeks\cms\backend\BackendAction;
-use skeeks\cms\helpers\RequestResponse;
-use skeeks\cms\models\CmsSite;
-use skeeks\cms\models\CmsTree;
-use skeeks\cms\models\Search;
-use skeeks\cms\models\Tree;
-use skeeks\cms\modules\admin\actions\AdminAction;
-use skeeks\cms\modules\admin\actions\modelEditor\ModelEditorGridAction;
-use skeeks\cms\modules\admin\controllers\AdminModelEditorController;
-use skeeks\cms\modules\admin\controllers\helpers\rules\HasModel;
-use skeeks\cms\modules\admin\widgets\ControllerActions;
-use skeeks\cms\widgets\formInputs\selectTree\SelectTreeInputWidget;
-use skeeks\yii2\form\fields\WidgetField;
+use itlo\cms\backend\actions\BackendModelUpdateAction;
+use itlo\cms\backend\BackendAction;
+use itlo\cms\helpers\RequestResponse;
+use itlo\cms\models\CmsSite;
+use itlo\cms\models\CmsTree;
+use itlo\cms\models\Search;
+use itlo\cms\models\Tree;
+use itlo\cms\modules\admin\actions\AdminAction;
+use itlo\cms\modules\admin\actions\modelEditor\ModelEditorGridAction;
+use itlo\cms\modules\admin\controllers\AdminModelEditorController;
+use itlo\cms\modules\admin\controllers\helpers\rules\HasModel;
+use itlo\cms\modules\admin\widgets\ControllerActions;
+use itlo\cms\widgets\formInputs\selectTree\SelectTreeInputWidget;
+use itlo\yii2\form\fields\WidgetField;
 use Yii;
 use yii\base\DynamicModel;
 use yii\base\Event;
@@ -36,7 +34,7 @@ use yii\helpers\Url;
  * @property Tree $model
  *
  * Class AdminUserController
- * @package skeeks\cms\controllers
+ * @package itlo\cms\controllers
  */
 class AdminTreeController extends AdminModelEditorController
 {
@@ -51,7 +49,7 @@ class AdminTreeController extends AdminModelEditorController
             return Html::tag('h1', $model->fullName . Html::a('<i class="fas fa-external-link-alt"></i>', $model->url, [
                 'target' => "_blank",
                 'class' => "g-ml-20",
-                'title' => \Yii::t('skeeks/cms', 'Watch to site (opens new window)'),
+                'title' => \Yii::t('itlo/cms', 'Watch to site (opens new window)'),
             ]));
         };
         $this->modelClassName = Tree::className();
@@ -64,14 +62,14 @@ class AdminTreeController extends AdminModelEditorController
         $actions = ArrayHelper::merge(parent::actions(), [
             'index' => [
                 'class'    => AdminAction::className(),
-                'name'     => \Yii::t('skeeks/cms', 'Tree'),
+                'name'     => \Yii::t('itlo/cms', 'Tree'),
                 'callback' => [$this, 'indexAction'],
                 'accessCallback' => true,
             ],
 
             'list' => [
                 'class'    => ModelEditorGridAction::className(),
-                'name'     => \Yii::t('skeeks/cms', 'List'),
+                'name'     => \Yii::t('itlo/cms', 'List'),
                 "icon"     => "fa fa-list",
                 "priority" => 10,
             ],
@@ -101,7 +99,7 @@ class AdminTreeController extends AdminModelEditorController
 
             "move" => [
                 'class'          => BackendModelUpdateAction::class,
-                "name"           => \Yii::t('skeeks/cms', 'Move'),
+                "name"           => \Yii::t('itlo/cms', 'Move'),
                 "icon"           => "fas fa-expand-arrows-alt",
                 "beforeContent"  => "Механизм перемещения раздела. Укажите новый родительский раздел. <p><b>Внимание!</b> перемещение раздела, повлияет на изменение адресов всех дочерних разделов.</p>",
                 "successMessage" => "Раздел успешно перемещен",
@@ -113,13 +111,13 @@ class AdminTreeController extends AdminModelEditorController
 
                     $dm->addRule(['pid'], function ($attribute) use ($dm, $model) {
                         if ($dm->pid == $model->id) {
-                            $dm->addError($attribute, \Yii::t('skeeks/cms', 'Нельзя переместить в этот раздел.'));
+                            $dm->addError($attribute, \Yii::t('itlo/cms', 'Нельзя переместить в этот раздел.'));
                             return false;
                         }
 
                         $newParent = CmsTree::findOne($dm->pid);
                         if ($newParent->getChildren()->andWhere(['code' => $model->code])->one()) {
-                            $dm->addError($attribute, \Yii::t('skeeks/cms', 'Нельзя переместить в этот раздел, потому что в этом разделе есть подразделы с кодом: '.$model->code));
+                            $dm->addError($attribute, \Yii::t('itlo/cms', 'Нельзя переместить в этот раздел, потому что в этом разделе есть подразделы с кодом: '.$model->code));
                             return false;
                         }
 
@@ -193,7 +191,7 @@ class AdminTreeController extends AdminModelEditorController
                                     },
                                 ],
                                 //'widgetClass' => SelectModelDialogTreeWidget::class,
-                                'label'        => ['skeeks/cms', 'Новый родительский раздел'],
+                                'label'        => ['itlo/cms', 'Новый родительский раздел'],
                             ],
                         ];
                     }
@@ -246,7 +244,7 @@ class AdminTreeController extends AdminModelEditorController
                 $relatedModel->load(\Yii::$app->request->post());
 
                 if ($model->save() && $relatedModel->save()) {
-                    \Yii::$app->getSession()->setFlash('success', \Yii::t('skeeks/cms', 'Saved'));
+                    \Yii::$app->getSession()->setFlash('success', \Yii::t('itlo/cms', 'Saved'));
 
                     $is_saved = true;
 

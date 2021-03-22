@@ -1,22 +1,21 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 30.04.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\relatedProperties\userPropertyTypes;
+namespace itlo\cms\relatedProperties\userPropertyTypes;
 
-use skeeks\cms\components\Cms;
-use skeeks\cms\models\CmsContentElement;
-use skeeks\cms\relatedProperties\models\RelatedPropertiesModel;
-use skeeks\cms\relatedProperties\PropertyType;
+use itlo\cms\components\Cms;
+use itlo\cms\models\CmsContentElement;
+use itlo\cms\relatedProperties\models\RelatedPropertiesModel;
+use itlo\cms\relatedProperties\PropertyType;
 use yii\helpers\ArrayHelper;
 
 /**
  * Class UserPropertyTypeComboText
- * @package skeeks\cms\relatedProperties\userPropertyTypes
+ * @package itlo\cms\relatedProperties\userPropertyTypes
  */
 class UserPropertyTypeComboText extends PropertyType
 {
@@ -48,7 +47,7 @@ class UserPropertyTypeComboText extends PropertyType
     {
         $field = parent::renderForActiveForm();
 
-        $field->widget(\skeeks\cms\widgets\formInputs\comboText\ComboTextInputWidget::className(),
+        $field->widget(\itlo\cms\widgets\formInputs\comboText\ComboTextInputWidget::className(),
             [
                 'ckeditorOptions' =>
                     [

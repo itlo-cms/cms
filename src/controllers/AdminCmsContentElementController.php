@@ -1,39 +1,38 @@
 <?php
 /**
- * @link https://cms.skeeks.com/
- * @copyright Copyright (c) 2010 SkeekS
- * @license https://cms.skeeks.com/license/
- * @author Semenov Alexander <semenov@skeeks.com>
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\controllers;
+namespace itlo\cms\controllers;
 
-use skeeks\cms\actions\backend\BackendModelMultiActivateAction;
-use skeeks\cms\actions\backend\BackendModelMultiDeactivateAction;
-use skeeks\cms\backend\actions\BackendGridModelAction;
-use skeeks\cms\backend\actions\BackendModelMultiDialogEditAction;
-use skeeks\cms\backend\actions\BackendModelUpdateAction;
-use skeeks\cms\backend\controllers\BackendModelStandartController;
-use skeeks\cms\backend\widgets\SelectModelDialogTreeWidget;
-use skeeks\cms\backend\widgets\SelectModelDialogUserWidget;
-use skeeks\cms\grid\DateTimeColumnData;
-use skeeks\cms\grid\ImageColumn2;
-use skeeks\cms\helpers\Image;
-use skeeks\cms\helpers\RequestResponse;
-use skeeks\cms\IHasUrl;
-use skeeks\cms\models\CmsContent;
-use skeeks\cms\models\CmsContentElement;
-use skeeks\cms\models\CmsContentElementProperty;
-use skeeks\cms\models\CmsContentPropertyEnum;
-use skeeks\cms\modules\admin\actions\AdminAction;
-use skeeks\cms\modules\admin\actions\modelEditor\AdminModelEditorAction;
-use skeeks\cms\modules\admin\widgets\GridViewStandart;
-use skeeks\cms\queryfilters\filters\modes\FilterModeEq;
-use skeeks\cms\queryfilters\QueryFiltersEvent;
-use skeeks\yii2\form\fields\BoolField;
-use skeeks\yii2\form\fields\SelectField;
-use skeeks\yii2\form\fields\TextField;
-use skeeks\yii2\form\fields\WidgetField;
+use itlo\cms\actions\backend\BackendModelMultiActivateAction;
+use itlo\cms\actions\backend\BackendModelMultiDeactivateAction;
+use itlo\cms\backend\actions\BackendGridModelAction;
+use itlo\cms\backend\actions\BackendModelMultiDialogEditAction;
+use itlo\cms\backend\actions\BackendModelUpdateAction;
+use itlo\cms\backend\controllers\BackendModelStandartController;
+use itlo\cms\backend\widgets\SelectModelDialogTreeWidget;
+use itlo\cms\backend\widgets\SelectModelDialogUserWidget;
+use itlo\cms\grid\DateTimeColumnData;
+use itlo\cms\grid\ImageColumn2;
+use itlo\cms\helpers\Image;
+use itlo\cms\helpers\RequestResponse;
+use itlo\cms\IHasUrl;
+use itlo\cms\models\CmsContent;
+use itlo\cms\models\CmsContentElement;
+use itlo\cms\models\CmsContentElementProperty;
+use itlo\cms\models\CmsContentPropertyEnum;
+use itlo\cms\modules\admin\actions\AdminAction;
+use itlo\cms\modules\admin\actions\modelEditor\AdminModelEditorAction;
+use itlo\cms\modules\admin\widgets\GridViewStandart;
+use itlo\cms\queryfilters\filters\modes\FilterModeEq;
+use itlo\cms\queryfilters\QueryFiltersEvent;
+use itlo\yii2\form\fields\BoolField;
+use itlo\yii2\form\fields\SelectField;
+use itlo\yii2\form\fields\TextField;
+use itlo\yii2\form\fields\WidgetField;
 use yii\base\DynamicModel;
 use yii\base\Event;
 use yii\base\Exception;
@@ -50,7 +49,7 @@ use yii\web\Application;
  * @property CmsContent|static $content
  *
  * Class AdminCmsContentTypeController
- * @package skeeks\cms\controllers
+ * @package itlo\cms\controllers
  */
 class AdminCmsContentElementController extends BackendModelStandartController
 {
@@ -66,7 +65,7 @@ class AdminCmsContentElementController extends BackendModelStandartController
 
     public function init()
     {
-        $this->name = \Yii::t('skeeks/cms', 'Elements');
+        $this->name = \Yii::t('itlo/cms', 'Elements');
 
         if ($this->content) {
             if ($this->permissionName === null) {
@@ -82,7 +81,7 @@ class AdminCmsContentElementController extends BackendModelStandartController
             return Html::tag('h1', $model->name.Html::a('<i class="fas fa-external-link-alt"></i>', $model->url, [
                     'target' => "_blank",
                     'class'  => "g-ml-20",
-                    'title'  => \Yii::t('skeeks/cms', 'Watch to site (opens new window)'),
+                    'title'  => \Yii::t('itlo/cms', 'Watch to site (opens new window)'),
                 ]));
         };
 
@@ -300,7 +299,7 @@ class AdminCmsContentElementController extends BackendModelStandartController
                             'contentOptions' => [
                                 'style' => '100px',
                             ],
-                            'value'          => function (\skeeks\cms\models\CmsContentElement $model) {
+                            'value'          => function (\itlo\cms\models\CmsContentElement $model) {
                                 if ($model->active == "Y") {
                                     $time = \Yii::$app->formatter->asRelativeTime($model->published_at);
                                     $dateTime = \Yii::$app->formatter->asDatetime($model->published_at);
@@ -318,7 +317,7 @@ HTML;
                         'custom'       => [
                             'attribute' => 'id',
                             'format'    => 'raw',
-                            'value'     => function (\skeeks\cms\models\CmsContentElement $model) {
+                            'value'     => function (\itlo\cms\models\CmsContentElement $model) {
 
                                 $data = [];
                                 /*$data[] = "<div class='sx-trigger-action' style='width: 50px; float: left;'>".Html::a(
@@ -380,7 +379,7 @@ HTML;
                         ],
 
                         'tree_id' => [
-                            'value'  => function (\skeeks\cms\models\CmsContentElement $model) {
+                            'value'  => function (\itlo\cms\models\CmsContentElement $model) {
                                 if (!$model->cmsTree) {
                                     return null;
                                 }
@@ -403,11 +402,11 @@ HTML;
                         ],
 
                         'view' => [
-                            'value'          => function (\skeeks\cms\models\CmsContentElement $model) {
+                            'value'          => function (\itlo\cms\models\CmsContentElement $model) {
                                 return \yii\helpers\Html::a('<i class="fas fa-external-link-alt"></i>', $model->absoluteUrl,
                                     [
                                         'target'    => '_blank',
-                                        'title'     => \Yii::t('skeeks/cms', 'Watch to site (opens new window)'),
+                                        'title'     => \Yii::t('itlo/cms', 'Watch to site (opens new window)'),
                                         'data-pjax' => '0',
                                         'class'     => 'btn btn-sm',
                                     ]);
@@ -423,7 +422,7 @@ HTML;
                         ],
 
                         'additionalSections' => [
-                            'value'   => function (\skeeks\cms\models\CmsContentElement $model) {
+                            'value'   => function (\itlo\cms\models\CmsContentElement $model) {
                                 $result = [];
 
                                 if ($model->cmsContentElementTrees) {
@@ -439,7 +438,7 @@ HTML;
 
                             },
                             'format'  => 'raw',
-                            'label'   => \Yii::t('skeeks/cms', 'Additional sections'),
+                            'label'   => \Yii::t('itlo/cms', 'Additional sections'),
                             'visible' => false,
                         ],
 
@@ -484,7 +483,7 @@ HTML;
             "copy" => [
                 'priority'       => 200,
                 'class'          => BackendModelUpdateAction::class,
-                "name"           => \Yii::t('skeeks/cms', 'Copy'),
+                "name"           => \Yii::t('itlo/cms', 'Copy'),
                 "icon"           => "fas fa-copy",
                 "beforeContent"  => "Механизм создания копии текущего элемента. Укажите параметры копирования и нажмите применить.",
                 "successMessage" => "Элемент успешно скопирован",
@@ -522,11 +521,11 @@ HTML;
                     return [
                         'dm.is_copy_images' => [
                             'class' => BoolField::class,
-                            'label' => ['skeeks/cms', 'Copy images?'],
+                            'label' => ['itlo/cms', 'Copy images?'],
                         ],
                         'dm.is_copy_files'  => [
                             'class' => BoolField::class,
-                            'label' => ['skeeks/cms', 'Copy files?'],
+                            'label' => ['itlo/cms', 'Copy files?'],
                         ],
                     ];
                 },
@@ -535,8 +534,8 @@ HTML;
 
             "change-tree-multi" => [
                 'class'        => BackendModelMultiDialogEditAction::class,
-                "name"         => \Yii::t('skeeks/cms', 'The main section'),
-                "viewDialog"   => "@skeeks/cms/views/admin-cms-content-element/change-tree-form",
+                "name"         => \Yii::t('itlo/cms', 'The main section'),
+                "viewDialog"   => "@itlo/cms/views/admin-cms-content-element/change-tree-form",
                 "eachCallback" => [$this, 'eachMultiChangeTree'],
                 'on init'      => function ($e) {
                     /**
@@ -553,8 +552,8 @@ HTML;
 
             "change-trees-multi" => [
                 'class'        => BackendModelMultiDialogEditAction::class,
-                "name"         => \Yii::t('skeeks/cms', 'Related topics'),
-                "viewDialog"   => "@skeeks/cms/views/admin-cms-content-element/change-trees-form",
+                "name"         => \Yii::t('itlo/cms', 'Related topics'),
+                "viewDialog"   => "@itlo/cms/views/admin-cms-content-element/change-trees-form",
                 "eachCallback" => [$this, 'eachMultiChangeTrees'],
                 'on init'      => function ($e) {
                     $action = $e->sender;
@@ -569,8 +568,8 @@ HTML;
 
             "rp" => [
                 'class'        => BackendModelMultiDialogEditAction::class,
-                "name"         => \Yii::t('skeeks/cms', 'Properties'),
-                "viewDialog"   => "@skeeks/cms/views/admin-cms-content-element/multi-rp",
+                "name"         => \Yii::t('itlo/cms', 'Properties'),
+                "viewDialog"   => "@itlo/cms/views/admin-cms-content-element/multi-rp",
                 "eachCallback" => [$this, 'eachRelatedProperties'],
                 'on init'      => function ($e) {
                     $action = $e->sender;
@@ -625,7 +624,7 @@ HTML;
                     'format' => 'raw',
                     'value'  => function ($model, $key, $index) use ($name, $relatedPropertiesModel) {
                         /**
-                         * @var $model \skeeks\cms\models\CmsContentElement
+                         * @var $model \itlo\cms\models\CmsContentElement
                          */
                         return $model->relatedPropertiesModel->getAttributeAsHtml($name);
                         /*if (is_array($value)) {
@@ -640,7 +639,7 @@ HTML;
                 $autoLabels["property{$property->id}"] = \yii\helpers\ArrayHelper::getValue($relatedPropertiesModel->attributeLabels(), $name)." [свойство]";
 
 
-                if ($property->property_type == \skeeks\cms\relatedProperties\PropertyType::CODE_STRING) {
+                if ($property->property_type == \itlo\cms\relatedProperties\PropertyType::CODE_STRING) {
                     $autoFilters["property{$property->id}"] = [
                         'class'    => TextField::class,
                         'label'    => \yii\helpers\ArrayHelper::getValue($relatedPropertiesModel->attributeLabels(), $name)." [свойство]",
@@ -668,7 +667,7 @@ HTML;
                             }
                         },
                     ];
-                } elseif ($property->property_type == \skeeks\cms\relatedProperties\PropertyType::CODE_BOOL) {
+                } elseif ($property->property_type == \itlo\cms\relatedProperties\PropertyType::CODE_BOOL) {
 
                     $autoFilters["property{$property->id}"] = [
                         'class'    => BoolField::class,
@@ -694,19 +693,19 @@ HTML;
                         },
                     ];
 
-                } elseif ($property->property_type == \skeeks\cms\relatedProperties\PropertyType::CODE_NUMBER) {
+                } elseif ($property->property_type == \itlo\cms\relatedProperties\PropertyType::CODE_NUMBER) {
 
 
-                } elseif ($property->property_type == \skeeks\cms\relatedProperties\PropertyType::CODE_LIST) {
+                } elseif ($property->property_type == \itlo\cms\relatedProperties\PropertyType::CODE_LIST) {
 
                     $count = CmsContentPropertyEnum::find()->where(['property_id' => $property->id])->count();
 
                     if ($count > 100) {
                         $autoFilters["property{$property->id}"] = [
                             'class'        => WidgetField::class,
-                            'widgetClass'  => \skeeks\cms\backend\widgets\SelectModelDialogWidget::class,
+                            'widgetClass'  => \itlo\cms\backend\widgets\SelectModelDialogWidget::class,
                             'widgetConfig' => [
-                                'modelClassName' => \skeeks\cms\models\CmsContentPropertyEnum::class,
+                                'modelClassName' => \itlo\cms\models\CmsContentPropertyEnum::class,
                                 'dialogRoute'    => [
                                     '/cms/admin-cms-content-property-enum',
                                     'CmsContentPropertyEnum' => [
@@ -745,7 +744,7 @@ HTML;
                     };
 
 
-                } elseif ($property->property_type == \skeeks\cms\relatedProperties\PropertyType::CODE_ELEMENT) {
+                } elseif ($property->property_type == \itlo\cms\relatedProperties\PropertyType::CODE_ELEMENT) {
 
                     $propertyType = $property->handler;
 
@@ -754,7 +753,7 @@ HTML;
                     if ($count > 100) {
                         $autoFilters["property{$property->id}"] = [
                             'class'        => WidgetField::class,
-                            'widgetClass'  => \skeeks\cms\backend\widgets\SelectModelDialogContentElementWidget::class,
+                            'widgetClass'  => \itlo\cms\backend\widgets\SelectModelDialogContentElementWidget::class,
                             'widgetConfig' => [
                                 'content_id' => $propertyType->content_id,
                             ],
@@ -789,11 +788,11 @@ HTML;
                     };
 
 
-                } elseif ($property->property_type == \skeeks\cms\relatedProperties\PropertyType::CODE_TREE) {
+                } elseif ($property->property_type == \itlo\cms\relatedProperties\PropertyType::CODE_TREE) {
                     $propertyType = $property->handler;
                     $autoFilters["property{$property->id}"] = [
                         'class'       => WidgetField::class,
-                        'widgetClass' => \skeeks\cms\backend\widgets\SelectModelDialogTreeWidget::class,
+                        'widgetClass' => \itlo\cms\backend\widgets\SelectModelDialogTreeWidget::class,
                         'label'       => \yii\helpers\ArrayHelper::getValue($relatedPropertiesModel->attributeLabels(), $name)." [свойство]",
                         'on apply'    => function (QueryFiltersEvent $e) use ($property) {
                             /**
@@ -847,7 +846,7 @@ HTML;
     public function contentEdit(Event $e)
     {
         $href = \yii\helpers\Html::a('Настройках контента',
-            \skeeks\cms\helpers\UrlHelper::construct([
+            \itlo\cms\helpers\UrlHelper::construct([
                 '/cms/admin-cms-content/update',
                 'pk' => $this->content->id,
             ])->enableAdmin()->toString());
@@ -875,7 +874,7 @@ HTML
         $model->loadDefaultValues();
 
         if ($content_id = \Yii::$app->request->get("content_id")) {
-            $contentModel = \skeeks\cms\models\CmsContent::findOne($content_id);
+            $contentModel = \itlo\cms\models\CmsContent::findOne($content_id);
             $model->content_id = $content_id;
         }
 
@@ -905,7 +904,7 @@ HTML
                 $relatedModel->load(\Yii::$app->request->post());
 
                 if ($model->save() && $relatedModel->save()) {
-                    \Yii::$app->getSession()->setFlash('success', \Yii::t('skeeks/cms', 'Saved'));
+                    \Yii::$app->getSession()->setFlash('success', \Yii::t('itlo/cms', 'Saved'));
 
                     $is_saved = true;
 
@@ -974,7 +973,7 @@ HTML
                 $relatedModel->load(\Yii::$app->request->post());
 
                 if ($model->save() && $relatedModel->save()) {
-                    \Yii::$app->getSession()->setFlash('success', \Yii::t('skeeks/cms', 'Saved'));
+                    \Yii::$app->getSession()->setFlash('success', \Yii::t('itlo/cms', 'Saved'));
 
                     $is_saved = true;
 
@@ -1219,28 +1218,28 @@ HTML
     {
         $columns = [
             [
-                'class' => \skeeks\cms\grid\ImageColumn2::class,
+                'class' => \itlo\cms\grid\ImageColumn2::class,
             ],
             'name',
-            ['class' => \skeeks\cms\grid\CreatedAtColumn::class],
+            ['class' => \itlo\cms\grid\CreatedAtColumn::class],
             [
-                'class'   => \skeeks\cms\grid\UpdatedAtColumn::class,
+                'class'   => \itlo\cms\grid\UpdatedAtColumn::class,
                 'visible' => false,
             ],
             [
-                'class'   => \skeeks\cms\grid\PublishedAtColumn::class,
+                'class'   => \itlo\cms\grid\PublishedAtColumn::class,
                 'visible' => false,
             ],
             [
-                'class'     => \skeeks\cms\grid\DateTimeColumnData::class,
+                'class'     => \itlo\cms\grid\DateTimeColumnData::class,
                 'attribute' => "published_to",
                 'visible'   => false,
             ],
-            ['class' => \skeeks\cms\grid\CreatedByColumn::class],
-            //['class' => \skeeks\cms\grid\UpdatedByColumn::class],
+            ['class' => \itlo\cms\grid\CreatedByColumn::class],
+            //['class' => \itlo\cms\grid\UpdatedByColumn::class],
             [
                 'class'     => \yii\grid\DataColumn::class,
-                'value'     => function (\skeeks\cms\models\CmsContentElement $model) {
+                'value'     => function (\itlo\cms\models\CmsContentElement $model) {
                     if (!$model->cmsTree) {
                         return null;
                     }
@@ -1259,12 +1258,12 @@ HTML
                 },
                 'format'    => 'raw',
                 'filter'    => false,
-                //'filter' => \skeeks\cms\helpers\TreeOptions::getAllMultiOptions(),
+                //'filter' => \itlo\cms\helpers\TreeOptions::getAllMultiOptions(),
                 'attribute' => 'tree_id',
             ],
             'additionalSections' => [
                 'class'   => \yii\grid\DataColumn::class,
-                'value'   => function (\skeeks\cms\models\CmsContentElement $model) {
+                'value'   => function (\itlo\cms\models\CmsContentElement $model) {
                     $result = [];
                     if ($model->cmsContentElementTrees) {
                         foreach ($model->cmsContentElementTrees as $contentElementTree) {
@@ -1275,21 +1274,21 @@ HTML
                     return implode('<br />', $result);
                 },
                 'format'  => 'raw',
-                'label'   => \Yii::t('skeeks/cms', 'Additional sections'),
+                'label'   => \Yii::t('itlo/cms', 'Additional sections'),
                 'visible' => false,
             ],
             [
                 'attribute' => 'active',
-                'class'     => \skeeks\cms\grid\BooleanColumn::class,
+                'class'     => \itlo\cms\grid\BooleanColumn::class,
             ],
             [
                 'class'  => \yii\grid\DataColumn::class,
                 'label'  => "Смотреть",
-                'value'  => function (\skeeks\cms\models\CmsContentElement $model) {
+                'value'  => function (\itlo\cms\models\CmsContentElement $model) {
                     return \yii\helpers\Html::a('<i class="glyphicon glyphicon-arrow-right"></i>', $model->absoluteUrl,
                         [
                             'target'    => '_blank',
-                            'title'     => \Yii::t('skeeks/cms', 'Watch to site (opens new window)'),
+                            'title'     => \Yii::t('itlo/cms', 'Watch to site (opens new window)'),
                             'data-pjax' => '0',
                             'class'     => 'btn btn-default btn-sm',
                         ]);
@@ -1332,14 +1331,14 @@ HTML
                     },
                 ];
             }
-            $searchRelatedPropertiesModel = new \skeeks\cms\models\searchs\SearchRelatedPropertiesModel();
+            $searchRelatedPropertiesModel = new \itlo\cms\models\searchs\SearchRelatedPropertiesModel();
             $searchRelatedPropertiesModel->initProperties($cmsContent->cmsContentProperties);
             $searchRelatedPropertiesModel->load(\Yii::$app->request->get());
             if ($dataProvider) {
                 $searchRelatedPropertiesModel->search($dataProvider);
             }
             /**
-             * @var $model \skeeks\cms\models\CmsContentElement
+             * @var $model \itlo\cms\models\CmsContentElement
              */
             if ($model->relatedPropertiesModel) {
                 $autoColumns = ArrayHelper::merge($autoColumns,

@@ -1,22 +1,21 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link https://skeeks.com/
- * @copyright (c) 2010 SkeekS
- * @date 10.11.2017
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 $config =
     [
-        'id' => 'app-skeeks-console',
+        'id' => 'app-itlo-console',
 
         'modules' => [
 
             'cms' => [
-                'controllerNamespace' => 'skeeks\cms\console\controllers'
+                'controllerNamespace' => 'itlo\cms\console\controllers'
             ],
 
             'ajaxfileupload' => [
-                'controllerNamespace' => 'skeeks\yii2\ajaxfileupload\console\controllers',
+                'controllerNamespace' => 'itlo\yii2\ajaxfileupload\console\controllers',
                 'private_tmp_dir' => '@frontend/runtime/ajaxfileupload'
             ]
         ],
@@ -34,7 +33,7 @@ $config =
                 'class'         => 'yii\console\controllers\MigrateController',
                 'migrationPath' => [
                     '@app/migrations',
-                    '@skeeks/cms/migrations',
+                    '@itlo/cms/migrations',
                 ],
             ],
         ]

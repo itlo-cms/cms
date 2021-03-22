@@ -1,15 +1,14 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 25.05.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\helpers;
+namespace itlo\cms\helpers;
 
-use skeeks\cms\base\Component;
-use skeeks\yii2\config\ConfigModel;
+use itlo\cms\base\Component;
+use itlo\yii2\config\ConfigModel;
 use yii\data\DataProviderInterface;
 
 /**
@@ -18,7 +17,7 @@ use yii\data\DataProviderInterface;
  * @property array                 $resultColumns; готовый конфиг для построения колонок
  *
  * Class ShopProductFiltersWidget
- * @package skeeks\cms\helpers
+ * @package itlo\cms\helpers
  */
 class PaginationConfig extends ConfigModel
 {
@@ -64,11 +63,11 @@ class PaginationConfig extends ConfigModel
     public function attributeLabels()
     {
         return [
-            'pageParam'        => \Yii::t('skeeks/cms', 'Parameter name pages, pagination'),
-            'defaultPageSize'  => \Yii::t('skeeks/cms', 'Number of records on one page'),
-            'pageSizeLimitMin' => \Yii::t('skeeks/cms', 'The minimum allowable value for pagination'),
-            'pageSizeLimitMax' => \Yii::t('skeeks/cms', 'The maximum allowable value for pagination'),
-            'pageSizeParam' => \Yii::t('skeeks/cms', 'pageSizeParam'),
+            'pageParam'        => \Yii::t('itlo/cms', 'Parameter name pages, pagination'),
+            'defaultPageSize'  => \Yii::t('itlo/cms', 'Number of records on one page'),
+            'pageSizeLimitMin' => \Yii::t('itlo/cms', 'The minimum allowable value for pagination'),
+            'pageSizeLimitMax' => \Yii::t('itlo/cms', 'The maximum allowable value for pagination'),
+            'pageSizeParam' => \Yii::t('itlo/cms', 'pageSizeParam'),
         ];
     }
 

@@ -1,15 +1,14 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 14.10.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 /* @var $this yii\web\View */
-/* @var $action \skeeks\cms\modules\admin\actions\modelEditor\AdminMultiDialogModelEditAction */
-/* @var $content \skeeks\cms\models\CmsContent */
+/* @var $action \itlo\cms\modules\admin\actions\modelEditor\AdminMultiDialogModelEditAction */
+/* @var $content \itlo\cms\models\CmsContent */
 
-$model = new \skeeks\cms\models\CmsContentElement();
+$model = new \itlo\cms\models\CmsContentElement();
 
 $jsData = \yii\helpers\Json::encode([
     'id' => $action->id
@@ -67,12 +66,12 @@ JS
         <?php if ($element && $rpm) : ?>
 
             <? $rpm->initAllProperties(); ?>
-            <?php $form = \skeeks\cms\modules\admin\widgets\ActiveForm::begin([
+            <?php $form = \itlo\cms\modules\admin\widgets\ActiveForm::begin([
                 'options' => [
                     'class' => 'sx-form',
                 ]
             ]); ?>
-            <?= \skeeks\widget\chosen\Chosen::widget([
+            <?= \itlo\widget\chosen\Chosen::widget([
                 'multiple' => true,
                 'name' => 'fields',
                 'options' => [
@@ -86,12 +85,12 @@ JS
 
             <?php foreach ($rpm->getProperties() as $property) : ?>
                 <div class="sx-multi sx-multi-<?= $property->code; ?>" style="display: none;">
-                    <?php if ($property->property_type == \skeeks\cms\relatedProperties\PropertyType::CODE_ELEMENT) : ?>
+                    <?php if ($property->property_type == \itlo\cms\relatedProperties\PropertyType::CODE_ELEMENT) : ?>
 
-                        <?php if ($property->handler->fieldElement == \skeeks\cms\relatedProperties\propertyTypes\PropertyTypeElement::FIELD_ELEMENT_SELECT) : ?>
+                        <?php if ($property->handler->fieldElement == \itlo\cms\relatedProperties\propertyTypes\PropertyTypeElement::FIELD_ELEMENT_SELECT) : ?>
                             <?
                             echo $form->field($rpm, $property->code)->widget(
-                                \skeeks\cms\backend\widgets\SelectModelDialogContentElementWidget::class,
+                                \itlo\cms\backend\widgets\SelectModelDialogContentElementWidget::class,
                                 [
                                     'content_id' => $property->handler->content_id
                                 ]
@@ -101,7 +100,7 @@ JS
                             : ?>
                             <?
                             echo $form->field($rpm, $property->code)->widget(
-                                \skeeks\cms\backend\widgets\SelectModelDialogContentElementWidget::class,
+                                \itlo\cms\backend\widgets\SelectModelDialogContentElementWidget::class,
                                 [
                                     'content_id' => $property->handler->content_id,
                                     'multiple' => true

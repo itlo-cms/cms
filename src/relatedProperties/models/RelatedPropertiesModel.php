@@ -1,16 +1,15 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 18.05.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\relatedProperties\models;
+namespace itlo\cms\relatedProperties\models;
 
-use skeeks\cms\models\behaviors\HasDescriptionsBehavior;
-use skeeks\cms\models\behaviors\HasStatus;
-use skeeks\cms\relatedProperties\PropertyType;
+use itlo\cms\models\behaviors\HasDescriptionsBehavior;
+use itlo\cms\models\behaviors\HasStatus;
+use itlo\cms\relatedProperties\PropertyType;
 use yii\base\DynamicModel;
 use yii\base\Exception;
 use yii\base\ModelEvent;
@@ -26,7 +25,7 @@ use yii\base\InvalidParamException;
  * @property RelatedPropertyModel[] $properties
  *
  * Class RelatedPropertiesModel
- * @package skeeks\cms\relatedProperties\models
+ * @package itlo\cms\relatedProperties\models
  */
 class RelatedPropertiesModel extends DynamicModel
 {
@@ -619,7 +618,7 @@ class RelatedPropertiesModel extends DynamicModel
         if ($this->hasAttribute($name)) {
             $this->$name = $value;
         } else {
-            throw new InvalidArgumentException(get_class($this).' '.\Yii::t('skeeks/cms',
+            throw new InvalidArgumentException(get_class($this).' '.\Yii::t('itlo/cms',
                     'has no attribute named "{name}".', ['name' => $name]));
         }
     }

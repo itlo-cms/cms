@@ -1,18 +1,17 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 30.03.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\helpers;
+namespace itlo\cms\helpers;
 
-use skeeks\cms\components\imaging\Filter;
+use itlo\cms\components\imaging\Filter;
 
 /**
  * Class Request
- * @package skeeks\cms\helpers
+ * @package itlo\cms\helpers
  */
 class Image
 {

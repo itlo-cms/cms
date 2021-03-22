@@ -1,25 +1,24 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 25.05.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\cmsWidgets\treeMenu;
+namespace itlo\cms\cmsWidgets\treeMenu;
 
-use skeeks\cms\base\WidgetRenderable;
-use skeeks\cms\components\Cms;
-use skeeks\cms\grid\BooleanColumn;
-use skeeks\cms\models\CmsSite;
-use skeeks\cms\models\CmsTree;
-use skeeks\cms\models\Tree;
-use skeeks\cms\widgets\formInputs\selectTree\SelectTreeInputWidget;
-use skeeks\yii2\form\fields\BoolField;
-use skeeks\yii2\form\fields\FieldSet;
-use skeeks\yii2\form\fields\FieldSetEnd;
-use skeeks\yii2\form\fields\SelectField;
-use skeeks\yii2\form\fields\WidgetField;
+use itlo\cms\base\WidgetRenderable;
+use itlo\cms\components\Cms;
+use itlo\cms\grid\BooleanColumn;
+use itlo\cms\models\CmsSite;
+use itlo\cms\models\CmsTree;
+use itlo\cms\models\Tree;
+use itlo\cms\widgets\formInputs\selectTree\SelectTreeInputWidget;
+use itlo\yii2\form\fields\BoolField;
+use itlo\yii2\form\fields\FieldSet;
+use itlo\yii2\form\fields\FieldSetEnd;
+use itlo\yii2\form\fields\SelectField;
+use itlo\yii2\form\fields\WidgetField;
 use yii\caching\TagDependency;
 use yii\db\ActiveQuery;
 use yii\helpers\ArrayHelper;
@@ -28,7 +27,7 @@ use yii\widgets\ActiveForm;
 /**
  * Class TreeMenuCmsWidget
  *
- * @package skeeks\cms\cmsWidgets\treeMenu
+ * @package itlo\cms\cmsWidgets\treeMenu
  */
 class TreeMenuCmsWidget extends WidgetRenderable
 {
@@ -127,18 +126,18 @@ class TreeMenuCmsWidget extends WidgetRenderable
     {
         return array_merge(parent::attributeLabels(),
             [
-                'treePid'            => \Yii::t('skeeks/cms', 'The parent section'),
-                'active'             => \Yii::t('skeeks/cms', 'Activity'),
-                'level'              => \Yii::t('skeeks/cms', 'The nesting level'),
-                'label'              => \Yii::t('skeeks/cms', 'Header'),
-                'site_codes'         => \Yii::t('skeeks/cms', 'Linking to sites'),
-                'orderBy'            => \Yii::t('skeeks/cms', 'Sorting'),
-                'order'              => \Yii::t('skeeks/cms', 'Sorting direction'),
-                'enabledCurrentSite' => \Yii::t('skeeks/cms', 'Consider the current site'),
-                'enabledRunCache'    => \Yii::t('skeeks/cms', 'Enable caching'),
-                'runCacheDuration'   => \Yii::t('skeeks/cms', 'Cache lifetime'),
-                'tree_type_ids'      => \Yii::t('skeeks/cms', 'Section types'),
-                'limit'              => \Yii::t('skeeks/cms', 'The maximum number of entries in the sample ({limit})',
+                'treePid'            => \Yii::t('itlo/cms', 'The parent section'),
+                'active'             => \Yii::t('itlo/cms', 'Activity'),
+                'level'              => \Yii::t('itlo/cms', 'The nesting level'),
+                'label'              => \Yii::t('itlo/cms', 'Header'),
+                'site_codes'         => \Yii::t('itlo/cms', 'Linking to sites'),
+                'orderBy'            => \Yii::t('itlo/cms', 'Sorting'),
+                'order'              => \Yii::t('itlo/cms', 'Sorting direction'),
+                'enabledCurrentSite' => \Yii::t('itlo/cms', 'Consider the current site'),
+                'enabledRunCache'    => \Yii::t('itlo/cms', 'Enable caching'),
+                'runCacheDuration'   => \Yii::t('itlo/cms', 'Cache lifetime'),
+                'tree_type_ids'      => \Yii::t('itlo/cms', 'Section types'),
+                'limit'              => \Yii::t('itlo/cms', 'The maximum number of entries in the sample ({limit})',
                                                             ['limit' => 'limit']),
             ]);
     }
@@ -147,9 +146,9 @@ class TreeMenuCmsWidget extends WidgetRenderable
     {
         return array_merge(parent::attributeHints(),
             [
-                'enabledCurrentSite' => \Yii::t('skeeks/cms',
+                'enabledCurrentSite' => \Yii::t('itlo/cms',
                     'If you select "yes", then the sample section, add the filter condition, sections of the site, which is called the widget'),
-                'level'              => \Yii::t('skeeks/cms',
+                'level'              => \Yii::t('itlo/cms',
                     'Adds the sample sections, the condition of nesting choice. 0 - will not use this condition at all.'),
             ]);
     }
@@ -175,7 +174,7 @@ class TreeMenuCmsWidget extends WidgetRenderable
         return [
             'template' => [
                 'class'  => FieldSet::class,
-                'name'   => \Yii::t('skeeks/cms', 'Template'),
+                'name'   => \Yii::t('itlo/cms', 'Template'),
                 'fields' => [
                     'viewFile',
                 ],
@@ -183,7 +182,7 @@ class TreeMenuCmsWidget extends WidgetRenderable
 
             'filtration' => [
                 'class'  => FieldSet::class,
-                'name'   => \Yii::t('skeeks/cms', 'Filtration'),
+                'name'   => \Yii::t('itlo/cms', 'Filtration'),
                 'fields' => [
                     'enabledCurrentSite' => [
                         'class'      => BoolField::class,
@@ -198,7 +197,7 @@ class TreeMenuCmsWidget extends WidgetRenderable
                     'tree_type_ids'      => [
                         'class'    => SelectField::class,
                         'items'    => \yii\helpers\ArrayHelper::map(
-                            \skeeks\cms\models\CmsTreeType::find()->all(), 'id', 'name'
+                            \itlo\cms\models\CmsTreeType::find()->all(), 'id', 'name'
                         ),
                         'multiple' => true,
                     ],
@@ -210,7 +209,7 @@ class TreeMenuCmsWidget extends WidgetRenderable
                     'site_codes'         => [
                         'class'    => SelectField::class,
                         'items'    => \yii\helpers\ArrayHelper::map(
-                            \skeeks\cms\models\CmsSite::find()->active()->all(),
+                            \itlo\cms\models\CmsSite::find()->active()->all(),
                             'code',
                             'name'
                         ),
@@ -224,17 +223,17 @@ class TreeMenuCmsWidget extends WidgetRenderable
             ],
             'sort'       => [
                 'class'  => FieldSet::class,
-                'name'   => \Yii::t('skeeks/cms', 'Sorting'),
+                'name'   => \Yii::t('itlo/cms', 'Sorting'),
                 'fields' => [
                     'orderBy' => [
                         'class' => SelectField::class,
-                        'items' => (new \skeeks\cms\models\Tree())->attributeLabels(),
+                        'items' => (new \itlo\cms\models\Tree())->attributeLabels(),
                     ],
                     'order'   => [
                         'class' => SelectField::class,
                         'items' => [
-                            SORT_ASC  => \Yii::t('skeeks/cms', 'ASC (from lowest to highest)'),
-                            SORT_DESC => \Yii::t('skeeks/cms', 'DESC (from highest to lowest)'),
+                            SORT_ASC  => \Yii::t('itlo/cms', 'ASC (from lowest to highest)'),
+                            SORT_DESC => \Yii::t('itlo/cms', 'DESC (from highest to lowest)'),
                         ],
                     ],
                     'limit'
@@ -242,14 +241,14 @@ class TreeMenuCmsWidget extends WidgetRenderable
             ],
             'additionally'       => [
                 'class'  => FieldSet::class,
-                'name'   => \Yii::t('skeeks/cms', 'Additionally'),
+                'name'   => \Yii::t('itlo/cms', 'Additionally'),
                 'fields' => [
                     'label'
                 ],
             ],
             'cache'       => [
                 'class'  => FieldSet::class,
-                'name'   => \Yii::t('skeeks/cms', 'Cache settings'),
+                'name'   => \Yii::t('itlo/cms', 'Cache settings'),
                 'fields' => [
                     'enabledRunCache' => [
                         'class' => BoolField::class,

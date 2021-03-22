@@ -2,18 +2,17 @@
 /**
  * Селект в который можно добавлять записи
  *
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 16.03.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\widgets\formInputs;
+namespace itlo\cms\widgets\formInputs;
 
-use skeeks\cms\Exception;
-use skeeks\cms\models\Publication;
-use skeeks\cms\modules\admin\widgets\Pjax;
-use skeeks\widget\chosen\Chosen;
+use itlo\cms\Exception;
+use itlo\cms\models\Publication;
+use itlo\cms\modules\admin\widgets\Pjax;
+use itlo\widget\chosen\Chosen;
 use yii\helpers\Html;
 use yii\helpers\Json;
 use yii\widgets\InputWidget;
@@ -22,7 +21,7 @@ use Yii;
 /**
  * @deprecated
  * Class EditedSelect
- * @package skeeks\cms\widgets\formInputs
+ * @package itlo\cms\widgets\formInputs
  */
 class EditedSelect extends Chosen
 {
@@ -67,20 +66,20 @@ class EditedSelect extends Chosen
         echo "<div class='col-md-6'>";
 
 
-        $createUrl = (string)\skeeks\cms\backend\helpers\BackendUrlHelper::createByParams([$this->controllerRoute . '/' . $this->createAction])
+        $createUrl = (string)\itlo\cms\backend\helpers\BackendUrlHelper::createByParams([$this->controllerRoute . '/' . $this->createAction])
             ->merge($this->additionalData)
             ->enableEmptyLayout()
             ->enableNoActions()
             ->url;
 
-        $updateUrl = (string)\skeeks\cms\backend\helpers\BackendUrlHelper::createByParams([$this->controllerRoute . '/' . $this->updateAction])
+        $updateUrl = (string)\itlo\cms\backend\helpers\BackendUrlHelper::createByParams([$this->controllerRoute . '/' . $this->updateAction])
             ->merge($this->additionalData)
             ->enableEmptyLayout()
             ->url;
 
 
-        $create_w = \Yii::t('skeeks/cms', 'Create');
-        $edit_w = \Yii::t('skeeks/cms', 'Edit');
+        $create_w = \Yii::t('itlo/cms', 'Create');
+        $edit_w = \Yii::t('itlo/cms', 'Edit');
         echo <<<HTML
             <a href="{$createUrl}" class="btn btn-default sx-btn-create sx-btn-controll" ><span class="fa fa-plus"></span> {$create_w}</a>
             <a href="{$updateUrl}" class="btn btn-default sx-btn-update sx-btn-controll" ><span class="fa fa-edit"></span> {$edit_w}</a>

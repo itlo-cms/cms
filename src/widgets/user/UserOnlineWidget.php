@@ -1,21 +1,20 @@
 <?php
 /**
- * @link https://cms.skeeks.com/
- * @copyright Copyright (c) 2010 SkeekS
- * @license https://cms.skeeks.com/license/
- * @author Semenov Alexander <semenov@skeeks.com>
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\widgets\user;
+namespace itlo\cms\widgets\user;
 
 use common\models\User;
-use skeeks\cms\widgets\user\assets\UserOnlineWidgetAsset;
+use itlo\cms\widgets\user\assets\UserOnlineWidgetAsset;
 use yii\base\Widget;
 use yii\helpers\ArrayHelper;
 
 /**
  * Виджет отображения индикатора онлайн пользователь или офлайн
- * @author Semenov Alexander <semenov@skeeks.com>
+ * @author Semenov Alexander <semenov@itlo.com>
  */
 class UserOnlineWidget extends Widget
 {
@@ -38,14 +37,14 @@ class UserOnlineWidget extends Widget
 
         if ($user->isOnline) {
             $options = ArrayHelper::merge($this->options, [
-                'title' => \Yii::t('skeeks/cms', 'Online'),
+                'title' => \Yii::t('itlo/cms', 'Online'),
                 'data-toggle' => 'tooltip',
             ]);
 
             $online = \yii\helpers\Html::img(UserOnlineWidgetAsset::getAssetUrl('icons/round_green.gif'), $options);
         } else {
             $options = ArrayHelper::merge($this->options, [
-                'title' => \Yii::t('skeeks/cms', 'Offline'),
+                'title' => \Yii::t('itlo/cms', 'Offline'),
                 'data-toggle' => 'tooltip',
             ]);
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace skeeks\cms\models;
+namespace itlo\cms\models;
 
 use Yii;
 
@@ -21,7 +21,7 @@ use Yii;
  * @property CmsUser $cmsUser
  * @property CmsDashboardWidget[] $cmsDashboardWidgets
  */
-class CmsDashboard extends \skeeks\cms\models\Core
+class CmsDashboard extends \itlo\cms\models\Core
 {
     /**
      * @inheritdoc
@@ -54,16 +54,16 @@ class CmsDashboard extends \skeeks\cms\models\Core
     public function attributeLabels()
     {
         return [
-            'id' => Yii::t('skeeks/cms', 'ID'),
-            'created_by' => Yii::t('skeeks/cms', 'Created By'),
-            'updated_by' => Yii::t('skeeks/cms', 'Updated By'),
-            'created_at' => Yii::t('skeeks/cms', 'Created At'),
-            'updated_at' => Yii::t('skeeks/cms', 'Updated At'),
-            'name' => Yii::t('skeeks/cms', 'Name'),
-            'cms_user_id' => Yii::t('skeeks/cms', 'Cms User ID'),
-            'priority' => Yii::t('skeeks/cms', 'Priority'),
-            'columns' => Yii::t('skeeks/cms', 'Number of columns'),
-            'columns_settings' => Yii::t('skeeks/cms', 'Columns Settings'),
+            'id' => Yii::t('itlo/cms', 'ID'),
+            'created_by' => Yii::t('itlo/cms', 'Created By'),
+            'updated_by' => Yii::t('itlo/cms', 'Updated By'),
+            'created_at' => Yii::t('itlo/cms', 'Created At'),
+            'updated_at' => Yii::t('itlo/cms', 'Updated At'),
+            'name' => Yii::t('itlo/cms', 'Name'),
+            'cms_user_id' => Yii::t('itlo/cms', 'Cms User ID'),
+            'priority' => Yii::t('itlo/cms', 'Priority'),
+            'columns' => Yii::t('itlo/cms', 'Number of columns'),
+            'columns_settings' => Yii::t('itlo/cms', 'Columns Settings'),
         ];
     }
 

@@ -1,14 +1,13 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 18.12.2016
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 /* @var $this yii\web\View */
-/* @var $widget \skeeks\cms\widgets\tree\CmsTreeWidget */
-/* @var $model \skeeks\cms\models\CmsTree */
-/* @var $selectTreeInputWidget \skeeks\cms\widgets\formInputs\selectTree\SelectTreeInputWidget */
+/* @var $widget \itlo\cms\widgets\tree\CmsTreeWidget */
+/* @var $model \itlo\cms\models\CmsTree */
+/* @var $selectTreeInputWidget \itlo\cms\widgets\formInputs\selectTree\SelectTreeInputWidget */
 $widget = $this->context;
 $selectTreeInputWidget = \yii\helpers\ArrayHelper::getValue($widget->contextData, 'selectTreeInputWidget');
 ?>
@@ -21,7 +20,7 @@ $selectTreeInputWidget = \yii\helpers\ArrayHelper::getValue($widget->contextData
 <!-- Possible actions -->
 <!--<div class="sx-controll-node row">
     <div class="pull-left sx-controll-act">
-        <a href="<?php /*= $model->absoluteUrl; */ ?>" target="_blank" class="btn-tree-node-controll btn btn-default btn-sm show-at-site" title="<?php /*= \Yii::t('skeeks/cms',"Show at site"); */ ?>">
+        <a href="<?php /*= $model->absoluteUrl; */ ?>" target="_blank" class="btn-tree-node-controll btn btn-default btn-sm show-at-site" title="<?php /*= \Yii::t('itlo/cms',"Show at site"); */ ?>">
             <span class="fa fa-eye"></span>
         </a>
     </div>

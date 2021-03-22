@@ -1,26 +1,25 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 15.05.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\controllers;
+namespace itlo\cms\controllers;
 
-use skeeks\cms\helpers\UrlHelper;
-use skeeks\cms\models\CmsContent;
-use skeeks\cms\modules\admin\controllers\AdminModelEditorController;
+use itlo\cms\helpers\UrlHelper;
+use itlo\cms\models\CmsContent;
+use itlo\cms\modules\admin\controllers\AdminModelEditorController;
 
 /**
  * Class AdminCmsContentTypeController
- * @package skeeks\cms\controllers
+ * @package itlo\cms\controllers
  */
 class AdminCmsContentController extends AdminModelEditorController
 {
     public function init()
     {
-        $this->name = \Yii::t('skeeks/cms', 'Content management');
+        $this->name = \Yii::t('itlo/cms', 'Content management');
         $this->modelShowAttribute = "name";
         $this->modelClassName = CmsContent::class;
 

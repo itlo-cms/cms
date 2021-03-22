@@ -1,14 +1,13 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 12.04.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\widgets;
+namespace itlo\cms\widgets;
 
-use skeeks\cms\admin\assets\ActionFilesAsset;
+use itlo\cms\admin\assets\ActionFilesAsset;
 use yii\base\Widget;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Url;
@@ -17,7 +16,7 @@ use yii\helpers\Url;
  * @property array $defaultClientOptions read-only
  *
  * Class ControllerActions
- * @package skeeks\cms\modules\admin\widgets
+ * @package itlo\cms\modules\admin\widgets
  * @deprecated
  */
 class StorageFileManager extends Widget
@@ -82,12 +81,12 @@ JS
 
     public function run()
     {
-        $str_upload = \Yii::t('skeeks/cms', 'Upload');
-        $str_togg_drop = \Yii::t('skeeks/cms', 'Toggle Dropdow');
-        $str_upl_from_comp = \Yii::t('skeeks/cms', 'Upload from your computer');
-        $str_remote_upl = \Yii::t('skeeks/cms', 'Upload by link {http}', ['http' => 'http://']);
-        $str_up_f = \Yii::t('skeeks/cms', 'The upload file');
-        $str_up_fs = \Yii::t('skeeks/cms', 'The upload files');
+        $str_upload = \Yii::t('itlo/cms', 'Upload');
+        $str_togg_drop = \Yii::t('itlo/cms', 'Toggle Dropdow');
+        $str_upl_from_comp = \Yii::t('itlo/cms', 'Upload from your computer');
+        $str_remote_upl = \Yii::t('itlo/cms', 'Upload by link {http}', ['http' => 'http://']);
+        $str_up_f = \Yii::t('itlo/cms', 'The upload file');
+        $str_up_fs = \Yii::t('itlo/cms', 'The upload files');
         return <<<HTML
     <div id="sx-file-manager-{$this->id}">
 

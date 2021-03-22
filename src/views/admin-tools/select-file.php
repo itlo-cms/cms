@@ -1,15 +1,14 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 28.04.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 /* @var $this yii\web\View */
 
 /* @var $model \yii\db\ActiveRecord */
 
-use skeeks\cms\modules\admin\widgets\form\ActiveFormUseTab as ActiveForm;
+use itlo\cms\modules\admin\widgets\form\ActiveFormUseTab as ActiveForm;
 
 ?>
 
@@ -87,13 +86,13 @@ JS
     ],
     'items'       => [
         [
-            'label'   => \Yii::t('skeeks/cms', 'File storage'),
+            'label'   => \Yii::t('itlo/cms', 'File storage'),
             'content' => $this->render('_file-storage-select-file'),
             'active'  => true,
             'class' => 'active'
         ],
         [
-            'label'   => \Yii::t('skeeks/cms', 'File manager'),
+            'label'   => \Yii::t('itlo/cms', 'File manager'),
             'content' => $this->render('_file-manager-select-file'),
         ],
     ],
@@ -104,9 +103,9 @@ JS
 <hr/>
 <? /*= \yii\helpers\Html::a("<i class='glyphicon glyphicon-question-sign'></i>", "#", [
     'class' => 'btn btn-default',
-    'onclick' => "sx.dialog({'title' : '" . \Yii::t('skeeks/cms', 'Help') . "', 'content' : '#sx-help'}); return false;"
+    'onclick' => "sx.dialog({'title' : '" . \Yii::t('itlo/cms', 'Help') . "', 'content' : '#sx-help'}); return false;"
 ]); */ ?>
 <div style="display: none;" id="sx-help">
-    <?php /*\Yii::t('skeeks/cms', 'Help in the process of writing ...') */ ?>
+    <?php /*\Yii::t('itlo/cms', 'Help in the process of writing ...') */ ?>
 </div>-->
 

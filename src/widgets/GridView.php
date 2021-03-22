@@ -1,21 +1,20 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 25.05.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\widgets;
+namespace itlo\cms\widgets;
 
-use skeeks\cms\backend\helpers\BackendUrlHelper;
-use skeeks\cms\base\ActiveRecord;
-use skeeks\cms\helpers\PaginationConfig;
-use skeeks\cms\widgets\assets\GridViewAsset;
-use skeeks\yii2\config\ConfigBehavior;
-use skeeks\yii2\config\ConfigTrait;
-use skeeks\yii2\form\fields\FieldSet;
-use skeeks\yii2\form\fields\WidgetField;
+use itlo\cms\backend\helpers\BackendUrlHelper;
+use itlo\cms\base\ActiveRecord;
+use itlo\cms\helpers\PaginationConfig;
+use itlo\cms\widgets\assets\GridViewAsset;
+use itlo\yii2\config\ConfigBehavior;
+use itlo\yii2\config\ConfigTrait;
+use itlo\yii2\form\fields\FieldSet;
+use itlo\yii2\form\fields\WidgetField;
 use yii\base\Component;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
@@ -34,7 +33,7 @@ use yii\helpers\Inflector;
  * @property PaginationConfig      $paginationConfig;
  *
  * Class ShopProductFiltersWidget
- * @package skeeks\cms\cmsWidgets\filters
+ * @package itlo\cms\cmsWidgets\filters
  */
 class GridView extends \yii\grid\GridView
 {
@@ -121,15 +120,15 @@ class GridView extends \yii\grid\GridView
                     'fields'           => [
                         'main'             => [
                             'class'  => FieldSet::class,
-                            'name'   => \Yii::t('skeeks/cms', 'Main'),
+                            'name'   => \Yii::t('itlo/cms', 'Main'),
                             'fields' => [
                                 'caption',
                                 'visibleColumns' => [
                                     'class'           => WidgetField::class,
                                     'widgetClass'     => DualSelect::class,
                                     'widgetConfig'    => [
-                                        'visibleLabel' => \Yii::t('skeeks/cms', 'Display columns'),
-                                        'hiddenLabel'  => \Yii::t('skeeks/cms', 'Hidden columns'),
+                                        'visibleLabel' => \Yii::t('itlo/cms', 'Display columns'),
+                                        'hiddenLabel'  => \Yii::t('itlo/cms', 'Hidden columns'),
                                     ],
                                     //'multiple'        => true,
                                     'on beforeRender' => function ($e) {
@@ -147,7 +146,7 @@ class GridView extends \yii\grid\GridView
                         ],
                         /*'sort' => [
                             'class'  => FieldSet::class,
-                            'name'   => \Yii::t('skeeks/cms', 'Sorting'),
+                            'name'   => \Yii::t('itlo/cms', 'Sorting'),
                             'fields' => [
                                 'defaultOrder'  => [
                                     'class'           => WidgetField::class,
@@ -167,7 +166,7 @@ class GridView extends \yii\grid\GridView
                         ],*/
                         'paginationConfig' => [
                             'class'  => FieldSet::class,
-                            'name'   => \Yii::t('skeeks/cms', 'Pagination'),
+                            'name'   => \Yii::t('itlo/cms', 'Pagination'),
                             'fields' => [
                                 'defaultPageSize'  => [
                                     'elementOptions' => [
@@ -205,11 +204,11 @@ class GridView extends \yii\grid\GridView
                         'visibleColumns' => 'Отображаемые колонки',
                         'caption'        => 'Заголовок таблицы',
 
-                        'pageParam'        => \Yii::t('skeeks/cms', 'Parameter name pages, pagination'),
-                        'defaultPageSize'  => \Yii::t('skeeks/cms', 'Number of records on one page'),
-                        'pageSizeLimitMin' => \Yii::t('skeeks/cms', 'The minimum allowable value for pagination'),
-                        'pageSizeLimitMax' => \Yii::t('skeeks/cms', 'The maximum allowable value for pagination'),
-                        'pageSizeParam'    => \Yii::t('skeeks/cms', 'pageSizeParam'),
+                        'pageParam'        => \Yii::t('itlo/cms', 'Parameter name pages, pagination'),
+                        'defaultPageSize'  => \Yii::t('itlo/cms', 'Number of records on one page'),
+                        'pageSizeLimitMin' => \Yii::t('itlo/cms', 'The minimum allowable value for pagination'),
+                        'pageSizeLimitMax' => \Yii::t('itlo/cms', 'The maximum allowable value for pagination'),
+                        'pageSizeParam'    => \Yii::t('itlo/cms', 'pageSizeParam'),
 
                         'defaultOrder' => 'Сортировка',
                     ],
@@ -771,7 +770,7 @@ JS
 
                     }
 
-                    return \yii\helpers\Html::a('<i class="glyphicon glyphicon-circle-arrow-left"></i> '.\Yii::t('skeeks/cms',
+                    return \yii\helpers\Html::a('<i class="glyphicon glyphicon-circle-arrow-left"></i> '.\Yii::t('itlo/cms',
                             'Choose'), '#', [
                         'class'     => 'btn btn-primary sx-row-action',
                         'onclick'   => 'sx.SelectCmsElement.submit('.\yii\helpers\Json::encode($data).'); return false;',

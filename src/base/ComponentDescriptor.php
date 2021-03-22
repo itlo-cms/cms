@@ -1,21 +1,17 @@
 <?php
 /**
- * @link https://cms.skeeks.com/
- * @copyright Copyright (c) 2010 SkeekS
- * @license https://cms.skeeks.com/license/
- * @author Semenov Alexander <semenov@skeeks.com>
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright 2021 ITLO (Infomarket)
  */
 
-namespace skeeks\cms\base;
+namespace itlo\cms\base;
 
-use skeeks\cms\IHasImage;
-use skeeks\cms\IHasName;
-use skeeks\cms\traits\THasImage;
-use skeeks\cms\traits\THasName;
+use itlo\cms\IHasImage;
+use itlo\cms\IHasName;
+use itlo\cms\traits\THasImage;
+use itlo\cms\traits\THasName;
 
-/**
- * @author Semenov Alexander <semenov@skeeks.com>
- */
 class ComponentDescriptor extends \yii\base\Component implements IHasName, IHasImage
 {
     use THasName;

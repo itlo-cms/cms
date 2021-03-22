@@ -1,15 +1,13 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010-2014 SkeekS (Sx)
- * @date 09.11.2014
- * @since 1.0.0
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\models;
+namespace itlo\cms\models;
 
-use skeeks\cms\components\Cms;
+use itlo\cms\components\Cms;
 use Yii;
 use yii\helpers\ArrayHelper;
 
@@ -73,10 +71,10 @@ class CmsContent extends Core
     public static function getOnDeleteOptions()
     {
         return [
-            self::CASCADE => "CASCADE (" . \Yii::t('skeeks/cms', 'Remove all items of that content') . ")",
-            self::RESTRICT => "RESTRICT (" . \Yii::t('skeeks/cms',
+            self::CASCADE => "CASCADE (" . \Yii::t('itlo/cms', 'Remove all items of that content') . ")",
+            self::RESTRICT => "RESTRICT (" . \Yii::t('itlo/cms',
                     'Deny delete parent is not removed, these elements') . ")",
-            self::SET_NULL => "SET NULL (" . \Yii::t('skeeks/cms', 'Remove the connection to a remote parent') . ")",
+            self::SET_NULL => "SET NULL (" . \Yii::t('itlo/cms', 'Remove the connection to a remote parent') . ")",
         ];
     }
 
@@ -94,39 +92,39 @@ class CmsContent extends Core
     public function attributeLabels()
     {
         return array_merge(parent::attributeLabels(), [
-            'id' => Yii::t('skeeks/cms', 'ID'),
-            'created_by' => Yii::t('skeeks/cms', 'Created By'),
-            'updated_by' => Yii::t('skeeks/cms', 'Updated By'),
-            'created_at' => Yii::t('skeeks/cms', 'Created At'),
-            'updated_at' => Yii::t('skeeks/cms', 'Updated At'),
-            'name' => Yii::t('skeeks/cms', 'Name'),
-            'code' => Yii::t('skeeks/cms', 'Code'),
-            'active' => Yii::t('skeeks/cms', 'Active'),
-            'priority' => Yii::t('skeeks/cms', 'Priority'),
-            'description' => Yii::t('skeeks/cms', 'Description'),
-            'content_type' => Yii::t('skeeks/cms', 'Content Type'),
-            'index_for_search' => Yii::t('skeeks/cms', 'To index for search module'),
-            'tree_chooser' => Yii::t('skeeks/cms', 'The Interface Binding Element to Sections'),
-            'list_mode' => Yii::t('skeeks/cms', 'View Mode Sections And Elements'),
-            'name_meny' => Yii::t('skeeks/cms', 'The Name Of The Elements (Plural)'),
-            'name_one' => Yii::t('skeeks/cms', 'The Name One Element'),
+            'id' => Yii::t('itlo/cms', 'ID'),
+            'created_by' => Yii::t('itlo/cms', 'Created By'),
+            'updated_by' => Yii::t('itlo/cms', 'Updated By'),
+            'created_at' => Yii::t('itlo/cms', 'Created At'),
+            'updated_at' => Yii::t('itlo/cms', 'Updated At'),
+            'name' => Yii::t('itlo/cms', 'Name'),
+            'code' => Yii::t('itlo/cms', 'Code'),
+            'active' => Yii::t('itlo/cms', 'Active'),
+            'priority' => Yii::t('itlo/cms', 'Priority'),
+            'description' => Yii::t('itlo/cms', 'Description'),
+            'content_type' => Yii::t('itlo/cms', 'Content Type'),
+            'index_for_search' => Yii::t('itlo/cms', 'To index for search module'),
+            'tree_chooser' => Yii::t('itlo/cms', 'The Interface Binding Element to Sections'),
+            'list_mode' => Yii::t('itlo/cms', 'View Mode Sections And Elements'),
+            'name_meny' => Yii::t('itlo/cms', 'The Name Of The Elements (Plural)'),
+            'name_one' => Yii::t('itlo/cms', 'The Name One Element'),
 
-            'default_tree_id' => Yii::t('skeeks/cms', 'Default Section'),
-            'is_allow_change_tree' => Yii::t('skeeks/cms', 'Is Allow Change Default Section'),
-            'is_count_views' => Yii::t('skeeks/cms', 'Считать количество просмотров?'),
-            'root_tree_id' => Yii::t('skeeks/cms', 'Root Section'),
-            'view_file' => Yii::t('skeeks/cms', 'Template'),
+            'default_tree_id' => Yii::t('itlo/cms', 'Default Section'),
+            'is_allow_change_tree' => Yii::t('itlo/cms', 'Is Allow Change Default Section'),
+            'is_count_views' => Yii::t('itlo/cms', 'Считать количество просмотров?'),
+            'root_tree_id' => Yii::t('itlo/cms', 'Root Section'),
+            'view_file' => Yii::t('itlo/cms', 'Template'),
 
-            'meta_title_template' => Yii::t('skeeks/cms', 'Шаблон META TITLE'),
-            'meta_description_template' => Yii::t('skeeks/cms', 'Шаблон META KEYWORDS'),
-            'meta_keywords_template' => Yii::t('skeeks/cms', 'Шаблон META DESCRIPTION'),
+            'meta_title_template' => Yii::t('itlo/cms', 'Шаблон META TITLE'),
+            'meta_description_template' => Yii::t('itlo/cms', 'Шаблон META KEYWORDS'),
+            'meta_keywords_template' => Yii::t('itlo/cms', 'Шаблон META DESCRIPTION'),
 
-            'access_check_element' => Yii::t('skeeks/cms', 'Включить управление доступом к элементам'),
-            'parent_content_id' => Yii::t('skeeks/cms', 'Parent content'),
+            'access_check_element' => Yii::t('itlo/cms', 'Включить управление доступом к элементам'),
+            'parent_content_id' => Yii::t('itlo/cms', 'Parent content'),
 
-            'visible' => Yii::t('skeeks/cms', 'Show in menu'),
-            'parent_content_on_delete' => Yii::t('skeeks/cms', 'At the time of removal of the parent element'),
-            'parent_content_is_required' => Yii::t('skeeks/cms', 'Parent element is required to be filled'),
+            'visible' => Yii::t('itlo/cms', 'Show in menu'),
+            'parent_content_on_delete' => Yii::t('itlo/cms', 'At the time of removal of the parent element'),
+            'parent_content_is_required' => Yii::t('itlo/cms', 'Parent element is required to be filled'),
         ]);
     }
 
@@ -157,8 +155,8 @@ class CmsContent extends Core
             ['active', 'default', 'value' => Cms::BOOL_Y],
             ['is_allow_change_tree', 'default', 'value' => Cms::BOOL_Y],
             ['access_check_element', 'default', 'value' => Cms::BOOL_N],
-            ['name_meny', 'default', 'value' => Yii::t('skeeks/cms', 'Elements')],
-            ['name_one', 'default', 'value' => Yii::t('skeeks/cms', 'Element')],
+            ['name_meny', 'default', 'value' => Yii::t('itlo/cms', 'Elements')],
+            ['name_one', 'default', 'value' => Yii::t('itlo/cms', 'Element')],
 
 
             ['visible', 'default', 'value' => Cms::BOOL_Y],
@@ -180,7 +178,7 @@ class CmsContent extends Core
     public function validateCode($attribute)
     {
         if (!preg_match('/^[a-zA-Z]{1}[a-zA-Z0-9-]{1,255}$/', $this->$attribute)) {
-            $this->addError($attribute, \Yii::t('skeeks/cms',
+            $this->addError($attribute, \Yii::t('itlo/cms',
                 'Use only letters of the alphabet in lower or upper case and numbers, the first character of the letter (Example {code})',
                 ['code' => 'code1']));
         }

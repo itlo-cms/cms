@@ -2,7 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-use skeeks\cms\models\Tree;
+use itlo\cms\models\Tree;
 
 /* @var $this yii\web\View */
 /* @var $model Tree */
@@ -16,7 +16,7 @@ use skeeks\cms\models\Tree;
 <?= $form->field($model, 'description')->textarea() ?>
 
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? Yii::t('skeeks/cms', 'Create') : Yii::t('skeeks/cms', 'Update'),
+        <?= Html::submitButton($model->isNewRecord ? Yii::t('itlo/cms', 'Create') : Yii::t('itlo/cms', 'Update'),
             ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
 <?php ActiveForm::end(); ?>

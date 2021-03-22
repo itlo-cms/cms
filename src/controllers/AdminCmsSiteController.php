@@ -1,32 +1,31 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 31.05.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\controllers;
+namespace itlo\cms\controllers;
 
-use skeeks\cms\actions\backend\BackendModelMultiActivateAction;
-use skeeks\cms\actions\backend\BackendModelMultiDeactivateAction;
-use skeeks\cms\backend\actions\BackendGridModelRelatedAction;
-use skeeks\cms\backend\actions\BackendModelAction;
-use skeeks\cms\backend\controllers\BackendModelStandartController;
-use skeeks\cms\grid\BooleanColumn;
-use skeeks\cms\grid\ImageColumn2;
-use skeeks\cms\helpers\Image;
-use skeeks\cms\models\CmsSite;
-use skeeks\cms\queryfilters\filters\modes\FilterModeEmpty;
-use skeeks\cms\queryfilters\filters\modes\FilterModeNotEmpty;
-use skeeks\cms\queryfilters\QueryFiltersEvent;
-use skeeks\yii2\form\fields\BoolField;
-use skeeks\yii2\form\fields\FieldSet;
-use skeeks\yii2\form\fields\HiddenField;
-use skeeks\yii2\form\fields\HtmlBlock;
-use skeeks\yii2\form\fields\SelectField;
-use skeeks\yii2\form\fields\TextareaField;
-use skeeks\yii2\form\fields\WidgetField;
+use itlo\cms\actions\backend\BackendModelMultiActivateAction;
+use itlo\cms\actions\backend\BackendModelMultiDeactivateAction;
+use itlo\cms\backend\actions\BackendGridModelRelatedAction;
+use itlo\cms\backend\actions\BackendModelAction;
+use itlo\cms\backend\controllers\BackendModelStandartController;
+use itlo\cms\grid\BooleanColumn;
+use itlo\cms\grid\ImageColumn2;
+use itlo\cms\helpers\Image;
+use itlo\cms\models\CmsSite;
+use itlo\cms\queryfilters\filters\modes\FilterModeEmpty;
+use itlo\cms\queryfilters\filters\modes\FilterModeNotEmpty;
+use itlo\cms\queryfilters\QueryFiltersEvent;
+use itlo\yii2\form\fields\BoolField;
+use itlo\yii2\form\fields\FieldSet;
+use itlo\yii2\form\fields\HiddenField;
+use itlo\yii2\form\fields\HtmlBlock;
+use itlo\yii2\form\fields\SelectField;
+use itlo\yii2\form\fields\TextareaField;
+use itlo\yii2\form\fields\WidgetField;
 use yii\base\Event;
 use yii\data\ActiveDataProvider;
 use yii\db\ActiveQuery;
@@ -35,13 +34,13 @@ use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
+ * @author Semenov Alexander <semenov@itlo.com>
  */
 class AdminCmsSiteController extends BackendModelStandartController
 {
     public function init()
     {
-        $this->name = \Yii::t('skeeks/cms', "Site management");
+        $this->name = \Yii::t('itlo/cms', "Site management");
         $this->modelShowAttribute = "name";
         $this->modelClassName = CmsSite::class;
 
@@ -307,18 +306,18 @@ class AdminCmsSiteController extends BackendModelStandartController
         if ($action->model->def == 'Y') {
             $active = [
                 'class'     => HiddenField::class,
-                'hint'      => \Yii::t('skeeks/cms', 'Site selected by default always active')
+                'hint'      => \Yii::t('itlo/cms', 'Site selected by default always active')
             ];
             $def = [
                 'class'     => HiddenField::class,
-                'hint'      => \Yii::t('skeeks/cms', 'This site is the site selected by default. If you want to change it, you need to choose a different site, the default site.')
+                'hint'      => \Yii::t('itlo/cms', 'This site is the site selected by default. If you want to change it, you need to choose a different site, the default site.')
             ];
         }
 
         $result = [
             'image_id'    => [
                 'class'        => WidgetField::class,
-                'widgetClass'  => \skeeks\cms\widgets\AjaxFileUploadWidget::class,
+                'widgetClass'  => \itlo\cms\widgets\AjaxFileUploadWidget::class,
                 'widgetConfig' => [
                     'accept'   => 'image/*',
                     'multiple' => false,
@@ -338,11 +337,11 @@ class AdminCmsSiteController extends BackendModelStandartController
         /*if (!$action->model->isNewRecord) {
             $result['domains'] = [
                 'class'  => FieldSet::class,
-                'name'   => \Yii::t('skeeks/cms', "Domains"),
+                'name'   => \Yii::t('itlo/cms', "Domains"),
                 'fields' => [
                     'domains' => [
                         'class' => HtmlBlock::class,
-                        'content' => \skeeks\cms\modules\admin\widgets\RelatedModelsGrid::widget([
+                        'content' => \itlo\cms\modules\admin\widgets\RelatedModelsGrid::widget([
                             'label' => "",
                             'hint' => "",
                             'parentModel' => $action->model,

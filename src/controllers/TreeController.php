@@ -1,17 +1,16 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (�����)
- * @date 14.04.2016
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\controllers;
+namespace itlo\cms\controllers;
 
-use skeeks\cms\base\Controller;
-use skeeks\cms\helpers\UrlHelper;
-use skeeks\cms\models\CmsTree;
-use skeeks\cms\models\Tree;
+use itlo\cms\base\Controller;
+use itlo\cms\helpers\UrlHelper;
+use itlo\cms\models\CmsTree;
+use itlo\cms\models\Tree;
 use Yii;
 use yii\web\NotFoundHttpException;
 
@@ -19,7 +18,7 @@ use yii\web\NotFoundHttpException;
  * @property CmsTree $model
  *
  * Class TreeController
- * @package skeeks\cms\controllers
+ * @package itlo\cms\controllers
  */
 class TreeController extends Controller
 {
@@ -37,7 +36,7 @@ class TreeController extends Controller
                 $controller->requestPkParamName => $this->model->{$controller->modelPkAttribute}
             ];
 
-            $urlEditModel = \skeeks\cms\backend\helpers\BackendUrlHelper::createByParams($adminControllerRoute)
+            $urlEditModel = \itlo\cms\backend\helpers\BackendUrlHelper::createByParams($adminControllerRoute)
                 ->enableEmptyLayout()
                 ->url;
 
@@ -75,7 +74,7 @@ class TreeController extends Controller
     public function actionView()
     {
         if (!$this->model) {
-            throw new NotFoundHttpException(\Yii::t('skeeks/cms', 'Page not found'));
+            throw new NotFoundHttpException(\Yii::t('itlo/cms', 'Page not found'));
         }
 
         \Yii::$app->cms->setCurrentTree($this->model);

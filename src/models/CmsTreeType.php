@@ -1,12 +1,11 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 22.05.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\models;
+namespace itlo\cms\models;
 
 use Yii;
 
@@ -54,21 +53,21 @@ class CmsTreeType extends Core
     public function attributeLabels()
     {
         return array_merge(parent::attributeLabels(), [
-            'id' => Yii::t('skeeks/cms', 'ID'),
-            'created_by' => Yii::t('skeeks/cms', 'Created By'),
-            'updated_by' => Yii::t('skeeks/cms', 'Updated By'),
-            'created_at' => Yii::t('skeeks/cms', 'Created At'),
-            'updated_at' => Yii::t('skeeks/cms', 'Updated At'),
-            'name' => Yii::t('skeeks/cms', 'Name'),
-            'code' => Yii::t('skeeks/cms', 'Code'),
-            'active' => Yii::t('skeeks/cms', 'Active'),
-            'priority' => Yii::t('skeeks/cms', 'Priority'),
-            'description' => Yii::t('skeeks/cms', 'Description'),
-            'index_for_search' => Yii::t('skeeks/cms', 'To index for search module'),
-            'name_meny' => Yii::t('skeeks/cms', 'Name of many sections'),
-            'name_one' => Yii::t('skeeks/cms', 'Name of one section'),
-            'view_file' => Yii::t('skeeks/cms', 'Template'),
-            'default_children_tree_type' => Yii::t('skeeks/cms', 'Type of child partitions by default'),
+            'id' => Yii::t('itlo/cms', 'ID'),
+            'created_by' => Yii::t('itlo/cms', 'Created By'),
+            'updated_by' => Yii::t('itlo/cms', 'Updated By'),
+            'created_at' => Yii::t('itlo/cms', 'Created At'),
+            'updated_at' => Yii::t('itlo/cms', 'Updated At'),
+            'name' => Yii::t('itlo/cms', 'Name'),
+            'code' => Yii::t('itlo/cms', 'Code'),
+            'active' => Yii::t('itlo/cms', 'Active'),
+            'priority' => Yii::t('itlo/cms', 'Priority'),
+            'description' => Yii::t('itlo/cms', 'Description'),
+            'index_for_search' => Yii::t('itlo/cms', 'To index for search module'),
+            'name_meny' => Yii::t('itlo/cms', 'Name of many sections'),
+            'name_one' => Yii::t('itlo/cms', 'Name of one section'),
+            'view_file' => Yii::t('itlo/cms', 'Template'),
+            'default_children_tree_type' => Yii::t('itlo/cms', 'Type of child partitions by default'),
         ]);
     }
     /**
@@ -77,9 +76,9 @@ class CmsTreeType extends Core
     public function attributeHints()
     {
         return array_merge(parent::attributeHints(), [
-            'code' => \Yii::t('skeeks/cms', 'The name of the template to draw the elements of this type will be the same as the name of the code.'),
-            'view_file' => \Yii::t('skeeks/cms', 'The path to the template. If not specified, the pattern will be the same code.'),
-            'default_children_tree_type' => \Yii::t('skeeks/cms', 'If this parameter is not specified, the child partition is created of the same type as the current one.'),
+            'code' => \Yii::t('itlo/cms', 'The name of the template to draw the elements of this type will be the same as the name of the code.'),
+            'view_file' => \Yii::t('itlo/cms', 'The path to the template. If not specified, the pattern will be the same code.'),
+            'default_children_tree_type' => \Yii::t('itlo/cms', 'If this parameter is not specified, the child partition is created of the same type as the current one.'),
         ]);
     }
 
@@ -103,15 +102,15 @@ class CmsTreeType extends Core
             [['code'], 'validateCode'],
             ['priority', 'default', 'value' => 500],
             ['active', 'default', 'value' => "Y"],
-            ['name_meny', 'default', 'value' => \Yii::t('skeeks/cms', 'Sections')],
-            ['name_one', 'default', 'value' => \Yii::t('skeeks/cms', 'Section')],
+            ['name_meny', 'default', 'value' => \Yii::t('itlo/cms', 'Sections')],
+            ['name_one', 'default', 'value' => \Yii::t('itlo/cms', 'Section')],
         ]);
     }
 
     public function validateCode($attribute)
     {
         if (!preg_match('/^[a-zA-Z]{1}[a-zA-Z0-9-]{1,255}$/', $this->$attribute)) {
-            $this->addError($attribute, \Yii::t('skeeks/cms',
+            $this->addError($attribute, \Yii::t('itlo/cms',
                 'Use only letters of the alphabet in lower or upper case and numbers, the first character of the letter (Example {code})',
                 ['code' => 'code1']));
         }

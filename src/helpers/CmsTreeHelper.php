@@ -1,22 +1,21 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 13.08.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\helpers;
+namespace itlo\cms\helpers;
 
-use skeeks\cms\models\CmsContentElement;
-use skeeks\cms\models\Tree;
+use itlo\cms\models\CmsContentElement;
+use itlo\cms\models\Tree;
 use yii\base\Component;
 use yii\helpers\ArrayHelper;
 
 
 /**
  * Class CmsTreeHelper
- * @package skeeks\cms\helpers
+ * @package itlo\cms\helpers
  */
 abstract class CmsTreeHelper extends Component
 {

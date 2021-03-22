@@ -1,25 +1,24 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 25.05.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright 2021 ITLO (Infomarket)
  */
 
-namespace skeeks\cms\cmsWidgets\contentElements;
+namespace itlo\cms\cmsWidgets\contentElements;
 
-use skeeks\cms\base\WidgetRenderable;
-use skeeks\cms\components\Cms;
-use skeeks\cms\models\CmsContent;
-use skeeks\cms\models\CmsContentElement;
-use skeeks\cms\models\CmsContentElementTree;
-use skeeks\cms\models\Search;
-use skeeks\cms\models\Tree;
-use skeeks\cms\widgets\formInputs\selectTree\SelectTree;
-use skeeks\yii2\form\fields\BoolField;
-use skeeks\yii2\form\fields\FieldSet;
-use skeeks\yii2\form\fields\SelectField;
-use skeeks\yii2\form\fields\WidgetField;
+use itlo\cms\base\WidgetRenderable;
+use itlo\cms\components\Cms;
+use itlo\cms\models\CmsContent;
+use itlo\cms\models\CmsContentElement;
+use itlo\cms\models\CmsContentElementTree;
+use itlo\cms\models\Search;
+use itlo\cms\models\Tree;
+use itlo\cms\widgets\formInputs\selectTree\SelectTree;
+use itlo\yii2\form\fields\BoolField;
+use itlo\yii2\form\fields\FieldSet;
+use itlo\yii2\form\fields\SelectField;
+use itlo\yii2\form\fields\WidgetField;
 use yii\caching\TagDependency;
 use yii\data\ActiveDataProvider;
 use yii\db\ActiveQuery;
@@ -28,11 +27,11 @@ use yii\widgets\ActiveForm;
 
 /**
  * Class СontentElementsCmsWidget
- * @package skeeks\cms\cmsWidgets\contentElements
+ * @package itlo\cms\cmsWidgets\contentElements
  */
 class ContentElementsCmsWidget extends WidgetRenderable
 {
-    public $contentElementClass = '\skeeks\cms\models\CmsContentElement';
+    public $contentElementClass = '\itlo\cms\models\CmsContentElement';
 
     //Навигация
     public $enabledPaging = CMS::BOOL_Y;
@@ -103,7 +102,7 @@ class ContentElementsCmsWidget extends WidgetRenderable
     public static function descriptorConfig()
     {
         return array_merge(parent::descriptorConfig(), [
-            'name' => \Yii::t('skeeks/cms', 'Content elements'),
+            'name' => \Yii::t('itlo/cms', 'Content elements'),
         ]);
     }
     public function init()
@@ -257,33 +256,33 @@ class ContentElementsCmsWidget extends WidgetRenderable
     {
         return array_merge(parent::attributeLabels(),
             [
-                'enabledPaging'         => \Yii::t('skeeks/cms', 'Enable paging'),
-                'enabledPjaxPagination' => \Yii::t('skeeks/cms', 'Enable ajax navigation'),
-                'pageParamName'         => \Yii::t('skeeks/cms', 'Parameter name pages, pagination'),
-                'pageSize'              => \Yii::t('skeeks/cms', 'Number of records on one page'),
-                'pageSizeLimitMin'      => \Yii::t('skeeks/cms', 'The minimum allowable value for pagination'),
-                'pageSizeLimitMax'      => \Yii::t('skeeks/cms', 'The maximum allowable value for pagination'),
+                'enabledPaging'         => \Yii::t('itlo/cms', 'Enable paging'),
+                'enabledPjaxPagination' => \Yii::t('itlo/cms', 'Enable ajax navigation'),
+                'pageParamName'         => \Yii::t('itlo/cms', 'Parameter name pages, pagination'),
+                'pageSize'              => \Yii::t('itlo/cms', 'Number of records on one page'),
+                'pageSizeLimitMin'      => \Yii::t('itlo/cms', 'The minimum allowable value for pagination'),
+                'pageSizeLimitMax'      => \Yii::t('itlo/cms', 'The maximum allowable value for pagination'),
 
-                'orderBy' => \Yii::t('skeeks/cms', 'Sort by what parameter'),
-                'order'   => \Yii::t('skeeks/cms', 'Sorting direction'),
+                'orderBy' => \Yii::t('itlo/cms', 'Sort by what parameter'),
+                'order'   => \Yii::t('itlo/cms', 'Sorting direction'),
 
-                'label'               => \Yii::t('skeeks/cms', 'Title'),
-                'enabledSearchParams' => \Yii::t('skeeks/cms',
+                'label'               => \Yii::t('itlo/cms', 'Title'),
+                'enabledSearchParams' => \Yii::t('itlo/cms',
                     'Take into account the parameters from search string (for filtering)'),
 
-                'limit'                      => \Yii::t('skeeks/cms', 'The maximum number of entries in the sample ({limit})',
+                'limit'                      => \Yii::t('itlo/cms', 'The maximum number of entries in the sample ({limit})',
                     ['limit' => 'limit']),
-                'active'                     => \Yii::t('skeeks/cms', 'Active'),
-                'createdBy'                  => \Yii::t('skeeks/cms', 'Selecting the user records'),
-                'content_ids'                => \Yii::t('skeeks/cms', 'Elements of content'),
-                'enabledCurrentTree'         => \Yii::t('skeeks/cms',
+                'active'                     => \Yii::t('itlo/cms', 'Active'),
+                'createdBy'                  => \Yii::t('itlo/cms', 'Selecting the user records'),
+                'content_ids'                => \Yii::t('itlo/cms', 'Elements of content'),
+                'enabledCurrentTree'         => \Yii::t('itlo/cms',
                     'For the colection taken into account the current section (which shows the widget)'),
-                'enabledCurrentTreeChild'    => \Yii::t('skeeks/cms',
+                'enabledCurrentTreeChild'    => \Yii::t('itlo/cms',
                     'For the colection taken into account the current section and its subsections'),
-                'enabledCurrentTreeChildAll' => \Yii::t('skeeks/cms',
+                'enabledCurrentTreeChildAll' => \Yii::t('itlo/cms',
                     'For the colection taken into account the current section and all its subsections'),
-                'tree_ids'                   => \Yii::t('skeeks/cms', 'Show items linked to sections'),
-                'enabledActiveTime'          => \Yii::t('skeeks/cms', 'Take into consideration activity time'),
+                'tree_ids'                   => \Yii::t('itlo/cms', 'Show items linked to sections'),
+                'enabledActiveTime'          => \Yii::t('itlo/cms', 'Take into consideration activity time'),
 
                 'enabledRunCache'  => 'Включить кэширование',
                 'runCacheDuration' => 'Время жизни кэша',
@@ -292,7 +291,7 @@ class ContentElementsCmsWidget extends WidgetRenderable
     public function attributeHints()
     {
         return ArrayHelper::merge(parent::attributeHints(), [
-            'enabledActiveTime' => \Yii::t('skeeks/cms', "Will be considered time of beginning and end of the publication"),
+            'enabledActiveTime' => \Yii::t('itlo/cms', "Will be considered time of beginning and end of the publication"),
         ]);
     }
     public function rules()
@@ -333,7 +332,7 @@ class ContentElementsCmsWidget extends WidgetRenderable
         return [
             'template' => [
                 'class'  => FieldSet::class,
-                'name'   => \Yii::t('skeeks/cms', 'Template'),
+                'name'   => \Yii::t('itlo/cms', 'Template'),
                 'fields' => [
                     'viewFile',
                 ],
@@ -341,7 +340,7 @@ class ContentElementsCmsWidget extends WidgetRenderable
 
             'pagination' => [
                 'class'  => FieldSet::class,
-                'name'   => \Yii::t('skeeks/cms', 'Pagination'),
+                'name'   => \Yii::t('itlo/cms', 'Pagination'),
                 'fields' => [
                     'enabledPaging'         => [
                         'class'      => BoolField::class,
@@ -376,7 +375,7 @@ class ContentElementsCmsWidget extends WidgetRenderable
 
             'filtration' => [
                 'class'  => FieldSet::class,
-                'name'   => \Yii::t('skeeks/cms', 'Filtration'),
+                'name'   => \Yii::t('itlo/cms', 'Filtration'),
                 'fields' => [
                     'active'            => [
                         'class'      => BoolField::class,
@@ -392,7 +391,7 @@ class ContentElementsCmsWidget extends WidgetRenderable
                     'createdBy'         => [
                         'class' => SelectField::class,
                         'items' => \yii\helpers\ArrayHelper::map(
-                            \skeeks\cms\models\User::find()->active()->all(),
+                            \itlo\cms\models\User::find()->active()->all(),
                             'id',
                             'displayName'
                         ),
@@ -443,7 +442,7 @@ class ContentElementsCmsWidget extends WidgetRenderable
 
             'sort'         => [
                 'class'  => FieldSet::class,
-                'name'   => \Yii::t('skeeks/cms', 'Sorting and quantity'),
+                'name'   => \Yii::t('itlo/cms', 'Sorting and quantity'),
                 'fields' => [
                     'limit'   => [
                         'elementOptions' => [
@@ -452,27 +451,27 @@ class ContentElementsCmsWidget extends WidgetRenderable
                     ],
                     'orderBy' => [
                         'class' => SelectField::class,
-                        'items' => (new \skeeks\cms\models\Tree())->attributeLabels(),
+                        'items' => (new \itlo\cms\models\Tree())->attributeLabels(),
                     ],
                     'order'   => [
                         'class' => SelectField::class,
                         'items' => [
-                            SORT_ASC  => \Yii::t('skeeks/cms', 'ASC (from lowest to highest)'),
-                            SORT_DESC => \Yii::t('skeeks/cms', 'DESC (from highest to lowest)'),
+                            SORT_ASC  => \Yii::t('itlo/cms', 'ASC (from lowest to highest)'),
+                            SORT_DESC => \Yii::t('itlo/cms', 'DESC (from highest to lowest)'),
                         ],
                     ],
                 ],
             ],
             'additionally' => [
                 'class'  => FieldSet::class,
-                'name'   => \Yii::t('skeeks/cms', 'Additionally'),
+                'name'   => \Yii::t('itlo/cms', 'Additionally'),
                 'fields' => [
                     'label',
                 ],
             ],
             'cache'        => [
                 'class'  => FieldSet::class,
-                'name'   => \Yii::t('skeeks/cms', 'Cache settings'),
+                'name'   => \Yii::t('itlo/cms', 'Cache settings'),
                 'fields' => [
                     'enabledRunCache'  => [
                         'class'      => BoolField::class,

@@ -1,14 +1,13 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link https://skeeks.com/
- * @copyright (c) 2010 SkeekS
- * @date 21.03.2017
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 /* @var $this yii\web\View */
-/* @var $controller \skeeks\cms\backend\controllers\BackendModelController */
-/* @var $action \skeeks\cms\backend\actions\BackendModelCreateAction|\skeeks\cms\backend\actions\IHasActiveForm */
-/* @var $model \skeeks\cms\models\CmsLang */
+/* @var $controller \itlo\cms\backend\controllers\BackendModelController */
+/* @var $action \itlo\cms\backend\actions\BackendModelCreateAction|\itlo\cms\backend\actions\IHasActiveForm */
+/* @var $model \itlo\cms\models\CmsLang */
 $controller = $this->context;
 $action = $controller->action;
 ?>

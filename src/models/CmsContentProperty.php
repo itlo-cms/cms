@@ -1,15 +1,13 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010-2014 SkeekS (Sx)
- * @date 09.11.2014
- * @since 1.0.0
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\models;
+namespace itlo\cms\models;
 
-use skeeks\cms\relatedProperties\models\RelatedPropertyModel;
+use itlo\cms\relatedProperties\models\RelatedPropertyModel;
 use Yii;
 use yii\helpers\ArrayHelper;
 
@@ -43,7 +41,7 @@ class CmsContentProperty extends RelatedPropertyModel
     public function behaviors()
     {
         return ArrayHelper::merge(parent::behaviors(), [
-            \skeeks\cms\behaviors\RelationalBehavior::class,
+            \itlo\cms\behaviors\RelationalBehavior::class,
         ]);
     }
 
@@ -69,8 +67,8 @@ class CmsContentProperty extends RelatedPropertyModel
     public function attributeLabels()
     {
         return ArrayHelper::merge(parent::attributeLabels(), [
-            'cmsContents' => Yii::t('skeeks/cms', 'Linked to content'),
-            'cmsTrees' => Yii::t('skeeks/cms', 'Linked to sections'),
+            'cmsContents' => Yii::t('itlo/cms', 'Linked to content'),
+            'cmsTrees' => Yii::t('itlo/cms', 'Linked to sections'),
         ]);
     }
 
@@ -85,7 +83,7 @@ class CmsContentProperty extends RelatedPropertyModel
             [['cmsContents'], 'safe'],
             [['cmsTrees'], 'safe'],
             [['code'], 'unique'],
-            //[['code', 'content_id'], 'unique', 'targetAttribute' => ['content_id', 'code'], 'message' => \Yii::t('skeeks/cms','For the content of this code is already in use.')],
+            //[['code', 'content_id'], 'unique', 'targetAttribute' => ['content_id', 'code'], 'message' => \Yii::t('itlo/cms','For the content of this code is already in use.')],
         ]);
 
         return $rules;

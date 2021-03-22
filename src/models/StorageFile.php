@@ -2,18 +2,17 @@
 /**
  * StorageFile
  *
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 26.02.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\models;
+namespace itlo\cms\models;
 
-use skeeks\cms\components\storage\ClusterLocal;
-use skeeks\cms\models\behaviors\CanBeLinkedToModel;
-use skeeks\cms\models\behaviors\HasDescriptionsBehavior;
-use skeeks\cms\models\helpers\ModelFilesGroup;
+use itlo\cms\components\storage\ClusterLocal;
+use itlo\cms\models\behaviors\CanBeLinkedToModel;
+use itlo\cms\models\behaviors\HasDescriptionsBehavior;
+use itlo\cms\models\helpers\ModelFilesGroup;
 use Yii;
 use yii\helpers\ArrayHelper;
 
@@ -44,7 +43,7 @@ use yii\helpers\ArrayHelper;
  * @property string $absoluteSrc
  * @property string $downloadName
  *
- * @property \skeeks\cms\components\storage\Cluster $cluster
+ * @property \itlo\cms\components\storage\Cluster $cluster
  */
 class StorageFile extends Core
 {
@@ -74,7 +73,7 @@ class StorageFile extends Core
                 ['cluster_id', 'cluster_file'],
                 'unique',
                 'targetAttribute' => ['cluster_id', 'cluster_file'],
-                'message' => Yii::t('skeeks/cms',
+                'message' => Yii::t('itlo/cms',
                     'The combination of Cluster ID and Cluster Src has already been taken.')
             ],
         ]);
@@ -86,23 +85,23 @@ class StorageFile extends Core
     public function attributeLabels()
     {
         return array_merge(parent::attributeLabels(), [
-            'id' => Yii::t('skeeks/cms', 'ID'),
-            'cluster_id' => Yii::t('skeeks/cms', 'Storage'),
-            'cluster_file' => Yii::t('skeeks/cms', 'Cluster File'),
-            'created_by' => Yii::t('skeeks/cms', 'Created By'),
-            'updated_by' => Yii::t('skeeks/cms', 'Updated By'),
-            'created_at' => Yii::t('skeeks/cms', 'Created At'),
-            'updated_at' => Yii::t('skeeks/cms', 'Updated At'),
-            'size' => Yii::t('skeeks/cms', 'File Size'),
-            'mime_type' => Yii::t('skeeks/cms', 'File Type'),
-            'extension' => Yii::t('skeeks/cms', 'Extension'),
-            'original_name' => Yii::t('skeeks/cms', 'Original FileName'),
-            'name_to_save' => Yii::t('skeeks/cms', 'Name To Save'),
-            'name' => Yii::t('skeeks/cms', 'Name'),
-            'description_short' => Yii::t('skeeks/cms', 'Description Short'),
-            'description_full' => Yii::t('skeeks/cms', 'Description Full'),
-            'image_height' => Yii::t('skeeks/cms', 'Image Height'),
-            'image_width' => Yii::t('skeeks/cms', 'Image Width'),
+            'id' => Yii::t('itlo/cms', 'ID'),
+            'cluster_id' => Yii::t('itlo/cms', 'Storage'),
+            'cluster_file' => Yii::t('itlo/cms', 'Cluster File'),
+            'created_by' => Yii::t('itlo/cms', 'Created By'),
+            'updated_by' => Yii::t('itlo/cms', 'Updated By'),
+            'created_at' => Yii::t('itlo/cms', 'Created At'),
+            'updated_at' => Yii::t('itlo/cms', 'Updated At'),
+            'size' => Yii::t('itlo/cms', 'File Size'),
+            'mime_type' => Yii::t('itlo/cms', 'File Type'),
+            'extension' => Yii::t('itlo/cms', 'Extension'),
+            'original_name' => Yii::t('itlo/cms', 'Original FileName'),
+            'name_to_save' => Yii::t('itlo/cms', 'Name To Save'),
+            'name' => Yii::t('itlo/cms', 'Name'),
+            'description_short' => Yii::t('itlo/cms', 'Description Short'),
+            'description_full' => Yii::t('itlo/cms', 'Description Full'),
+            'image_height' => Yii::t('itlo/cms', 'Image Height'),
+            'image_width' => Yii::t('itlo/cms', 'Image Width'),
         ]);
     }
 
@@ -213,7 +212,7 @@ class StorageFile extends Core
 
 
     /**
-     * @return \skeeks\cms\components\storage\Cluster
+     * @return \itlo\cms\components\storage\Cluster
      */
     public function getCluster()
     {
@@ -242,7 +241,7 @@ class StorageFile extends Core
 
     /**
      * TODO::is depricated version > 2.6.0
-     * @return \skeeks\cms\components\storage\Cluster
+     * @return \itlo\cms\components\storage\Cluster
      */
     public function cluster()
     {

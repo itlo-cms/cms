@@ -1,19 +1,15 @@
 <?php
 /**
- * @link https://cms.skeeks.com/
- * @copyright Copyright (c) 2010 SkeekS
- * @license https://cms.skeeks.com/license/
- * @author Semenov Alexander <semenov@skeeks.com>
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\components\storage;
+namespace itlo\cms\components\storage;
 
-use skeeks\sx\Dir;
-use skeeks\sx\File;
+use itlo\sx\Dir;
+use itlo\sx\File;
 
-/**
- * @author Semenov Alexander <semenov@skeeks.com>
- */
 class ClusterLocal extends Cluster
 {
     /**
@@ -23,7 +19,7 @@ class ClusterLocal extends Cluster
     public function init()
     {
         if (!$this->name) {
-            $this->name = \Yii::t('skeeks/cms', "Local storage");
+            $this->name = \Yii::t('itlo/cms', "Local storage");
         }
 
         if (!$this->publicBaseUrl) {

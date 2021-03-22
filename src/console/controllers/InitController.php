@@ -1,20 +1,19 @@
 <?php
 /**
- * @link https://cms.skeeks.com/
- * @copyright Copyright (c) 2010 SkeekS
- * @license https://cms.skeeks.com/license/
- * @author Semenov Alexander <semenov@skeeks.com>
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\console\controllers;
+namespace itlo\cms\console\controllers;
 
-use skeeks\cms\helpers\FileHelper;
+use itlo\cms\helpers\FileHelper;
 use yii\console\Controller;
 
 /**
- * Project SkeekS CMS initialization
+ * Project itlo CMS initialization
  *
- * @package skeeks\cms\console\controllers
+ * @package itlo\cms\console\controllers
  */
 class InitController extends Controller
 {

@@ -1,22 +1,21 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 25.05.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
 namespace skeeks\cms\cmsWidgets\filters\models;
 
-use skeeks\cms\base\Widget;
-use skeeks\cms\base\WidgetRenderable;
-use skeeks\cms\components\Cms;
-use skeeks\cms\helpers\UrlHelper;
-use skeeks\cms\models\CmsContentElement;
-use skeeks\cms\models\CmsContentElementTree;
-use skeeks\cms\models\Search;
-use skeeks\cms\models\Tree;
-use skeeks\cms\shop\cmsWidgets\filters\ShopProductFiltersWidget;
+use itlo\cms\base\Widget;
+use itlo\cms\base\WidgetRenderable;
+use itlo\cms\components\Cms;
+use itlo\cms\helpers\UrlHelper;
+use itlo\cms\models\CmsContentElement;
+use itlo\cms\models\CmsContentElementTree;
+use itlo\cms\models\Search;
+use itlo\cms\models\Tree;
+use itlo\cms\shop\cmsWidgets\filters\ShopProductFiltersWidget;
 use yii\base\InvalidParamException;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
@@ -27,7 +26,7 @@ use yii\helpers\Json;
 
 /**
  * Class SearchProductsModel
- * @package skeeks\cms\shop\cmsWidgets\filters\models
+ * @package itlo\cms\shop\cmsWidgets\filters\models
  */
 class SearchProductsModel extends Model
 {
@@ -43,7 +42,7 @@ class SearchProductsModel extends Model
     public function attributeLabels()
     {
         return [
-            'image' => \Yii::t('skeeks/cms', 'With photo'),
+            'image' => \Yii::t('itlo/cms', 'With photo'),
         ];
     }
 

@@ -1,18 +1,17 @@
 <?php
 /**
- * @link https://cms.skeeks.com/
- * @copyright Copyright (c) 2010 SkeekS
- * @license https://cms.skeeks.com/license/
- * @author Semenov Alexander <semenov@skeeks.com>
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright 2021 ITLO (Infomarket)
  */
 
-namespace skeeks\cms\base;
+namespace itlo\cms\base;
 
 use common\models\User;
-use skeeks\cms\models\behaviors\HasTableCache;
-use skeeks\cms\models\CmsUser;
-use skeeks\cms\query\CmsActiveQuery;
-use skeeks\cms\traits\TActiveRecord;
+use itlo\cms\models\behaviors\HasTableCache;
+use itlo\cms\models\CmsUser;
+use itlo\cms\query\CmsActiveQuery;
+use itlo\cms\traits\TActiveRecord;
 use Yii;
 use yii\base\InvalidConfigException;
 use yii\behaviors\BlameableBehavior;
@@ -29,7 +28,6 @@ use yii\behaviors\TimestampBehavior;
  * @property CmsUser|User $createdBy
  * @property CmsUser|User $updatedBy
  *
- * @author Semenov Alexander <semenov@skeeks.com>
  */
 class ActiveRecord extends \yii\db\ActiveRecord
 {
@@ -145,11 +143,11 @@ class ActiveRecord extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id'         => Yii::t('skeeks/cms', 'ID'),
-            'created_by' => Yii::t('skeeks/cms', 'Created By'),
-            'updated_by' => Yii::t('skeeks/cms', 'Updated By'),
-            'created_at' => Yii::t('skeeks/cms', 'Created At'),
-            'updated_at' => Yii::t('skeeks/cms', 'Updated At'),
+            'id'         => Yii::t('itlo/cms', 'ID'),
+            'created_by' => Yii::t('itlo/cms', 'Created By'),
+            'updated_by' => Yii::t('itlo/cms', 'Updated By'),
+            'created_at' => Yii::t('itlo/cms', 'Created At'),
+            'updated_at' => Yii::t('itlo/cms', 'Updated At'),
         ];
     }
     /**

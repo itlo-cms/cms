@@ -2,16 +2,15 @@
 /**
  * Модель связанного свойства.
  *
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 18.05.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\relatedProperties\models;
+namespace itlo\cms\relatedProperties\models;
 
-use skeeks\cms\components\Cms;
-use skeeks\cms\models\Core;
+use itlo\cms\components\Cms;
+use itlo\cms\models\Core;
 use Yii;
 use yii\db\BaseActiveRecord;
 use yii\widgets\ActiveForm;
@@ -40,17 +39,17 @@ abstract class RelatedElementPropertyModel extends Core
     public function attributeLabels()
     {
         return array_merge(parent::attributeLabels(), [
-            'id' => Yii::t('skeeks/cms', 'ID'),
-            'created_by' => Yii::t('skeeks/cms', 'Created By'),
-            'updated_by' => Yii::t('skeeks/cms', 'Updated By'),
-            'created_at' => Yii::t('skeeks/cms', 'Created At'),
-            'updated_at' => Yii::t('skeeks/cms', 'Updated At'),
-            'property_id' => Yii::t('skeeks/cms', 'Property ID'),
-            'element_id' => Yii::t('skeeks/cms', 'Element ID'),
-            'value' => Yii::t('skeeks/cms', 'Value'),
-            'value_enum' => Yii::t('skeeks/cms', 'Value Enum'),
-            'value_num' => Yii::t('skeeks/cms', 'Value Num'),
-            'description' => Yii::t('skeeks/cms', 'Description'),
+            'id' => Yii::t('itlo/cms', 'ID'),
+            'created_by' => Yii::t('itlo/cms', 'Created By'),
+            'updated_by' => Yii::t('itlo/cms', 'Updated By'),
+            'created_at' => Yii::t('itlo/cms', 'Created At'),
+            'updated_at' => Yii::t('itlo/cms', 'Updated At'),
+            'property_id' => Yii::t('itlo/cms', 'Property ID'),
+            'element_id' => Yii::t('itlo/cms', 'Element ID'),
+            'value' => Yii::t('itlo/cms', 'Value'),
+            'value_enum' => Yii::t('itlo/cms', 'Value Enum'),
+            'value_num' => Yii::t('itlo/cms', 'Value Num'),
+            'description' => Yii::t('itlo/cms', 'Description'),
         ]);
     }
 

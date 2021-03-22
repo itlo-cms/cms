@@ -2,26 +2,24 @@
 /**
  * Storage
  *
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010-2014 SkeekS (Sx)
- * @date 17.10.2014
- * @since 1.0.0
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\components\storage;
+namespace itlo\cms\components\storage;
 
 use Yii;
 use yii\base\Component;
 
 
-use \skeeks\sx\File;
-use \skeeks\sx\Dir;
+use \itlo\sx\File;
+use \itlo\sx\Dir;
 use yii\base\Model;
 
 /**
  * Class Cluster
- * @package skeeks\cms\components\storage
+ * @package itlo\cms\components\storage
  */
 abstract class Cluster extends Model
 {
@@ -29,7 +27,7 @@ abstract class Cluster extends Model
     public $name;
     public $priority = 100;
 
-    public $publicBaseUrl; //   http://c1.s.skeeks.com/uploads/
+    public $publicBaseUrl; //   http://c1.s.itlo.com/uploads/
     public $rootBasePath; //   /var/www/sites/test.ru/frontend/web/uploads/
 
     /**

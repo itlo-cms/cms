@@ -1,19 +1,18 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 26.03.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\grid;
+namespace itlo\cms\grid;
 
-use skeeks\cms\components\Cms;
+use itlo\cms\components\Cms;
 use yii\grid\DataColumn;
 
 /**
  * Class CreatedAtColumn
- * @package skeeks\cms\grid
+ * @package itlo\cms\grid
  */
 class BooleanColumn extends DataColumn
 {

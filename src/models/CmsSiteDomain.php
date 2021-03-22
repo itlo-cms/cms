@@ -1,15 +1,14 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 20.05.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\models;
+namespace itlo\cms\models;
 
-use skeeks\cms\helpers\StringHelper;
-use skeeks\modules\cms\user\models\User;
+use itlo\cms\helpers\StringHelper;
+use itlo\modules\cms\user\models\User;
 use Yii;
 use yii\helpers\ArrayHelper;
 
@@ -62,15 +61,15 @@ class CmsSiteDomain extends Core
     public function attributeLabels()
     {
         return array_merge(parent::attributeLabels(), [
-            'id'          => Yii::t('skeeks/cms', 'ID'),
-            'created_by'  => Yii::t('skeeks/cms', 'Created By'),
-            'updated_by'  => Yii::t('skeeks/cms', 'Updated By'),
-            'created_at'  => Yii::t('skeeks/cms', 'Created At'),
-            'updated_at'  => Yii::t('skeeks/cms', 'Updated At'),
-            'cms_site_id' => Yii::t('skeeks/cms', 'Site'),
-            'domain'      => Yii::t('skeeks/cms', 'Domain'),
-            'is_https'      => Yii::t('skeeks/cms', 'Работает по https?'),
-            'is_main'      => Yii::t('skeeks/cms', 'Основной домен для сайта?'),
+            'id'          => Yii::t('itlo/cms', 'ID'),
+            'created_by'  => Yii::t('itlo/cms', 'Created By'),
+            'updated_by'  => Yii::t('itlo/cms', 'Updated By'),
+            'created_at'  => Yii::t('itlo/cms', 'Created At'),
+            'updated_at'  => Yii::t('itlo/cms', 'Updated At'),
+            'cms_site_id' => Yii::t('itlo/cms', 'Site'),
+            'domain'      => Yii::t('itlo/cms', 'Domain'),
+            'is_https'      => Yii::t('itlo/cms', 'Работает по https?'),
+            'is_main'      => Yii::t('itlo/cms', 'Основной домен для сайта?'),
         ]);
     }
 

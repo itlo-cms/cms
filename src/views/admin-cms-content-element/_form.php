@@ -1,15 +1,15 @@
 <?php
 
-use skeeks\cms\modules\admin\widgets\form\ActiveFormUseTab as ActiveForm;
+use itlo\cms\modules\admin\widgets\form\ActiveFormUseTab as ActiveForm;
 use yii\helpers\Html;
 
-/* @var $model \skeeks\cms\models\CmsContentElement */
-/* @var $relatedModel \skeeks\cms\relatedProperties\models\RelatedPropertiesModel */
+/* @var $model \itlo\cms\models\CmsContentElement */
+/* @var $relatedModel \itlo\cms\relatedProperties\models\RelatedPropertiesModel */
 
 /* @var $this yii\web\View */
-/* @var $controller \skeeks\cms\backend\controllers\BackendModelController */
-/* @var $action \skeeks\cms\backend\actions\BackendModelCreateAction|\skeeks\cms\backend\actions\IHasActiveForm */
-/* @var $model \skeeks\cms\models\CmsLang */
+/* @var $controller \itlo\cms\backend\controllers\BackendModelController */
+/* @var $action \itlo\cms\backend\actions\BackendModelCreateAction|\itlo\cms\backend\actions\IHasActiveForm */
+/* @var $model \itlo\cms\models\CmsLang */
 $controller = $this->context;
 $action = $controller->action;
 
@@ -102,7 +102,7 @@ JS
 
     <?php if ($model->isNewRecord) : ?>
         <?php if ($content_id = \Yii::$app->request->get("content_id")) : ?>
-            <?php $contentModel = \skeeks\cms\models\CmsContent::findOne($content_id); ?>
+            <?php $contentModel = \itlo\cms\models\CmsContent::findOne($content_id); ?>
             <?php $model->content_id = $content_id; ?>
             <?= $form->field($model, 'content_id')->hiddenInput(['value' => $content_id])->label(false); ?>
         <?php endif; ?>
@@ -164,8 +164,8 @@ JS
 
 <?php if (!$model->isNewRecord) : ?>
     <?php if ($model->cmsContent->access_check_element == "Y") : ?>
-        <?= $form->fieldSet(\Yii::t('skeeks/cms', 'Access')); ?>
-        <?= \skeeks\cms\rbac\widgets\adminPermissionForRoles\AdminPermissionForRolesWidget::widget([
+        <?= $form->fieldSet(\Yii::t('itlo/cms', 'Access')); ?>
+        <?= \itlo\cms\rbac\widgets\adminPermissionForRoles\AdminPermissionForRolesWidget::widget([
             'permissionName'        => $model->permissionName,
             'permissionDescription' => 'Доступ к этому элементу: '.$model->name,
             'label'                 => 'Доступ к этому элементу',
@@ -179,7 +179,7 @@ JS
     <?
 
     /**
-     * @var $content \skeeks\cms\models\CmsContent
+     * @var $content \itlo\cms\models\CmsContent
      */
     ?>
     <?php foreach ($model->cmsContent->childrenContents as $childContent) : ?>
@@ -192,11 +192,11 @@ JS
                     [
                         'class' => 'alert-warning',
                     ],
-                'body'    => \Yii::t('skeeks/cms', 'Management will be available after saving'),
+                'body'    => \Yii::t('itlo/cms', 'Management will be available after saving'),
             ]); ?>
         <?php else
             : ?>
-            <?= \skeeks\cms\modules\admin\widgets\RelatedModelsGrid::widget([
+            <?= \itlo\cms\modules\admin\widgets\RelatedModelsGrid::widget([
                 'label'       => $childContent->name,
                 'namespace'   => md5($model->className().$childContent->id),
                 'parentModel' => $model,
@@ -214,7 +214,7 @@ JS
 
                 'controllerRoute' => '/cms/admin-cms-content-element',
                 'gridViewOptions' => [
-                    'columns' => (array)\skeeks\cms\controllers\AdminCmsContentElementController::getColumns($childContent),
+                    'columns' => (array)\itlo\cms\controllers\AdminCmsContentElementController::getColumns($childContent),
                 ],
             ]);
             ?>

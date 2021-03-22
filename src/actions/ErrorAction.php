@@ -2,16 +2,14 @@
 /**
  * ErrorAction
  *
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010-2014 SkeekS (Sx)
- * @date 04.11.2014
- * @since 1.0.0
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright 2021 ITLO (Infomarket)
  */
 
-namespace skeeks\cms\actions;
+namespace itlo\cms\actions;
 
-use skeeks\cms\helpers\RequestResponse;
+use itlo\cms\helpers\RequestResponse;
 use Yii;
 use yii\base\Exception;
 use yii\base\UserException;

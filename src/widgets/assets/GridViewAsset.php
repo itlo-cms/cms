@@ -1,21 +1,20 @@
 <?php
 /**
- * @link https://cms.skeeks.com/
- * @copyright Copyright (c) 2010 SkeekS
- * @license https://cms.skeeks.com/license/
- * @author Semenov Alexander <semenov@skeeks.com>
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\widgets\assets;
+namespace itlo\cms\widgets\assets;
 
-use skeeks\cms\base\AssetBundle;
+use itlo\cms\base\AssetBundle;
 
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
+ * @author Semenov Alexander <semenov@itlo.com>
  */
 class GridViewAsset extends AssetBundle
 {
-    public $sourcePath = '@skeeks/cms/widgets/assets/src/grid-view';
+    public $sourcePath = '@itlo/cms/widgets/assets/src/grid-view';
 
     public $css = [
         'grid.css',
@@ -26,6 +25,6 @@ class GridViewAsset extends AssetBundle
 
     public $depends = [
         'yii\web\YiiAsset',
-        'skeeks\sx\assets\Custom',
+        'itlo\sx\assets\Custom',
     ];
 }

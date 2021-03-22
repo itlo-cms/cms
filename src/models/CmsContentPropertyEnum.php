@@ -1,14 +1,13 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (�����)
- * @date 29.07.2016
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\models;
+namespace itlo\cms\models;
 
-use skeeks\cms\relatedProperties\models\RelatedPropertyEnumModel;
+use itlo\cms\relatedProperties\models\RelatedPropertyEnumModel;
 
 /**
  * This is the model class for table "{{%cms_content_property_enum}}".

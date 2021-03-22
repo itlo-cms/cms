@@ -1,12 +1,11 @@
 <?php
 /**
- * @link https://cms.skeeks.com/
- * @copyright Copyright (c) 2010 SkeekS
- * @license https://cms.skeeks.com/license/
- * @author Semenov Alexander <semenov@skeeks.com>
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\models;
+namespace itlo\cms\models;
 
 use Yii;
 use yii\base\Exception;
@@ -25,9 +24,9 @@ use yii\helpers\Url;
  * @property CmsUser $cmsUser
  * @property string $approveUrl
  *
- * @author Semenov Alexander <semenov@skeeks.com>
+ * @author Semenov Alexander <semenov@itlo.com>
  */
-class CmsUserEmail extends \skeeks\cms\base\ActiveRecord
+class CmsUserEmail extends \itlo\cms\base\ActiveRecord
 {
     /**
      * @inheritdoc
@@ -102,7 +101,7 @@ class CmsUserEmail extends \skeeks\cms\base\ActiveRecord
     public function attributeLabels()
     {
         return ArrayHelper::merge(parent::attributeLabels(), [
-            'cms_user_id' => Yii::t('skeeks/cms', 'User'),
+            'cms_user_id' => Yii::t('itlo/cms', 'User'),
             'value'   => "Email",
         ]);
     }
@@ -147,7 +146,7 @@ class CmsUserEmail extends \skeeks\cms\base\ActiveRecord
     {
         \Yii::$app->mailer->view->theme->pathMap = ArrayHelper::merge(\Yii::$app->mailer->view->theme->pathMap, [
             '@app/mail' => [
-                '@skeeks/cms/mail-templates',
+                '@itlo/cms/mail-templates',
             ],
         ]);
 

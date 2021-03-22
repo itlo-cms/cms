@@ -2,41 +2,39 @@
 /**
  * AdminProfileController
  *
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010-2014 SkeekS (Sx)
- * @date 06.11.2014
- * @since 1.0.0
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\controllers;
+namespace itlo\cms\controllers;
 
-use skeeks\cms\backend\actions\BackendModelAction;
-use skeeks\cms\backend\actions\BackendModelUpdateAction;
-use skeeks\cms\backend\BackendController;
-use skeeks\cms\backend\controllers\BackendModelController;
-use skeeks\cms\helpers\RequestResponse;
-use skeeks\cms\helpers\UrlHelper;
-use skeeks\cms\models\CmsUser;
-use skeeks\cms\models\forms\PasswordChangeForm;
-use skeeks\cms\models\Search;
-use skeeks\cms\models\UserGroup;
-use skeeks\cms\modules\admin\actions\AdminAction;
-use skeeks\cms\modules\admin\actions\modelEditor\AdminOneModelEditAction;
-use skeeks\cms\modules\admin\controllers\AdminController;
-use skeeks\cms\modules\admin\controllers\AdminModelEditorController;
-use skeeks\cms\modules\admin\controllers\helpers\rules\HasModel;
-use skeeks\cms\rbac\CmsManager;
+use itlo\cms\backend\actions\BackendModelAction;
+use itlo\cms\backend\actions\BackendModelUpdateAction;
+use itlo\cms\backend\BackendController;
+use itlo\cms\backend\controllers\BackendModelController;
+use itlo\cms\helpers\RequestResponse;
+use itlo\cms\helpers\UrlHelper;
+use itlo\cms\models\CmsUser;
+use itlo\cms\models\forms\PasswordChangeForm;
+use itlo\cms\models\Search;
+use itlo\cms\models\UserGroup;
+use itlo\cms\modules\admin\actions\AdminAction;
+use itlo\cms\modules\admin\actions\modelEditor\AdminOneModelEditAction;
+use itlo\cms\modules\admin\controllers\AdminController;
+use itlo\cms\modules\admin\controllers\AdminModelEditorController;
+use itlo\cms\modules\admin\controllers\helpers\rules\HasModel;
+use itlo\cms\rbac\CmsManager;
 use Yii;
-use skeeks\cms\models\User;
-use skeeks\cms\models\searchs\User as UserSearch;
+use itlo\cms\models\User;
+use itlo\cms\models\searchs\User as UserSearch;
 use yii\db\Exception;
 use yii\helpers\ArrayHelper;
 use yii\web\Response;
 
 /**
  * Class AdminProfileController
- * @package skeeks\cms\controllers
+ * @package itlo\cms\controllers
  */
 class AdminProfileController extends BackendModelController
 {
@@ -134,7 +132,7 @@ class AdminProfileController extends BackendModelController
                             throw new Exception("Пароль не изменен");
                         }
 
-                        \Yii::$app->getSession()->setFlash('success', \Yii::t('skeeks/cms', 'Пароль успешно обновлен'));
+                        \Yii::$app->getSession()->setFlash('success', \Yii::t('itlo/cms', 'Пароль успешно обновлен'));
                     }
 
 
@@ -148,7 +146,7 @@ class AdminProfileController extends BackendModelController
 
                     $model->refresh();
 
-                    \Yii::$app->getSession()->setFlash('success', \Yii::t('skeeks/cms', 'Данные обновлены'));
+                    \Yii::$app->getSession()->setFlash('success', \Yii::t('itlo/cms', 'Данные обновлены'));
 
                 } else {
                     throw new Exception("Не удалось сохранить дополнительные свойства: " . print_r($model->errors, true));
@@ -191,7 +189,7 @@ class AdminProfileController extends BackendModelController
         $model = $this->model;
 
 
-        return $this->render('@skeeks/cms/views/admin-user/file-manager', [
+        return $this->render('@itlo/cms/views/admin-user/file-manager', [
             'model' => $model
         ]);
 
@@ -214,7 +212,7 @@ class AdminProfileController extends BackendModelController
         if (\Yii::$app->request->isAjax && !\Yii::$app->request->isPjax) {
             $modelForm->load(\Yii::$app->request->post());
             \Yii::$app->response->format = Response::FORMAT_JSON;
-            return \skeeks\cms\modules\admin\widgets\ActiveForm::validate($modelForm);
+            return \itlo\cms\modules\admin\widgets\ActiveForm::validate($modelForm);
         }
 
 
@@ -226,7 +224,7 @@ class AdminProfileController extends BackendModelController
                 \Yii::$app->getSession()->setFlash('error', 'Не удалось изменить пароль');
             }
 
-            return $this->render('@skeeks/cms/views/admin-user/change-password.php', [
+            return $this->render('@itlo/cms/views/admin-user/change-password.php', [
                 'model' => $modelForm
             ]);
 

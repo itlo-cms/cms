@@ -1,22 +1,21 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 15.05.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\controllers;
+namespace itlo\cms\controllers;
 
-use skeeks\cms\backend\controllers\BackendModelStandartController;
-use skeeks\cms\grid\BooleanColumn;
-use skeeks\cms\models\CmsTreeType;
-use skeeks\cms\modules\admin\actions\modelEditor\AdminMultiModelEditAction;
-use skeeks\cms\modules\admin\traits\AdminModelEditorStandartControllerTrait;
-use skeeks\cms\queryfilters\QueryFiltersEvent;
-use skeeks\yii2\form\fields\BoolField;
-use skeeks\yii2\form\fields\FieldSet;
-use skeeks\yii2\form\fields\SelectField;
+use itlo\cms\backend\controllers\BackendModelStandartController;
+use itlo\cms\grid\BooleanColumn;
+use itlo\cms\models\CmsTreeType;
+use itlo\cms\modules\admin\actions\modelEditor\AdminMultiModelEditAction;
+use itlo\cms\modules\admin\traits\AdminModelEditorStandartControllerTrait;
+use itlo\cms\queryfilters\QueryFiltersEvent;
+use itlo\yii2\form\fields\BoolField;
+use itlo\yii2\form\fields\FieldSet;
+use itlo\yii2\form\fields\SelectField;
 use yii\base\Event;
 use yii\db\Expression;
 use yii\helpers\ArrayHelper;
@@ -24,7 +23,7 @@ use yii\helpers\Html;
 
 /**
  * Class AdminCmsTreeTypeController
- * @package skeeks\cms\controllers
+ * @package itlo\cms\controllers
  */
 class AdminCmsTreeTypeController extends BackendModelStandartController
 {
@@ -178,7 +177,7 @@ class AdminCmsTreeTypeController extends BackendModelStandartController
         return [
             'main' => [
                 'class'  => FieldSet::class,
-                'name'   => \Yii::t('skeeks/cms', 'Main'),
+                'name'   => \Yii::t('itlo/cms', 'Main'),
                 'fields' => [
                     'name',
                     'code',
@@ -192,7 +191,7 @@ class AdminCmsTreeTypeController extends BackendModelStandartController
                     'default_children_tree_type' => [
                         'class' => SelectField::class,
                         'items' => function () {
-                            return \yii\helpers\ArrayHelper::map(\skeeks\cms\models\CmsTreeType::find()->all(), 'id', 'name');
+                            return \yii\helpers\ArrayHelper::map(\itlo\cms\models\CmsTreeType::find()->all(), 'id', 'name');
                         },
                     ],
                 ],
@@ -200,7 +199,7 @@ class AdminCmsTreeTypeController extends BackendModelStandartController
 
             'captions' => [
                 'class'  => FieldSet::class,
-                'name'   => \Yii::t('skeeks/cms', 'Captions'),
+                'name'   => \Yii::t('itlo/cms', 'Captions'),
                 'fields' => [
                     'name_one',
                     'name_meny'

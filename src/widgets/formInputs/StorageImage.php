@@ -1,16 +1,15 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 02.03.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\widgets\formInputs;
+namespace itlo\cms\widgets\formInputs;
 
-use skeeks\cms\helpers\UrlHelper;
-use skeeks\cms\models\CmsStorageFile;
-use skeeks\cms\models\StorageFile;
+use itlo\cms\helpers\UrlHelper;
+use itlo\cms\models\CmsStorageFile;
+use itlo\cms\models\StorageFile;
 use yii\base\Exception;
 use yii\bootstrap\Alert;
 use yii\helpers\Json;
@@ -19,7 +18,7 @@ use yii\widgets\InputWidget;
 /**
  * @property CmsStorageFile $image
  * Class StorageImage
- * @package skeeks\cms\widgets\formInputs
+ * @package itlo\cms\widgets\formInputs
  */
 class StorageImage extends InputWidget
 {
@@ -48,11 +47,11 @@ class StorageImage extends InputWidget
     {
         try {
             if (!$this->hasModel()) {
-                throw new Exception(\Yii::t('skeeks/cms', "Current widget works only in form with model"));
+                throw new Exception(\Yii::t('itlo/cms', "Current widget works only in form with model"));
             }
 
             if ($this->model->isNewRecord) {
-                throw new Exception(\Yii::t('skeeks/cms', "The image can be downloaded after you save the form data"));
+                throw new Exception(\Yii::t('itlo/cms', "The image can be downloaded after you save the form data"));
             }
 
             echo $this->render('storage-image', [

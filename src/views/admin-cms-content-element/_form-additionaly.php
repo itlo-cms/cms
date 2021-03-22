@@ -1,9 +1,9 @@
 <?php
 /* @var $this yii\web\View */
-/* @var $model \skeeks\cms\models\CmsContentElement */
-/* @var $relatedModel \skeeks\cms\relatedProperties\models\RelatedPropertiesModel */
+/* @var $model \itlo\cms\models\CmsContentElement */
+/* @var $relatedModel \itlo\cms\relatedProperties\models\RelatedPropertiesModel */
 ?>
-<?= $form->fieldSet(\Yii::t('skeeks/cms', 'Additionally')); ?>
+<?= $form->fieldSet(\Yii::t('itlo/cms', 'Additionally')); ?>
 <div class="row">
     <div class="col-md-3">
         <?= $form->field($model, 'published_at')->widget(\kartik\datecontrol\DateControl::classname(), [
@@ -18,13 +18,13 @@
         ]); ?>
     </div>
 </div>
-<?= $form->field($model, 'code')->textInput(['maxlength' => 255])->hint(\Yii::t('skeeks/cms',
+<?= $form->field($model, 'code')->textInput(['maxlength' => 255])->hint(\Yii::t('itlo/cms',
     "This parameter affects the address of the page")); ?>
 <?= $form->fieldInputInt($model, 'priority'); ?>
 
 <?php if ($contentModel->parent_content_id) : ?>
     <?= $form->field($model, 'parent_content_element_id')->widget(
-        \skeeks\cms\backend\widgets\SelectModelDialogContentElementWidget::class,
+        \itlo\cms\backend\widgets\SelectModelDialogContentElementWidget::class,
         [
             'content_id' => $contentModel->parent_content_id
         ]

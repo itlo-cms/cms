@@ -1,19 +1,18 @@
 <?php
 /**
- * @author Semenov Alexander <semenov@skeeks.com>
- * @link http://skeeks.com/
- * @copyright 2010 SkeekS (СкикС)
- * @date 09.03.2015
+ * @author Logachev Roman <rlogachev@itlo.ru>
+ * @link http://itlo.ru/
+ * @copyright ITLO (Infomarket)
  */
 
-namespace skeeks\cms\query;
+namespace itlo\cms\query;
 
-use skeeks\cms\components\Cms;
+use itlo\cms\components\Cms;
 use yii\db\ActiveQuery;
 
 /**
  * Class CmsActiveQuery
- * @package skeeks\cms\query
+ * @package itlo\cms\query
  */
 class CmsActiveQuery extends ActiveQuery
 {

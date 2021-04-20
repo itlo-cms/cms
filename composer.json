@@ -40,11 +40,7 @@
         "paulzi/yii2-auto-tree": "^1.1.0",
         "paulzi/yii2-adjacency-list": "^2.2.0",
         "paulzi/yii2-nested-sets": "^1.1.0",
-        "paulzi/yii2-materialized-path": "^2.1.0",
-
-        "bower-asset/sizzle":"1.10.12",
-        "bower-asset/fancybox": "^3.1",
-        "bower-asset/jquery": "2.2.*@stable | 2.1.*@stable | 1.11.*@stable | 1.12.*@stable"
+        "paulzi/yii2-materialized-path": "^2.1.0"
     },
     "repositories": [
         {

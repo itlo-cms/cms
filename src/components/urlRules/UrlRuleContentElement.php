@@ -17,8 +17,7 @@ use yii\helpers\Url;
  * Class UrlRuleContentElement
  * @package itlo\cms\components\urlRules
  */
-class UrlRuleContentElement
-    extends \yii\web\UrlRule
+class UrlRuleContentElement extends \yii\web\UrlRule
 {
 
     public function init()

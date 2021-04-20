@@ -20,8 +20,7 @@ use yii\helpers\Url;
  * Class UrlRuleTree
  * @package itlo\cms\components\urlRules
  */
-class UrlRuleTree
-    extends \yii\web\UrlRule
+class UrlRuleTree extends \yii\web\UrlRule
 {
     public function init()
     {

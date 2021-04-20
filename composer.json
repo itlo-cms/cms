@@ -32,8 +32,8 @@
         "yiisoft/yii2-bootstrap": "^2.0.9 || dev-master@dev",
 
 
-        "itlo/cms-composer": "^0.1 || dev-master@dev",
-        "itlo/cms-composer-update-plugin": "^0.1 || dev-master",
+        "itlo/cms-composer": "^0.0.1 || dev-master@dev",
+        "itlo/cms-composer-update-plugin": "^0.0.1 || dev-master",
 
         "kartik-v/yii2-datecontrol": "^1.9.7",
         "kartik-v/yii2-widget-datepicker": "^1.4.7",

@@ -1,5 +1,10 @@
 {
     "name": "itlo/cms",
+    "version": "0.0.1",
+    "dist": {
+        "url": "git@github.com:itlo-cms/app-template.git",
+        "type": "csv"
+    },
     "description": "ITLO CMS — control panel and tools based on php framework Yii2",
     "keywords": ["framework", "cms", "itlo", "sx", "itlo cms", "app", "yii2", "extension"],
     "homepage": "https://itlo.ru",

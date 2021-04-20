@@ -2,7 +2,7 @@
     "name": "itlo/cms",
     "version": "0.0.1",
     "dist": {
-        "url": "git@github.com:itlo-cms/app-template.git",
+        "url": "git@github.com:itlo-cms/cms.git",
         "type": "csv"
     },
     "description": "ITLO CMS — control panel and tools based on php framework Yii2",
@@ -52,12 +52,6 @@
         "bower-asset/fancybox": "^3.1",
         "bower-asset/jquery": "2.2.*@stable | 2.1.*@stable | 1.11.*@stable | 1.12.*@stable"
     },
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "https://asset-packagist.org"
-        }
-    ],
     "autoload": {
         "psr-4": {
             "skeeks\\cms\\":  "src/"

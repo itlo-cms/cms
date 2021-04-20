@@ -1,38 +1,36 @@
 {
     "name": "itlo/cms",
-    "version": "0.0.1",
-    "dist": {
-        "url": "git@github.com:itlo-cms/cms.git",
-        "type": "csv"
-    },
-    "description": "ITLO CMS — control panel and tools based on php framework Yii2",
-    "keywords": ["framework", "cms", "itlo", "sx", "itlo cms", "app", "yii2", "extension"],
-    "homepage": "https://itlo.ru",
+    "description": "SkeekS CMS — control panel and tools based on php framework Yii2",
+    "keywords": ["framework", "cms", "skeeks", "sx", "skeeks cms", "app", "yii2", "extension"],
+    "homepage": "https://cms.skeeks.com",
     "type": "yii2-extension",
     "license": "BSD-3-Clause",
     "support": {
         "source": "https://github.com/itlo-cms/cms",
         "issues": "https://github.com/itlo-cms/cms/issues",
-        "wiki": "https://itlo.ru/docs",
+        "wiki": "https://cms.itlo.ru/docs",
         "authors": "https://itlo.ru"
     },
     "authors": [
         {
-            "name": "Support ITLO",
+            "name": "itlo",
             "email": "support@itlo.ru",
-            "homepage": "https://itlo.ru"
+            "homepage": "http://itlo.ru"
         },
         {
-            "name": "Logachev Roman",
-            "email": "rlogachev@itlo.ru"
+            "name": "Ivan Roman",
+            "email": "info@itlo.ru"
         }
     ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "require": {
         "php": ">=7.0.0",
 
         "yiisoft/yii2": "^2.0.24 || dev-master@dev",
         "yiisoft/yii2-jui": "^2.0.7",
         "yiisoft/yii2-bootstrap": "^2.0.9 || dev-master@dev",
+
 
         "kartik-v/yii2-datecontrol": "^1.9.7",
         "kartik-v/yii2-widget-datepicker": "^1.4.7",
@@ -50,6 +48,12 @@
         "bower-asset/fancybox": "^3.1",
         "bower-asset/jquery": "2.2.*@stable | 2.1.*@stable | 1.11.*@stable | 1.12.*@stable"
     },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ],
     "autoload": {
         "psr-4": {
             "skeeks\\cms\\":  "src/"

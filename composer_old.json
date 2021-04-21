@@ -31,8 +31,7 @@
         "yiisoft/yii2-jui": "^2.0.7",
         "yiisoft/yii2-bootstrap": "^2.0.9 || dev-master@dev",
 
-        "itlo/cms-composer": "^0.0.1 || dev-master@dev",
-        "itlo/cms-composer-update-plugin": "^0.0.1 || dev-master",
+
 
         "skeeks/cms-composer": "^1.0.0 || dev-master@dev",
         "skeeks/yii2-config": "^0.1.0 || ^1.0.0 || dev-master@dev",
